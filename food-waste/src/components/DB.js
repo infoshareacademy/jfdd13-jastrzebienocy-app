@@ -1,1 +1,0 @@
-// Kilka obiektów z przepisami
