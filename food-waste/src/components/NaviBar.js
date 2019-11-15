@@ -3,12 +3,15 @@ import styles from "./NaviBar.module.css";
 
 
 class NaviBar extends React.Component {
-    <nav className={styles.NaviBar}>
-    <a href="">logo</a>
-    <a href="">Dashboard</a>
-    <a href="">Przepisy</a>
-    <a href="">Progil</a>
-</nav>
+    render () { return (
+    <div className={styles.NaviBar}>
+        <a href="" className={styles.logo}>Logo</a>
+        <a href="" className={styles.Dashboard}>Dashboard</a>
+        <a href="" className={styles.Przepisy}>Przepisy</a>
+        <a href="" className={styles.Profil}>Profil</a>
+    </div>
+    )
+    }
 }
 
 
