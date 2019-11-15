@@ -1,16 +1,16 @@
 // List of products
-export const products = [
+export const Products = [
     {
         id: 0,
         name: 'Mięso',
-        images:
+        images: 
             'https://cdn.pixabay.com/photo/2015/11/07/11/00/meat-1030729__340.jpg'
     },
     {
         id: 0,
         name: 'Nabiał',
-        images:
-            'https://cdn.pixabay.com/photo/2018/08/15/01/32/cheese-3607039__340.jpg'
+        images: 
+        'https://cdn.pixabay.com/photo/2018/08/15/01/32/cheese-3607039__340.jpg'
     },
     {
         id: 0,
@@ -24,7 +24,7 @@ export const products = [
     }
 ];
 // List of meat
-export const meat = [
+export const Meat = [
     {
         id: 0,
         description: 'Drób',
@@ -34,11 +34,11 @@ export const meat = [
         id: 1,
         description: 'Wołowina',
         image: 'https://cdn.pixabay.com/photo/2018/07/16/12/56/beef-3541869__340.jpg'
-    }
+    }    
 ];
 
 // List of dairy
-export const dairy = [
+export const Dairy = [
     {
         id: 0,
         description: 'Jajka',
@@ -48,11 +48,11 @@ export const dairy = [
         id: 1,
         description: 'Śmietana',
         image: 'https://cdn.pixabay.com/photo/2018/03/16/16/42/milk-3231772__340.jpg'
-    }
+    }    
 ];
 
 // List of Veggies
-export const vegetables = [
+export const Vegetables = [
     {
         id: 0,
         description: 'Pomidor',
@@ -62,11 +62,11 @@ export const vegetables = [
         id: 1,
         description: 'Cebula',
         image: 'https://image.shutterstock.com/image-photo/full-frame-shot-purple-onions-260nw-1284082165.jpg'
-    }
+    }    
 ];
 
 // List of Fruits
-export const fruits = [
+export const Fruits = [
     {
         id: 0,
         description: 'Jabłka',
@@ -76,5 +76,5 @@ export const fruits = [
         id: 1,
         description: 'Truskawki',
         image: 'https://cdn.pixabay.com/photo/2014/11/12/21/18/strawberries-528791__340.jpg'
-    }
+    }    
 ];
