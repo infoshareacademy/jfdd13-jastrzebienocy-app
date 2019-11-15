@@ -1,5 +1,5 @@
 // List of products
-export const products = [
+export const Products = [
     {
         id: 0,
         name: 'Mięso',
@@ -24,7 +24,7 @@ export const products = [
     }
 ];
 // List of meat
-export const meat = [
+export const Meat = [
     {
         id: 0,
         description: 'Drób',
@@ -38,7 +38,7 @@ export const meat = [
 ];
 
 // List of dairy
-export const dairy = [
+export const Dairy = [
     {
         id: 0,
         description: 'Jajka',
@@ -52,7 +52,7 @@ export const dairy = [
 ];
 
 // List of Veggies
-export const vegetables = [
+export const Vegetables = [
     {
         id: 0,
         description: 'Pomidor',
@@ -66,7 +66,7 @@ export const vegetables = [
 ];
 
 // List of Fruits
-export const fruits = [
+export const Fruits = [
     {
         id: 0,
         description: 'Jabłka',
