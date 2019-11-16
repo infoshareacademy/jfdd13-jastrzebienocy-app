@@ -1,0 +1,17 @@
+.SideBar {
+    font-family: "Oswald", sans-serif;
+    width: 100%;
+    align-items: center;
+    background: #8bc34a;
+    height: 120px;
+    z-index: 5;
+    scroll-behavior: smooth;
+    top: 0px;
+    align-self: flex-end;
+    
+}
+
+.FlexBox{
+    display: flex;
+    flex-direction: row;
+}

@@ -2,18 +2,18 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import NaviBar from './components/NaviBar';
+import SideBar from './components/SideBar';
 
 
 
 function App() {
   return (
 
-    
-
     <div className="App">
 
       <NaviBar />
-
+<div className="FlexBox">
+      <SideBar />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -28,6 +28,7 @@ function App() {
           Learn React
         </a>
       </header>
+      </div>
     </div>
   );
 }
