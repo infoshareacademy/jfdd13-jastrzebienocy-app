@@ -3,7 +3,7 @@ import { kStringMaxLength } from 'buffer'
 
 
 // Recipes in general
-export const recipes = [
+export default [
     { 
         id: uuid.v4(),
         category: 'Włoska',
