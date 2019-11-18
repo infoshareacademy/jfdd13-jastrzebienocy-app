@@ -1,18 +1,14 @@
 import React from 'react';
 import Recipes from './Recipes'
-import Recipe from './components/Recipe';
+import RecipeView from './components/RecipeView';
 
 
 class RecipesToRender extends React.Component{
     render() {
         return (
             Recipes.map( item =>
-                <Recipe recipe={item} /> 
+                <RecipeView recipe={item} /> 
                 )
-
-
-
-
         )
     }
 }
