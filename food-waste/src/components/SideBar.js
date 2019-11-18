@@ -6,10 +6,10 @@ class SideBar extends React.Component {
         return (
             <div className={styles.SideBar}>
                 <div className={styles.Produkt}>Produkt</div>
-                <div className={styles.Ilość}>Ilość</div>
-                <div className={styles.Kategoria}>Kategoria</div>
-                <div className={styles.Ulubione}>Ulubione</div>
-                <div className={styles.Szukaj}>Szukaj</div>
+                    <input></input>
+                <div className={styles.Quantity}>Ilość</div>
+                <div className={styles.Kategory}>Kategoria</div>
+                <div className={styles.Vawourites}>Ulubione</div>
             </div>
         )
     }

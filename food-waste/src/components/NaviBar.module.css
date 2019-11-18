@@ -18,25 +18,9 @@
     margin-left: 25px;
 }
 
+.Profil,
+.Przepisy,
 .Dashboard {
-    font-family: "Oswald", sans-serif;
-    font-weight: bold;
-    color: #212121;
-    font-size: 24px;
-    text-decoration: none;
-    padding: 20px;
-}
-
-.Przepisy {
-    font-family: "Oswald", sans-serif;
-    font-weight: bold;
-    color: #212121;
-    font-size: 24px;
-    text-decoration: none;
-    padding: 20px;
-}
-
-.Profil {
     font-family: "Oswald", sans-serif;
     font-weight: bold;
     color: #212121;
