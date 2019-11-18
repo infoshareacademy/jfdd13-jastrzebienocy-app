@@ -7,6 +7,7 @@ class MainContent extends React.Component {
         return (
             <div className={styles.MainContent}>Jakis ladny txt do Majna
             <RecipesToRender/>
+
             </div>
         )
     }
