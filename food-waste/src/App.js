@@ -4,6 +4,8 @@ import NaviBar from './components/NaviBar';
 import SideBar from './components/SideBar';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
+import Privacy from './components/Privacy';
+
 
 function App() {
   return (
@@ -17,5 +19,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
