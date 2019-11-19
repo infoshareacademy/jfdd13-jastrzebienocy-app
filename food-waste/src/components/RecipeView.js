@@ -13,7 +13,7 @@ class RecipeView extends React.Component{
     render(){
         return( 
                 <Segment className={styles.Wrapper}>
-                    <div >
+                    <div>
                     <div>
                         <Image src={this.props.recipe.imageUrl}  className ={styles.Img} size='small' floated='left' />
                     </div>
