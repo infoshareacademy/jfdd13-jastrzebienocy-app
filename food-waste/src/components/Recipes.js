@@ -10,10 +10,11 @@ export default [
         category: 'Włoska',
         description: 'Amazing roasted Chicken porcja na 4 osoby',
         products: 'Kurczak',
-        cockingTime: '120min',
+        cockingTime: '120 min',
         weight: 1.4 + 'kg',
         imageUrl: 'https://myfridgefood.com/media/8730/roastedchx.jpg',
-        recipeUrl: 'https://myfridgefood.com/recipes/entree-chicken/amazing-roasted-chicken/'
+        recipeUrl: 'https://myfridgefood.com/recipes/entree-chicken/amazing-roasted-chicken/',
+        portions: 4
     },
     {
         id: uuid.v4(),
