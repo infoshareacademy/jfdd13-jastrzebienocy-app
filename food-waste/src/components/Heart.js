@@ -1,15 +1,8 @@
-import React from 'react';
-import { Button } from 'semantic-ui-react'
+import React from 'react'
+import { Icon } from 'semantic-ui-react'
 
-const Hearts = () => (
-  <div>
-    <Button
-      content='Like'
-      icon='heart'
-      label={{ as: 'a', basic: true, content: '2,048' }}
-      labelPosition='right'
-    />
-  </div>
-)
+const Heart = () => <Icon name='heart outline' />
 
-  export default Hearts;
+export default Heart
+
+
