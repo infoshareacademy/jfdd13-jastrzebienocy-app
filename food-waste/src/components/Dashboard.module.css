@@ -1,0 +1,15 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(50, 247, 10, 0.05);
+  }
+
+.header {
+  background-color: rgba(50, 247, 10, 0.05);
+  height: 30vh;
+  margin: 0 auto;
+  width: 80%;
+}
+  
