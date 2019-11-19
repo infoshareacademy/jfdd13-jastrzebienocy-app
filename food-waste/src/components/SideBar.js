@@ -12,7 +12,7 @@ class SideBar extends React.Component {
                 <div className={styles.Quantity}>Ilość</div>
                 <div className={styles.Kategory}>Kategoria</div>
                 <div className={styles.Vawourites}>Ulubione</div>
-                <Heart />
+                <Heart className={styles.Heart}/>
             </div>
         )
     }

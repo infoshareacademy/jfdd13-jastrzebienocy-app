@@ -11,3 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#root > div > div > div.FlexBox > div.SideBar_SideBar__3VxqB > div.Heart > i{
+  font-size:30px;
+}
