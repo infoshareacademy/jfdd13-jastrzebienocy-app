@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./MainContent.module.css";
-import RecipesToRender from "../RecipesToRender";
+import RecipesToRender from "./RecipesToRender";
 
 class MainContent extends React.Component {
     render() {
