@@ -1,28 +1,49 @@
 import React, { Component } from 'react';
-// import { Select } from 'semantic-ui-react';
+import UsersList from './UserList';
+import RecipiesToRender from '../RecipesToRender';
 
 class Search extends Component {
-	state = {
-		query: ''
-	};
+	constructor() {
+		super();
 
-	handleInputChange = () => {
-		this.setState({
-			query: this.search.value
-		});
-	};
-
+		this.state = {
+			filteredUsers: RecipiesToRender
+		};
+	}
 	render() {
 		return (
-			<form>
-				<input
-					placeholder="Search for..."
-					ref={(input) => (this.search = input)}
-					onChange={this.handleInputChange}
-				/>
-				<p>{this.state.query}</p>
-			</form>
+			<div>
+				<input type="search" />
+				<ul>
+					<li>Michał</li>
+					<li>Ania</li>
+					<li>Kasia</li>
+					<li>Tomek</li>
+				</ul>
+				<input onInput={this.filterUsers.bind(this)} />
+				<UsersList users={this.state.filteredUsers} />
+			</div>
 		);
+	}
+
+	filterUsers(e) {
+		const text = e.currentTarget.value;
+		const filteredUsers = this.getFilteredUsersForText(text);
+		this.setState({
+			filteredUsers
+		});
+	}
+
+	getFilteredUsersForText(text) {
+		return new Promise((resolve) => {
+			const time = (Math.random() + 1) * 250;
+			setTimeout(() => {
+				const filteredUsers = RecipiesToRender.filter((user) =>
+					user.toLowerCase().includes(text.toLowerCase())
+				);
+				resolve(filteredUsers);
+			}, time);
+		});
 	}
 }
 
