@@ -3,11 +3,10 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
-		"faker": "^4.1.0",
 		"formik": "^2.0.4",
-		"loadash": "^1.0.0",
 		"react": "^16.11.0",
 		"react-dom": "^16.11.0",
+		"react-router-dom": "^5.1.2",
 		"react-scripts": "3.2.0",
 		"semantic-ui-react": "^0.88.1",
 		"uuid": "^3.3.3",
@@ -23,15 +22,7 @@
 		"extends": "react-app"
 	},
 	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
+		"production": [ ">0.2%", "not dead", "not op_mini all" ],
+		"development": [ "last 1 chrome version", "last 1 firefox version", "last 1 safari version" ]
 	}
 }
