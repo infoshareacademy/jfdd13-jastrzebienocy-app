@@ -8,7 +8,7 @@
     scroll-behavior: smooth;
     top: 0px;
     align-self: flex-end;
-    height: 81vh;
+    height: 80vh;
     
 }
 
@@ -24,3 +24,6 @@
     text-decoration: none;
     padding: 20px;
 }
+
+/* Input styles */
+

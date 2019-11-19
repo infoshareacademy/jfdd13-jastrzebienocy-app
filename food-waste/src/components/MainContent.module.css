@@ -1,5 +1,7 @@
 .MainContent {
     background-color: pink;
     width: 85%;
+    height: 80vh;
+    overflow: scroll;
 }
 
