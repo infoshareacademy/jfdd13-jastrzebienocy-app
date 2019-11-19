@@ -5,7 +5,7 @@ import {Segment, Image, Icon} from 'semantic-ui-react'
 let portions = (count) => {
     let list = [];
     for (let i=0; i<count; i+= 1){
-        list.push(<Icon name='user'/>)
+        list.push(<Icon name='user' size="large"/>)
     }
     return list;
 }
@@ -28,7 +28,7 @@ class RecipeView extends React.Component{
                 </div>
                 
                 <div className={styles.TimeAndPortions}> 
-                     <div><Icon name='time' />{this.props.recipe.cockingTime}</div>
+                     <div><Icon name='time' size="large" />{this.props.recipe.cockingTime}</div>
                      <div>{portions(this.props.recipe.portions || 1)}</div>
                 </div>
                 </Segment>
