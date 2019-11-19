@@ -15,8 +15,11 @@ const Root = () => {
         <Router>
             <div>
                 <Switch>
-                    <Route exact strict sensitive path="/" component={App} />
+                    <Route exact path="/" component={App} />
                     <Route exact path="/privacy" component={Privacy} />
+                    {/* <Route exact path="/dashboard" component={Dashboard} /> */}
+                    {/* <Route exact path="/przepisy" component={Przepisy} /> */}
+                    {/* <Route exact path="/profil" component={Profil} /> */}
                 </Switch>
             </div>    
         </Router>    

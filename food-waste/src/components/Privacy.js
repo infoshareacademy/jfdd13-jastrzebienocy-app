@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
 
-
 class Privacy extends React.Component {
     render() {
         return (
