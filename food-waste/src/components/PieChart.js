@@ -7,7 +7,7 @@ class PieChart extends Component {
         super(props);
         this.state = {
             chartData:{
-              labels: ['April', 'May', 'June', 'July', 'August', 'September'],
+                labels: ['Kwiecien', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień'],
               datasets:[
                   {
                       label: 'Ilosc Uzytkownikow',
@@ -44,7 +44,7 @@ class PieChart extends Component {
     min: 0 },
         title:{
         display: true,
-          text: 'Liczba uzytkownikow korzystajacych z aplikacj',
+          text: 'Liczba użytkowników korzystających z aplikacji',
           fontSize:25
       },
         legend:{

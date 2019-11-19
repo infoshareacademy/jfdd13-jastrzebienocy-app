@@ -14,11 +14,13 @@ class Dashboard extends React.Component {
   
     render() {
       return (
+        <div className={styles.dasboardAll}>
         <div>
         <DashboardHeader />
         <div className={styles.wrapper}>
         <BarChart />
         <PieChart />
+        </div>
         </div>
         </div>
       );
