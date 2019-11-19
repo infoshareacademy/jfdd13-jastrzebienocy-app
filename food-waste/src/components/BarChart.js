@@ -50,6 +50,7 @@ class BarChart extends Component {
         legend:{
           display: true,
           position: 'bottom'
+          
       }
        }}
 

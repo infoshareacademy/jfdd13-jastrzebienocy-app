@@ -10,7 +10,7 @@
 
 .header {
   background-color: rgba(220,237,200, 0.3);
-  height: 40vh;
+  height: 100%;
   margin: 0 auto;
   width: 100%;
 }
@@ -24,5 +24,12 @@
   margin-bottom: 5px;
   border-radius: 1%;
   
+}
+
+.header2 {
+font-size: 30px;
+line-height: 40px;
+margin-top: 30px;
+padding: 15px;
 }
   
