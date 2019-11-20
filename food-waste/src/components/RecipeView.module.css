@@ -25,6 +25,9 @@
 
 .Img{
     border-radius: 6px;
+    width: 200px;
+    height: 200px;
+    background: cover;
 }
 
 .TimeAndPortions{

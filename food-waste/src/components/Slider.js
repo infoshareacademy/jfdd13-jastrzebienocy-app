@@ -17,17 +17,17 @@ class Slider extends React.Component {
     render() {
       return (
         <div>
-          <label>
-            <input 
+          <div className={styles.label}>
+            <input className={styles.inputSlide}
               id="typeinp" 
               type="range" 
-              min="0" max="10" 
+              min="0" max="2000" 
               value={this.state.value} 
               onChange={this.handleChange}
-              step="1"/>
+              step="50"/>
             {this.state.value}
-          </label>
-        </div>
+          </div>
+        </div> 
       );
     }
   }
