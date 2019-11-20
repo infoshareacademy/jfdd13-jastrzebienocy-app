@@ -5,12 +5,8 @@
     padding: 30px;
    
 }
-
-.plusButton{
-    color: red;
-    /* position: fixed;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end; */
-}
+ h1{
+     display: block;
+     text-align: center
+ }
 
