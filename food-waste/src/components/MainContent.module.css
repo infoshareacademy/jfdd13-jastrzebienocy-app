@@ -1,5 +1,8 @@
 .MainContent {
     background-color: pink;
-    width: 85%;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+   
 }
 

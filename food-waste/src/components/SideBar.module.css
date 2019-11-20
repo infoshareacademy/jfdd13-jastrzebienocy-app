@@ -1,15 +1,12 @@
 .SideBar {
     font-family: "Oswald", sans-serif;
-    width: 15%;
+    /* width: 15%; */
     align-items: center;
-    background: #8bc34a;
     height: 120px;
     z-index: 5;
     scroll-behavior: smooth;
     top: 0px;
-    align-self: flex-end;
-    height: 81vh;
-    
+    padding: 20px;
 }
 
 .Produkt,
@@ -24,3 +21,10 @@
     text-decoration: none;
     padding: 20px;
 }
+
+.Heart{
+    font-size: 30px;
+}
+
+/* Input styles */
+

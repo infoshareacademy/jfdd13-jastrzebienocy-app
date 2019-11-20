@@ -6,15 +6,19 @@ import { kStringMaxLength } from 'buffer'
 export default [
     { 
         id: uuid.v4(),
+        name: 'Niesamowity pieczony kurczak',
         category: 'Włoska',
-        description: 'BR-ETA Chicken porcja na 2 osoby',
+        description: 'Amazing roasted Chicken porcja na 4 osoby',
         products: 'Kurczak',
-        cockingTime: '40min',
-        weight: 0.5 + 'kg',
-        imageUrl: 'https://myfridgefood.com/recipes/entree-chicken/br-eta-chicken/'
+        cockingTime: '120 min',
+        weight: 1.4 + 'kg',
+        imageUrl: 'https://myfridgefood.com/media/8730/roastedchx.jpg',
+        recipeUrl: 'https://myfridgefood.com/recipes/entree-chicken/amazing-roasted-chicken/',
+        portions: 4
     },
     {
         id: uuid.v4(),
+        name: '',
         category: 'Azjatycka',
         description: 'Mogolski Stek porcja na 4 osoby',
         products: 'Wołowina',
@@ -24,6 +28,7 @@ export default [
     },
     {
         id: uuid.v4(),
+        name: '',
         category: 'Polska',
         description: 'Jajka w Bekonie porcja na  4 osoby',
         products: 'Jajka',
@@ -33,42 +38,47 @@ export default [
     },
     {
         id: uuid.v4(),
+        name: '',
         category: 'Włoska',
         description: 'Chrupiące ciastka z jabłkami',
         products: 'Śmietana',
         cockingTime: '35min',
         weight: 1.5 + 'kg',
-        imageURL: 'https://myfridgefood.com/recipes/dessert/apple-pie-crescent-wraps/'
+        imageUrl: 'https://myfridgefood.com/recipes/dessert/apple-pie-crescent-wraps/'
     },
     {
         id: uuid.v4(),
+        name: '',
         category: 'Włoska',
         description: 'Pieczone pomidory z serem - porcja na 4 osoby',
         products: 'Pomidory',
         cockingTime: '10min',
         weight: 1.5 + 'kg',
-        imageURL: 'https://myfridgefood.com/recipes/salads-and-sides/baked-tomatoes-with-cheese/'
+        imageUrl: 'https://myfridgefood.com/recipes/salads-and-sides/baked-tomatoes-with-cheese/'
     },
     {
         id: uuid.v4(),
+        name: '',
         category: 'Polska',
         description: 'Pieczone krążki cebulowe porcja nz 2-4 osób',
         products: 'Cebula',
         cockingTime: '15min',
         weight: 0.5 + 'kg',
-        imageURL: 'https://myfridgefood.com/recipes/salads-and-sides/baked-onion-rings/'
+        imageUrl: 'https://myfridgefood.com/recipes/salads-and-sides/baked-onion-rings/'
     },
     {
         id: uuid.v4(),
+        name: '',
         category: 'Polska',
         description: 'Serowy burger z Jabłkami porcja na 4ry osoby',
         products: 'Jabłka',
         cockingTime: '45min',
         weight: 1 + 'kg',
-        imageURL: '	https://myfridgefood.com/recipes/apple-recipe-contest/cheesy-turkey-burgers-with-apples/'
+        imageUrl: '	https://myfridgefood.com/recipes/apple-recipe-contest/cheesy-turkey-burgers-with-apples/'
     },
     {
         id: uuid.v4(),
+        name: '',
         category: 'Polska',
         description: 'Jogurtowe Truskawki porcja na 2 osoby',
         products: 'Truskawki',
