@@ -10,7 +10,7 @@ state = {
     this.setState ({ icon: this.state.icon === 'heart' ? 'heart outline' : 'heart'})
   }
   render () {
-    return <Icon onClick={ this.handleOnClick } name={ this.state.icon} size='big' />
+    return <Icon onClick={ this.handleOnClick } name={ this.state.icon}  />
   }
 }
 
