@@ -7,17 +7,16 @@ class PieChart extends Component {
         super(props);
         this.state = {
             chartData:{
-                labels: ['Kwiecien', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień'],
+                labels: ['Azjatycka', 'Włoska', 'Polska', 'Francuska', 'Hiszpańska'],
               datasets:[
                   {
-                      label: 'Ilosc Uzytkownikow',
+                      label: 'Rodzaje kuchni ',
                       data:[
                           5,
-                          10, 
+                          25, 
                           20, 
-                          30, 
-                          40, 
-                          50],
+                          10, 
+                          20, ],
                       backgroundColor: [
                           'rgba(255, 99, 132, 0.6)',
                           'rgba(54, 162, 235, 0.6)',
@@ -45,11 +44,18 @@ class PieChart extends Component {
         title:{
         display: true,
           text: 'Liczba użytkowników korzystających z aplikacji',
-          fontSize:25
+          fontSize:22,
+          fontFamily: "Oswald sans-serif",
+          fontColor: "black",
       },
-        legend:{
-          display: true,
-          position: 'bottom'
+      legend:{
+        display: true,
+        position: 'bottom',  
+        labels: {
+          fontColor: "black",
+          fontSize: 24,
+          fontFamily: "Oswald sans-serif",
+      }
       }
        }}
 
