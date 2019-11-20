@@ -1,6 +1,5 @@
-.footer-box {
+.footerBox {
   height: 3em;
-
   font-size: 0.9em;
   border-top: 1px solid #000;
 }
@@ -31,11 +30,13 @@
 .privacy {
   text-align: center;
   margin: 2em;
+  
 }
 
 .policyText {
   background-color: #dfdfdf;
   border-radius: 10px;
+  padding: 30px;
 }
 
 .policyText p {
