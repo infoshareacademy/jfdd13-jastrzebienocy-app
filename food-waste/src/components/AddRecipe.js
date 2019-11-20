@@ -3,30 +3,33 @@ import "./helper.css";
 import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { Modal } from "semantic-ui-react"
 
-const regEx = /^[a-zA-Z ]*$/;
+const regEx = /^[a-zA-Z ą ć ę ł ś ń ż ź]*$/;
 
 
 
 class AddRecipe extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-          
-        }
+        // this.state = {
+        //   open: props.open
+        // }
     }
 
-   
-   
-
-
     render(){
+      const {open} = this.props
         return(
+         
 
-            <div className="HeaderAdd">
+          <div>
+
+            
     <h1>
       Nowy przepis
     </h1>
+    {/* </Modal.Header>
+    <Modal.Content> */}
 
     <Formik
       initialValues={{ name: "", category: "", description: "", products: "", cookingTime: "", weight: "", imageUrl: "", portions: "" }}
@@ -59,7 +62,7 @@ class AddRecipe extends React.Component{
 
       })}
 
-      className='FormClass'
+      
     >
       {props => {
         const {
@@ -75,7 +78,7 @@ class AddRecipe extends React.Component{
         } = props;
 
         return (
-          <form onSubmit={handleSubmit   }>
+          <form  style={{display: 'block', textAlign: 'center', margin: '0 auto'}} onSubmit={handleSubmit   }>
             <label htmlFor="name" style={{ display: "block" }}>
               Nazwa przepisu
             </label>
@@ -249,7 +252,7 @@ class AddRecipe extends React.Component{
               Reset
             </button>
             <button type="submit" disabled={isSubmitting}>
-              Submit
+              Wyślij
             </button>
             </div>
 
@@ -258,6 +261,8 @@ class AddRecipe extends React.Component{
         );
       }}
     </Formik>
+    {/* </Modal.Content>
+    </Modal> */}
 
  
   </div>
