@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Recipes from '../Recipes';
+import RecipesToRender from '../RecipesToRender';
 import ProductList from './ProductsList';
 
 // Search input by products
@@ -39,25 +39,5 @@ class Search extends React.Component {
 		);
 	}
 }
-
-// filteredProducts(e) {
-// 	const text = e.currentTarget.value;
-// 	const filteredProducts = this.getFilteredProductsForText(text);
-// 	this.setState({
-// 		filteredProducts
-// 	});
-// };
-
-getFilteredProductsForText = (text) => {
-	return new Promise((resolve) => {
-		const time = (Math.random() + 1) * 250;
-		setTimeout(() => {
-			const filteredProducts = RecipiesToRender.filter((products) =>
-				products.toLowerCase().includes(text.toLowerCase())
-			);
-			resolve(filteredProducts);
-		}, time);
-	});
-};
 
 export default Search;
