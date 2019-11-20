@@ -11,7 +11,7 @@ class SideBar extends React.Component {
                 <div className={styles.Produkt}>Produkt</div>
                 <input className={styles.Input}></input>
                 <div className={styles.Quantity}>Ilość</div>
-                <Slider /> 
+                <Slider />
                 <br/>
                 <div className={styles.dropdown}><Dropdown /></div>
                 <br/>
