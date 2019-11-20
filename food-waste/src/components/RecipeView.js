@@ -15,7 +15,7 @@ class RecipeView extends React.Component{
                 <Segment className={styles.Wrapper}>
                     <div>
                     <div>
-                        <Image src={this.props.recipe.imageUrl}  className ={styles.Img} size='small' floated='left' />
+                        <Image src={this.props.recipe.imageUrl} className ={styles.Img} size='small' floated='left' />
                     </div>
                     <div className={styles.Text}>
                         <div className={styles.NameRecipe}> 
@@ -28,7 +28,7 @@ class RecipeView extends React.Component{
                 </div>
                 
                 <div className={styles.TimeAndPortions}> 
-                     <div><Icon name='time' size="large" />{this.props.recipe.cockingTime}</div>
+                     <div><Icon name='time' size="large" />{this.props.recipe.cookingTime} min</div>
                      <div>{portions(this.props.recipe.portions || 1)}</div>
                 </div>
                 </Segment>
