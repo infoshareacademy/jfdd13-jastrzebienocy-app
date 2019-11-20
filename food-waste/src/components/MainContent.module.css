@@ -6,3 +6,11 @@
    
 }
 
+.plusButton{
+    color: red;
+    /* position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end; */
+}
+
