@@ -39,11 +39,15 @@ class PieChart extends Component {
   height={100}
   
   options={{ 
+    tooltips: {
+        bodyFontColor: "white",
+        bodyFontSize: 20,
+    },
     ticks: {
     min: 0 },
         title:{
         display: true,
-          text: 'Liczba użytkowników korzystających z aplikacji',
+          text: 'Rodzaje kuchni',
           fontSize:22,
           fontFamily: "Oswald sans-serif",
           fontColor: "black",

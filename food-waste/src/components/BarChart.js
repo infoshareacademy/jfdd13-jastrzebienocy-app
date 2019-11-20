@@ -47,7 +47,8 @@ class BarChart extends Component {
 
   options={{
     tooltips: {
-        bodyFontColor: "black"
+        bodyFontColor: "white",
+        bodyFontSize: 16,
     },
       
     scales: {
@@ -61,7 +62,8 @@ class BarChart extends Component {
                 fontColor: "#212121",
                 fontFamily: "Oswald sans-serif",
                 fontSize: 14,
-                fontStyle: "bold"
+                fontStyle: "bold",
+                mode: "single",
               }
         }
         ],
