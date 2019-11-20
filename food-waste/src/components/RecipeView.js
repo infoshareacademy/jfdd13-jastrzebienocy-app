@@ -15,14 +15,14 @@ class RecipeView extends React.Component{
                 <Segment className={styles.Wrapper}>
                     <div>
                     <div>
-                        <Image src={this.props.recipe.imageUrl} className ={styles.Img} size='small' floated='left' />
+                        <Image src={this.props.recipe.imageUrl} className ={styles.Img}  style={{width:200, height: 200, objectFit: 'cover', objectPosition: 'center'}} size='medium'  floated='left' />
                     </div>
                     <div className={styles.Text}>
                         <div className={styles.NameRecipe}> 
                             <p>{this.props.recipe.name}</p>
                          </div>
                     <div> <p>Produkt bazowy: {this.props.recipe.products}</p></div>
-                    <div> <p>Ilość: {this.props.recipe.weight}</p></div>
+                    <div> <p>Ilość: {this.props.recipe.weight} g</p></div>
                     <div> <p>Kuchnia: {this.props.recipe.category}</p></div>
                 </div>
                 </div>
