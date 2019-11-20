@@ -14,8 +14,6 @@ state = {
   }
 }
 
-
-
 export default Heart
 
 
