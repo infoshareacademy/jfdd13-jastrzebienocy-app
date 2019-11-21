@@ -11,17 +11,10 @@ import Show from './components/ShowRecipes'
 function App() {
   return (
     <div className="App">
-      <NaviBar />
-      <div>
-      <div className="Profile"></div>
+    
         <Dashboard />
+        
       </div>
-      <div className="FlexBox">
-        <SideBar />
-        <MainContent/>
-      </div>
-      <Footer />
-    </div>
     
   );
 }

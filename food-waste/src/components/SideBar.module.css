@@ -1,11 +1,12 @@
 .SideBar {
-    font-family: "Oswald", sans-serif;
-    align-items: center;
-    z-index: 5;
-    scroll-behavior: smooth;
-    top: 0px;
-    padding: 20px;
-    width: 220px;
+  font-family: "Oswald", sans-serif;
+  align-items: center;
+  z-index: 5;
+  scroll-behavior: smooth;
+  background-color:#5d4747;
+  top: 0px;
+  padding: 20px;
+  min-width: 250px;
 }
 
 .Produkt,
@@ -26,6 +27,7 @@
     color: #212121;
     font-size: 24px;
     text-decoration: none;
+    padding: 0px 16px;
 }
 
 /* slider */
