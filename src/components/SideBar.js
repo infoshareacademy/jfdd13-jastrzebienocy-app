@@ -12,20 +12,23 @@ class SideBar extends React.Component {
         <input className={styles.Input} />
         <div className={styles.Quantity}>Ilość</div>
         <Slider />
-        <br />
+        {/* <br /> */}
+        <div className={styles.Kategory}>Kategoria</div>
+
         <div className={styles.dropdown}>
           <Dropdown />
         </div>
+
         <br />
         <div className={styles.Vawourites}>
           Ulubione <Heart />
         </div>
 
-        {/* <input className={styles.Input} /> */}
+        {/* <input className={styles.Input} />
         <div className={styles.Quantity}>Ilość</div>
-        <div className={styles.Kategory}>Kategoria</div>
-        <div className={styles.Vawourites}>Ulubione</div>
-        <Heart />
+         <div className={styles.Kategory}>Kategoria</div>
+		<div className={styles.Vawourites}>Ulubione</div>
+        <Heart /> */}
       </div>
     )
   }
