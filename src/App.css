@@ -1,0 +1,12 @@
+
+
+.App {
+  text-align: center;
+  background: white;
+
+}
+
+.FlexBox {
+    display: flex;
+    background: #757575 ;
+  }

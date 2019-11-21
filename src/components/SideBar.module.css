@@ -1,0 +1,51 @@
+
+.SideBar {
+    font-family: "Oswald", sans-serif;
+    /* width: 15%; */
+    align-items: center;
+    height: 120px;
+    z-index: 5;
+    scroll-behavior: smooth;
+    top: 0px;
+    padding: 20px;
+    background-color: #bdbdbd;;
+    
+}
+
+.Produkt,
+.Quantity,
+.Kategory,
+.Search {
+ font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 24px;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.Vawourites {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+/* slider */
+
+.label {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    font-size: 24px;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 24px;
+  }
+  
+  .inputSlide {
+    margin-right: 10px;
+  }
+

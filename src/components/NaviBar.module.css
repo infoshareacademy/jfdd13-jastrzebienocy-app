@@ -1,0 +1,37 @@
+
+.NaviBar {
+    font-family: "Oswald", sans-serif;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #757575;
+    height: 120px;
+    z-index: 5;
+    scroll-behavior: smooth;
+    top: 0px;
+    align-self: flex-end;
+    height: 10%;
+    
+}
+
+.logo {
+    width: 155px;
+    margin-left: 25px;
+}
+
+.Profil,
+.Przepisy,
+.Dashboard {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color:  white;
+    font-size: 24px;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.NaviBarRight {
+    flex-basis: 100%;
+    text-align: end;
+    margin-right: 25px;  
+}
