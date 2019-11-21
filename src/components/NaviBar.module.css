@@ -4,13 +4,14 @@
     width: 100%;
     display: flex;
     align-items: center;
-    background: #8bc34a;
+    background: #757575;
     height: 120px;
     z-index: 5;
     scroll-behavior: smooth;
     top: 0px;
     align-self: flex-end;
     height: 10%;
+    
 }
 
 .logo {
@@ -23,7 +24,7 @@
 .Dashboard {
     font-family: "Oswald", sans-serif;
     font-weight: bold;
-    color: #212121;
+    color:  white;
     font-size: 24px;
     text-decoration: none;
     padding: 20px;
