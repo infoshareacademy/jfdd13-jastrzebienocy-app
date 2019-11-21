@@ -22,8 +22,7 @@ export class RecipesFromBase extends React.Component {
     render() {
         return (<Grid>
             { this.state.recipes.map( item =>
-            <Grid.Column width={8}><RecipeView recipe={item} /></Grid.Column>
+            <Grid.Column width={8}><RecipeView recipe={item}/></Grid.Column>
             )}
             </Grid>)
-    }
-}
+    }}
