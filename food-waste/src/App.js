@@ -13,6 +13,7 @@ function App() {
     <div className="App">
       <NaviBar />
       <div>
+      <div className="Profile"></div>
         <Dashboard />
       </div>
       <div className="FlexBox">
