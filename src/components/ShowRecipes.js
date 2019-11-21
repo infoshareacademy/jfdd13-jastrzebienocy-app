@@ -1,31 +1,35 @@
-import React from 'react';
+// Do wywalenia prawdopodobnie
 
- class Show extends React.Component {
-    constructor(props) {
-        super(props);
+import React from 'react'
 
-        this.state = {
-                list: []
-            }
-        }
-    
+class Show extends React.Component {
+  constructor (props) {
+    super(props)
 
-    componentDidMount() {
-        fetch(`https://myfirstproject-b5855.firebaseio.com/recipe.json`)
-            .then(res => res.json())
-            .then(obj => Object.values(obj))
-            .then(list => this.setState({list: list}));
+    this.state = {
+      list: []
     }
+  }
 
-    render() {
-        return (<div>
-            {this.state.list.map(list => <p>{list.name} {list.description} {list.category} {list.products} {list.cookingTime} {list.weight} {list.portions} </p>)}
-        </div>)
-    }
+  componentDidMount () {
+    fetch(`https://myfirstproject-b5855.firebaseio.com/recipe.json`)
+      .then(res => res.json())
+      .then(obj => Object.values(obj))
+      .then(list => this.setState({ list: list }))
+  }
+
+  render () {
+    return (
+      <div>
+        {this.state.list.map(list => (
+          <p>
+            {list.name} {list.description} {list.category} {list.products}{' '}
+            {list.cookingTime} {list.weight} {list.portions}{' '}
+          </p>
+        ))}
+      </div>
+    )
+  }
 }
 
-
- 
-
-
-export default Show;
+export default Show

@@ -1,3 +1,4 @@
+componentDidMount
 // import React from 'react';
 // import Recipes from './Recipes';
 // import RecipeView from './RecipeView';
