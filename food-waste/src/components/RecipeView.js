@@ -13,11 +13,8 @@ let portions = (count) => {
 class RecipeView extends React.Component{
     render(){
         
-        return( 
-            <div className='RecipesOnPage'>
-               
-            
-                <Segment className={styles.Wrapper}>
+        return( <div>
+                <Segment className={styles.Wrapper} onClick={() => {console.log('dej mnie przepis')}} >
                     <div>
                         <div>
                             <Image src={this.props.recipe.imageUrl} className ={styles.Img}  style={{width:200, height: 200, objectFit: 'cover', objectPosition: 'center'}} size='medium'  floated='left' />

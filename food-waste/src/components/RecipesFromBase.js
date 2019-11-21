@@ -28,10 +28,8 @@ export class RecipesFromBase extends React.Component {
         
         <Grid>
             { this.state.recipes.map( item =>
-            <Grid.Column width={8} style={{}}><RecipeView recipe={item} /></Grid.Column>
+            <Grid.Column width={8}><RecipeView recipe={item}/></Grid.Column>
             )}
             </Grid>
             </div>)
-            
-    }
-}
+    }}
