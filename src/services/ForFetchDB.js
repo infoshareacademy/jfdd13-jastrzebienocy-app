@@ -13,10 +13,10 @@ export const fetchRecipes = () => {
             return object[key]
           })
       )
+  //   .then(data => console.log(data))
   // .then((obj) => Object.values(obj))
   // .then(allRecipes => this.setState({ recipes: allRecipes }))
   // Dodane JK
-  //   .then(data => console.log(data))
   )
 }
 

@@ -8,9 +8,10 @@ class SideBar extends React.Component {
   render () {
     return (
       <div className={styles.SideBar}>
+        <div className={styles.Produkt}>Wyszukaj</div>
         <div className={styles.Produkt}>Produkt</div>
-        <input className={styles.Input} />
-        <div className={styles.Quantity}>Ilość</div>
+        <input className={styles.Input} placeholder='Szukaj ...' />
+        <div className={styles.Quantity}>Masa</div>
         <Slider />
         {/* <br /> */}
         <div className={styles.Kategory}>Kategoria</div>
