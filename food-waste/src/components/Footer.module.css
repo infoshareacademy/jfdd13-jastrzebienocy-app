@@ -1,0 +1,54 @@
+.footerBox {
+  height: 3em;
+  font-size: 0.9em;
+  border-top: 1px solid #000;
+}
+
+.copywright {
+  color: #757575;
+  line-height: 1.6em;
+  float: left;
+  margin: 1.4em 20px;
+  font-size: 1.1em;
+}
+
+.footerLinks {
+  line-height: 1.6em;
+  float: right;
+  text-decoration: none;
+  color: #000;
+  margin: 1.4em 20px;
+  font-size: 1.1em;
+}
+.footerLinks:hover {
+  background-color: #757575;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.privacy {
+  text-align: center;
+  margin: 2em;
+  
+}
+
+.policyText {
+  background-color: #dfdfdf;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.policyText p {
+  text-align: left;
+  margin-top: 1.1em;
+}
+
+.policyText p:first-child {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.policyText p:last-child {
+  padding-bottom: 10px;
+}
