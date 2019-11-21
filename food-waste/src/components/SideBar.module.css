@@ -12,7 +12,6 @@
 .Produkt,
 .Quantity,
 .Kategory,
-.Vawourites,
 .Search {
  font-family: "Oswald", sans-serif;
     font-weight: bold;
@@ -22,5 +21,28 @@
     padding: 20px;
 }
 
-/* Input styles */
+.Vawourites {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+/* slider */
+
+.label {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    font-size: 24px;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 24px;
+  }
+  
+  .inputSlide {
+    margin-right: 10px;
+  }
 

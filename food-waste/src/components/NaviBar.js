@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./NaviBar.module.css";
 import Logo from "./logo-nav.png";
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -12,9 +13,9 @@ class NaviBar extends React.Component {
                     <img src={Logo} alt={"Logo"} className={styles.logo}/>
                     </span>
              <div className={styles.NaviBarRight}>
-                    <a href="" className={styles.Dashboard}>Dashboard</a>
-                    <a href="" className={styles.Przepisy}>Przepisy</a>
-                    <a href="" className={styles.Profil}>Profil</a>
+                    <NavLink activeClassName={"active-link"} to="/" className={styles.Dashboard} exact>Dashboard</NavLink>
+                    <NavLink activeClassName={"active-link"} to="/RecipeView" className={styles.Przepisy} exact>Przepisy</NavLink>
+                    <NavLink activeClassName={"active-link"} to="/Profil" className={styles.Profil}>Profil</NavLink>
                     </div> 
             </div>
         )

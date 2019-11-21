@@ -4,20 +4,18 @@ import NaviBar from './components/NaviBar';
 import SideBar from './components/SideBar';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
-import 'semantic-ui-css/semantic.min.css'
-
-
+import Dashboard from './components/Dashboard'
+import AddForm from './components/AddToForm'
+import Show from './components/ShowRecipes'
 
 function App() {
   return (
     <div className="App">
-      <NaviBar />
-      <div className="FlexBox">
-        <SideBar />
-        <MainContent/>
+    
+        <Dashboard />
+        
       </div>
-      <Footer />
-    </div>
+    
   );
 }
 

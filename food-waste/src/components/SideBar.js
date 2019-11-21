@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./SideBar.module.css";
 import Heart from "./Heart";
-// import { Button, Icon, Label } from 'semantic-ui-react';
+import Dropdown from "./Dropdown";
+import Slider from "./Slider";
 
 class SideBar extends React.Component {
     render() {
@@ -10,9 +11,11 @@ class SideBar extends React.Component {
                 <div className={styles.Produkt}>Produkt</div>
                 <input className={styles.Input}></input>
                 <div className={styles.Quantity}>Ilość</div>
-                <div className={styles.Kategory}>Kategoria</div>
-                <div className={styles.Vawourites}>Ulubione</div>
-                <Heart />
+                <Slider /> 
+                <br/>
+                <div className={styles.dropdown}><Dropdown /></div>
+                <br/>
+                <div className={styles.Vawourites}>Ulubione <Heart /></div>
             </div>
         )
     }
