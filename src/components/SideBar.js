@@ -11,7 +11,7 @@ class SideBar extends React.Component {
         <div className={styles.Produkt}>Wyszukaj</div>
         <div className={styles.Produkt}>Produkt</div>
         <input className={styles.Input} placeholder='Szukaj ...' />
-        <div className={styles.Quantity}>Masa</div>
+        <div className={styles.Quantity}>Masa [g]</div>
         <Slider />
         {/* <br /> */}
         <div className={styles.Kategory}>Kategoria</div>
