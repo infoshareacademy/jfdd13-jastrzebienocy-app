@@ -10,7 +10,14 @@ class SideBar extends React.Component {
       <div className={styles.SideBar}>
         <div className={styles.Produkt}>Wyszukaj</div>
         <div className={styles.Produkt}>Produkt</div>
-        <input className={styles.Input} placeholder='Szukaj ...' />
+        <input
+          className={styles.Input}
+          placeholder='Szukaj ...'
+          value={this.props.products}
+          onChange={event => {
+            this.props.onProductsChange(event.target.value)
+          }}
+        />
         <div className={styles.Quantity}>Masa [g]</div>
         <Slider />
         {/* <br /> */}

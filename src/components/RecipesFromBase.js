@@ -10,12 +10,17 @@ export class RecipesFromBase extends React.Component {
     super(props)
 
     this.state = {
-      recipes: []
+      recipes: [],
+      products: '',
+      weight: 0,
+      category: null,
+      showFavorites: false
     }
   }
 
   componentDidMount () {
     fetchRecipes().then(recipes => {
+      console.log(recipes)
       this.setState({ recipes })
     })
   }
@@ -36,15 +41,33 @@ export class RecipesFromBase extends React.Component {
   //       .then(data => console.log(this.state.recipes))
   //   }
 
+  get filteredRecepies () {
+    const { recipes, products } = this.state
+    if (products.length !== 0) {
+      return recipes.filter(recipe => {
+        return recipe.products.includes(products)
+      })
+    }
+
+    return recipes
+  }
+
   render () {
     return (
       <div style={{ display: 'flex' }}>
         <div style={{ background: 'grey', marginRight: '20px' }}>
-          <SideBar />
+          <SideBar
+            products={this.state.products}
+            onProductsChange={products => {
+              this.setState({
+                products
+              })
+            }}
+          />
         </div>
 
         <Grid>
-          {this.state.recipes.map(item => (
+          {this.filteredRecepies.map(item => (
             <Grid.Column width={8}>
               <RecipeView recipe={item} />
             </Grid.Column>
