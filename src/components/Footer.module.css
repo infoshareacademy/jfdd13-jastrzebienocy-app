@@ -1,7 +1,10 @@
 .footerBox {
-  height: 3em;
+  height: 5vh;
   font-size: 0.9em;
-  border-top: 1px solid #000;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: white;
 }
 
 .copywright {

@@ -40,7 +40,6 @@ export class RecipesFromBase extends React.Component {
   render () {
     return (
       <div style={{ display: 'flex' }}>
-        {/* <div style={{ background: 'grey', marginRight: '20px' }}> */}
         <div className={styles.SideBar}>
           <SideBar />
         </div>

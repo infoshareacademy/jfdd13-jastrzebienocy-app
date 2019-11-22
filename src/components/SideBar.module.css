@@ -1,11 +1,11 @@
 .SideBar {
   font-family: "Oswald", sans-serif;
   align-items: center;
-  z-index: 5;
   scroll-behavior: smooth;
   top: 0px;
-  padding: 20px;
+  padding: 10px;
   background-color: #bdbdbd;
+  height: 88vh;
 }
 
 .Produkt, .Quantity, .Kategory, .Search {
