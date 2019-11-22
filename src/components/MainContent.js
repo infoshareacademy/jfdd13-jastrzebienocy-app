@@ -25,7 +25,7 @@ class MainContent extends React.Component {
                 onClick={ () =>  { this.onClick(); }}  
                 circular 
                 icon="plus" 
-                style={{position: "fixed", bottom: 50, right: 50, background: "#FFC107" }} 
+                style={{position: "fixed", bottom: 80, right: 50, background: "#FFC107" }} 
                 ></Button>
                 <Modal open={this.state.modal}>
                     <AddRecipe />
