@@ -1,5 +1,6 @@
 .MainContent {
-    background-color: #BDBDBD ;
+    background: rgb(189,189,189);
+    background-image: linear-gradient(205deg, rgba(189,189,189,1) 0%, rgba(241,236,236,1) 55%, rgba(255,255,255,1) 100%);
     width: 100%;
     height: 100%;
     /* padding: 30px; */
