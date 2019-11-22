@@ -6,7 +6,6 @@ import MainContent from './components/MainContent'
 import Footer from './components/Footer'
 import Dashboard from './components/Dashboard'
 
-import Show from './components/ShowRecipes'
 
 function App () {
   return (
