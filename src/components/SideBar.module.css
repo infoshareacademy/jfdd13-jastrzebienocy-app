@@ -6,7 +6,6 @@
   top: 0px;
   padding: 20px;
   background-color: #bdbdbd;
-  ;
 }
 
 .Produkt, .Quantity, .Kategory, .Search {
@@ -31,17 +30,17 @@
 /* slider */
 
 .Label {
-    align-items: center;
-    /* width: 90%; */
-    font-size: 24px;
-    font-family: "Oswald", sans-serif;
-    font-weight: bold;
-    color: #212121;
-    font-size: 24px;
-    text-align: center;
+  /* display: flex; */
+  align-items: center;
+  /* width: 90%; */
+  font-size: 24px;
+  font-family: "Oswald", sans-serif;
+  font-weight: bold;
+  color: #212121;
+  font-size: 24px;
+  text-align: center;
 }
 
 .InputSlide {
   margin-right: 10px;
-  
-}
+} 
