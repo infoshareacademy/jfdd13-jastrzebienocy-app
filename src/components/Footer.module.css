@@ -1,14 +1,17 @@
 .footerBox {
-  height: 3em;
+  height: 5vh;
   font-size: 0.9em;
-  border-top: 1px solid #000;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: white;
 }
 
 .copywright {
   color: #757575;
   line-height: 1.6em;
   float: left;
-  margin: 1.4em 20px;
+  margin: 15px 20px;
   font-size: 1.1em;
 }
 
@@ -17,9 +20,10 @@
   float: right;
   text-decoration: none;
   color: #000;
-  margin: 1.4em 20px;
+  margin:15px 20px;
   font-size: 1.1em;
 }
+
 .footerLinks:hover {
   background-color: #757575;
   color: #fff;

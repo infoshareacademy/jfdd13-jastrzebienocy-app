@@ -24,7 +24,7 @@ const Root = () => {
                 <Navibar/>
                 <Switch>
                     <Route exact path="/" component={App} />
-                    {/* <Route exact path="/privacy" component={Privacy} /> */}
+                    <Route exact path="/privacy" component={Privacy} />
                     {/* <Route exact path="/dashboard" component={Dashboard} />  */}
                     <Route exact path="/RecipeView" component={MainContent} />
                     {/* <Route exact path="/Profil" component={Profile}/>  */} 
