@@ -13,7 +13,7 @@ let portions = count => {
 class RecipeView extends React.Component {
   render() {
     return (
-      <div>
+      <div className={styles.RecipeView}>
         <Segment
           className={styles.Wrapper}
           onClick={() => {
