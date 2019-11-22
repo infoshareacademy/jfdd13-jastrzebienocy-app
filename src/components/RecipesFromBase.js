@@ -4,6 +4,7 @@ import RecipeView from './RecipeView'
 import { Grid } from 'semantic-ui-react'
 import SideBar from './SideBar'
 import { fetchRecipes } from '../services/ForFetchDB'
+import styles from './SideBar.module.css'
 
 export class RecipesFromBase extends React.Component {
   constructor (props) {
@@ -39,7 +40,7 @@ export class RecipesFromBase extends React.Component {
   render () {
     return (
       <div style={{ display: 'flex' }}>
-        <div style={{ background: 'grey', marginRight: '20px' }}>
+        <div className={styles.SideBar}>
           <SideBar />
         </div>
 
