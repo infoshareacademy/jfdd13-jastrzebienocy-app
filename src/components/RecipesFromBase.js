@@ -4,6 +4,7 @@ import RecipeView from './RecipeView'
 import { Grid } from 'semantic-ui-react'
 import SideBar from './SideBar'
 import { fetchRecipes } from '../services/ForFetchDB'
+import { removeTypeDuplicates } from '@babel/types'
 
 export class RecipesFromBase extends React.Component {
   constructor (props) {
@@ -13,7 +14,7 @@ export class RecipesFromBase extends React.Component {
       recipes: [],
       products: '',
       weight: 0,
-      category: null,
+      category: '',
       showFavorites: false
     }
   }
@@ -40,15 +41,42 @@ export class RecipesFromBase extends React.Component {
   //       // Dodane JK
   //       .then(data => console.log(this.state.recipes))
   //   }
-
+  // Filter for products i recipes.
   get filteredRecepies () {
-    const { recipes, products } = this.state
+    // Destructure state for the products option
+    const { recipes, products, weigth, category } = this.state
+    // Condition function for showing filtered recipes
     if (products.length !== 0) {
+      // returning of the recipes.
       return recipes.filter(recipe => {
         return recipe.products.includes(products)
       })
     }
+    return recipes
+  }
+  // possible put part of it to the first filter
+  get filterByWeigth () {
+    const { recipes, weight } = this.state
 
+    if (weight !== 0) {
+      console.log(weight)
+
+      return recipes.filter(recipe => {
+        return recipe.weight > weight
+      })
+    }
+    return recipes
+  }
+
+  get filterByCategory () {
+    const { recipes, category } = this.state
+    if (category.length !== 0) {
+      return recipes.filter(recipe => {
+        console.log(recipe.category)
+
+        return recipe.category.includes(category)
+      })
+    }
     return recipes
   }
 
@@ -63,11 +91,25 @@ export class RecipesFromBase extends React.Component {
                 products
               })
             }}
+            weigth={this.state.weight}
+            onWeigthChange={weight => {
+              this.setState({
+                weight
+              })
+              console.log(this.state.weigth)
+            }}
+            category={this.state.category}
+            onCategoryChange={category => {
+              this.setState({
+                category
+              })
+              console.log(category)
+            }}
           />
         </div>
 
         <Grid>
-          {this.filteredRecepies.map(item => (
+          {this.filterByWeigth.map(item => (
             <Grid.Column width={8}>
               <RecipeView recipe={item} />
             </Grid.Column>

@@ -1,9 +1,27 @@
 import React from 'react'
 import styles from './SideBar.module.css'
 import Heart from './Heart'
-import Dropdown from './Dropdown'
-import Slider from './Slider'
+// import Dropdown from './Dropdown'
+import { Dropdown } from 'semantic-ui-react'
+// import Slider from './Slider'
 
+const dropdownI = [
+  {
+    key: 'Kuchnia włoska',
+    text: 'Kuchnia włoska',
+    value: 'Włoska'
+  },
+  {
+    key: 'Kuchnia azjatycka',
+    text: 'Kuchnia azjatycka',
+    value: 'Azjatycka'
+  },
+  {
+    key: 'Kuchnia polska',
+    text: 'Kuchnia polska',
+    value: 'Polska'
+  }
+]
 class SideBar extends React.Component {
   render () {
     return (
@@ -19,12 +37,39 @@ class SideBar extends React.Component {
           }}
         />
         <div className={styles.Quantity}>Masa [g]</div>
-        <Slider />
+
+        <input
+          className={styles.inputSlide}
+          id='typeinp'
+          type='range'
+          min='0'
+          max='2000'
+          // value={this.state.value}
+          // onChange={this.handleChange}
+          step='50'
+          value={this.props.weigth}
+          onChange={event => {
+            this.props.onWeigthChange(event.target.value)
+            console.log(event)
+          }}
+        />
+
         {/* <br /> */}
         <div className={styles.Kategory}>Kategoria</div>
 
         <div className={styles.dropdown}>
-          <Dropdown />
+          <Dropdown
+            size='massive'
+            placeholder='Kategoria'
+            fluid
+            selection
+            options={dropdownI}
+            value={this.props.category}
+            onChange={(event, data) => {
+              this.props.onCategoryChange(data.value)
+              console.log(data)
+            }}
+          />
         </div>
 
         <br />
