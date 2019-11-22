@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./RecipeView.module.css";
 import { Segment, Image, Icon } from "semantic-ui-react";
-import Heart from './Heart'
+import Heart from "./Heart";
 
 let portions = count => {
   let list = [];
@@ -38,32 +38,37 @@ class RecipeView extends React.Component {
             <div className={styles.Text}>
               <div className={styles.NameRecipe}>
                 <p>{this.props.recipe.name}</p>
+                <div className={styles.HeartInRecipe}>
+              <Heart />
+            </div>
               </div>
-              <div>
-                {" "}
-                <p>Produkt bazowy: {this.props.recipe.products}</p>
-              </div>
-              <div>
-                {" "}
-                <p>Ilość: {this.props.recipe.weight} g</p>
-              </div>
-              <div>
-                {" "}
-                <p>Kuchnia: {this.props.recipe.category}</p>
+              <div className={styles.ShortDescription}>
+                <div>
+                  {" "}
+                  <p>Produkt bazowy: {this.props.recipe.products}</p>
+                </div>
+                <div>
+                  {" "}
+                  <p>Ilość: {this.props.recipe.weight} g</p>
+                </div>
+                <div>
+                  {" "}
+                  <p>Kuchnia: {this.props.recipe.category}</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className={styles.TimeAndPortions}>
-            <div>
-              <Icon name="time" size="large" />
-              {this.props.recipe.cookingTime} min
+          
+            <div className={styles.TimeAndPortions}>
+              <div>
+                <Icon name="time" size="large" style={{ color: "#8BC34A" }} />
+                {this.props.recipe.cookingTime} min
+              </div>
+              <div>{portions(this.props.recipe.portions || 1)}</div>{" "}
             </div>
-            <div>{portions(this.props.recipe.portions || 1)}</div>
-            <div>
-              <Heart/>
-            </div>
-          </div>
+            
+          
         </Segment>
       </div>
     );

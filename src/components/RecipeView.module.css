@@ -15,6 +15,16 @@
     font-weight: bold;
     color: black;
     padding-bottom: 20px ;
+
+  
+    display: flex;
+    justify-content: space-around;
+
+
+}
+
+.ShortDescription{
+    margin: 10px;
 }
 
 .GridContainer{
@@ -39,3 +49,12 @@
 .Heart{
     display: flex;
 }
+
+.HeartInRecipe {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 24px;
+    text-decoration: none;
+    
+  }

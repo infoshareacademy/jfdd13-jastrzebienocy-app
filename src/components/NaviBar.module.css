@@ -4,8 +4,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    background: #757575;
-    height: 120px;
+    background: #BDBDBD;
     z-index: 5;
     scroll-behavior: smooth;
     top: 0px;
