@@ -25,7 +25,7 @@ class Slider extends React.Component {
               value={this.state.value} 
               onChange={this.handleChange}
               step="50"/>
-            {this.state.value}&nbsp;g
+            {this.state.value}
           </div>
         </div> 
       );

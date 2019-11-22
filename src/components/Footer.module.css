@@ -2,15 +2,14 @@
   height: 3em;
   font-size: 0.9em;
   border-top: 1px solid #000;
-  align-items: center;
 }
 
 .copywright {
   color: #757575;
-    line-height: 1.6em;
-    float: left;
-    margin: 9px 20px;
-    font-size: 1.1em;
+  line-height: 1.6em;
+  float: left;
+  margin: 1.4em 20px;
+  font-size: 1.1em;
 }
 
 .footerLinks {
@@ -18,7 +17,7 @@
   float: right;
   text-decoration: none;
   color: #000;
-  margin: 9px 20px;
+  margin: 1.4em 20px;
   font-size: 1.1em;
 }
 .footerLinks:hover {

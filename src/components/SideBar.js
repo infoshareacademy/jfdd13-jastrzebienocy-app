@@ -1,8 +1,8 @@
-import React from "react";
-import styles from "./SideBar.module.css";
-import Heart from "./Heart";
-import Dropdown from "./Dropdown";
-import Slider from "./Slider";
+import React from 'react'
+import styles from './SideBar.module.css'
+import Heart from './Heart'
+import Dropdown from './Dropdown'
+import Slider from './Slider'
 
 class SideBar extends React.Component {
   render () {
@@ -11,7 +11,7 @@ class SideBar extends React.Component {
         <div className={styles.Produkt}>Wyszukaj</div>
         <div className={styles.Produkt}>Produkt</div>
         <input className={styles.Input} placeholder='Szukaj ...' />
-        <div className={styles.Quantity}>Masa [g]</div>
+        <div className={styles.Quantity}>Masa</div>
         <Slider />
         {/* <br /> */}
         <div className={styles.Kategory}>Kategoria</div>
@@ -35,4 +35,8 @@ class SideBar extends React.Component {
   }
 }
 
-export default SideBar;
+export default SideBar
+// najpierw pw searchu dodać onsearch i potem tutaj dodać w sidebarze to co jest wklejone.
+// onSubmit={(values) => {
+// 	onSearch(values);
+// }}
