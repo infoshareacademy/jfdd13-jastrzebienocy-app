@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Image } from "semantic-ui-react";
+import { Modal, Image, Button } from "semantic-ui-react";
 
 
 class ModalWindow extends React.Component {
@@ -7,6 +7,7 @@ class ModalWindow extends React.Component {
     console.log("hej");
     return (
     <Modal open={this.props.open}>
+        <h1>{this.props.name}</h1>
          <div>
               <Image
                 src={this.props.imageUrl}
@@ -21,7 +22,11 @@ class ModalWindow extends React.Component {
                 floated="left"
               />
             </div>
-            <p>{this.props.name}</p>
+
+            <Modal.Actions>
+                    <Button negative onClick={() => this.onClick()}>Zamknij</Button>
+                    </Modal.Actions>
+            
     </Modal>);
   }
 }
