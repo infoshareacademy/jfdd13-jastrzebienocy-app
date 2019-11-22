@@ -6,6 +6,7 @@
   padding: 10px;
   background-color: #bdbdbd;
   height: 88vh;
+  max-width: 230px;
 }
 
 .Produkt, .Quantity, .Kategory, .Search {
