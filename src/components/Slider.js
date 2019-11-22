@@ -6,7 +6,7 @@ import styles from './SideBar.module.css';
 class Slider extends React.Component {
     constructor() {
       super()
-      this.state = {value: 3}
+      this.state = {value: 0}
       this.handleChange = this.handleChange.bind(this)
     }
     
@@ -17,7 +17,7 @@ class Slider extends React.Component {
     render() {
       return (
         <div>
-          <div className={styles.label}>
+          <div className={styles.Label}>
             <input className={styles.inputSlide}
               id="typeinp" 
               type="range" 
@@ -25,7 +25,7 @@ class Slider extends React.Component {
               value={this.state.value} 
               onChange={this.handleChange}
               step="50"/>
-            {this.state.value}
+            {this.state.value} [g]
           </div>
         </div> 
       );

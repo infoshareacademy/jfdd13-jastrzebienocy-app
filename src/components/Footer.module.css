@@ -8,7 +8,7 @@
   color: #757575;
   line-height: 1.6em;
   float: left;
-  margin: 1.4em 20px;
+  margin: 8px 20px;
   font-size: 1.1em;
 }
 
@@ -17,7 +17,7 @@
   float: right;
   text-decoration: none;
   color: #000;
-  margin: 1.4em 20px;
+  margin:8px 20px;
   font-size: 1.1em;
 }
 .footerLinks:hover {
