@@ -50,7 +50,7 @@ class SideBar extends React.Component {
           value={this.props.weigth}
           onChange={event => {
             this.props.onWeigthChange(event.target.value)
-            console.log(event)
+            // console.log(event)
           }}
         />
 

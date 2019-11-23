@@ -4,7 +4,7 @@ import RecipeView from './RecipeView'
 import { Grid } from 'semantic-ui-react'
 import SideBar from './SideBar'
 import { fetchRecipes } from '../services/ForFetchDB'
-import styles from './SideBar.module.css'
+// import { removeTypeDuplicates } from '@babel/types'
 
 export class RecipesFromBase extends React.Component {
   constructor (props) {
@@ -36,20 +36,45 @@ export class RecipesFromBase extends React.Component {
       return recipes.filter(recipe => {
         return recipe.products.includes(products)
       })
-    } else if (weight != 0) {
+    } else if (weight > 0) {
       return recipes.filter(recipe => {
         return recipe.weight > weight
       })
     } else if (category.length !== 0) {
       return recipes.filter(recipe => {
-        // console.log(recipe.category)
+        console.log(recipe.category)
 
         return recipe.category.includes(category)
       })
     }
     return recipes
   }
+  // possible put part of it to the first filter
+  // get filterByWeigth () {
+  //   const { recipes, weight } = this.state
 
+  //   if (weight !== 0) {
+  //     console.log(weight)
+  //   } else if (weight != 0) {
+  //     return recipes.filter(recipe => {
+  //       return recipe.weight > weight
+  //     })
+  //   }
+  //   return recipes
+  // }
+
+  // get filterByCategory () {
+  //   const { recipes, category } = this.state
+  //   if (category.length !== 0) {
+  //   } else if (category.length !== 0) {
+  //     return recipes.filter(recipe => {
+  //       console.log(recipe.category)
+
+  //       return recipe.category.includes(category)
+  //     })
+  //   }
+  //   return recipes
+  // }
   render () {
     return (
       <div style={{ display: 'flex' }}>
@@ -84,6 +109,7 @@ export class RecipesFromBase extends React.Component {
               <RecipeView recipe={item} />
             </Grid.Column>
           ))}
+          }
         </Grid>
       </div>
     )
