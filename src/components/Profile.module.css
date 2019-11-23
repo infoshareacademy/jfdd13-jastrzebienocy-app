@@ -1,0 +1,32 @@
+.ProfileMain {
+    background-color: #BDBDBD;
+    padding: 20px;
+    margin: 30px;
+    border-radius: 30px;
+}
+
+img {
+    border-style: none;
+    border-radius: 20px;
+    width: 30%;
+}
+
+.ProfileFlex{
+    display: flex;
+}
+
+.ProfileRight{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.FavoutiteRecipe,
+.Email,
+.Name {
+    font-size: 30px;
+    padding: 20px;
+}
+
+
+
