@@ -32,8 +32,7 @@ class AddRecipe extends React.Component {
             cookingTime: '',
             weight: '',
             imageUrl: '',
-            portions: '',
-            showFavourites: false // Added by JK
+            portions: ''
           }}
           onSubmit={(values, actions) => {
             fetch('https://foodwaste-ecb78.firebaseio.com/recipes.json', {
@@ -57,9 +56,7 @@ class AddRecipe extends React.Component {
             imageUrl: Yup.string().url(),
             portions: Yup.number()
               .integer()
-              .positive(),
-            // Added by JK - not connected
-            showFavourites: Yup.boolean()
+              .positive()
           })}
         >
           {props => {
