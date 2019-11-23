@@ -27,7 +27,7 @@ class SideBar extends React.Component {
     return (
       <div className={styles.SideBar}>
         <div className={styles.Produkt}>Wyszukaj</div>
-        <div className={styles.Produkt}>Produkt</div>
+        <div className={styles.Produkt}>Produkt:</div>
         <input
           className={styles.Input}
           placeholder='Szukaj ...'
@@ -54,7 +54,7 @@ class SideBar extends React.Component {
           }}
         />
 
-        <div className={styles.Kategory}>Kategoria</div>
+        <div className={styles.Kategory}>Kategoria:</div>
 
         <div className={styles.dropdown}>
           <Dropdown
