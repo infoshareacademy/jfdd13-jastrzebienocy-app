@@ -1,10 +1,14 @@
 .footerBox {
-  height: 5vh;
-  font-size: 0.9em;
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  background-color: white;
+    font-size: 0.9em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+}
+
+.FooterTxt {
+  background-color: pink;
 }
 
 .copywright {
@@ -38,7 +42,7 @@
 }
 
 .policyText {
-  background-color: #dfdfdf;
+  background-color: #BDBDBD;
   border-radius: 10px;
   padding: 30px;
 }
