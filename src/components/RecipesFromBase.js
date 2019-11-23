@@ -4,7 +4,7 @@ import RecipeView from './RecipeView'
 import { Grid } from 'semantic-ui-react'
 import SideBar from './SideBar'
 import { fetchRecipes } from '../services/ForFetchDB'
-import { removeTypeDuplicates } from '@babel/types'
+import styles from './SideBar.module.css'
 
 export class RecipesFromBase extends React.Component {
   constructor (props) {
