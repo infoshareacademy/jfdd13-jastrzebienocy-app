@@ -86,4 +86,4 @@ export class RecipesFromBase extends React.Component {
       </div>
     )
   }
-} Kkt *@grF0efQKkt*@grF0efQ
+}
