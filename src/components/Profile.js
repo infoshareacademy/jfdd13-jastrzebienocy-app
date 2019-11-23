@@ -16,7 +16,7 @@ class Profile extends React.Component {
                             <div className={styles.Email}>fluidmonster@wp.pl</div>
                         </div>
                     </div>
-                    <div className={styles.FavoutiteRecipe}>Ulubione przepisy "icon:heart"
+                    <div className={styles.FavoutiteRecipe}>Ulubione przepisy 
                     </div>
                 </div>
             </div>
