@@ -54,7 +54,6 @@ class SideBar extends React.Component {
           }}
         />
 
-        {/* <br /> */}
         <div className={styles.Kategory}>Kategoria</div>
 
         <div className={styles.dropdown}>
@@ -88,7 +87,3 @@ class SideBar extends React.Component {
 }
 
 export default SideBar
-// najpierw pw searchu dodać onsearch i potem tutaj dodać w sidebarze to co jest wklejone.
-// onSubmit={(values) => {
-// 	onSearch(values);
-// }}
