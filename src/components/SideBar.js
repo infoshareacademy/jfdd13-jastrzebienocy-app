@@ -34,6 +34,7 @@ class SideBar extends React.Component {
           value={this.props.products}
           onChange={event => {
             this.props.onProductsChange(event.target.value)
+            console.log(event)
           }}
         />
         <div className={styles.Quantity}>Masa [g]</div>
@@ -54,6 +55,7 @@ class SideBar extends React.Component {
           }}
         />
 
+        {/* <br /> */}
         <div className={styles.Kategory}>Kategoria</div>
 
         <div className={styles.dropdown}>
@@ -64,7 +66,7 @@ class SideBar extends React.Component {
             selection
             options={dropdownI}
             value={this.props.category}
-            onChange={(event, data) => {
+            onChange={data => {
               this.props.onCategoryChange(data.value)
               console.log(data)
             }}
@@ -87,3 +89,7 @@ class SideBar extends React.Component {
 }
 
 export default SideBar
+// najpierw pw searchu dodać onsearch i potem tutaj dodać w sidebarze to co jest wklejone.
+// onSubmit={(values) => {
+// 	onSearch(values);
+// }}
