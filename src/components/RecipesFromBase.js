@@ -36,7 +36,7 @@ export class RecipesFromBase extends React.Component {
       return recipes.filter(recipe => {
         return recipe.products.includes(products)
       })
-    } else if (weight != 0) {
+    } else if (weight > 0) {
       return recipes.filter(recipe => {
         return recipe.weight > weight
       })
@@ -81,8 +81,9 @@ export class RecipesFromBase extends React.Component {
               <RecipeView recipe={item} />
             </Grid.Column>
           ))}
+          }
         </Grid>
       </div>
     )
   }
-}
+} Kkt *@grF0efQKkt*@grF0efQ
