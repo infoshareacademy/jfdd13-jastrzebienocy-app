@@ -42,6 +42,7 @@ export class RecipesFromBase extends React.Component {
       })
     } else if (category.length !== 0) {
       return recipes.filter(recipe => {
+        console.log(category)
         console.log(recipe.category)
         return recipe.category.includes(category)
       })
