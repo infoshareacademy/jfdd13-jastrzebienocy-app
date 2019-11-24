@@ -8,8 +8,13 @@
     z-index: 5;
     scroll-behavior: smooth;
     top: 0px;
-    align-self: flex-end;
+    align-self: flex-end; 
     height: 7vh;
+    /* display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; */
     
 }
 
@@ -35,4 +40,9 @@
     margin-right: 25px;  
 }
 
-
+.Profile:hover,
+.Przepisy:hover,
+.Dashboard:hover {
+    background-color: grey;
+    padding: 10px 4vh
+}
