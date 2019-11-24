@@ -81,7 +81,7 @@ export class RecipesFromBase extends React.Component {
               <RecipeView   recipe={item} />
             </Grid.Column>
           ))}
-          }
+          
         </Grid>
       </div>
     )

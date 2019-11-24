@@ -13,7 +13,7 @@ class MainContent extends React.Component {
     }
 
     onClick() {
-        console.log('asdasdas', this.state.modal)
+        
         this.setState({ modal: !this.state.modal});
     }
     render() {

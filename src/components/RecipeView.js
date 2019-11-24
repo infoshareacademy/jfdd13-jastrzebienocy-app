@@ -42,6 +42,7 @@ class RecipeView extends React.Component {
                 floated='left'
                 onClick={() => {
                   this.showModalWindow()
+                  console.log(this.state)
                 }}
               />
             </div>

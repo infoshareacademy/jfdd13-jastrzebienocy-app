@@ -3,15 +3,22 @@ import { Modal, Image, Button } from "semantic-ui-react";
 
 
 class ModalWindow extends React.Component {
+  constructor(props){
+    super(props);
+    
+}
+  onClick() {  
+    this.setState({ open: false});
+}
+
   render() {
-    console.log("hej");
+   
     return (
-    <Modal open={this.props.open}>
+    <Modal open={this.props.modal}>
         <h1>{this.props.name}</h1>
          <div>
               <Image
                 src={this.props.imageUrl}
-               
                 style={{
                   width: 200,
                   height: 200,
