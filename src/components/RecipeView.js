@@ -61,7 +61,7 @@ class RecipeView extends React.Component {
             </div>
             <div>{portions(this.props.recipe.portions || 1)}</div>
             <div>
-              <Heart/>
+              <Heart />
             </div>
           </div>
         </Segment>
