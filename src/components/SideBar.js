@@ -3,7 +3,6 @@ import styles from './SideBar.module.css'
 import Heart from './Heart'
 // import Dropdown from './Dropdown'
 import { Dropdown } from 'semantic-ui-react'
-// import Slider from './Slider'
 
 const dropdownI = [
   {
@@ -20,6 +19,11 @@ const dropdownI = [
     key: 'Kuchnia polska',
     text: 'Kuchnia polska',
     value: 'Polska'
+  },
+  {
+    key: 'Kuchnia francuska',
+    text: 'Kuchnia francuska',
+    value: 'francuska'
   }
 ]
 class SideBar extends React.Component {
@@ -45,15 +49,14 @@ class SideBar extends React.Component {
           type='range'
           min='0'
           max='2000'
-          // value={this.state.value}
-          // onChange={this.handleChange}
           step='50'
           value={this.props.weigth}
           onChange={event => {
             this.props.onWeigthChange(event.target.value)
-            // console.log(event)
+            console.log(event)
           }}
         />
+        <span style={{ color: 'yellow' }}>{this.props.weigth}</span>
 
         {/* <br /> */}
         <div className={styles.Kategory}>Kategoria</div>

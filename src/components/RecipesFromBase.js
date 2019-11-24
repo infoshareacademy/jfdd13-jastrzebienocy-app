@@ -5,7 +5,7 @@ import { Grid } from 'semantic-ui-react'
 import SideBar from './SideBar'
 import { fetchRecipes } from '../services/ForFetchDB'
 // import { removeTypeDuplicates } from '@babel/types'
-
+// import Pagination from './Pagination'
 export class RecipesFromBase extends React.Component {
   constructor (props) {
     super(props)
@@ -48,6 +48,7 @@ export class RecipesFromBase extends React.Component {
     }
     return recipes
   }
+
   render () {
     return (
       <div style={{ display: 'flex' }}>
@@ -77,11 +78,10 @@ export class RecipesFromBase extends React.Component {
         </div>
         <Grid>
           {this.filteredRecepies.map(item => (
-            <Grid.Column width={8}>
+            <Grid.Column key={item.id} width={8}>
               <RecipeView recipe={item} />
             </Grid.Column>
           ))}
-          }
         </Grid>
       </div>
     )

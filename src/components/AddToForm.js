@@ -45,7 +45,7 @@ class AddForm extends React.Component {
       method: 'POST',
       body: JSON.stringify({
         recipe: this.state
-      }).toLowerCase()
+      })
     })
       .then(res => res.json())
       .then(res => console.log(res))
