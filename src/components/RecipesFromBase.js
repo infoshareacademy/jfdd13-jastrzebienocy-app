@@ -5,7 +5,7 @@ import { Grid } from 'semantic-ui-react'
 import SideBar from './SideBar'
 import { fetchRecipes } from '../services/ForFetchDB'
 // import { removeTypeDuplicates } from '@babel/types'
-// import Pagination from './Pagination'
+
 export class RecipesFromBase extends React.Component {
   constructor (props) {
     super(props)

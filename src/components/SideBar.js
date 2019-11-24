@@ -23,7 +23,7 @@ const dropdownI = [
   {
     key: 'Kuchnia francuska',
     text: 'Kuchnia francuska',
-    value: 'francuska'
+    value: 'Francuska'
   }
 ]
 class SideBar extends React.Component {
@@ -41,7 +41,10 @@ class SideBar extends React.Component {
             console.log(event)
           }}
         />
-        <div className={styles.Quantity}>Masa [g]</div>
+        <div className={styles.Quantity}>
+          Masa <span className={styles.WeightDisplay}>{this.props.weigth}</span>
+          g
+        </div>
 
         <input
           className={styles.inputSlide}
@@ -56,10 +59,9 @@ class SideBar extends React.Component {
             console.log(event)
           }}
         />
-        <span style={{ color: 'yellow' }}>{this.props.weigth}</span>
 
         {/* <br /> */}
-        <div className={styles.Kategory}>Kategoria</div>
+        <div className={styles.Category}>Kategoria</div>
 
         <div className={styles.dropdown}>
           <Dropdown
