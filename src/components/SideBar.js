@@ -3,7 +3,6 @@ import styles from './SideBar.module.css'
 import Heart from './Heart'
 // import Dropdown from './Dropdown'
 import { Dropdown } from 'semantic-ui-react'
-// import Slider from './Slider'
 
 const dropdownI = [
   {
@@ -20,6 +19,11 @@ const dropdownI = [
     key: 'Kuchnia polska',
     text: 'Kuchnia polska',
     value: 'Polska'
+  },
+  {
+    key: 'Kuchnia francuska',
+    text: 'Kuchnia francuska',
+    value: 'Francuska'
   }
 ]
 class SideBar extends React.Component {
@@ -37,7 +41,10 @@ class SideBar extends React.Component {
             console.log(event)
           }}
         />
-        <div className={styles.Quantity}>Masa [g]</div>
+        <div className={styles.Quantity}>
+          Masa <span className={styles.WeightDisplay}>{this.props.weigth}</span>
+          g
+        </div>
 
         <input
           className={styles.inputSlide}
@@ -45,19 +52,16 @@ class SideBar extends React.Component {
           type='range'
           min='0'
           max='2000'
-          // value={this.state.value}
-          // onChange={this.handleChange}
           step='50'
           value={this.props.weigth}
           onChange={event => {
             this.props.onWeigthChange(event.target.value)
-            // console.log(event)
+            console.log(event)
           }}
         />
-        <span style={{color: 'yellow'}}>{this.props.weigth}</span>
 
         {/* <br /> */}
-        <div className={styles.Kategory}>Kategoria</div>
+        <div className={styles.Category}>Kategoria</div>
 
         <div className={styles.dropdown}>
           <Dropdown

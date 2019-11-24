@@ -4,12 +4,12 @@
   scroll-behavior: smooth;
   top: 0px;
   padding: 10px;
-  background:  rgba(189,189,189,1) 0%,;
+  background: rgba(189, 189, 189, 1) 0%, ;
   height: 88vh;
-  width: 200px;
+  width: 220px;
 }
 
-.Produkt, .Quantity, .Kategory, .Search {
+.Produkt, .Quantity, .Category, .Search {
   font-family: "Oswald", sans-serif;
   font-weight: bold;
   color: #212121;
@@ -42,4 +42,13 @@
 
 .InputSlide {
   margin-right: 10px;
-} 
+}
+
+.WeightDisplay {
+  font-size: 24px;
+  font-weight: bold;
+  color: #212121;
+  width: 100%;
+  padding: 3px;
+  margin-right: 2px;
+}

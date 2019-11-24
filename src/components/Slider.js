@@ -15,10 +15,7 @@
 //   render () {
 //     return (
 //       <div>
-//         <div className={styles.label}>
-
-//           {this.state.value}
-//         </div>
+//         <div className={styles.label}>{this.state.value}</div>
 //       </div>
 //     )
 //   }
