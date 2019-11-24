@@ -6,15 +6,21 @@ class ModalWindow extends React.Component {
   constructor(props){
     super(props);
     
+    
+    
 }
+  
   onClick() {  
-    this.setState({ open: false});
+   console.log(this.props.closeWindow() ) 
+   
+
 }
 
   render() {
    
     return (
-    <Modal open={this.props.modal}>
+    <Modal open={this.props.open}>
+      
         <h1>{this.props.name}</h1>
          <div>
               <Image
@@ -31,7 +37,7 @@ class ModalWindow extends React.Component {
             </div>
 
             <Modal.Actions>
-                    <Button negative onClick={() => this.onClick()}>Zamknij</Button>
+                    <Button negative onClick={() => {this.onClick()}}>Zamknij</Button>
                     </Modal.Actions>
             
     </Modal>);
