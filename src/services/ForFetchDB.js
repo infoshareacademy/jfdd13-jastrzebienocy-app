@@ -1,6 +1,4 @@
-import React from 'react'
-
-// Servis for filtering base.
+// import React from 'react'
 
 export const fetchRecipes = () => {
   return fetch('https://foodwaste-ecb78.firebaseio.com/recipes.json')

@@ -7,7 +7,7 @@ import ModalWindow from './ModalWindow'
 let portions = count => {
   let list = []
   for (let i = 0; i < count; i += 1) {
-    list.push(<Icon name='user' size='large' />)
+    list.push(<Icon  key={i} name='user' size='large' />)
   }
   return list
 }
@@ -21,13 +21,11 @@ class RecipeView extends React.Component {
   }
   render () {
     return (
-      <div className={styles.RecipeView}>
+      <div  className={styles.RecipeView}>
         <ModalWindow open={this.state.open} {...this.props.recipe} />
         <Segment
           className={styles.Wrapper}
-          onClick={() => {
-            this.showModalWindow()
-          }}
+          
         >
           <div className={styles.Heart}>
             <div>
@@ -42,16 +40,23 @@ class RecipeView extends React.Component {
                 }}
                 size='medium'
                 floated='left'
+                onClick={() => {
+                  this.showModalWindow()
+                }}
               />
             </div>
             <div className={styles.Text}>
               <div className={styles.NameRecipe}>
-                <p>{this.props.recipe.name}</p>
+                <p onClick={() => {
+            this.showModalWindow()
+          }}>{this.props.recipe.name}</p>
                 <div className={styles.HeartInRecipe}>
                   <Heart />
                 </div>
               </div>
-              <div className={styles.ShortDescription}>
+              <div onClick={() => {
+            this.showModalWindow()
+          }}className={styles.ShortDescription}>
                 <div>
                   {' '}
                   <p>Produkt bazowy: {this.props.recipe.products}</p>

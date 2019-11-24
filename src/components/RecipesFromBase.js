@@ -43,38 +43,11 @@ export class RecipesFromBase extends React.Component {
     } else if (category.length !== 0) {
       return recipes.filter(recipe => {
         console.log(recipe.category)
-
         return recipe.category.includes(category)
       })
     }
     return recipes
   }
-  // possible put part of it to the first filter
-  // get filterByWeigth () {
-  //   const { recipes, weight } = this.state
-
-  //   if (weight !== 0) {
-  //     console.log(weight)
-  //   } else if (weight != 0) {
-  //     return recipes.filter(recipe => {
-  //       return recipe.weight > weight
-  //     })
-  //   }
-  //   return recipes
-  // }
-
-  // get filterByCategory () {
-  //   const { recipes, category } = this.state
-  //   if (category.length !== 0) {
-  //   } else if (category.length !== 0) {
-  //     return recipes.filter(recipe => {
-  //       console.log(recipe.category)
-
-  //       return recipe.category.includes(category)
-  //     })
-  //   }
-  //   return recipes
-  // }
   render () {
     return (
       <div style={{ display: 'flex' }}>
@@ -102,11 +75,10 @@ export class RecipesFromBase extends React.Component {
             }}
           />
         </div>
-
         <Grid>
           {this.filteredRecepies.map(item => (
-            <Grid.Column width={8}>
-              <RecipeView recipe={item} />
+            <Grid.Column key={item.id} width={8}>
+              <RecipeView   recipe={item} />
             </Grid.Column>
           ))}
           }
