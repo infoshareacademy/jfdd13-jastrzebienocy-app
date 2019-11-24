@@ -7,7 +7,7 @@ import ModalWindow from './ModalWindow'
 let portions = count => {
   let list = []
   for (let i = 0; i < count; i += 1) {
-    list.push(<Icon name='user' size='large' />)
+    list.push(<Icon  key={i} name='user' size='large' />)
   }
   return list
 }
@@ -21,7 +21,7 @@ class RecipeView extends React.Component {
   }
   render () {
     return (
-      <div className={styles.RecipeView}>
+      <div  className={styles.RecipeView}>
         <ModalWindow open={this.state.open} {...this.props.recipe} />
         <Segment
           className={styles.Wrapper}
