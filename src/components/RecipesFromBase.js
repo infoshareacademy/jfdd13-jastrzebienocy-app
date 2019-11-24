@@ -78,7 +78,11 @@ export class RecipesFromBase extends React.Component {
         <Grid>
           {this.filteredRecepies.map(item => (
             <Grid.Column key={item.id} width={8}>
+<<<<<<< HEAD
               <RecipeView recipe={item} />
+=======
+              <RecipeView   recipe={item} />
+>>>>>>> 0ebf0491e89d0bead88c7ccce29aed9212ecc082
             </Grid.Column>
           ))}
           }
