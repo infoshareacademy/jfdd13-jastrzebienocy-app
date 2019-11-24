@@ -1,0 +1,47 @@
+.ProfileTxt {
+    background-color: #BDBDBD;
+    padding: 20px;
+    margin: 30px 120px;
+    border-radius: 10px;
+    font-size: 35px;
+    text-align: center;
+}
+
+.ProfileMain {
+    background-color: #BDBDBD;
+    padding: 20px;
+    margin: 30px 120px;
+    border-radius: 10px;
+    height: 60vh;
+}
+
+img {
+    border-style: none;
+    border-radius: 200px;
+    width: 210px;
+}
+
+.ProfileFlex{
+    display: flex;
+}
+
+.ProfileRight{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 20%;
+}
+
+.FavoutiteRecipe,
+.Email,
+.Name {
+    font-size: 30px;
+    padding: 20px;
+}
+
+.FavoutiteRecipe{
+    margin-top: 40px;
+}
+
+
+

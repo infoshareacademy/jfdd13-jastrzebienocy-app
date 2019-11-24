@@ -4,22 +4,21 @@
     width: 100%;
     display: flex;
     align-items: center;
-    background: #757575;
-    height: 120px;
+    background: #BDBDBD;
     z-index: 5;
     scroll-behavior: smooth;
     top: 0px;
     align-self: flex-end;
-    height: 10%;
+    height: 7vh;
     
 }
 
 .logo {
-    width: 155px;
+    width: 125px;
     margin-left: 25px;
 }
 
-.Profil,
+.Profile,
 .Przepisy,
 .Dashboard {
     font-family: "Oswald", sans-serif;
@@ -35,3 +34,5 @@
     text-align: end;
     margin-right: 25px;  
 }
+
+
