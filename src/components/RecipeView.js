@@ -7,7 +7,7 @@ import ModalWindow from './ModalWindow'
 let portions = count => {
   let list = []
   for (let i = 0; i < count; i += 1) {
-    list.push(<Icon name='user' size='large' />)
+    list.push(<Icon  key={i} name='user' size='large' />)
   }
   return list
 }
@@ -21,14 +21,11 @@ class RecipeView extends React.Component {
   }
   render () {
     return (
-      <div className={styles.RecipeView}>
+      <div  className={styles.RecipeView}>
         <ModalWindow open={this.state.open} {...this.props.recipe} />
         <Segment
-        id={this.props.recipe.id}
           className={styles.Wrapper}
-          onClick={() => {
-            this.showModalWindow()
-          }}
+          
         >
           <div className={styles.Heart}>
             <div>
@@ -43,16 +40,23 @@ class RecipeView extends React.Component {
                 }}
                 size='medium'
                 floated='left'
+                onClick={() => {
+                  this.showModalWindow()
+                }}
               />
             </div>
             <div className={styles.Text}>
               <div className={styles.NameRecipe}>
-                <p>{this.props.recipe.name}</p>
+                <p onClick={() => {
+            this.showModalWindow()
+          }}>{this.props.recipe.name}</p>
                 <div className={styles.HeartInRecipe}>
-                  <Heart id={this.props.recipe.id}/>
+                  <Heart />
                 </div>
               </div>
-              <div className={styles.ShortDescription}>
+              <div onClick={() => {
+            this.showModalWindow()
+          }}className={styles.ShortDescription}>
                 <div>
                   {' '}
                   <p>Produkt bazowy: {this.props.recipe.products}</p>
@@ -73,10 +77,6 @@ class RecipeView extends React.Component {
             <div>
               <Icon name='time' size='large' style={{ color: '#8BC34A' }} />
               {this.props.recipe.cookingTime} min
-            </div>
-            <div>{portions(this.props.recipe.portions || 1)}</div>
-            <div>
-              <Heart/>
             </div>
             <div>{portions(this.props.recipe.portions || 1)}</div>{' '}
           </div>

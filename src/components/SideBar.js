@@ -54,6 +54,7 @@ class SideBar extends React.Component {
             // console.log(event)
           }}
         />
+        <span style={{color: 'yellow'}}>{this.props.weigth}</span>
 
         {/* <br /> */}
         <div className={styles.Kategory}>Kategoria</div>
