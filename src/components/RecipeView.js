@@ -24,6 +24,7 @@ class RecipeView extends React.Component {
       <div className={styles.RecipeView}>
         <ModalWindow open={this.state.open} {...this.props.recipe} />
         <Segment
+        id={this.props.recipe.id}
           className={styles.Wrapper}
           onClick={() => {
             this.showModalWindow()
@@ -48,7 +49,7 @@ class RecipeView extends React.Component {
               <div className={styles.NameRecipe}>
                 <p>{this.props.recipe.name}</p>
                 <div className={styles.HeartInRecipe}>
-                  <Heart />
+                  <Heart id={this.props.recipe.id}/>
                 </div>
               </div>
               <div className={styles.ShortDescription}>
@@ -75,7 +76,7 @@ class RecipeView extends React.Component {
             </div>
             <div>{portions(this.props.recipe.portions || 1)}</div>
             <div>
-              <Heart />
+              <Heart/>
             </div>
             <div>{portions(this.props.recipe.portions || 1)}</div>{' '}
           </div>
