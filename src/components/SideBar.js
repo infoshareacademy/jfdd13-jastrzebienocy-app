@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './SideBar.module.css'
 import Heart from './Heart'
-// import Dropdown from './Dropdown'
+
 import { Dropdown } from 'semantic-ui-react'
 
 const dropdownI = [
@@ -38,12 +38,12 @@ class SideBar extends React.Component {
           value={this.props.products}
           onChange={event => {
             this.props.onProductsChange(event.target.value)
-            console.log(event)
+            // console.log(event)
           }}
         />
         <div className={styles.Quantity}>
-          Masa <span className={styles.WeightDisplay}>{this.props.weigth}</span>
-          g
+          Masa:{' '}
+          <span className={styles.WeightDisplay}>{this.props.weigth}</span>g
         </div>
 
         <input
@@ -56,12 +56,11 @@ class SideBar extends React.Component {
           value={this.props.weigth}
           onChange={event => {
             this.props.onWeigthChange(event.target.value)
-            console.log(event)
+            // console.log(event)
           }}
         />
 
-        {/* <br /> */}
-        <div className={styles.Category}>Kategoria</div>
+        <div className={styles.Category}>Kategoria:</div>
 
         <div className={styles.dropdown}>
           <Dropdown
@@ -71,9 +70,9 @@ class SideBar extends React.Component {
             selection
             options={dropdownI}
             value={this.props.category}
-            onChange={data => {
+            onChange={(event, data) => {
               this.props.onCategoryChange(data.value)
-              console.log(data)
+              // console.log(data)
             }}
           />
         </div>
@@ -82,19 +81,9 @@ class SideBar extends React.Component {
         <div className={styles.Vawourites}>
           Ulubione <Heart />
         </div>
-
-        {/* <input className={styles.Input} />
-        <div className={styles.Quantity}>Ilość</div>
-         <div className={styles.Kategory}>Kategoria</div>
-		<div className={styles.Vawourites}>Ulubione</div>
-        <Heart /> */}
       </div>
     )
   }
 }
 
 export default SideBar
-// najpierw pw searchu dodać onsearch i potem tutaj dodać w sidebarze to co jest wklejone.
-// onSubmit={(values) => {
-// 	onSearch(values);
-// }}

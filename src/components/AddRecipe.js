@@ -37,7 +37,7 @@ class AddRecipe extends React.Component {
           onSubmit={(values, actions) => {
             fetch('https://foodwaste-ecb78.firebaseio.com/recipes.json', {
               method: 'POST',
-              body: JSON.stringify({ ...values })
+              body: JSON.stringify({ ...values }).toLowerCase() // added to stndarize recipes i base -JK
             }).then(() => {
               actions.setSubmitting(false)
             })
