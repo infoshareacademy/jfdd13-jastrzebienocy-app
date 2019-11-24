@@ -46,6 +46,6 @@
 .Profile:hover,
 .Przepisy:hover,
 .Dashboard:hover {
-    background-color: grey;
+    background-color: #689F38;
     padding: 10px 4vh
 }
