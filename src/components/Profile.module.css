@@ -5,6 +5,7 @@
     border-radius: 10px;
     font-size: 35px;
     text-align: center;
+    font-family: Oswald, sans-serif;
 }
 
 .ProfileMain {
@@ -30,6 +31,8 @@ img {
     flex-direction: column;
     padding: 20px;
     margin-left: 20%;
+    border-radius: 20px;
+    background-color: white;;
 }
 
 .FavoutiteRecipe,
@@ -41,7 +44,10 @@ img {
 
 .FavoutiteRecipe{
     margin-top: 40px;
+    background-color: white;
+    border-radius: 20px;
 }
+
 
 
 

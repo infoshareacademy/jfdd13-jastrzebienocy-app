@@ -48,6 +48,7 @@ export class RecipesFromBase extends React.Component {
     }
     return recipes
   }
+
   render () {
     return (
       <div style={{ display: 'flex' }}>
@@ -78,7 +79,7 @@ export class RecipesFromBase extends React.Component {
         <Grid>
           {this.filteredRecepies.map(item => (
             <Grid.Column key={item.id} width={8}>
-              <RecipeView   recipe={item} />
+              <RecipeView recipe={item} />
             </Grid.Column>
           ))}
           

@@ -4,12 +4,19 @@
     width: 100%;
     display: flex;
     align-items: center;
-    background: #BDBDBD;
+    /* background: #BDBDBD; */
+    /* background-color: rgba(220,237,200, 0.9);*/
+    background-color: rgba(139,195,74, 0.8); 
     z-index: 5;
     scroll-behavior: smooth;
     top: 0px;
-    align-self: flex-end;
+    align-self: flex-end; 
     height: 7vh;
+    /* display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; */
     
 }
 
@@ -23,7 +30,8 @@
 .Dashboard {
     font-family: "Oswald", sans-serif;
     font-weight: bold;
-    color:  white;
+    /* color:  white; */
+    color: #212121;
     font-size: 24px;
     text-decoration: none;
     padding: 20px;
@@ -35,4 +43,9 @@
     margin-right: 25px;  
 }
 
-
+.Profile:hover,
+.Przepisy:hover,
+.Dashboard:hover {
+    background-color: #689F38;
+    padding: 10px 4vh
+}
