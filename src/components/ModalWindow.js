@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Image, Button } from "semantic-ui-react";
+import { Modal, Image, Button, Segment } from "semantic-ui-react";
 
 
 class ModalWindow extends React.Component {
@@ -35,6 +35,9 @@ class ModalWindow extends React.Component {
                 floated="left"
               />
             </div>
+            <div>{this.props.description}</div>
+              
+          
 
             <Modal.Actions>
                     <Button negative onClick={() => {this.onClick()}}>Zamknij</Button>
