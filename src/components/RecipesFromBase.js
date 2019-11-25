@@ -32,17 +32,18 @@ export class RecipesFromBase extends React.Component {
     // Condition function for showing filtered recipes
     if (products.length !== 0) {
       // returning of the recipes.
+      console.log(products.toLowerCase())
       return recipes.filter(recipe => {
         return recipe.products.includes(products)
       })
     } else if (weight > 0) {
       return recipes.filter(recipe => {
-        return recipe.weight > weight
+        return recipe.weight <= weight
       })
     } else if (category.length !== 0) {
       return recipes.filter(recipe => {
-        console.log(category)
-        console.log(recipe.category)
+        // console.log(category)
+        // console.log(recipe.category)
         return recipe.category.includes(category)
       })
     }
@@ -76,13 +77,12 @@ export class RecipesFromBase extends React.Component {
             }}
           />
         </div>
-        <Grid>
+        <Grid style={{ width: '100%' }}>
           {this.filteredRecepies.map(item => (
             <Grid.Column key={item.id} width={8}>
               <RecipeView recipe={item} />
             </Grid.Column>
           ))}
-          
         </Grid>
       </div>
     )
