@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './RecipeView.module.css'
-import { Segment, Image, Icon, Modal } from 'semantic-ui-react'
+import { Segment, Image, Icon, Modal, Button } from 'semantic-ui-react'
 import Heart from './Heart'
 import ModalWindow from './ModalWindow'
 
@@ -12,17 +12,24 @@ let portions = count => {
   return list
 }
 class RecipeView extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = { open: false }
   }
-  showModalWindow () {
+  showModalWindow() {
     this.setState({ open: true })
   }
-  render () {
+  closeWindow = () =>{
+    this.setState({
+      open: false
+    })
+  }
+  render() {
     return (
       <div className={styles.RecipeView}>
-        <ModalWindow open={this.state.open} {...this.props.recipe} />
+        <ModalWindow open={this.state.open} onCloseWindow={this.closeWindow} {...this.props.recipe} >
+         
+        </ModalWindow>
         <Segment className={styles.Wrapper}>
           <div className={styles.Heart}>
             <div>

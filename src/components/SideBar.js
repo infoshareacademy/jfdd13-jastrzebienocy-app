@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './SideBar.module.css'
 import Heart from './Heart'
+import { Icon } from 'semantic-ui-react'
 
 import { Dropdown } from 'semantic-ui-react'
 

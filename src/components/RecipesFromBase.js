@@ -21,8 +21,6 @@ export class RecipesFromBase extends React.Component {
 
   componentDidMount () {
     fetchRecipes().then(recipes => {
-      console.log(recipes)
-      console.log(recipes.products)
       this.setState({ recipes })
     })
   }
@@ -87,6 +85,7 @@ export class RecipesFromBase extends React.Component {
               <RecipeView recipe={item} />
             </Grid.Column>
           ))}
+          
         </Grid>
       </div>
     )
