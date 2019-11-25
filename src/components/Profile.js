@@ -13,14 +13,14 @@ class Profile extends React.Component {
                 <div className={styles.ProfileTxt}>już wkrótce... Miejsce na twój profil!</div>
                 <div className={styles.ProfileMain}>
                     <div className={styles.ProfileFlex}>
-                        <img src={ProfilePicture} ClassName={styles.ProfilePicture} alt={'Profile picture'}></img>
+                        <img src={ProfilePicture} className={styles.ProfilePicture} alt={'Profile picture'}></img>
                         <div className={styles.ProfileRight}>
                             <div className={styles.Name}>Gerwazy Zawyszyński</div>
                             <div className={styles.Email}>fluidmonster@wp.pl</div>
                         </div>
                     </div>
                     <div className={styles.FavoutiteRecipe}>Ulubione przepisy&nbsp; 
-                    <Icon name={this.state.icon} />
+                    <Icon name={this.state.icon} />:
                     </div>
                 </div>
             </div>
