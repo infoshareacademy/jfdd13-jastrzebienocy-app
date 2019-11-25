@@ -19,7 +19,7 @@ class RecipeView extends React.Component {
   showModalWindow() {
     this.setState({ open: true })
   }
-  closeWindow(){
+  closeWindow = () =>{
     this.setState({
       open: false
     })
@@ -27,7 +27,7 @@ class RecipeView extends React.Component {
   render() {
     return (
       <div className={styles.RecipeView}>
-        <ModalWindow open={this.state.open} closeWindow={this.closeWindow} {...this.props.recipe} >
+        <ModalWindow open={this.state.open} onCloseWindow={this.closeWindow} {...this.props.recipe} >
          
         </ModalWindow>
         <Segment className={styles.Wrapper}>

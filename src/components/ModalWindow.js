@@ -5,13 +5,13 @@ import { Modal, Image, Button, Segment } from "semantic-ui-react";
 class ModalWindow extends React.Component {
   constructor(props){
     super(props);
-    
+    // this.closeWindow = closeWindow()
     
     
 }
   
   onClick() {  
-   console.log(this.props.closeWindow() ) 
+  
    
 
 }
@@ -19,10 +19,12 @@ class ModalWindow extends React.Component {
   render() {
    
     return (
-    <Modal open={this.props.open}>
+    <Modal open={this.props.open} >
+      <Segment styles={{display: 'flex'}}>
       
         <h1>{this.props.name}</h1>
-         <div>
+
+         
               <Image
                 src={this.props.imageUrl}
                 style={{
@@ -34,13 +36,14 @@ class ModalWindow extends React.Component {
                 size="medium"
                 floated="left"
               />
-            </div>
-            <div>{this.props.description}</div>
+            
+            <div >{this.props.description}</div>
+            </Segment>
               
           
 
             <Modal.Actions>
-                    <Button negative onClick={() => {this.onClick()}}>Zamknij</Button>
+                    <Button negative onClick={() => this.props.onCloseWindow()}>Zamknij</Button>
                     </Modal.Actions>
             
     </Modal>);
