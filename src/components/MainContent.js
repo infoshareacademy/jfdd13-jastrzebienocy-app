@@ -27,8 +27,8 @@ class MainContent extends React.Component {
                 icon="plus" 
                 style={{position: "fixed", bottom: 80, right: 50, background: "#FFC107" }} 
                 ></Button>
-                <Modal open={this.state.modal}>
-                    <AddRecipe />
+                <Modal open={this.state.modal} >
+                    <AddRecipe {...this.props}/>
                     <Modal.Actions>
                     <Button negative onClick={() => this.onClick()}>Zamknij</Button>
                     </Modal.Actions>

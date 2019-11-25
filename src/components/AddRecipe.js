@@ -22,8 +22,7 @@ class AddRecipe extends React.Component {
     return (
       <div>
         <h1>Nowy przepis</h1>
-        {/* </Modal.Header>
-    <Modal.Content> */}
+        
 
         <Formik
           initialValues={{
@@ -36,16 +35,15 @@ class AddRecipe extends React.Component {
             imageUrl: '',
             portions: ''
           }}
-          onSubmit={(values, actions, props) => {
+          onSubmit={(values, actions) => {
             fetch('https://foodwaste-ecb78.firebaseio.com/recipes.json', {
               method: 'POST',
               body: JSON.stringify({ ...values }).toLowerCase() // added to stndarize recipes i base -JK
             }).then(() => {
               actions.setSubmitting(false)
             }).then(() => {
-              console.log(props)
-              // <Link to="/RecipeView"/>
-              // props.history.replace("/RecipeView")
+              this.props.history.push("/")
+               this.props.history.push("/RecipeView")
             })
           }}
 
@@ -295,8 +293,7 @@ class AddRecipe extends React.Component {
             )
           }}
         </Formik>
-        {/* </Modal.Content>
-    </Modal> */}
+       
       </div>
     )
   }
