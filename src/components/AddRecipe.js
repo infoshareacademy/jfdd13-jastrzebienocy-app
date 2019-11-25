@@ -279,6 +279,7 @@ class AddRecipe extends React.Component {
                     style={{ background: '#689F38' }}
                     type='submit'
                     disabled={isSubmitting}
+                    as a href = ''
                   >
                     Wyślij
                   </button>
