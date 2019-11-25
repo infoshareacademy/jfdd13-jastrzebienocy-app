@@ -40,7 +40,7 @@ export class RecipesFromBase extends React.Component {
       return recipes.filter(recipe => {
         console.log(weight)
         console.log(recipe.weight)
-        return recipe.weight >= weight
+        return recipe.weight <= weight
       })
     } else if (category.length !== 0) {
       return recipes.filter(recipe => {
@@ -85,7 +85,6 @@ export class RecipesFromBase extends React.Component {
               <RecipeView recipe={item} />
             </Grid.Column>
           ))}
-          
         </Grid>
       </div>
     )
