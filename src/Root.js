@@ -12,6 +12,7 @@ import App from './App';
 import MainContent from './components/MainContent';
 import Sidebar from './components/SideBar';
 import RecipeView from './components/RecipeView';
+import Profile from './components/Profile'
 
 import Footer from "./components/Footer";
 import Privacy from "./components/Privacy"
@@ -24,10 +25,10 @@ const Root = () => {
                 <Navibar/>
                 <Switch>
                     <Route exact path="/" component={App} />
-                    {/* <Route exact path="/privacy" component={Privacy} /> */}
-                    {/* <Route exact path="/dashboard" component={Dashboard} />  */}
-                    <Route exact path="/RecipeView" component={RecipesFromBase} />
-                    {/* <Route exact path="/Profil" component={Profile}/>  */} 
+                    <Route exact path="/privacy" component={Privacy} />
+                    {/* <Route exact path="/dashboard" component={Dashboard} /> */}
+                    <Route exact path="/RecipeView" component={MainContent} />
+                    <Route exact path="/Profile" component={Profile}/>
                 </Switch>
                 <Footer/>
             </div>    
