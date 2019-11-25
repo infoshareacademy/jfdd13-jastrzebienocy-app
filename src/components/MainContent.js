@@ -13,7 +13,7 @@ class MainContent extends React.Component {
     }
 
     onClick() {
-        console.log('asdasdas', this.state.modal)
+        
         this.setState({ modal: !this.state.modal});
     }
     render() {
@@ -25,10 +25,10 @@ class MainContent extends React.Component {
                 onClick={ () =>  { this.onClick(); }}  
                 circular 
                 icon="plus" 
-                style={{position: "fixed", bottom: 50, right: 50, background: "yellow" }} 
+                style={{position: "fixed", bottom: 80, right: 50, background: "#FFC107" }} 
                 ></Button>
-                <Modal open={this.state.modal}>
-                    <AddRecipe />
+                <Modal open={this.state.modal} >
+                    <AddRecipe {...this.props}/>
                     <Modal.Actions>
                     <Button negative onClick={() => this.onClick()}>Zamknij</Button>
                     </Modal.Actions>
