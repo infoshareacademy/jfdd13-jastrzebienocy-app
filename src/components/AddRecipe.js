@@ -1,9 +1,11 @@
 // Helper styles for demo
 import './helper.css'
 import React from 'react'
+import {Route} from 'react-router-dom'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { Modal } from 'semantic-ui-react'
+import { Modal , Link} from 'semantic-ui-react'
+import MainContent from './MainContent'
 
 const regEx = /^[a-zA-Z ą ć ę ł ś ń ż ź]*$/
 
@@ -16,7 +18,7 @@ class AddRecipe extends React.Component {
   }
 
   render () {
-    const { open } = this.props
+    // const { open } = this.props
     return (
       <div>
         <h1>Nowy przepis</h1>
@@ -34,14 +36,19 @@ class AddRecipe extends React.Component {
             imageUrl: '',
             portions: ''
           }}
-          onSubmit={(values, actions) => {
+          onSubmit={(values, actions, props) => {
             fetch('https://foodwaste-ecb78.firebaseio.com/recipes.json', {
               method: 'POST',
               body: JSON.stringify({ ...values }).toLowerCase() // added to stndarize recipes i base -JK
             }).then(() => {
               actions.setSubmitting(false)
+            }).then(() => {
+              console.log(props)
+              // <Link to="/RecipeView"/>
+              // props.history.replace("/RecipeView")
             })
           }}
+
           validationSchema={Yup.object().shape({
             name: Yup.string()
               .required('Required')
