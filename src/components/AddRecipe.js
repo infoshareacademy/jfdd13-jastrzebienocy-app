@@ -115,7 +115,7 @@ class AddRecipe extends React.Component {
                   id='products'
                   placeholder='Podaj produkt bazowy'
                   type='text'
-                  value={values.products}
+                  value={values.products.toLowerCase()}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={
