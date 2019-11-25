@@ -21,7 +21,6 @@ export class RecipesFromBase extends React.Component {
 
   componentDidMount () {
     fetchRecipes().then(recipes => {
-      console.log(recipes)
       this.setState({ recipes })
     })
   }
