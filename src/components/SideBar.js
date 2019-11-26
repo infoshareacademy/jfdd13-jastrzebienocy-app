@@ -33,7 +33,9 @@ class SideBar extends React.Component {
       <div className={styles.SideBar}>
         <div className={styles.Produkt}>Wyszukaj</div>
         <div className={styles.Produkt}>Produkt:</div>
-        <input
+        <input  style={{'borderRadius':'25px',
+                         'width': '165px',
+                         'marginLeft': '16px'}}
           className={styles.Input}
           placeholder='Szukaj ...'
           value={this.props.products}
@@ -47,9 +49,11 @@ class SideBar extends React.Component {
           <span className={styles.WeightDisplay}>{this.props.weigth}</span>g
         </div>
 
-        <input
+        <input 
           className={styles.inputSlide}
-          style={{padding: '7px 0'}}
+          style={{padding: '7px 0',
+                  'width': '165px',
+                  'marginLeft': '16px'}}
           id='typeinp'
           type='range'
           min='0'
@@ -65,14 +69,14 @@ class SideBar extends React.Component {
         <div className={styles.Category}>Kategoria:</div>
 
         <div className={styles.dropdown}>
-          <Dropdown
+          <Dropdown  style={{'borderRadius':'25px',
+                             'width': '165px',
+                             'marginLeft': '16px'}}
             size='massive'
             placeholder='Kategoria'
             fluid
             selection
             clearable
-            // defaultSearchQuery={'dupa'}
-            // defaultValue={true}
             options={dropdownI}
             value={this.props.category}
             onChange={(event, data) => {
