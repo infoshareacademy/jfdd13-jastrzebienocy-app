@@ -49,6 +49,7 @@ class SideBar extends React.Component {
 
         <input
           className={styles.inputSlide}
+          style={{padding: '7px 0'}}
           id='typeinp'
           type='range'
           min='0'
@@ -69,6 +70,9 @@ class SideBar extends React.Component {
             placeholder='Kategoria'
             fluid
             selection
+            clearable
+            // defaultSearchQuery={'dupa'}
+            // defaultValue={true}
             options={dropdownI}
             value={this.props.category}
             onChange={(event, data) => {
