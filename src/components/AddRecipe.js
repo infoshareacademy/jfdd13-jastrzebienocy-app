@@ -51,14 +51,20 @@ class AddRecipe extends React.Component {
           validationSchema={Yup.object().shape({
             name: Yup.string()
               .required('Pole jest wymagane!')
-              .matches(regEx, 'Możesz użyć tylko słów'),
+              .matches(
+                regEx,
+                'Możesz użyć tylko słów o minimalnej długości dwóch znaków'
+              ),
             category: Yup.string(),
             description: Yup.string().required('Pole jest wymagane!'),
             products: Yup.string().required('Pole jest wymagane!'),
             cookingTime: Yup.number()
               .integer()
               .positive(),
-            weight: Yup.number().required('Pole jest wymagane!'),
+            weight: Yup.number()
+              .positive()
+              .required('Pole jest wymagane!'),
+
             imageUrl: Yup.string().url(),
             portions: Yup.number()
               .integer()
@@ -287,7 +293,6 @@ class AddRecipe extends React.Component {
                     style={{ background: '#689F38' }}
                     type='submit'
                     disabled={isSubmitting}
-                    as
                     a
                     href=''
                   >
