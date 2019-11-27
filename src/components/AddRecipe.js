@@ -7,7 +7,7 @@ import * as Yup from 'yup'
 import { Modal, Link } from 'semantic-ui-react'
 import MainContent from './MainContent'
 
-const regEx = /^[a-zA-Z ą ć ę ł ś ń ż ź]*$/
+const regEx = /^[a-z\s\bąćśńółężź]{2,}$/i // Modified JK
 
 class AddRecipe extends React.Component {
   constructor (props) {
@@ -32,12 +32,13 @@ class AddRecipe extends React.Component {
             cookingTime: '',
             weight: '',
             imageurl: '',
-            portions: ''
+            portions: '',
+            favourites: false
           }}
           onSubmit={(values, actions) => {
             fetch('https://foodwaste-ecb78.firebaseio.com/recipes.json', {
               method: 'POST',
-              body: JSON.stringify({ ...values }).toLowerCase() // added to stndarize recipes i base -JK
+              body: JSON.stringify({ ...values }).toLowerCase() // added to stndarize recipes in base -JK
             })
               .then(() => {
                 actions.setSubmitting(false)
@@ -49,6 +50,7 @@ class AddRecipe extends React.Component {
           }}
           validationSchema={Yup.object().shape({
             name: Yup.string()
+              .capitalize() // added JK
               .required('Pole jest wymagane!')
               .matches(regEx, 'Możesz użyć tylko słów'),
             category: Yup.string(),
@@ -61,7 +63,8 @@ class AddRecipe extends React.Component {
             imageUrl: Yup.string().url(),
             portions: Yup.number()
               .integer()
-              .positive()
+              .positive(),
+            favourites: Yup.boolean() // Added JK
           })}
         >
           {props => {
@@ -120,7 +123,7 @@ class AddRecipe extends React.Component {
                   id='products'
                   placeholder='Podaj produkt bazowy'
                   type='text'
-                  value={values.products.toLowerCase()}
+                  value={values.products}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={
@@ -270,6 +273,7 @@ class AddRecipe extends React.Component {
                 {errors.portions && touched.portions && (
                   <div className='input-feedback'>{errors.portions}</div>
                 )}
+
                 <div className='Buttons'>
                   <button
                     style={{ background: '#FFC107' }}
