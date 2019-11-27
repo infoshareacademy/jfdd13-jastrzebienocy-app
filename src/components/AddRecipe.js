@@ -49,15 +49,15 @@ class AddRecipe extends React.Component {
 
           validationSchema={Yup.object().shape({
             name: Yup.string()
-              .required('Required')
+              .required('Pole jest wymagane!')
               .matches(regEx, 'Możesz użyć tylko słów'),
             category: Yup.string(),
-            description: Yup.string().required('Required'),
-            products: Yup.string().required('Required'),
+            description: Yup.string().required('Pole jest wymagane!'),
+            products: Yup.string().required('Pole jest wymagane!'),
             cookingTime: Yup.number()
               .integer()
               .positive(),
-            weight: Yup.number().required('Required'),
+            weight: Yup.number().required('Pole jest wymagane!'),
             imageUrl: Yup.string().url(),
             portions: Yup.number()
               .integer()
