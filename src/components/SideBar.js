@@ -80,7 +80,9 @@ class SideBar extends React.Component {
           <Dropdown  style={{'borderRadius':'25px',
                              'width': '165px',
                              'marginLeft': '16px',
-                             backgroundColor: 'lightGrey'}}
+                             'backgroundColor': 'lightGrey',
+                             textAlign: 'center'
+                            }}
             size='massive'
             placeholder='Kategoria'
             fluid
@@ -90,7 +92,6 @@ class SideBar extends React.Component {
             value={this.props.category}
             onChange={(event, data) => {
               this.props.onCategoryChange(data.value)
-              // console.log(data)
             }}
           />
         </div>
