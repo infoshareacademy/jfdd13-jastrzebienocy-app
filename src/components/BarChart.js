@@ -8,10 +8,10 @@ class BarChart extends Component {
         super(props);
         this.state = {
             chartData:{
-              labels: ['Kwiecien', 'Maj', 'Czerwiec', 'Wrzesień', 'Październik', 'Listopad'],
+              labels: ['Kwiecień', 'Maj', 'Czerwiec', 'Wrzesień', 'Październik', 'Listopad'],
               datasets:[
                   {
-                      label: 'Ilosc Uzytkownikow',
+                      label: 'Ilość Ućytkowników',
                       data:[
                           10,
                           30, 
