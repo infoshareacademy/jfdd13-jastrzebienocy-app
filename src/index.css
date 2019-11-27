@@ -11,3 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.ui.selection.active.dropdown .menu{
+  border-radius: 0 0 25px 25px;
+}
