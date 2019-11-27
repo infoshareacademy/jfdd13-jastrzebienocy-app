@@ -1,4 +1,5 @@
 .wrapper {
+    font-family: "Oswald", sans-serif;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -18,6 +19,7 @@
 }
 
 .dasboardAll {
+  font-family: "Oswald", sans-serif;
   border: 2px solid #757575;
   width:90%;
   height:100%;
