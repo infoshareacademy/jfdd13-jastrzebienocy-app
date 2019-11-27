@@ -278,7 +278,7 @@ class AddRecipe extends React.Component {
                     onClick={handleReset}
                     disabled={!dirty || isSubmitting}
                   >
-                    Reset
+                    Wyczyść
                   </button>
                   <button
                     style={{ background: '#689F38' }}
