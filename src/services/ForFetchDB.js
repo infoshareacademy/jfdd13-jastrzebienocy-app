@@ -8,4 +8,4 @@ export const fetchRecipes = () => {
         object[key].id = key
         return object[key]
       })
-    )
+    )}
