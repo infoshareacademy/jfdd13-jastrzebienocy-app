@@ -51,7 +51,7 @@ class SideBar extends React.Component {
 
         <input 
           className={styles.inputSlide}
-          style={{padding: '7px 0',
+          style={{'padding': '7px 0',
                   'width': '165px',
                   'marginLeft': '16px'}}
           id='typeinp'
