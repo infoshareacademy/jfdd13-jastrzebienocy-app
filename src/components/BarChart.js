@@ -11,7 +11,7 @@ class BarChart extends Component {
               labels: ['Kwiecień', 'Maj', 'Czerwiec', 'Wrzesień', 'Październik', 'Listopad'],
               datasets:[
                   {
-                      label: 'Ilość Ućytkowników',
+                      label: 'Ilość Użytkowników',
                       data:[
                           10,
                           30, 
