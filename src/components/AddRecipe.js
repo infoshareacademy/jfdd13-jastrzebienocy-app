@@ -1,9 +1,11 @@
 // Helper styles for demo
 import './helper.css'
 import React from 'react'
+import {Route} from 'react-router-dom'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { Modal } from 'semantic-ui-react'
+import { Modal , Link} from 'semantic-ui-react'
+import MainContent from './MainContent'
 
 const regEx = /^[a-zA-Z ą ć ę ł ś ń ż ź]*$/
 
@@ -16,12 +18,11 @@ class AddRecipe extends React.Component {
   }
 
   render () {
-    const { open } = this.props
+    // const { open } = this.props
     return (
       <div>
         <h1>Nowy przepis</h1>
-        {/* </Modal.Header>
-    <Modal.Content> */}
+        
 
         <Formik
           initialValues={{
@@ -40,19 +41,23 @@ class AddRecipe extends React.Component {
               body: JSON.stringify({ ...values }).toLowerCase() // added to stndarize recipes i base -JK
             }).then(() => {
               actions.setSubmitting(false)
+            }).then(() => {
+              this.props.history.push("/")
+               this.props.history.push("/RecipeView")
             })
           }}
+
           validationSchema={Yup.object().shape({
             name: Yup.string()
-              .required('Required')
+              .required('Pole jest wymagane!')
               .matches(regEx, 'Możesz użyć tylko słów'),
             category: Yup.string(),
-            description: Yup.string().required('Required'),
-            products: Yup.string().required('Required'),
+            description: Yup.string().required('Pole jest wymagane!'),
+            products: Yup.string().required('Pole jest wymagane!'),
             cookingTime: Yup.number()
               .integer()
               .positive(),
-            weight: Yup.number().required('Required'),
+            weight: Yup.number().required('Pole jest wymagane!'),
             imageUrl: Yup.string().url(),
             portions: Yup.number()
               .integer()
@@ -288,8 +293,7 @@ class AddRecipe extends React.Component {
             )
           }}
         </Formik>
-        {/* </Modal.Content>
-    </Modal> */}
+       
       </div>
     )
   }

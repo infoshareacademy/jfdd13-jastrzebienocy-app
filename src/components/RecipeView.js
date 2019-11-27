@@ -26,8 +26,12 @@ class RecipeView extends React.Component {
   }
   render() {
     return (
-      <div className={styles.RecipeView}>
-        <ModalWindow open={this.state.open} onCloseWindow={this.closeWindow} {...this.props.recipe} >
+      <div className={styles.RecipeView} >
+        <ModalWindow 
+        open={this.state.open} 
+        onCloseWindow={this.closeWindow} 
+        onClick={this.closeWindow }
+        {...this.props.recipe} >
          
         </ModalWindow>
         <Segment className={styles.Wrapper}>
