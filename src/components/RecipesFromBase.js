@@ -1,12 +1,15 @@
 import React from 'react'
 import RecipeView from './RecipeView'
-
+import firebase from '../firebase'
 import { Grid } from 'semantic-ui-react'
 import SideBar from './SideBar'
-import { fetchRecipes } from '../services/ForFetchDB'
+
+  import { fetchRecipes, prepareRecipes, watchRecipes } from '../services/ForFetchDB'
+import { bindExpression } from '@babel/types'
 // import { removeTypeDuplicates } from '@babel/types'
 
 export class RecipesFromBase extends React.Component {
+
   constructor (props) {
     super(props)
 
@@ -20,10 +23,14 @@ export class RecipesFromBase extends React.Component {
   }
 
   componentDidMount () {
-    fetchRecipes().then(recipes => {
-      this.setState({ recipes })
-    })
-  }
+   
+    watchRecipes(recipes => {
+      this.setState({recipes})
+     
+    }
+
+      )
+    }
 
   // Filter for products and recipes.
   get filteredRecepies () {
