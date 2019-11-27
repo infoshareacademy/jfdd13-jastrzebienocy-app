@@ -43,14 +43,18 @@ class BarChart extends Component {
   
  
     ///Other configurable options
-    
+  
 
-  options={{
+  options={
+    {
+       responsive: true,
+       maintainAspectRatio: false,
+     },{
+   
     tooltips: {
         bodyFontColor: "white",
         bodyFontSize: 16,
     },
-      
     scales: {
         yAxes: [
           {
