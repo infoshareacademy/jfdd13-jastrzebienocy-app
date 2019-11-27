@@ -50,7 +50,6 @@ class AddRecipe extends React.Component {
           }}
           validationSchema={Yup.object().shape({
             name: Yup.string()
-
               .required('Pole jest wymagane!')
               .matches(regEx, 'Możesz użyć tylko słów'),
             category: Yup.string(),
