@@ -1,10 +1,10 @@
 // Helper styles for demo
 import './helper.css'
 import React from 'react'
-import {Route} from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { Modal , Link} from 'semantic-ui-react'
+import { Modal, Link } from 'semantic-ui-react'
 import MainContent from './MainContent'
 
 const regEx = /^[a-zA-Z ą ć ę ł ś ń ż ź]*$/
@@ -22,7 +22,6 @@ class AddRecipe extends React.Component {
     return (
       <div>
         <h1>Nowy przepis</h1>
-        
 
         <Formik
           initialValues={{
@@ -32,21 +31,22 @@ class AddRecipe extends React.Component {
             products: '',
             cookingTime: '',
             weight: '',
-            imageUrl: '',
+            imageurl: '',
             portions: ''
           }}
           onSubmit={(values, actions) => {
             fetch('https://foodwaste-ecb78.firebaseio.com/recipes.json', {
               method: 'POST',
               body: JSON.stringify({ ...values }).toLowerCase() // added to stndarize recipes i base -JK
-            }).then(() => {
-              actions.setSubmitting(false)
-            }).then(() => {
-              this.props.history.push("/")
-               this.props.history.push("/RecipeView")
             })
+              .then(() => {
+                actions.setSubmitting(false)
+              })
+              .then(() => {
+                this.props.history.push('/')
+                this.props.history.push('/RecipeView')
+              })
           }}
-
           validationSchema={Yup.object().shape({
             name: Yup.string()
               .required('Pole jest wymagane!')
@@ -284,7 +284,9 @@ class AddRecipe extends React.Component {
                     style={{ background: '#689F38' }}
                     type='submit'
                     disabled={isSubmitting}
-                    as a href = ''
+                    as
+                    a
+                    href=''
                   >
                     Wyślij
                   </button>
@@ -293,7 +295,6 @@ class AddRecipe extends React.Component {
             )
           }}
         </Formik>
-       
       </div>
     )
   }

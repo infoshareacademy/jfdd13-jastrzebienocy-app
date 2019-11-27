@@ -9,3 +9,4 @@ export const fetchRecipes = () => {
         return object[key]
       })
     )
+}

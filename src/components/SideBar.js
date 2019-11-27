@@ -4,27 +4,32 @@ import Heart from './Heart'
 import { Icon } from 'semantic-ui-react'
 
 import { Dropdown } from 'semantic-ui-react'
-
+// const regEx = /^[a-z]$/i
 const dropdownI = [
+  {
+    key: 'Wszystkie',
+    text: 'Wszystkie',
+    value: null
+  },
   {
     key: 'Kuchnia włoska',
     text: 'Kuchnia włoska',
-    value: 'Włoska'
+    value: 'włoska'
   },
   {
     key: 'Kuchnia azjatycka',
     text: 'Kuchnia azjatycka',
-    value: 'Azjatycka'
+    value: 'azjatycka'
   },
   {
     key: 'Kuchnia polska',
     text: 'Kuchnia polska',
-    value: 'Polska'
+    value: 'polska'
   },
   {
     key: 'Kuchnia francuska',
     text: 'Kuchnia francuska',
-    value: 'Francuska'
+    value: 'francuska'
   }
 ]
 class SideBar extends React.Component {
@@ -33,9 +38,8 @@ class SideBar extends React.Component {
       <div className={styles.SideBar}>
         <div className={styles.Produkt}>Wyszukaj</div>
         <div className={styles.Produkt}>Produkt:</div>
-        <input  style={{'borderRadius':'25px',
-                         'width': '165px',
-                         'marginLeft': '16px'}}
+        <input
+          style={{ borderRadius: '25px', width: '165px', marginLeft: '16px' }}
           className={styles.Input}
           placeholder='Szukaj ...'
           value={this.props.products}
@@ -49,11 +53,9 @@ class SideBar extends React.Component {
           <span className={styles.WeightDisplay}>{this.props.weigth}</span>g
         </div>
 
-        <input 
+        <input
           className={styles.inputSlide}
-          style={{padding: '7px 0',
-                  'width': '165px',
-                  'marginLeft': '16px'}}
+          style={{ padding: '7px 0', width: '165px', marginLeft: '16px' }}
           id='typeinp'
           type='range'
           min='0'
@@ -69,9 +71,8 @@ class SideBar extends React.Component {
         <div className={styles.Category}>Kategoria:</div>
 
         <div className={styles.dropdown}>
-          <Dropdown  style={{'borderRadius':'25px',
-                             'width': '165px',
-                             'marginLeft': '16px'}}
+          <Dropdown
+            style={{ borderRadius: '25px', width: '165px', marginLeft: '16px' }}
             size='massive'
             placeholder='Kategoria'
             fluid
