@@ -38,7 +38,7 @@ class AddRecipe extends React.Component {
           onSubmit={(values, actions) => {
             fetch('https://foodwaste-ecb78.firebaseio.com/recipes.json', {
               method: 'POST',
-              body: JSON.stringify({ ...values }).toLowerCase() // added to stndarize recipes in base -JK
+              body: JSON.stringify({ ...values }) // .toLowerCase() // added to stndarize recipes in base -JK
             })
               .then(() => {
                 actions.setSubmitting(false)
@@ -50,7 +50,7 @@ class AddRecipe extends React.Component {
           }}
           validationSchema={Yup.object().shape({
             name: Yup.string()
-              .capitalize() // added JK
+
               .required('Pole jest wymagane!')
               .matches(regEx, 'Możesz użyć tylko słów'),
             category: Yup.string(),
