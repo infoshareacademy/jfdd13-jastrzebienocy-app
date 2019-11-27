@@ -38,7 +38,11 @@ class PieChart extends Component {
   width={100}
   height={100}
   
-  options={{ 
+  options={
+    {
+        responsive: true,
+        maintainAspectRatio: false,
+      },{ 
     tooltips: {
         bodyFontColor: "white",
         bodyFontSize: 20,
