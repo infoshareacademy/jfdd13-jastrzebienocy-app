@@ -1,12 +1,15 @@
 import React from 'react'
 import RecipeView from './RecipeView'
-
+import firebase from '../firebase'
 import { Grid } from 'semantic-ui-react'
 import SideBar from './SideBar'
-import { fetchRecipes } from '../services/ForFetchDB'
+
+  import { fetchRecipes, prepareRecipes, watchRecipes } from '../services/ForFetchDB'
+import { bindExpression } from '@babel/types'
 // import { removeTypeDuplicates } from '@babel/types'
 
 export class RecipesFromBase extends React.Component {
+
   constructor (props) {
     super(props)
 
@@ -15,33 +18,38 @@ export class RecipesFromBase extends React.Component {
       products: '',
       weight: 0,
       category: '',
-      showFavorites: false
+      favorites: false
     }
   }
 
   componentDidMount () {
-    fetchRecipes().then(recipes => {
-      this.setState({ recipes })
-    })
-  }
+   
+    watchRecipes(recipes => {
+      this.setState({recipes})
+     
+    }
+
+      )
+    }
 
   // Filter for products and recipes.
   get filteredRecepies () {
     // Destructure state for the products option
     const { recipes, products, weight, category } = this.state
+
     // Condition function for showing filtered recipes
     if (products.length !== 0) {
       // returning of the recipes.
-      console.log(products.toLowerCase())
+      console.log(products)
       return recipes.filter(recipe => {
-        return recipe.products.includes(products)
+        return recipe.products.includes(products.toLowerCase())
       })
     } else if (weight > 0) {
       return recipes.filter(recipe => {
-        console.log(weight)
-        console.log(recipe.weight)
-        return recipe.weight >= weight
+        return recipe.weight <= weight
       })
+    } else if (category === null) {
+      return recipes
     } else if (category.length !== 0) {
       return recipes.filter(recipe => {
         // console.log(category)
@@ -79,13 +87,12 @@ export class RecipesFromBase extends React.Component {
             }}
           />
         </div>
-        <Grid>
+        <Grid style={{ width: '100%' }}>
           {this.filteredRecepies.map(item => (
             <Grid.Column key={item.id} width={8}>
               <RecipeView recipe={item} />
             </Grid.Column>
           ))}
-          
         </Grid>
       </div>
     )

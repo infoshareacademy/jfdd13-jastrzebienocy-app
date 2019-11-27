@@ -12,6 +12,7 @@
     top: 0px;
     align-self: flex-end; 
     height: 7vh;
+    justify-content: space-between;
     /* display: block;
   color: white;
   text-align: center;
@@ -30,22 +31,30 @@
 .Dashboard {
     font-family: "Oswald", sans-serif;
     font-weight: bold;
-    /* color:  white; */
     color: #212121;
     font-size: 24px;
     text-decoration: none;
     padding: 20px;
+    justify-content: flex-end;
 }
 
 .NaviBarRight {
-    flex-basis: 100%;
-    text-align: end;
-    margin-right: 25px;  
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    margin-right: 30px; 
 }
 
 .Profile:hover,
 .Przepisy:hover,
 .Dashboard:hover {
     background-color: #689F38;
-    padding: 10px 4vh
+    padding: 0 21px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+   
 }

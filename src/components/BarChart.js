@@ -8,10 +8,10 @@ class BarChart extends Component {
         super(props);
         this.state = {
             chartData:{
-              labels: ['Kwiecien', 'Maj', 'Czerwiec', 'Wrzesień', 'Październik', 'Listopad'],
+              labels: ['Kwiecień', 'Maj', 'Czerwiec', 'Wrzesień', 'Październik', 'Listopad'],
               datasets:[
                   {
-                      label: 'Ilosc Uzytkownikow',
+                      label: 'Ilość Użytkowników',
                       data:[
                           10,
                           30, 
@@ -43,14 +43,18 @@ class BarChart extends Component {
   
  
     ///Other configurable options
-    
+  
 
-  options={{
+  options={
+    {
+       responsive: true,
+       maintainAspectRatio: false,
+     },{
+   
     tooltips: {
         bodyFontColor: "white",
         bodyFontSize: 16,
     },
-      
     scales: {
         yAxes: [
           {
