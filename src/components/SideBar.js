@@ -28,6 +28,31 @@ const dropdownI = [
     key: 'Kuchnia francuska',
     text: 'Kuchnia francuska',
     value: 'francuska'
+  },
+  {
+    key: 'Kuchnia amerykańska',
+    text: 'Kuchnia amerykańska',
+    value: 'amerykańska'
+  },
+  {
+    key: 'Kuchnia meksykańska',
+    text: 'Kuchnia meksykańska',
+    value: 'meksykańska'
+  },
+  {
+    key: 'Kuchnia śródziemnomorska',
+    text: 'Kuchnia śródziemnomorska',
+    value: 'śródziemnomorska'
+  },
+  {
+    key: 'Kuchnia gruzińska',
+    text: 'Kuchnia gruzińska',
+    value: 'gruzińska'
+  },
+  {
+    key: 'inna',
+    text: 'inna',
+    value: 'inna'
   }
 ]
 class SideBar extends React.Component {
@@ -77,8 +102,7 @@ class SideBar extends React.Component {
             step='50'
             value={this.props.weigth}
             onChange={event => {
-              this.props.onWeigthChange(event.target.value)
-              // console.log(event)
+              this.props.onWeigthChange(Number(event.target.value))
             }}
           />
         </div>
@@ -86,14 +110,6 @@ class SideBar extends React.Component {
         <div className={styles.Category}>Kategoria:</div>
 
         <div className={styles.dropdown}>
-<<<<<<< HEAD
-          <Dropdown  style={{'borderRadius':'25px',
-                             'width': '165px',
-                             'marginLeft': '16px',
-                             'backgroundColor': 'lightGrey',
-                             textAlign: 'center'
-                            }}
-=======
           <Dropdown
             style={{
               borderRadius: '25px',
@@ -101,7 +117,6 @@ class SideBar extends React.Component {
               marginLeft: '16px',
               backgroundColor: 'lightGrey'
             }}
->>>>>>> 8b18aaf49f13538c1e800be570c394b5aba8a351
             size='massive'
             placeholder='Kategoria'
             fluid

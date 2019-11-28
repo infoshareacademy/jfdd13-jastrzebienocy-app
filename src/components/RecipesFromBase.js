@@ -36,27 +36,18 @@ export class RecipesFromBase extends React.Component {
     // Destructure state for the products option
     const { recipes, products, weight, category } = this.state
 
-    // Condition function for showing filtered recipes
-    if (products.length !== 0) {
-      // returning of the recipes.
-      console.log(products)
-      return recipes.filter(recipe => {
-        return recipe.products.includes(products.toLowerCase())
-      })
-    } else if (weight > 0) {
-      return recipes.filter(recipe => {
-        return recipe.weight <= weight
-      })
-    } else if (category === null) {
-      return recipes
-    } else if (category.length !== 0) {
-      return recipes.filter(recipe => {
-        console.log(category)
-        // console.log(recipe.category)
-        return recipe.category.includes(category)
-      })
-    }
-    return recipes
+    const finalData = recipes.filter(recipe => {
+      const productsFilter =
+        recipe.products &&
+        recipe.products.toLowerCase().includes(products.toLowerCase())
+      const weightFilter = weight ? Number(recipe.weight) <= weight : true
+      const categoryFilter = category
+        ? recipe.category.toLowerCase().includes(category.toLowerCase())
+        : true
+
+      return productsFilter && weightFilter && categoryFilter
+    })
+    return finalData
   }
 
   render () {
@@ -75,7 +66,6 @@ export class RecipesFromBase extends React.Component {
               this.setState({
                 weight
               })
-              console.log(this.state.weigth)
             }}
             category={this.state.category}
             onCategoryChange={category => {
