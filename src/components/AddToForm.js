@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input } from 'semantic-ui-react'
+import { Input, Dropdown } from 'semantic-ui-react'
 import styles from './AddToForm.module.css'
 
 class AddForm extends React.Component {
