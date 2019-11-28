@@ -31,6 +31,9 @@ const dropdownI = [
   }
 ]
 class SideBar extends React.Component {
+  state = {
+    icon: 'search'
+  }
   render () {
     return (
       <div className={styles.SideBar}>
@@ -83,6 +86,14 @@ class SideBar extends React.Component {
         <div className={styles.Category}>Kategoria:</div>
 
         <div className={styles.dropdown}>
+<<<<<<< HEAD
+          <Dropdown  style={{'borderRadius':'25px',
+                             'width': '165px',
+                             'marginLeft': '16px',
+                             'backgroundColor': 'lightGrey',
+                             textAlign: 'center'
+                            }}
+=======
           <Dropdown
             style={{
               borderRadius: '25px',
@@ -90,6 +101,7 @@ class SideBar extends React.Component {
               marginLeft: '16px',
               backgroundColor: 'lightGrey'
             }}
+>>>>>>> 8b18aaf49f13538c1e800be570c394b5aba8a351
             size='massive'
             placeholder='Kategoria'
             fluid
@@ -99,7 +111,6 @@ class SideBar extends React.Component {
             value={this.props.category}
             onChange={(event, data) => {
               this.props.onCategoryChange(data.value)
-              // console.log(data)
             }}
           />
         </div>
