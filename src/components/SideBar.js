@@ -28,6 +28,31 @@ const dropdownI = [
     key: 'Kuchnia francuska',
     text: 'Kuchnia francuska',
     value: 'francuska'
+  },
+  {
+    key: 'Kuchnia amerykańska',
+    text: 'Kuchnia amerykańska',
+    value: 'amerykańska'
+  },
+  {
+    key: 'Kuchnia meksykańska',
+    text: 'Kuchnia meksykańska',
+    value: 'meksykańska'
+  },
+  {
+    key: 'Kuchnia śródziemnomorska',
+    text: 'Kuchnia śródziemnomorska',
+    value: 'śródziemnomorska'
+  },
+  {
+    key: 'Kuchnia gruzińska',
+    text: 'Kuchnia gruzińska',
+    value: 'gruzińska'
+  },
+  {
+    key: 'inna',
+    text: 'inna',
+    value: 'inna'
   }
 ]
 class SideBar extends React.Component {
@@ -77,8 +102,7 @@ class SideBar extends React.Component {
             step='50'
             value={this.props.weigth}
             onChange={event => {
-              this.props.onWeigthChange(event.target.value)
-              // console.log(event)
+              this.props.onWeigthChange(Number(event.target.value))
             }}
           />
         </div>
