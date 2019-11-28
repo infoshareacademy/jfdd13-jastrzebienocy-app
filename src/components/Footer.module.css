@@ -1,14 +1,21 @@
 .footerBox {
-  height: 3em;
-  font-size: 0.9em;
-  border-top: 1px solid #000;
+    font-size: 0.9em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+}
+
+.FooterTxt {
+  background-color: pink;
 }
 
 .copywright {
   color: #757575;
   line-height: 1.6em;
   float: left;
-  margin: 1.4em 20px;
+  margin: 15px 20px;
   font-size: 1.1em;
 }
 
@@ -17,15 +24,18 @@
   float: right;
   text-decoration: none;
   color: #000;
-  margin: 1.4em 20px;
+  margin:15px 20px;
   font-size: 1.1em;
 }
+
 .footerLinks:hover {
   background-color: #757575;
   color: #fff;
   border-radius: 5px;
   padding: 0 5px;
 }
+
+/* privacy styles */
 
 .privacy {
   text-align: center;
@@ -34,9 +44,10 @@
 }
 
 .policyText {
-  background-color: #dfdfdf;
+  background-color: #BDBDBD;
   border-radius: 10px;
-  padding: 30px;
+  padding: 15px;
+  margin: 0 0 52px 0;
 }
 
 .policyText p {
@@ -50,5 +61,5 @@
 }
 
 .policyText p:last-child {
-  padding-bottom: 10px;
+  padding-bottom: 30px;
 }
