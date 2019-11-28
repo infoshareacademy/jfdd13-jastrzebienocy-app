@@ -28,6 +28,9 @@ const dropdownI = [
   }
 ]
 class SideBar extends React.Component {
+  state = {
+    icon: 'search'
+  }
   render () {
     return (
       <div className={styles.SideBar}>
