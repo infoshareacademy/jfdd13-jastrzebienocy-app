@@ -9,7 +9,7 @@ import {
   prepareRecipes,
   watchRecipes
 } from '../services/ForFetchDB'
-import { bindExpression } from '@babel/types'
+// import { bindExpression } from '@babel/types'
 // import { removeTypeDuplicates } from '@babel/types'
 
 export class RecipesFromBase extends React.Component {
@@ -20,7 +20,7 @@ export class RecipesFromBase extends React.Component {
       recipes: [],
       name: '',
       products: '',
-      weight: 0,
+      weight: 2000,
       category: '',
       favorites: false
     }
@@ -35,8 +35,8 @@ export class RecipesFromBase extends React.Component {
   // Filter for products and recipes.
   get filteredRecepies () {
     // Destructure state for the products option
-    const { recipes, products, weight, category } = this.state
-
+    const { recipes, products, weight, category, name } = this.state
+    console.log(weight)
     const finalData = recipes.filter(recipe => {
       const productsFilter =
         recipe.products &&
@@ -45,7 +45,9 @@ export class RecipesFromBase extends React.Component {
       const categoryFilter = category
         ? recipe.category.toLowerCase().includes(category.toLowerCase())
         : true
-      return productsFilter && weightFilter && categoryFilter
+      const nameFilter =
+        recipe.name && recipe.name.toLowerCase().includes(name.toLowerCase())
+      return productsFilter && weightFilter && categoryFilter && nameFilter
     })
     return finalData
   }
@@ -55,13 +57,19 @@ export class RecipesFromBase extends React.Component {
       <div style={{ display: 'flex' }}>
         <div style={{ background: 'grey', marginRight: '20px' }}>
           <SideBar
+            name={this.state.name}
+            onNameChange={name => {
+              this.setState({ name })
+              console.log(this.state.name)
+            }}
             products={this.state.products}
-            onProductsChange={products => {
+            onProductsChange={(products, name) => {
               this.setState({
-                products
+                products,
+                name
               })
             }}
-            weigth={this.state.weight}
+            weight={this.state.weight}
             onWeigthChange={weight => {
               this.setState({
                 weight

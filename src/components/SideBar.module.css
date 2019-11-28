@@ -9,7 +9,7 @@
   width: 220px;
 }
 
-.Produkt, .Quantity, .Category, .Search {
+.Product, .Quantity, .Category, .Search, .Name {
   font-family: "Oswald", sans-serif;
   font-weight: bold;
   color: #212121;
@@ -19,7 +19,26 @@
   text-align: center;
 }
 
-.Vawourites {
+.Searching {
+  font-family: serif;
+  font-weight: bold;
+  color: #212121;
+  font-size: 30px;
+  text-decoration: underline;
+  padding: 20px;
+  text-align: center;
+}
+
+.Searching::first-letter {
+  font-family: serif;
+  font-weight: bold;
+  color: #212121;
+  font-size: 40px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.Fawourites {
   font-family: "Oswald", sans-serif;
   font-weight: bold;
   color: #212121;
