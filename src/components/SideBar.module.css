@@ -4,8 +4,10 @@
   scroll-behavior: smooth;
   top: 0px;
   padding: 10px;
-  /* background: rgba(189, 189, 189, 1) 0%, ; */
   height: 88vh;
+  background-color: #fefefe40;
+  /* border: 1px solid #a9a9a9; */
+  border-radius: 0 25% 30% 0;
   width: 220px;
 }
 
