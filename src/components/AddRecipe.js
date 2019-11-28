@@ -6,8 +6,36 @@ import { Formik } from 'formik'
 import * as Yup from 'yup'
 import { Modal, Link, Button} from 'semantic-ui-react'
 import MainContent from './MainContent'
+import styles from './AddRecipe.module.css'
 
 const regEx = /^[a-z\s\bąćśńółężź]{2,}$/i // Modified JK
+const SelectInput = props => {
+  const { name, errors, touched, labelform, tooltiptext } = props;
+  return (
+    <div>
+      <label>
+        <div className={styles.selectCat}>
+          {labelform}
+        </div>
+        <select
+          style={{ width: "100%" , textAlignLast: 'center', color: 'grey', fontSize: '16px'}}
+          className="ui selection dropdown"
+          {...props}
+          error={errors[name] && touched[name]}>
+          <option value="włoska">Kuchnia włoska</option>
+          <option value="francuska">Kuchnia francuska</option>
+          <option value="polska">Kuchnia polska</option>
+          <option value="azjatycka">Kuchnia azjatycka</option>
+          <option value="amerykańska">Kuchnia amerykańska</option>
+          <option value="meksykańska">Kuchnia meksykańska</option>
+          <option value="gruzińska">Kuchnia gruzińska</option>
+          <option value="śródziemnomorska">Kuchnia środziemnomorska</option>
+          <option value="inna">Inna</option>
+        </select>
+      </label>
+    </div>
+  );
+};
 
 class AddRecipe extends React.Component {
   constructor (props) {
@@ -190,7 +218,20 @@ class AddRecipe extends React.Component {
                   <div className='input-feedback'>{errors.description}</div>
                 )}
 
-                <label
+
+                  <SelectInput
+                    labelform="Rodzaj kuchni"
+                    name="category"
+                    placeholder="Wybierz rodzaj kuchni"
+                    onChange={handleChange}
+                    value={values.category}
+                    touched={touched}
+                    errors={errors}
+                    
+                    />
+
+
+                {/* <label
                   htmlFor='category'
                   style={{ display: 'block', margin: '5px' }}
                 >
@@ -211,7 +252,13 @@ class AddRecipe extends React.Component {
                 />
                 {errors.category && touched.category && (
                   <div className='input-feedback'>{errors.name}</div>
-                )}
+                )} */}
+
+
+
+
+
+
 
                 <label
                   htmlFor='cookingTime'
