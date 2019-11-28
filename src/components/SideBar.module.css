@@ -5,9 +5,9 @@
   top: 0px;
   padding: 10px;
   height: 88vh;
-  background-color: #fefefe40;
-  /* border: 1px solid #a9a9a9; */
-  border-radius: 0 25% 30% 0;
+  /* background-color: #D4eFfa;
+  /* border: 1px solid #a9a9a9;
+  border-radius: 25% 0 0 40%;*/
   width: 220px;
 }
 
@@ -40,7 +40,7 @@
   text-align: center;
 }
 
-.Fawourites {
+.Favourites {
   font-family: "Oswald", sans-serif;
   font-weight: bold;
   color: #212121;

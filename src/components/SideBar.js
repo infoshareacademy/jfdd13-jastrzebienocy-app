@@ -144,7 +144,7 @@ class SideBar extends React.Component {
           />
         </div>
         <br />
-        <div className={styles.Fawourites}>
+        <div className={styles.Favourites}>
           Ulubione <Heart />
         </div>
       </div>
