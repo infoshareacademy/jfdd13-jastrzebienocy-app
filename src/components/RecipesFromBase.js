@@ -1,7 +1,7 @@
 import React from 'react'
 import RecipeView from './RecipeView'
 import firebase from '../firebase'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Pagination } from 'semantic-ui-react'
 import SideBar from './SideBar'
 
 import {
@@ -21,7 +21,9 @@ export class RecipesFromBase extends React.Component {
       products: '',
       weight: 0,
       category: '',
-      favorites: false
+      favorites: false,
+      pageItems: 4,
+      currentPage: 1
     }
   }
 
@@ -60,6 +62,11 @@ export class RecipesFromBase extends React.Component {
   }
 
   render () {
+    const {currentPage, pageItems } = this.state
+
+const viewedRecipes = this.filteredRecepies.slice( (currentPage -1) * pageItems ,currentPage * pageItems )
+
+
     return (
       <div style={{ display: 'flex' }}>
         <div style={{ background: 'grey', marginRight: '20px' }}>
@@ -86,8 +93,9 @@ export class RecipesFromBase extends React.Component {
             }}
           />
         </div>
+        <Pagination defaultActivePage={this.state.currentPage} totalPages={Math.ceil(this.filteredRecepies.length/this.state.pageItems)} />
         <Grid style={{ width: '100%' }}>
-          {this.filteredRecepies.map(item => (
+          {viewedRecipes.map(item => (
             <Grid.Column key={item.id} width={8}>
               <RecipeView recipe={item} />
             </Grid.Column>

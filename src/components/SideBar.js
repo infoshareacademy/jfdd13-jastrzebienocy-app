@@ -86,22 +86,12 @@ class SideBar extends React.Component {
         <div className={styles.Category}>Kategoria:</div>
 
         <div className={styles.dropdown}>
-<<<<<<< HEAD
           <Dropdown  style={{'borderRadius':'25px',
                              'width': '165px',
                              'marginLeft': '16px',
                              'backgroundColor': 'lightGrey',
                              textAlign: 'center'
                             }}
-=======
-          <Dropdown
-            style={{
-              borderRadius: '25px',
-              width: '165px',
-              marginLeft: '16px',
-              backgroundColor: 'lightGrey'
-            }}
->>>>>>> 8b18aaf49f13538c1e800be570c394b5aba8a351
             size='massive'
             placeholder='Kategoria'
             fluid
