@@ -45,14 +45,14 @@ const dropdownI = [
     value: 'śródziemnomorska'
   },
   {
-    key: 'Kuchnia gruzińska',
-    text: 'Kuchnia gruzińska',
-    value: 'gruzińska'
+    key: 'Kuchnia gruzińksa',
+    text: 'Kuchnia gruzińksa',
+    value: 'gruzińksa'
   },
   {
-    key: 'inna',
-    text: 'inna',
-    value: 'inna'
+    key: 'Inna',
+    text: 'Inna',
+    value: 'Inna'
   }
 ]
 class SideBar extends React.Component {
@@ -102,7 +102,8 @@ class SideBar extends React.Component {
             step='50'
             value={this.props.weigth}
             onChange={event => {
-              this.props.onWeigthChange(Number(event.target.value))
+              this.props.onWeigthChange(event.target.value)
+              // console.log(event)
             }}
           />
         </div>
@@ -110,12 +111,13 @@ class SideBar extends React.Component {
         <div className={styles.Category}>Kategoria:</div>
 
         <div className={styles.dropdown}>
-          <Dropdown  style={{'borderRadius':'25px',
-                             'width': '165px',
-                             'marginLeft': '16px',
-                             'backgroundColor': 'lightGrey',
-                             textAlign: 'center'
-                            }}
+          <Dropdown
+            style={{
+              borderRadius: '25px',
+              width: '165px',
+              marginLeft: '16px',
+              backgroundColor: 'lightGrey'
+            }}
             size='massive'
             placeholder='Kategoria'
             fluid

@@ -18,6 +18,7 @@ export class RecipesFromBase extends React.Component {
 
     this.state = {
       recipes: [],
+      name: '',
       products: '',
       weight: 0,
       category: '',
@@ -44,7 +45,6 @@ export class RecipesFromBase extends React.Component {
       const categoryFilter = category
         ? recipe.category.toLowerCase().includes(category.toLowerCase())
         : true
-
       return productsFilter && weightFilter && categoryFilter
     })
     return finalData
