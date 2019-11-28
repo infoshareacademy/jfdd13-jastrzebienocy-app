@@ -4,7 +4,7 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { Modal, Link } from 'semantic-ui-react'
+import { Modal, Link, Button} from 'semantic-ui-react'
 import MainContent from './MainContent'
 
 const regEx = /^[a-z\s\bąćśńółężź]{2,}$/i // Modified JK
@@ -57,12 +57,15 @@ class AddRecipe extends React.Component {
               ),
             category: Yup.string(),
             description: Yup.string().required('Pole jest wymagane!'),
-            products: Yup.string().required('Pole jest wymagane!'),
-            cookingTime: Yup.number()
+            products: Yup.string().required('Pole jest wymagane!') .matches(
+              regEx,
+              'Możesz użyć tylko słów o minimalnej długości dwóch znaków'
+            ),
+            cookingTime: Yup.number().typeError('Czas przygotowania podaj w minutach!')
               .integer()
               .positive(),
-            weight: Yup.number()
-              .positive()
+            weight: Yup.number().typeError('Waga musi być cyfrą/liczbą!')
+              .positive('Waga nie może być ujemna!')
               .required('Pole jest wymagane!'),
 
             imageUrl: Yup.string().url(),
@@ -145,7 +148,7 @@ class AddRecipe extends React.Component {
                   htmlFor='weight'
                   style={{ display: 'block', margin: '5px' }}
                 >
-                  <p>Ilość</p>
+                  <p>Ilość w gramach</p>
                 </label>
                 <input
                   id='weight'
@@ -214,7 +217,7 @@ class AddRecipe extends React.Component {
                   htmlFor='cookingTime'
                   style={{ display: 'block', margin: '5px' }}
                 >
-                  Czas przygotowania
+                  Czas przygotowania w minutach
                 </label>
                 <input
                   id='cookingTime'
@@ -280,24 +283,21 @@ class AddRecipe extends React.Component {
                 )}
 
                 <div className='Buttons'>
-                  <button
-                    style={{ background: '#FFC107' }}
-                    type='button'
-                    className='outline'
+                  <Button
+                    color= 'black'                
                     onClick={handleReset}
                     disabled={!dirty || isSubmitting}
                   >
                     Wyczyść
-                  </button>
-                  <button
-                    style={{ background: '#689F38' }}
+                  </Button>
+                  <Button
+                   color= 'green'
                     type='submit'
                     disabled={isSubmitting}
-                    a
-                    href=''
+                   
                   >
                     Wyślij
-                  </button>
+                  </Button>
                 </div>
               </form>
             )
