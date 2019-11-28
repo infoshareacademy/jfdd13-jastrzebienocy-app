@@ -1,0 +1,16 @@
+.RegisterForm{
+    background-color: pink;
+    padding: 20px;
+    height: 90vh;
+}
+
+.Inputs{
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+
+.Register{
+    display: block;
+    margin: auto;
+}
