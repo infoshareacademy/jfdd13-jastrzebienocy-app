@@ -4,27 +4,32 @@ import Heart from './Heart'
 import { Icon } from 'semantic-ui-react'
 
 import { Dropdown } from 'semantic-ui-react'
-
+// const regEx = /^[a-z]$/i
 const dropdownI = [
+  {
+    key: 'Wszystkie',
+    text: 'Wszystkie',
+    value: null
+  },
   {
     key: 'Kuchnia włoska',
     text: 'Kuchnia włoska',
-    value: 'Włoska'
+    value: 'włoska'
   },
   {
     key: 'Kuchnia azjatycka',
     text: 'Kuchnia azjatycka',
-    value: 'Azjatycka'
+    value: 'azjatycka'
   },
   {
     key: 'Kuchnia polska',
     text: 'Kuchnia polska',
-    value: 'Polska'
+    value: 'polska'
   },
   {
     key: 'Kuchnia francuska',
     text: 'Kuchnia francuska',
-    value: 'Francuska'
+    value: 'francuska'
   }
 ]
 class SideBar extends React.Component {
@@ -36,10 +41,13 @@ class SideBar extends React.Component {
       <div className={styles.SideBar}>
         <div className={styles.Produkt}>Wyszukaj</div>
         <div className={styles.Produkt}>Produkt:</div>
-        <input  style={{'borderRadius':'25px',
-                         'width': '165px',
-                         'marginLeft': '16px',
-                         backgroundColor: 'lightGrey'}}
+        <input
+          style={{
+            borderRadius: '25px',
+            width: '165px',
+            marginLeft: '16px',
+            backgroundColor: 'lightGrey'
+          }}
           className={styles.Input}
           placeholder='Szukaj ...'
           value={this.props.products}
@@ -80,12 +88,22 @@ class SideBar extends React.Component {
         <div className={styles.Category}>Kategoria:</div>
 
         <div className={styles.dropdown}>
+<<<<<<< HEAD
           <Dropdown  style={{'borderRadius':'25px',
                              'width': '165px',
                              'marginLeft': '16px',
                              'backgroundColor': 'lightGrey',
                              textAlign: 'center'
                             }}
+=======
+          <Dropdown
+            style={{
+              borderRadius: '25px',
+              width: '165px',
+              marginLeft: '16px',
+              backgroundColor: 'lightGrey'
+            }}
+>>>>>>> 8b18aaf49f13538c1e800be570c394b5aba8a351
             size='massive'
             placeholder='Kategoria'
             fluid

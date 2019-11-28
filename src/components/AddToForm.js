@@ -1,16 +1,3 @@
-// handleInputChange = () => {
-// 	this.setState({
-// 		products: this.search.value
-// 	});
-// };
-
-// constructor() {
-// 	super();
-
-// 	this.state = {
-// 		filteredProducts: 'this.Recipies.products'
-// 	};
-// }
 import React from 'react'
 import { Input } from 'semantic-ui-react'
 import styles from './AddToForm.module.css'
@@ -26,7 +13,7 @@ class AddForm extends React.Component {
       cookingTime: '',
       weight: '',
       portions: '',
-      showFavourites: false
+      favourites: false
     }
   }
 
@@ -45,7 +32,7 @@ class AddForm extends React.Component {
       method: 'POST',
       body: JSON.stringify({
         recipe: this.state
-      })
+      }) // .toLowerCase()
     })
       .then(res => res.json())
       .then(res => console.log(res))
