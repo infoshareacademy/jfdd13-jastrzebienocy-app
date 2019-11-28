@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./Profile.module.css";
 import ProfilePicture from "./images/ProfilePicture.jpg";
 import { Icon } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
+
 
 class Profile extends React.Component {
     state = {
@@ -10,7 +12,7 @@ class Profile extends React.Component {
     render() {
         return (
             <div>
-                <div className={styles.ProfileTxt}>już wkrótce... Miejsce na twój profil!</div>
+                <div className={styles.ProfileTxt}><NavLink activeClassName={"active-link"} to="/RegisterForm" className={styles.Dashboard} exact>Rejestracja</NavLink></div>
                 <div className={styles.ProfileMain}>
                     <div className={styles.ProfileFlex}>
                         <img src={ProfilePicture} className={styles.ProfilePicture} alt={'Profile picture'}></img>
@@ -27,5 +29,7 @@ class Profile extends React.Component {
         )
     }
 }
+
+
 
 export default Profile;
