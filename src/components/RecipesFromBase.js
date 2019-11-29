@@ -11,7 +11,7 @@ import {
   prepareRecipes,
   watchRecipes
 } from '../services/ForFetchDB'
-import { bindExpression } from '@babel/types'
+// import { bindExpression } from '@babel/types'
 // import { removeTypeDuplicates } from '@babel/types'
 
 export class RecipesFromBase extends React.Component {
@@ -20,8 +20,9 @@ export class RecipesFromBase extends React.Component {
 
     this.state = {
       recipes: [],
+      name: '',
       products: '',
-      weight: 0,
+      weight: 2000,
       category: '',
       favorites: false,
       pageItems: 4,
@@ -41,29 +42,24 @@ export class RecipesFromBase extends React.Component {
   // Filter for products and recipes.
   get filteredRecepies () {
     // Destructure state for the products option
-    const { recipes, products, weight, category } = this.state
+    const { recipes, products, weight, category, name } = this.state
+    console.log(name)
+    console.log(weight, recipes)
+    const finalData = recipes.filter(recipe => {
+      const productsFilter =
+        recipe.products &&
+        recipe.products.toLowerCase().includes(products.toLowerCase())
+      const nameFilter =
+        recipe.name && recipe.name.toLowerCase().includes(name.toLowerCase())
+      const weightFilter = weight ? Number(recipe.weight) <= weight : true
+      const categoryFilter = category
+        ? recipe.category.toLowerCase().includes(category.toLowerCase())
+        : true
 
-    // Condition function for showing filtered recipes
-    if (products.length !== 0) {
-      // returning of the recipes.
-      console.log(products)
-      return recipes.filter(recipe => {
-        return recipe.products.includes(products.toLowerCase())
-      })
-    } else if (weight > 0) {
-      return recipes.filter(recipe => {
-        return recipe.weight <= weight
-      })
-    } else if (category === null) {
-      return recipes
-    } else if (category.length !== 0) {
-      return recipes.filter(recipe => {
-        console.log(category)
-        // console.log(recipe.category)
-        return recipe.category.includes(category)
-      })
-    }
-    return recipes
+      console.log(recipe.name)
+      return productsFilter && nameFilter && weightFilter && categoryFilter
+    })
+    return finalData
   }
 
   render () {
@@ -76,18 +72,22 @@ export class RecipesFromBase extends React.Component {
       <div style={{ display: 'flex' }}>
         <div style={{ background: 'grey', marginRight: '20px' }}>
           <SideBar
+            name={this.state.name}
+            onNameChange={name => {
+              this.setState({ name })
+              console.log(this.state.name)
+            }}
             products={this.state.products}
             onProductsChange={products => {
               this.setState({
                 products
               })
             }}
-            weigth={this.state.weight}
+            weight={this.state.weight}
             onWeigthChange={weight => {
               this.setState({
                 weight
               })
-              console.log(this.state.weigth)
             }}
             category={this.state.category}
             onCategoryChange={category => {

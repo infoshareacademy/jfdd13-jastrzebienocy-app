@@ -28,6 +28,31 @@ const dropdownI = [
     key: 'Kuchnia francuska',
     text: 'Kuchnia francuska',
     value: 'francuska'
+  },
+  {
+    key: 'Kuchnia amerykańska',
+    text: 'Kuchnia amerykańska',
+    value: 'amerykańska'
+  },
+  {
+    key: 'Kuchnia meksykańska',
+    text: 'Kuchnia meksykańska',
+    value: 'meksykańska'
+  },
+  {
+    key: 'Kuchnia śródziemnomorska',
+    text: 'Kuchnia śródziemnomorska',
+    value: 'śródziemnomorska'
+  },
+  {
+    key: 'Kuchnia gruzińksa',
+    text: 'Kuchnia gruzińksa',
+    value: 'gruzińksa'
+  },
+  {
+    key: 'Inna',
+    text: 'Inna',
+    value: 'Inna'
   }
 ]
 class SideBar extends React.Component {
@@ -37,8 +62,8 @@ class SideBar extends React.Component {
   render () {
     return (
       <div className={styles.SideBar}>
-        <div className={styles.Produkt}>Wyszukaj</div>
-        <div className={styles.Produkt}>Produkt:</div>
+        <div className={styles.Searching}>Wyszukaj:</div>
+        <div className={styles.Name}>Nazwa:</div>
         <input
           style={{
             borderRadius: '25px',
@@ -47,7 +72,23 @@ class SideBar extends React.Component {
             backgroundColor: 'lightGrey'
           }}
           className={styles.Input}
-          placeholder='Szukaj ...'
+          placeholder='Nazwa Potrawy ...'
+          value={this.props.name}
+          onChange={event => {
+            this.props.onNameChange(event.target.value)
+            // console.log(event)
+          }}
+        />
+        <div className={styles.Product}>Produkt:</div>
+        <input
+          style={{
+            borderRadius: '25px',
+            width: '165px',
+            marginLeft: '16px',
+            backgroundColor: 'lightGrey'
+          }}
+          className={styles.Input}
+          placeholder='Nazwa Produktu ...'
           value={this.props.products}
           onChange={event => {
             this.props.onProductsChange(event.target.value)
@@ -56,16 +97,15 @@ class SideBar extends React.Component {
         />
         <div className={styles.Quantity}>
           Masa:{' '}
-          <span className={styles.WeightDisplay}>{this.props.weigth}</span>g
+          <span className={styles.WeightDisplay}>{this.props.weight}</span>g
         </div>
-
         <div className={styles.inputSlide}>
           <input
             style={{
               padding: '7px 0',
               width: '165px',
               marginLeft: '16px',
-              webkitAppearance: 'media-volume-sliderthumb',
+              WebkitAppearance: 'media-volume-sliderthumb',
               borderRadius: '51px',
               height: '20px',
               backgroundColor: 'lightGrey'
@@ -75,16 +115,14 @@ class SideBar extends React.Component {
             min='0'
             max='2000'
             step='50'
-            value={this.props.weigth}
+            value={this.props.weight}
             onChange={event => {
               this.props.onWeigthChange(event.target.value)
               // console.log(event)
             }}
           />
         </div>
-
         <div className={styles.Category}>Kategoria:</div>
-
         <div className={styles.dropdown}>
           <Dropdown  style={{'borderRadius':'25px',
                              'width': '165px',
@@ -104,9 +142,8 @@ class SideBar extends React.Component {
             }}
           />
         </div>
-
         <br />
-        <div className={styles.Vawourites}>
+        <div className={styles.Favourites}>
           Ulubione <Heart />
         </div>
       </div>
