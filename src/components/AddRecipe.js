@@ -328,6 +328,16 @@ class AddRecipe extends React.Component {
                   <div className='input-feedback'>{errors.portions}</div>
                 )}
 
+                <input 
+                id='favorites'
+                type= 'text'
+                value={values.favorites}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={styles.None}
+                />
+
+
                 <div className='Buttons'>
                   <Button
                     color='black'
