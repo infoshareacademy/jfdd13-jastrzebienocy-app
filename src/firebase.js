@@ -15,3 +15,54 @@ import firebase from "firebase";
 
   firebase.initializeApp(firebaseConfig);
   export default firebase;
+
+
+// register
+
+   export function register( email, password, name) {
+
+    return firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then(value => {
+      const user = firebase.auth().currentUser;
+      user
+        .updateProfile({
+          displayName: "name"
+        })
+        .then(() => {
+          console.log('Poprawnie zarejestrowano dane: email, hasło i imię');
+            firebase
+              .database()
+              .ref("/users")
+              .push({
+                id: user.uid,
+                name: "dupa",
+                email,
+                favorites: []
+              });
+        });
+    }).catch(function(error) { 
+      console.log('error', error)});
+
+
+
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // [START_EXCLUDE]
+    if (errorCode == 'auth/weak-password') {
+      alert('The password is too weak.');
+    } else {
+      alert(errorMessage);
+    }
+    console.log(error);
+    // [END_EXCLUDE]
+  });
+  // [END createwithemail]
+}
+
+// login 
+
+
