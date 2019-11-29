@@ -7,13 +7,13 @@ class Heart extends React.Component {
   }
 
   handleOnClick = () => {
-    this.setState({ icon: this.state.icon === 'heart' ? 'heart outline' : 'heart' })
+    this.setState({
+      icon: this.state.icon === 'heart' ? 'heart outline' : 'heart'
+    })
   }
-  render() {
+  render () {
     return <Icon onClick={this.handleOnClick} name={this.state.icon} />
   }
 }
 
 export default Heart
-
-
