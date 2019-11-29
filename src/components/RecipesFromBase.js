@@ -3,6 +3,7 @@ import RecipeView from './RecipeView'
 import firebase from '../firebase'
 import { Grid, Pagination } from 'semantic-ui-react'
 import SideBar from './SideBar'
+import styles from "./RecipesFromBase.module.css";
 
 
 import {
@@ -105,7 +106,7 @@ export class RecipesFromBase extends React.Component {
             </Grid.Column>
           ))}
         </Grid>
-        <div>
+        <div className={styles.pagMiddle}>
         <Pagination  
         onPageChange={this.handlePaginationChange} 
         activePage={this.state.activePage} 
