@@ -1,5 +1,5 @@
-const apiUrl = 'https://whatever-is-fine.firebaseio.com';
-const appKey = 'AIzaSyD9aWG_R2oswWo1gXmlfV_2QNL_iO0HWQs';
+const apiUrl = 'https://foodwaste-ecb78.firebaseio.com';
+const appKey = 'AIzaSyCVVIiKXCqCGhTP7KCs1EkrTN7rm116-eI';
 
 class Api {
     user = null;
