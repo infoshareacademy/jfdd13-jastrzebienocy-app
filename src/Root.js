@@ -17,8 +17,7 @@ import Footer from "./components/Footer";
 import Privacy from "./components/Privacy";
 import { RecipesFromBase } from './components/RecipesFromBase';
 import {RegisterSignIn} from './components/email/RegisterSignIn';
-import Login from './screens/Login'
-import Register from './screens/Register';
+
 
 const Root = () => {
     return (
