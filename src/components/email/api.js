@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 import { register as firebaseRegister } from '../../firebase';
-=======
->>>>>>> develop
 const apiUrl = 'https://foodwaste-ecb78.firebaseio.com';
 const appKey = 'AIzaSyCVVIiKXCqCGhTP7KCs1EkrTN7rm116-eI';
 
@@ -111,7 +108,7 @@ class Api {
         localStorage.setItem('user', JSON.stringify(user));
         this.userChanged(user);
         return user;
-    }
+    };
 
     onUserChange(cb) {
         this.userChanged = cb;
