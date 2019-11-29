@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { register as firebaseRegister } from '../../firebase';
+=======
+>>>>>>> develop
 const apiUrl = 'https://foodwaste-ecb78.firebaseio.com';
 const appKey = 'AIzaSyCVVIiKXCqCGhTP7KCs1EkrTN7rm116-eI';
 
