@@ -26,6 +26,9 @@ export class RecipesFromBase extends React.Component {
       currentPage: 1
     }
   }
+  handleInputChange = (e, { value }) => this.setState({ currentPage: value })
+  handlePaginationChange = (e, { currentPage }) => this.setState({ currentPage })
+
 
   componentDidMount () {
     watchRecipes(recipes => {
@@ -93,13 +96,14 @@ const viewedRecipes = this.filteredRecepies.slice( (currentPage -1) * pageItems 
             }}
           />
         </div>
-        <Pagination defaultActivePage={this.state.currentPage} totalPages={Math.ceil(this.filteredRecepies.length/this.state.pageItems)} />
+        <Pagination  onPageChange={this.handlePaginationChange} defaultActivePage={this.state.currentPage} totalPages={Math.ceil(this.filteredRecepies.length/this.state.pageItems)} />
         <Grid style={{ width: '100%' }}>
           {viewedRecipes.map(item => (
             <Grid.Column key={item.id} width={8}>
               <RecipeView recipe={item} />
             </Grid.Column>
           ))}
+         
         </Grid>
       </div>
     )
