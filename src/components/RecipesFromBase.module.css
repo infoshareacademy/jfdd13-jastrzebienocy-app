@@ -1,4 +1,5 @@
 .pagMiddle {
-    margin: 0 auto;
-    text-align: center;
+   position: fixed;
+   bottom: 10%;
+   left:49%;
 }
