@@ -5,12 +5,23 @@
 }
 
 .Inputs{
-    width: 50%;
-    display: block;
+    width: 20%;
     margin: auto;
+    display: block;
+    
 }
 
 .Register{
     display: block;
     margin: auto;
+    padding: 20px;
+    background-color: grey;
 }
+
+.RegPage{
+    height: 90vh;
+}
+
+/* .mailBox{
+    background-color: pink;
+} */
