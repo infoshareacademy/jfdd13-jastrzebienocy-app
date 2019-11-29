@@ -23,11 +23,11 @@ export class RecipesFromBase extends React.Component {
       category: '',
       favorites: false,
       pageItems: 4,
-      currentPage: 1
+      activePage: 1
     }
   }
-  handleInputChange = (e, { value }) => this.setState({ currentPage: value })
-  handlePaginationChange = (e, { currentPage }) => this.setState({ currentPage })
+
+  handlePaginationChange = (e, { activePage }) => this.setState({ activePage })
 
 
   componentDidMount () {
@@ -65,9 +65,9 @@ export class RecipesFromBase extends React.Component {
   }
 
   render () {
-    const {currentPage, pageItems } = this.state
-
-const viewedRecipes = this.filteredRecepies.slice( (currentPage -1) * pageItems ,currentPage * pageItems )
+    const {activePage, pageItems } = this.state
+    console.log(activePage)
+    const viewedRecipes = this.filteredRecepies.slice( (activePage -1) * pageItems ,activePage * pageItems )
 
 
     return (
@@ -96,7 +96,11 @@ const viewedRecipes = this.filteredRecepies.slice( (currentPage -1) * pageItems 
             }}
           />
         </div>
-        <Pagination  onPageChange={this.handlePaginationChange} defaultActivePage={this.state.currentPage} totalPages={Math.ceil(this.filteredRecepies.length/this.state.pageItems)} />
+        <Pagination  
+        onPageChange={this.handlePaginationChange} 
+        activePage={this.state.activePage} 
+        totalPages={Math.ceil(this.filteredRecepies.length/this.state.pageItems)} 
+        />
         <Grid style={{ width: '100%' }}>
           {viewedRecipes.map(item => (
             <Grid.Column key={item.id} width={8}>
