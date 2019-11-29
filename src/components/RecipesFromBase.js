@@ -1,8 +1,10 @@
 import React from 'react'
 import RecipeView from './RecipeView'
 import firebase from '../firebase'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Pagination } from 'semantic-ui-react'
 import SideBar from './SideBar'
+import styles from "./RecipesFromBase.module.css";
+
 
 import {
   fetchRecipes,
@@ -22,9 +24,14 @@ export class RecipesFromBase extends React.Component {
       products: '',
       weight: 2000,
       category: '',
-      favorites: false
+      favorites: false,
+      pageItems: 4,
+      activePage: 1
     }
   }
+
+  handlePaginationChange = (e, { activePage }) => this.setState({ activePage })
+
 
   componentDidMount () {
     watchRecipes(recipes => {
@@ -36,23 +43,31 @@ export class RecipesFromBase extends React.Component {
   get filteredRecepies () {
     // Destructure state for the products option
     const { recipes, products, weight, category, name } = this.state
-    console.log(weight)
+    console.log(name)
+    console.log(weight, recipes)
     const finalData = recipes.filter(recipe => {
       const productsFilter =
         recipe.products &&
         recipe.products.toLowerCase().includes(products.toLowerCase())
+      const nameFilter =
+        recipe.name && recipe.name.toLowerCase().includes(name.toLowerCase())
       const weightFilter = weight ? Number(recipe.weight) <= weight : true
       const categoryFilter = category
         ? recipe.category.toLowerCase().includes(category.toLowerCase())
         : true
-      const nameFilter =
-        recipe.name && recipe.name.toLowerCase().includes(name.toLowerCase())
-      return productsFilter && weightFilter && categoryFilter && nameFilter
+
+      console.log(recipe.name)
+      return productsFilter && nameFilter && weightFilter && categoryFilter
     })
     return finalData
   }
 
   render () {
+    const {activePage, pageItems } = this.state
+    console.log(activePage)
+    const viewedRecipes = this.filteredRecepies.slice( (activePage -1) * pageItems ,activePage * pageItems )
+
+
     return (
       <div style={{ display: 'flex' }}>
         <div style={{ background: 'grey', marginRight: '20px' }}>
@@ -63,10 +78,9 @@ export class RecipesFromBase extends React.Component {
               console.log(this.state.name)
             }}
             products={this.state.products}
-            onProductsChange={(products, name) => {
+            onProductsChange={products => {
               this.setState({
-                products,
-                name
+                products
               })
             }}
             weight={this.state.weight}
@@ -84,13 +98,23 @@ export class RecipesFromBase extends React.Component {
             }}
           />
         </div>
-        <Grid style={{ width: '100%' }}>
-          {this.filteredRecepies.map(item => (
+       <div>
+       <Grid style={{ width: '100%' }}>
+          {viewedRecipes.map(item => (
             <Grid.Column key={item.id} width={8}>
               <RecipeView recipe={item} />
             </Grid.Column>
           ))}
         </Grid>
+        <div className={styles.pagMiddle}>
+        <Pagination  
+        onPageChange={this.handlePaginationChange} 
+        activePage={this.state.activePage} 
+        totalPages={Math.ceil(this.filteredRecepies.length/this.state.pageItems)} 
+        />
+      </div>
+       </div>
+       
       </div>
     )
   }
