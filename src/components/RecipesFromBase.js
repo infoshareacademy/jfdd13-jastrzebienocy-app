@@ -4,6 +4,7 @@ import firebase from '../firebase'
 import { Grid, Pagination } from 'semantic-ui-react'
 import SideBar from './SideBar'
 
+
 import {
   fetchRecipes,
   prepareRecipes,
@@ -96,19 +97,23 @@ export class RecipesFromBase extends React.Component {
             }}
           />
         </div>
-        <Pagination  
-        onPageChange={this.handlePaginationChange} 
-        activePage={this.state.activePage} 
-        totalPages={Math.ceil(this.filteredRecepies.length/this.state.pageItems)} 
-        />
-        <Grid style={{ width: '100%' }}>
+       <div>
+       <Grid style={{ width: '100%' }}>
           {viewedRecipes.map(item => (
             <Grid.Column key={item.id} width={8}>
               <RecipeView recipe={item} />
             </Grid.Column>
           ))}
-         
         </Grid>
+        <div>
+        <Pagination  
+        onPageChange={this.handlePaginationChange} 
+        activePage={this.state.activePage} 
+        totalPages={Math.ceil(this.filteredRecepies.length/this.state.pageItems)} 
+        />
+      </div>
+       </div>
+       
       </div>
     )
   }
