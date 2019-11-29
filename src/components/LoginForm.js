@@ -1,7 +1,7 @@
 // import React from 'react';
 // import styles from './RegisterForm.module.css';
 
-// class RegisterForm extends React.Component {
+// class LoginForm extends React.Component {
 // 	state = {
 // 		email: '',
 //         password: '',
@@ -70,7 +70,7 @@
 //         {imBusy ? (
 //             <span>Proszę czekać</span>
 //         ) : (
-//             <div className={styles.RegisterForm}>
+//             <div className={styles.LoginForm}>
 //             <form onSubmit={this.onFormSubmit}>
 //                 <div className={styles.Inputs}>
 //                 <div>
@@ -109,8 +109,8 @@
 //                     onChange={this.handleChange}
 //                     />
 //                 </div>
-//                 <div className={styles.Register}>
-//                     <button type="submit">Zarejestruj</button>
+//                 <div className={styles.Login}>
+//                     <button type="submit">Zaloguj</button>
 //                 </div>
 //                 {isValidated && <span>Stworzono użytkownika</span>}
 //                 {imWithError && <span>Błąd walidacji</span>}
@@ -122,4 +122,4 @@
 // }
 // }
 
-// export default RegisterForm;
+// export default LoginForm;
