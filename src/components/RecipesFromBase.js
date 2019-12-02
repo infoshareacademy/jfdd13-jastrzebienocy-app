@@ -1,9 +1,9 @@
-import React from "react";
-import RecipeView from "./RecipeView";
-import firebase from "../firebase";
-import { Grid, Pagination } from "semantic-ui-react";
-import SideBar from "./SideBar";
-import styles from "./RecipesFromBase.module.css";
+import React from 'react'
+import RecipeView from './RecipeView'
+import firebase from '../firebase'
+import { Grid, Pagination } from 'semantic-ui-react'
+import SideBar from './SideBar'
+import styles from './RecipesFromBase.module.css'
 
 import {
   fetchRecipes,
@@ -29,9 +29,9 @@ export class RecipesFromBase extends React.Component {
     };
   }
 
-  handlePaginationChange = (e, { activePage }) => this.setState({ activePage });
+  handlePaginationChange = (e, { activePage }) => this.setState({ activePage })
 
-  componentDidMount() {
+  componentDidMount () {
     watchRecipes(recipes => {
       this.setState({ recipes });
     });
@@ -40,9 +40,9 @@ export class RecipesFromBase extends React.Component {
   // Filter for products and recipes.
   get filteredRecepies() {
     // Destructure state for the products option
-    const { recipes, products, weight, category, name } = this.state;
-    console.log(name);
-    console.log(weight, recipes);
+    const { recipes, products, weight, category, name, favourites } = this.state
+    // console.log(name)
+    // console.log(weight, recipes)
     const finalData = recipes.filter(recipe => {
       const productsFilter =
         recipe.products &&
@@ -52,21 +52,27 @@ export class RecipesFromBase extends React.Component {
       const weightFilter = weight ? Number(recipe.weight) <= weight : true;
       const categoryFilter = category
         ? recipe.category.toLowerCase().includes(category.toLowerCase())
-        : true;
-
-      console.log(recipe.name);
-      return productsFilter && nameFilter && weightFilter && categoryFilter;
-    });
-    return finalData;
+        : true
+      const favouritesFilter = favourites === true ? recipe.favourites : false
+      // console.log(recipe.name)
+      return (
+        productsFilter &&
+        nameFilter &&
+        weightFilter &&
+        categoryFilter &&
+        favouritesFilter
+      )
+    })
+    return finalData
   }
 
-  render() {
-    const { activePage, pageItems } = this.state;
-    console.log(activePage);
+  render () {
+    const { activePage, pageItems } = this.state
+    console.log(activePage)
     const viewedRecipes = this.filteredRecepies.slice(
       (activePage - 1) * pageItems,
       activePage * pageItems
-    );
+    )
 
     return (
       <div style={{ display: "flex" }}>
@@ -95,6 +101,11 @@ export class RecipesFromBase extends React.Component {
                 category
               });
               console.log(category);
+            }}
+            favourites={this.state.favourites}
+            onFavouritesChange={favourites => {
+              this.setState({ favourites })
+              console.log(favourites)
             }}
           />
         </div>
