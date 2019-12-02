@@ -1,6 +1,5 @@
 import React from 'react'
 import { Icon } from 'semantic-ui-react'
-
 class Heart extends React.Component {
   state = {
     checked: false
@@ -30,5 +29,4 @@ class Heart extends React.Component {
     )
   }
 }
-
 export default Heart
