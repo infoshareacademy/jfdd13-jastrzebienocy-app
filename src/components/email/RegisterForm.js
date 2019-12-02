@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from '..//RegisterForm.module.css';
+import  {RegisterSignIn} from './RegisterSignIn'
 import { NavLink, Link } from "react-router-dom";
+import api from './api';
 
 export default class RegisterForm extends React.Component {
     state = {
@@ -9,11 +11,15 @@ export default class RegisterForm extends React.Component {
         password: '',
         err: ''
     };
-
+    
     onSubmit = e => {
+        console.log(api)
+        
         e.preventDefault();
-        this.props.apiMethod(this.state.email, this.state.password, this.state.name)
+        api.register(this.state.email, this.state.password, this.state.name)
             .catch(err => this.setState({ err: err.message }));
+        // this.props.apiMethod(this.state.email, this.state.password, this.state.name)
+        //     .catch(err => this.setState({ err: err.message }));
     }
 
     render() {
@@ -42,6 +48,7 @@ export default class RegisterForm extends React.Component {
                         <p className={styles.MailParBelow}>Tworząc u Nas konto zgadzasz sie na naszą <Link to="/privacy" className={styles.footerLinks} >Politykę prywatności</Link></p>
                     </div>
                     <button type="submit">Zatwierdź</button>
+                    {/* <RegisterSignIn></RegisterSignIn> */}
                     {this.state.err && <p style={{ color: 'red' }}>{this.state.err}</p>}
                     <h1 className={styles.Register}>Posiadasz już konto?
                 <NavLink activeClassName={"active-link"} to="/" className={styles.Dashboard} exact>  Zaloguj się!</NavLink>
