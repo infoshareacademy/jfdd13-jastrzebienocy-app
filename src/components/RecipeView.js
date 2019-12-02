@@ -44,7 +44,8 @@ class RecipeView extends React.Component {
                   width: 200,
                   height: 200,
                   objectFit: 'cover',
-                  objectPosition: 'center'
+                  objectPosition: 'center',
+                  cursor: 'pointer'
                 }}
                 size='medium'
                 floated='left'
@@ -59,6 +60,7 @@ class RecipeView extends React.Component {
                   onClick={() => {
                     this.showModalWindow()
                   }}
+                  style={{cursor: 'pointer'}}
                 >
                   {this.props.recipe.name}
                 </p>
@@ -70,6 +72,7 @@ class RecipeView extends React.Component {
                 onClick={() => {
                   this.showModalWindow()
                 }}
+                style={{cursor: 'pointer'}}
                 className={styles.ShortDescription}
               >
                 <div>

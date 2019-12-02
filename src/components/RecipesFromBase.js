@@ -1,8 +1,10 @@
 import React from 'react'
 import RecipeView from './RecipeView'
 import firebase from '../firebase'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Pagination } from 'semantic-ui-react'
 import SideBar from './SideBar'
+import styles from "./RecipesFromBase.module.css";
+
 
 import {
   fetchRecipes,
@@ -22,9 +24,14 @@ export class RecipesFromBase extends React.Component {
       products: '',
       weight: 2000,
       category: '',
-      favorites: false
+      favorites: false,
+      pageItems: 4,
+      activePage: 1
     }
   }
+
+  handlePaginationChange = (e, { activePage }) => this.setState({ activePage })
+
 
   componentDidMount () {
     watchRecipes(recipes => {
@@ -56,6 +63,11 @@ export class RecipesFromBase extends React.Component {
   }
 
   render () {
+    const {activePage, pageItems } = this.state
+    console.log(activePage)
+    const viewedRecipes = this.filteredRecepies.slice( (activePage -1) * pageItems ,activePage * pageItems )
+
+
     return (
       <div style={{ display: 'flex' }}>
         <div style={{ background: 'grey', marginRight: '20px' }}>
@@ -86,13 +98,26 @@ export class RecipesFromBase extends React.Component {
             }}
           />
         </div>
-        <Grid style={{ width: '100%' }}>
-          {this.filteredRecepies.map(item => (
+       <div>
+       <Grid 
+       stackable={true}
+       relaxed={true}
+       style={{ width: '100%' }}>
+          {viewedRecipes.map(item => (
             <Grid.Column key={item.id} width={8}>
               <RecipeView recipe={item} />
             </Grid.Column>
           ))}
         </Grid>
+        <div className={styles.pagMiddle}>
+        <Pagination  
+        onPageChange={this.handlePaginationChange} 
+        activePage={this.state.activePage} 
+        totalPages={Math.ceil(this.filteredRecepies.length/this.state.pageItems)} 
+        />
+      </div>
+       </div>
+       
       </div>
     )
   }

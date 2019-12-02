@@ -18,6 +18,7 @@ import Privacy from "./components/Privacy";
 import { RecipesFromBase } from './components/RecipesFromBase';
 import {RegisterSignIn} from './components/email/RegisterSignIn';
 
+
 const Root = () => {
     return (
         <Router>
@@ -32,6 +33,7 @@ const Root = () => {
                     {/* <Route exact strict path="/RegisterForm" component={RegisterForm}/>
                     <Route exact strict path="/LoginForm" component={LoginForm}/> */}
                     <Route exact path="/RegisterSignIn" component={RegisterSignIn}/>
+                    
                 </Switch>
                 <Footer/>
             </div>    
