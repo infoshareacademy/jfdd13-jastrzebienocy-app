@@ -10,7 +10,8 @@ import styles from "./RecipesFromBase.module.css";
 import {
   fetchRecipes,
   prepareRecipes,
-  watchRecipes
+  watchRecipes,
+  categories
 } from "../services/ForFetchDB";
 // import { bindExpression } from '@babel/types'
 // import { removeTypeDuplicates } from '@babel/types'
@@ -36,7 +37,9 @@ export class RecipesFromBase extends React.Component {
   componentDidMount() {
     watchRecipes(recipes => {
       this.setState({ recipes });
+      categories(recipes)
     });
+    
   }
 
   // Filter for products and recipes.
