@@ -23,7 +23,7 @@ export function Profile(user) {
                         </div>
                     </div>
                     <div className={styles.FavoutiteRecipe}>Ulubione przepisy&nbsp; 
-                    <Icon name={this.state.icon} />:
+                    {/* <Icon name={this.state.icon} />: */}
                     </div>
                 </div>
             </div>
