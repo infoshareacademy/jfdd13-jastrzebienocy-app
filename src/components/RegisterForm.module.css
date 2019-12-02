@@ -2,6 +2,7 @@
     background-color: pink;
     padding: 20px;
     height: 90vh;
+    text-align: center;
 }
 
 .Inputs{
@@ -20,6 +21,16 @@
 
 .RegPage{
     height: 90vh;
+}
+
+.MailPar{
+    font-size: 25px;
+    text-align: center;
+}
+
+.MailParBelow{
+    font-size: 25px;
+    width: 100%;
 }
 
 /* .mailBox{
