@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 import {Link} from "react-router-dom";
 
 export function RegisterSignIn() {
-    return (<div className={styles.RegPage}>
+    return (<div>
         <LoginForm apiMethod={(email, password) => api.logIn(email, password)} />
         <RegisterForm apiMethod={(email, password, name) => api.register(email, password, name) } />
     </div>)
