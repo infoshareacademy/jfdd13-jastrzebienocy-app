@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from '..//RegisterForm.module.css';
 import { Link } from "react-router-dom";
+import api from "./api";
 
-export default class LoginForm extends React.Component {
+class LoginForm extends React.Component {
     state = {
         email: '',
         password: '',
@@ -11,7 +12,7 @@ export default class LoginForm extends React.Component {
 
     onSubmit = e => {
         e.preventDefault();
-        this.props.apiMethod(this.state.email, this.state.password)
+        api.logIn(this.state.email, this.state.password)
             .catch(err => this.setState({ err: err.message }));
     }
 
@@ -37,3 +38,4 @@ export default class LoginForm extends React.Component {
         )
     }
 }
+export default LoginForm
