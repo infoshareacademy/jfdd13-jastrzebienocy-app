@@ -124,12 +124,14 @@ class SideBar extends React.Component {
         </div>
         <div className={styles.Category}>Kategoria:</div>
         <div className={styles.dropdown}>
-          <Dropdown  style={{'borderRadius':'25px',
-                             'width': '165px',
-                             'marginLeft': '16px',
-                             'backgroundColor': 'lightGrey',
-                             textAlign: 'center'
-                            }}
+          <Dropdown
+            style={{
+              borderRadius: '25px',
+              width: '165px',
+              marginLeft: '16px',
+              backgroundColor: 'lightGrey',
+              textAlign: 'center'
+            }}
             size='massive'
             placeholder='Kategoria'
             fluid
@@ -144,7 +146,7 @@ class SideBar extends React.Component {
         </div>
         <br />
         <div className={styles.Favourites}>
-          Ulubione <Heart />
+          Ulubione <Heart onHeartClick={this.props.onFavouritesChange} />
         </div>
       </div>
     )

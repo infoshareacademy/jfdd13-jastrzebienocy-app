@@ -61,8 +61,7 @@ import firebase from "firebase";
     // [END_EXCLUDE]
   });
   // [END createwithemail]
-}
 
 // login 
 
-
+   }
