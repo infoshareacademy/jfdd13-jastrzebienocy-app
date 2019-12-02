@@ -20,7 +20,7 @@ class Heart extends React.Component {
     )
   }
   render () {
-    return <Icon onClick={this.handleOnClick} name={this.state.icon} />
+    // return <Icon onClick={this.handleOnClick} name={this.state.icon} />
     const { checked } = this.state
     return (
       <Icon
