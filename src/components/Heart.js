@@ -7,6 +7,9 @@ class Heart extends React.Component {
   }
 
   handleOnClick = () => {
+    this.setState({
+      icon: this.state.icon === 'heart' ? 'heart outline' : 'heart'
+    })
     this.setState(
       {
         checked: !this.state.checked
@@ -17,6 +20,7 @@ class Heart extends React.Component {
     )
   }
   render () {
+    // return <Icon onClick={this.handleOnClick} name={this.state.icon} />
     const { checked } = this.state
     return (
       <Icon
