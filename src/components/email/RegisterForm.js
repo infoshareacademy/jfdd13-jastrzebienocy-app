@@ -13,14 +13,10 @@ export default class RegisterForm extends React.Component {
   }
 
   onSubmit = e => {
-    console.log(api)
-
     e.preventDefault()
     api
       .register(this.state.email, this.state.password, this.state.name)
       .catch(err => this.setState({ err: err.message }))
-    // this.props.apiMethod(this.state.email, this.state.password, this.state.name)
-    //     .catch(err => this.setState({ err: err.message }));
   }
 
   render () {
@@ -56,14 +52,7 @@ export default class RegisterForm extends React.Component {
                 onChange={e => this.setState({ password: e.target.value })}
               />
             </div>
-            <div>
-              <label>Powtórz Hasło: </label>
-              <input
-                type='password'
-                value={this.state.password}
-                onChange={e => this.setState({ password: e.target.value })}
-              />
-            </div>
+
             <p className={styles.MailParBelow}>
               Tworząc u Nas konto zgadzasz sie na naszą{' '}
               <Link to='/privacy' className={styles.footerLinks}>
