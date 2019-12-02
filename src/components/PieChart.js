@@ -57,11 +57,13 @@ class PieChart extends Component {
           fontColor: "black",
       },
       legend:{
+        maintainAspectRatio: false,
+        responsive: true,
         display: true,
         position: 'bottom',  
         labels: {
           fontColor: "black",
-          fontSize: 24,
+          fontSize: 18,
           fontFamily: "Oswald sans-serif",
       }
       }
