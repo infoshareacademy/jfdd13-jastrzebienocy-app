@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '..//RegisterForm.module.css'
+import { RegisterSignIn } from './RegisterSignIn'
 import { NavLink, Link } from 'react-router-dom'
 import api from './api'
 
@@ -12,10 +13,14 @@ export default class RegisterForm extends React.Component {
   }
 
   onSubmit = e => {
+    console.log(api)
+
     e.preventDefault()
-    this.props.api
+    api
       .register(this.state.email, this.state.password, this.state.name)
       .catch(err => this.setState({ err: err.message }))
+    // this.props.apiMethod(this.state.email, this.state.password, this.state.name)
+    //     .catch(err => this.setState({ err: err.message }));
   }
 
   render () {
@@ -67,6 +72,7 @@ export default class RegisterForm extends React.Component {
             </p>
           </div>
           <button type='submit'>Zatwierdź</button>
+          {/* <RegisterSignIn></RegisterSignIn> */}
           {this.state.err && <p style={{ color: 'red' }}>{this.state.err}</p>}
           <h1 className={styles.Register}>
             Posiadasz już konto?

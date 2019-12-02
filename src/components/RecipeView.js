@@ -12,28 +12,27 @@ let portions = count => {
   return list
 }
 class RecipeView extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = { open: false }
   }
-  showModalWindow() {
+  showModalWindow () {
     this.setState({ open: true })
   }
-  closeWindow = () =>{
+  closeWindow = () => {
     this.setState({
       open: false
     })
   }
-  render() {
+  render () {
     return (
-      <div className={styles.RecipeView} >
-        <ModalWindow 
-        open={this.state.open} 
-        onCloseWindow={this.closeWindow} 
-        onClick={this.closeWindow }
-        {...this.props.recipe} >
-         
-        </ModalWindow>
+      <div className={styles.RecipeView}>
+        <ModalWindow
+          open={this.state.open}
+          onCloseWindow={this.closeWindow}
+          onClick={this.closeWindow}
+          {...this.props.recipe}
+        />
         <Segment className={styles.Wrapper}>
           <div className={styles.Heart}>
             <div>
@@ -60,7 +59,7 @@ class RecipeView extends React.Component {
                   onClick={() => {
                     this.showModalWindow()
                   }}
-                  style={{cursor: 'pointer'}}
+                  style={{ cursor: 'pointer' }}
                 >
                   {this.props.recipe.name}
                 </p>
@@ -72,7 +71,7 @@ class RecipeView extends React.Component {
                 onClick={() => {
                   this.showModalWindow()
                 }}
-                style={{cursor: 'pointer'}}
+                style={{ cursor: 'pointer' }}
                 className={styles.ShortDescription}
               >
                 <div>
