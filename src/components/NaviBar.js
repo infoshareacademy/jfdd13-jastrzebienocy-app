@@ -15,7 +15,7 @@ class NaviBar extends React.Component {
              <div className={styles.NaviBarRight}>
                     <NavLink activeClassName={"active-link"} to="/" className={styles.Dashboard} exact>Dashboard</NavLink>
                     <NavLink activeClassName={"active-link"} to="/RecipeView" className={styles.Przepisy} exact>Przepisy</NavLink>
-                    <NavLink activeClassName={"active-link"} to="/RegisterSignIn" className={styles.Profile}>Profil</NavLink>
+                    <NavLink activeClassName={"active-link"} to="/Profile" className={styles.Profile}>Profil</NavLink>
                     </div> 
             </div>
         )
