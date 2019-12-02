@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 export function RegisterSignIn () {
   return (
-    <div className={styles.RegPage}>
+    <div>
       <LoginForm apiMethod={(email, password) => api.logIn(email, password)} />
       <RegisterForm
         apiMethod={(email, password, name) =>

@@ -19,8 +19,6 @@ export default class RegisterForm extends React.Component {
     api
       .register(this.state.email, this.state.password, this.state.name)
       .catch(err => this.setState({ err: err.message }))
-    // this.props.apiMethod(this.state.email, this.state.password, this.state.name)
-    //     .catch(err => this.setState({ err: err.message }));
   }
 
   render () {
@@ -76,8 +74,7 @@ export default class RegisterForm extends React.Component {
 
           <button type='submit'>Zarejestruj się</button>
         </div>
-        {/* <RegisterSignIn></RegisterSignIn> */}
-        {/* {this.state.err && <p style={{ color: 'red' }}>{this.state.err}</p>} */}
+
         <div className={styles.LoginPage}>
           <div className={styles.Register2}>
             Posiadasz już konto?

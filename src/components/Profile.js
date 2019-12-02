@@ -12,8 +12,6 @@ export function Profile(user) {
     // render() {
         return (
             <div>
-                <div className={styles.ProfileTxt}><NavLink activeClassName={"active-link"} to="/LoginForm" className={styles.Dashboard} exact>Logowanie</NavLink></div>
-                <div className={styles.ProfileTxt}><NavLink activeClassName={"active-link"} to="/RegisterForm" className={styles.Dashboard} exact>Rejestracja</NavLink></div>
                 <div className={styles.ProfileMain}>
                     <div className={styles.ProfileFlex}>
                         <img src={ProfilePicture} className={styles.ProfilePicture} alt={'Profile picture'}></img>
