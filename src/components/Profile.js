@@ -2,15 +2,18 @@ import React from "react";
 import styles from "./Profile.module.css";
 import ProfilePicture from "./images/ProfilePicture.jpg";
 import { Icon } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 
-class Profile extends React.Component {
-    state = {
-        icon: 'heart'
-      }
-    render() {
+export function Profile(user) {
+// class Profile extends React.Component {
+    // state = {
+    //     icon: 'heart'
+    //   }
+    // render() {
         return (
             <div>
-                <div className={styles.ProfileTxt}>już wkrótce... Miejsce na twój profil!</div>
+                <div className={styles.ProfileTxt}><NavLink activeClassName={"active-link"} to="/LoginForm" className={styles.Dashboard} exact>Logowanie</NavLink></div>
+                <div className={styles.ProfileTxt}><NavLink activeClassName={"active-link"} to="/RegisterForm" className={styles.Dashboard} exact>Rejestracja</NavLink></div>
                 <div className={styles.ProfileMain}>
                     <div className={styles.ProfileFlex}>
                         <img src={ProfilePicture} className={styles.ProfilePicture} alt={'Profile picture'}></img>
@@ -20,12 +23,14 @@ class Profile extends React.Component {
                         </div>
                     </div>
                     <div className={styles.FavoutiteRecipe}>Ulubione przepisy&nbsp; 
-                    <Icon name={this.state.icon} />:
+                    {/* <Icon name={this.state.icon} />: */}
                     </div>
                 </div>
             </div>
         )
-    }
+    // }
 }
 
-export default Profile;
+
+
+// export default Profile;

@@ -1,8 +1,6 @@
 import React from 'react'
 import firebase from '../firebase'
 
-
-
 export const prepareRecipes = data => {
   return Object.entries(data).map(arr => {
     console.log(arr)
