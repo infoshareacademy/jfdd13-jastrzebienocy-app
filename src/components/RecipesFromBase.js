@@ -23,7 +23,7 @@ export class RecipesFromBase extends React.Component {
       products: '',
       weight: 2000,
       category: '',
-      favorites: false,
+      favourites: false,
       pageItems: 4,
       activePage: 1
     }
@@ -53,13 +53,13 @@ export class RecipesFromBase extends React.Component {
       const categoryFilter = category
         ? recipe.category.toLowerCase().includes(category.toLowerCase())
         : true
-      const favouritesFilter = favourites === true ? recipe.favourites : false
+      const favouritesFilter = favourites === true ? recipe.favourites : true
       // console.log(recipe.name)
       return (
         productsFilter &&
         nameFilter &&
         weightFilter &&
-        categoryFilter &&
+        categoryFilter && 
         favouritesFilter
       )
     })
@@ -109,7 +109,7 @@ export class RecipesFromBase extends React.Component {
             }}
           />
         </div>
-        <div>
+        <>
           <Grid stackable relaxed style={{ width: '100%' }}>
             {viewedRecipes.map(item => (
               <Grid.Column key={item.id} width={8}>
@@ -126,7 +126,7 @@ export class RecipesFromBase extends React.Component {
               )}
             />
           </div>
-        </div>
+        </>
       </div>
     )
   }
