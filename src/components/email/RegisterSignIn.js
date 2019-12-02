@@ -1,21 +1,26 @@
-import React from 'react';
-import RegisterForm from './RegisterForm';
-import LoginForm from './LoginForm';
-import api from './api';
-import styles from '..//RegisterForm.module.css';
-import { NavLink } from 'react-router-dom';
-import {Link} from "react-router-dom";
+import React from 'react'
+import RegisterForm from './RegisterForm'
+import LoginForm from './LoginForm'
+import api from './api'
+import styles from '..//RegisterForm.module.css'
+import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-export function RegisterSignIn() {
-    return (<div className={styles.RegPage}>
-        <LoginForm apiMethod={(email, password) => api.logIn(email, password)} />
-        <RegisterForm apiMethod={(email, password, name) => api.register(email, password, name) } />
-    </div>)
+export function RegisterSignIn () {
+  return (
+    <div className={styles.RegPage}>
+      <LoginForm apiMethod={(email, password) => api.logIn(email, password)} />
+      <RegisterForm
+        apiMethod={(email, password, name) =>
+          api.register(email, password, name)
+        }
+      />
+    </div>
+  )
 }
 
-
-
-{/* <form action="/action_page.php">
+{
+  /* <form action="/action_page.php">
   <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
@@ -34,11 +39,12 @@ export function RegisterSignIn() {
 
     <button type="submit" class="registerbtn">Register</button>
   </div>
-  
+
   <div class="container signin">
     <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>
-</form> */}
+</form> */
+}
 
 // export function RegisterSignIn() {
 //     return (<div className={styles.RegPage}>
