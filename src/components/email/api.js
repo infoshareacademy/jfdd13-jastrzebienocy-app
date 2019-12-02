@@ -1,5 +1,6 @@
-const apiUrl = 'https://whatever-is-fine.firebaseio.com';
-const appKey = 'AIzaSyD9aWG_R2oswWo1gXmlfV_2QNL_iO0HWQs';
+import { register as firebaseRegister } from '../../firebase';
+const apiUrl = 'https://foodwaste-ecb78.firebaseio.com';
+const appKey = 'AIzaSyCVVIiKXCqCGhTP7KCs1EkrTN7rm116-eI';
 
 class Api {
     user = null;
@@ -82,7 +83,9 @@ class Api {
         }).then(user => this.setUser(user));
     }
 
-    register(email, password) {
+    register(email, password) { 
+        return firebaseRegister(email, password)
+        
         return fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${appKey}`, {
             body: JSON.stringify({ email: email, password: password, returnSecureToken: true }),
             method: 'POST',
@@ -105,7 +108,7 @@ class Api {
         localStorage.setItem('user', JSON.stringify(user));
         this.userChanged(user);
         return user;
-    }
+    };
 
     onUserChange(cb) {
         this.userChanged = cb;

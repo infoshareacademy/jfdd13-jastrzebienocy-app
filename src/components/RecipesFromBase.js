@@ -110,7 +110,7 @@ export class RecipesFromBase extends React.Component {
           />
         </div>
         <div>
-          <Grid style={{ width: '100%' }}>
+          <Grid stackable relaxed style={{ width: '100%' }}>
             {viewedRecipes.map(item => (
               <Grid.Column key={item.id} width={8}>
                 <RecipeView recipe={item} />
