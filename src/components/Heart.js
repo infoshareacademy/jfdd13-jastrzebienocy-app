@@ -23,6 +23,7 @@ class Heart extends React.Component {
     const { checked } = this.state
     return (
       <Icon
+      
         onClick={this.handleOnClick}
         name={checked ? 'heart' : 'heart outline'}
       />
