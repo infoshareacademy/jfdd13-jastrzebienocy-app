@@ -25,7 +25,8 @@ export default class RegisterForm extends React.Component {
     render() {
         return (
             <div>
-                <h1 className={styles.Register}>Zarejestruj się</h1>
+                <div className={styles.Register}>Utwórz konto</div>
+                <div className={styles.InnerBox}>
                 <p className={styles.MailPar}>Proszę wypełnić formularz w celu rejestracji.</p>
                 <form className={styles.Inputs} onSubmit={this.onSubmit}>
                     <div className={styles.mailBox}>
@@ -45,15 +46,19 @@ export default class RegisterForm extends React.Component {
                             <label>Powtórz Hasło: </label>
                             <input type="password" value={this.state.password} onChange={e => this.setState({ password: e.target.value })}></input>
                         </div>
-                        <p className={styles.MailParBelow}>Tworząc u Nas konto zgadzasz sie na naszą <Link to="/privacy" className={styles.footerLinks} >Politykę prywatności</Link></p>
                     </div>
-                    <button type="submit">Zatwierdź</button>
-                    {/* <RegisterSignIn></RegisterSignIn> */}
-                    {this.state.err && <p style={{ color: 'red' }}>{this.state.err}</p>}
-                    <h1 className={styles.Register}>Posiadasz już konto?
-                <Link activeClassName={"active-link"} to="/Login" className={styles.Register} exact>Zaloguj się!</Link>
-                    </h1>
                 </form>
+                <p className={styles.MailParBelow}>Tworząc u Nas konto zgadzasz sie na naszą <Link to="/privacy" className={styles.footerLinks} >Politykę prywatności</Link></p>
+
+
+                <button type="submit">Zarejestruj się</button>
+                </div>
+                {/* <RegisterSignIn></RegisterSignIn> */}
+                {/* {this.state.err && <p style={{ color: 'red' }}>{this.state.err}</p>} */}
+                <div className={styles.LoginPage}>
+                    <div className={styles.Register2}>Posiadasz już konto?<Link activeClassName={"active-link"} to="/Login" className={styles.Register2} exact>Zaloguj się!</Link>
+                    </div>
+                </div>
             </div>
         )
     }

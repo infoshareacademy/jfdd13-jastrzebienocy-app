@@ -50,10 +50,11 @@ const Root = () => {
                     <Switch>
                         <Route exact path="/Register" component={RegisterForm} />
                         <Route exact path="/Login" component={LoginForm} />
+                        <Route exact path="/privacy" component={Privacy} />
                         {/* <Route exact path="/Login" component={LoginForm} /> */}
                         <Redirect to="/Register"></Redirect>
                     </Switch>
-                    <Footer />
+                    {/* <Footer /> */}
                 </div>
             </Router>
         )
