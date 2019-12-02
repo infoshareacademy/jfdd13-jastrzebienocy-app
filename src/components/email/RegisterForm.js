@@ -13,69 +13,84 @@ export default class RegisterForm extends React.Component {
   }
 
   onSubmit = e => {
+    console.log(api)
+
     e.preventDefault()
     api
       .register(this.state.email, this.state.password, this.state.name)
       .catch(err => this.setState({ err: err.message }))
+    // this.props.apiMethod(this.state.email, this.state.password, this.state.name)
+    //     .catch(err => this.setState({ err: err.message }));
   }
 
   render () {
     return (
       <div>
-        <h1 className={styles.Register}>Zarejestruj się</h1>
-        <p className={styles.MailPar}>
-          Proszę wypełnić formularz w celu rejestracji.
-        </p>
-        <form className={styles.Inputs} onSubmit={this.onSubmit}>
-          <div className={styles.mailBox}>
-            <div>
-              <label>Imię:</label>
-              <input
-                type='text'
-                value={this.state.name}
-                onChange={e => this.setState({ name: e.target.value })}
-              />
+        <div className={styles.Register}>Utwórz konto</div>
+        <div className={styles.InnerBox}>
+          <p className={styles.MailPar}>
+            Proszę wypełnić formularz w celu rejestracji.
+          </p>
+          <form className={styles.Inputs} onSubmit={this.onSubmit}>
+            <div className={styles.mailBox}>
+              <div>
+                <label>Imię:</label>
+                <input
+                  type='text'
+                  value={this.state.name}
+                  onChange={e => this.setState({ name: e.target.value })}
+                />
+              </div>
+              <div>
+                <label>Email:</label>
+                <input
+                  type='text'
+                  value={this.state.email}
+                  onChange={e => this.setState({ email: e.target.value })}
+                />
+              </div>
+              <div>
+                <label>Hasło: </label>
+                <input
+                  type='password'
+                  value={this.state.password}
+                  onChange={e => this.setState({ password: e.target.value })}
+                />
+              </div>
+              <div>
+                <label>Powtórz Hasło: </label>
+                <input
+                  type='password'
+                  value={this.state.password}
+                  onChange={e => this.setState({ password: e.target.value })}
+                />
+              </div>
             </div>
-            <div>
-              <label>Email:</label>
-              <input
-                type='text'
-                value={this.state.email}
-                onChange={e => this.setState({ email: e.target.value })}
-              />
-            </div>
-            <div>
-              <label>Hasło: </label>
-              <input
-                type='password'
-                value={this.state.password}
-                onChange={e => this.setState({ password: e.target.value })}
-              />
-            </div>
+          </form>
+          <p className={styles.MailParBelow}>
+            Tworząc u Nas konto zgadzasz sie na naszą{' '}
+            <Link to='/privacy' className={styles.footerLinks}>
+              Politykę prywatności
+            </Link>
+          </p>
 
-            <p className={styles.MailParBelow}>
-              Tworząc u Nas konto zgadzasz sie na naszą{' '}
-              <Link to='/privacy' className={styles.footerLinks}>
-                Politykę prywatności
-              </Link>
-            </p>
-          </div>
-          <button type='submit'>Zatwierdź</button>
-          {/* <RegisterSignIn></RegisterSignIn> */}
-          {this.state.err && <p style={{ color: 'red' }}>{this.state.err}</p>}
-          <h1 className={styles.Register}>
+          <button type='submit'>Zarejestruj się</button>
+        </div>
+        {/* <RegisterSignIn></RegisterSignIn> */}
+        {/* {this.state.err && <p style={{ color: 'red' }}>{this.state.err}</p>} */}
+        <div className={styles.LoginPage}>
+          <div className={styles.Register2}>
             Posiadasz już konto?
-            <NavLink
+            <Link
               activeClassName={'active-link'}
-              to='/'
-              className={styles.Dashboard}
+              to='/Login'
+              className={styles.Register2}
               exact
             >
-              {' '}
               Zaloguj się!
-            </NavLink>
-          </h1>
-        </form>
+            </Link>
+          </div>
+        </div>
       </div>
     )
   }
