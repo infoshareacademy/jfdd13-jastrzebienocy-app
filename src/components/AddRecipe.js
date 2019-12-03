@@ -236,28 +236,6 @@ class AddRecipe extends React.Component {
                   errors={errors}
                 />
 
-                {/* <label
-                  htmlFor='category'
-                  style={{ display: 'block', margin: '5px' }}
-                >
-                  Rodzaj kuchni
-                </label>
-                <input
-                  id='category'
-                  placeholder='Wybierz kuchnię'
-                  type='text'
-                  value={values.category}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={
-                    errors.category && touched.category
-                      ? 'text-input error'
-                      : 'text-input'
-                  }
-                />
-                {errors.category && touched.category && (
-                  <div className='input-feedback'>{errors.name}</div>
-                )} */}
 
                 <label
                   htmlFor='cookingTime'
