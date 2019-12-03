@@ -23,7 +23,7 @@ export const watchRecipes = onSuccess => {
     })
 }
 
-
+//nie kasowac
 export const categories = data => {
   
   console.log(Object.entries(data).map(([id,item]) => item.category))
