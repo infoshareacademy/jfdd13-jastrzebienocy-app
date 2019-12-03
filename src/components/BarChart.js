@@ -47,7 +47,7 @@ class BarChart extends Component {
 
   options={
     {
-       responsive: true,
+       responsive: false,
        maintainAspectRatio: false,
      },{
    
