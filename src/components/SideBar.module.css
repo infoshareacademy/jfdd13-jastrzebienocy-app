@@ -73,3 +73,83 @@
   padding: 3px;
   margin-right: 2px;
 }
+
+@media only screen and (max-width: 850px) { 
+  .SideBar {
+    font-family: "Oswald", sans-serif;
+    align-items: center;
+    scroll-behavior: smooth;
+    top: 0px;
+    padding: 10px;
+    height: 88vh;
+    /* background-color: #D4eFfa;
+    /* border: 1px solid #a9a9a9;
+    border-radius: 25% 0 0 40%;*/
+    width: 150px;
+  }
+  .Product, .Quantity, .Category, .Search, .Name {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 18px;
+    text-decoration: none;
+    padding-top: 10px;
+    text-align: center;
+  }
+  
+  .Searching {
+    font-family: serif;
+    font-weight: bold;
+    color: #212121;
+    text-decoration: underline;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .Searching::first-letter {
+    font-family: serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .Favourites {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  /* slider */
+  
+  .Label {
+    align-items: center;
+    font-size: 18px;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    text-align: center;
+  }
+  
+  .InputSlide {
+    margin-right: 10px;
+  }
+  
+  .WeightDisplay {
+    font-size: 24px;
+    font-weight: bold;
+    color: #212121;
+    width: 100%;
+    padding: 3px;
+    margin-right: 2px;
+  }
+  
+}
+
+@media only screen and (max-width: 550px) { 
+
+}
