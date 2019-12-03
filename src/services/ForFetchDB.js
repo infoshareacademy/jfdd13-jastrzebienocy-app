@@ -23,6 +23,8 @@ export const watchRecipes = onSuccess => {
     })
 }
 
+// stopRecepies -> trzeba zaimplementowac!!!
+
 //nie kasowac
 export const categories = data => {
   

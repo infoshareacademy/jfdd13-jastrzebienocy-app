@@ -2,21 +2,20 @@ import React, {Component} from 'react';
 import {Bar, Line, Pie } from 'react-chartjs-2';
 import styles from "./Charts.module.css";
 
+// ["polska", "Polska"] -> { "polska": 2, "wloska": 1 }
+const labels = Object.keys({ "polska": 2, "wloska": 1 })
+const data = Object.values({ "polska": 2, "wloska": 1 })
+
 class PieChart extends Component {
     constructor(props){
         super(props);
         this.state = {
             chartData:{
-                labels: ['Azjatycka', 'Włoska', 'Polska', 'Francuska', 'Hiszpańska'],
+                labels: labels,
               datasets:[
                   {
                       label: 'Rodzaje kuchni ',
-                      data:[
-                          5,
-                          25, 
-                          20, 
-                          10, 
-                          20, ],
+                      data:data,
                       backgroundColor: [
                           'rgba(255, 99, 132, 0.6)',
                           'rgba(54, 162, 235, 0.6)',
