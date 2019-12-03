@@ -58,6 +58,10 @@
     padding: 10px;
     justify-content: flex-end;
 }
+.logo {
+    width: 100px;
+    margin-left: 20px;
+}
 }
 
 @media only screen and (max-width: 500px) {
@@ -71,6 +75,10 @@
     text-decoration: none;
     padding: 5px;
     justify-content: flex-end;
+}
+.logo {
+    width: 90px;
+    margin-left: 15px;
 }
 }
 
