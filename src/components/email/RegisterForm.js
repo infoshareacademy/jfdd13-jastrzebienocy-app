@@ -75,20 +75,15 @@ export default class RegisterForm extends React.Component {
           <button type='submit'>Zarejestruj się</button>
         </div>
 
-        <div className={styles.LoginPage}>
-          <div className={styles.Register2}>
-            Posiadasz już konto?
-            <Link
-              activeClassName={'active-link'}
-              to='/Login'
-              className={styles.Register2}
-              exact
-            >
-              Zaloguj się!
-            </Link>
-          </div>
-        </div>
-      </div>
-    )
-  }
+                <button type="submit" onClick={this.onSubmit}>Zarejestruj się</button>
+                </div>
+                {/* <RegisterSignIn></RegisterSignIn> */}
+                {/* {this.state.err && <p style={{ color: 'red' }}>{this.state.err}</p>} */}
+                <div className={styles.LoginPage}>
+                    <div className={styles.Register2}>Posiadasz już konto?<Link activeClassName={"active-link"} to="/Login" className={styles.Register2} exact>Zaloguj się!</Link>
+                    </div>
+                </div>
+            </div>
+        )
+    }
 }
