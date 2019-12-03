@@ -57,6 +57,12 @@
     position: relative;
 }
 
+.AllRegister{
+    color: red;
+    font-size: 30px;
+    text-align: center;
+}
+
 /* .mailBox{
     background-color: pink;
 } */

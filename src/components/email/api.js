@@ -100,9 +100,7 @@ class Api {
                                 favorites: []
                             });
                     });
-            }).catch(function (error) {
-                console.log('error', error)
-            });
+            })
     }
 
     setUser(user) {
