@@ -53,7 +53,7 @@ export class RecipesFromBase extends React.Component {
       const categoryFilter = category
         ? recipe.category.toLowerCase().includes(category.toLowerCase())
         : true
-      const favouritesFilter = favourites === true ? recipe.favourites : false
+      const favouritesFilter = favourites === true ? recipe.favourites : true
       // console.log(recipe.name)
       return (
         productsFilter &&
