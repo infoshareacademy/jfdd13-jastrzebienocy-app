@@ -1,4 +1,4 @@
-import { register as firebaseRegister } from '../../firebase';
+import firebase from '../../firebase';
 const apiUrl = 'https://foodwaste-ecb78.firebaseio.com';
 const appKey = 'AIzaSyCVVIiKXCqCGhTP7KCs1EkrTN7rm116-eI';
 
@@ -66,41 +66,41 @@ class Api {
     }
 
     logIn(email, password) {
-        return fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${appKey}`, {
-            body: JSON.stringify({ email: email, password: password, returnSecureToken: true }),
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(resp => {
-            if (resp.ok) {
-                return resp.json();
-            }
-
-            return resp.json().then(err => {
-                throw new Error(`Login failed ${err.message}`);
+        return firebase
+            .auth()
+            .signInWithEmailAndPassword(email, password)
+            .then(value => {
+                console.log("Logged in!");
+                console.log(value);
+            })
+            .catch(() => {
+                console.log("Something went wrong!");
             });
-        }).then(user => this.setUser(user));
-    }
+    };
 
-    register(email, password) { 
-        return firebaseRegister(email, password)
-        
-        return fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${appKey}`, {
-            body: JSON.stringify({ email: email, password: password, returnSecureToken: true }),
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(resp => {
-            if (resp.ok) {
-                return resp.json();
-            }
-
-            return resp.json().then(err => {
-                throw new Error(`Login failed ${err.message}`);
-            });
-        }).then(user => this.setUser(user));
+    register(email, password, name) { 
+        return firebase
+            .auth()
+            .createUserWithEmailAndPassword(email, password)
+            .then(value => {
+                const user = firebase.auth().currentUser;
+                user
+                    .updateProfile({
+                        displayName: "name"
+                    })
+                    .then(() => {
+                        console.log('Poprawnie zarejestrowano dane: email, hasło i imię');
+                        firebase
+                            .database()
+                            .ref("/users")
+                            .push({
+                                id: user.uid,
+                                name,
+                                email,
+                                favorites: []
+                            });
+                    });
+            })
     }
 
     setUser(user) {
