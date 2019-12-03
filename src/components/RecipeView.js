@@ -5,6 +5,10 @@ import Heart from './Heart'
 import ModalWindow from './ModalWindow'
 import { RSA_NO_PADDING } from 'constants'
 import { handleFavoritesFirebase } from '../services/HandleFavourites'
+import api from './email/api'
+// import firebase, { user, id } from 'firebase'
+// import AuthService, { register, users, id } from '../services/AuthService'
+
 
 let portions = count => {
   let list = []
@@ -15,17 +19,18 @@ let portions = count => {
 }
 
 class RecipeView extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = { open: false }
   }
 
   addToFavorites = checked => {
     console.log(this.props.recipe.id)
+    console.log(this.props.id)
     //  handleFavoritesFirebase(this.props.recipe.id, userId)
   }
 
-  showModalWindow () {
+  showModalWindow() {
     this.setState({ open: true })
   }
   closeWindow = () => {
@@ -33,7 +38,7 @@ class RecipeView extends React.Component {
       open: false
     })
   }
-  render () {
+  render() {
     return (
       <div className={styles.RecipeView}>
         <ModalWindow

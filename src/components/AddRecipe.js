@@ -41,14 +41,14 @@ const SelectInput = props => {
 }
 
 class AddRecipe extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     // this.state = {
     //   open: props.open
     // }
   }
 
-  render () {
+  render() {
     // const { open } = this.props
     return (
       <div>
@@ -69,7 +69,7 @@ class AddRecipe extends React.Component {
           onSubmit={(values, actions) => {
             fetch('https://foodwaste-ecb78.firebaseio.com/recipes.json', {
               method: 'POST',
-              body: JSON.stringify({ ...values }) // .toLowerCase() // added to stndarize recipes in base -JK
+              body: JSON.stringify({ ...values })
             })
               .then(() => {
                 actions.setSubmitting(false)
