@@ -3,7 +3,6 @@ import styles from '..//RegisterForm.module.css'
 import { RegisterSignIn } from './RegisterSignIn'
 import { NavLink, Link } from 'react-router-dom'
 import api from './api'
-
 export default class RegisterForm extends React.Component {
   state = {
     name: '',
@@ -11,16 +10,15 @@ export default class RegisterForm extends React.Component {
     password: '',
     err: ''
   }
-
   onSubmit = e => {
     console.log(api)
-
     e.preventDefault()
     api
       .register(this.state.email, this.state.password, this.state.name)
       .catch(err => this.setState({ err: err.message }))
+    // this.props.apiMethod(this.state.email, this.state.password, this.state.name)
+    //     .catch(err => this.setState({ err: err.message }));
   }
-
   render () {
     return (
       <div>
@@ -72,18 +70,26 @@ export default class RegisterForm extends React.Component {
             </Link>
           </p>
 
-          <button type='submit'>Zarejestruj się</button>
+          <button type='submit' onClick={this.onSubmit}>
+            Zarejestruj się
+          </button>
         </div>
-
-                <button type="submit" onClick={this.onSubmit}>Zarejestruj się</button>
-                </div>
-                {/* <RegisterSignIn></RegisterSignIn> */}
-                {/* {this.state.err && <p style={{ color: 'red' }}>{this.state.err}</p>} */}
-                <div className={styles.LoginPage}>
-                    <div className={styles.Register2}>Posiadasz już konto?<Link activeClassName={"active-link"} to="/Login" className={styles.Register2} exact>Zaloguj się!</Link>
-                    </div>
-                </div>
-            </div>
-        )
-    }
+        {/* <RegisterSignIn></RegisterSignIn> */}
+        {/* {this.state.err && <p style={{ color: 'red' }}>{this.state.err}</p>} */}
+        <div className={styles.LoginPage}>
+          <div className={styles.Register2}>
+            Posiadasz już konto?
+            <Link
+              activeClassName={'active-link'}
+              to='/Login'
+              className={styles.Register2}
+              exact
+            >
+              Zaloguj się!
+            </Link>
+          </div>
+        </div>
+      </div>
+    )
+  }
 }

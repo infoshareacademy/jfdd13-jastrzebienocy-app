@@ -3,6 +3,8 @@ import styles from './RecipeView.module.css'
 import { Segment, Image, Icon, Modal, Button } from 'semantic-ui-react'
 import Heart from './Heart'
 import ModalWindow from './ModalWindow'
+import { RSA_NO_PADDING } from 'constants'
+import { handleFavoritesFirebase } from '../services/HandleFavourites'
 
 let portions = count => {
   let list = []
@@ -11,11 +13,18 @@ let portions = count => {
   }
   return list
 }
+
 class RecipeView extends React.Component {
   constructor (props) {
     super(props)
     this.state = { open: false }
   }
+
+  addToFavorites = checked => {
+    console.log(this.props.recipe.id)
+    //  handleFavoritesFirebase(this.props.recipe.id, userId)
+  }
+
   showModalWindow () {
     this.setState({ open: true })
   }
@@ -88,7 +97,7 @@ class RecipeView extends React.Component {
             </div>
           </div>
           <div className={styles.HeartInRecipe}>
-            <Heart />
+            <Heart onHeartClick={this.addToFavorites} />
           </div>
           <div className={styles.TimeAndPortions}>
             <div>
