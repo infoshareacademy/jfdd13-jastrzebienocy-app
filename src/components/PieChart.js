@@ -45,14 +45,14 @@ class PieChart extends Component {
       },{ 
     tooltips: {
         bodyFontColor: "white",
-        bodyFontSize: 20,
+        bodyFontSize: 10,
     },
     ticks: {
     min: 0 },
         title:{
         display: true,
           text: 'Rodzaje kuchni',
-          fontSize:22,
+          fontSize:20,
           fontFamily: "Oswald sans-serif",
           fontColor: "black",
       },
@@ -63,7 +63,7 @@ class PieChart extends Component {
         position: 'bottom',  
         labels: {
           fontColor: "black",
-          fontSize: 18,
+          fontSize: 16,
           fontFamily: "Oswald sans-serif",
       }
       }

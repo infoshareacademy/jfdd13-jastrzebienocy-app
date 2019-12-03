@@ -38,7 +38,7 @@ class BarChart extends Component {
     <div  className={styles.chart}>
     <Bar
   data={this.state.chartData}
-  width={100}
+  width={90}
   height={80}
   
  
@@ -53,7 +53,7 @@ class BarChart extends Component {
    
     tooltips: {
         bodyFontColor: "white",
-        bodyFontSize: 16,
+        bodyFontSize: 10,
     },
     scales: {
         yAxes: [
@@ -76,7 +76,7 @@ class BarChart extends Component {
               ticks: {
                   fontColor: "#212121",
                   fontFamily: "Oswald sans-serif",
-                  fontSize: 14,
+                  fontSize: 12,
                   fontStyle: "bold"
                 }
           }
@@ -86,7 +86,7 @@ class BarChart extends Component {
         title:{
         display: true,
           text: 'Liczba użytkowników korzystających z aplikacji',
-          fontSize:22,
+          fontSize:20,
           fontFamily: "Oswald sans-serif",
           fontColor: "black",
       },
