@@ -51,7 +51,7 @@ export default class RegisterForm extends React.Component {
                 <p className={styles.MailParBelow}>Tworząc u Nas konto zgadzasz sie na naszą <Link to="/privacy" className={styles.footerLinks} >Politykę prywatności</Link></p>
 
 
-                <button type="submit">Zarejestruj się</button>
+                <button type="submit" onClick={this.onSubmit}>Zarejestruj się</button>
                 </div>
                 {/* <RegisterSignIn></RegisterSignIn> */}
                 {/* {this.state.err && <p style={{ color: 'red' }}>{this.state.err}</p>} */}
