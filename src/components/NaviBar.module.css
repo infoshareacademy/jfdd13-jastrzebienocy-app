@@ -46,6 +46,42 @@
     margin-right: 30px; 
 }
 
+@media only screen and (max-width: 850px) {
+    .Profile,
+.Przepisy,
+.Dashboard {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px;
+    justify-content: flex-end;
+}
+.logo {
+    width: 100px;
+    margin-left: 20px;
+}
+}
+
+@media only screen and (max-width: 500px) {
+    .Profile,
+.Przepisy,
+.Dashboard {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 5px;
+    justify-content: flex-end;
+}
+.logo {
+    width: 90px;
+    margin-left: 15px;
+}
+}
+
 .Profile:hover,
 .Przepisy:hover,
 .Dashboard:hover {

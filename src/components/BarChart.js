@@ -38,8 +38,8 @@ class BarChart extends Component {
     <div  className={styles.chart}>
     <Bar
   data={this.state.chartData}
-  width={100}
-  height={100}
+  width={90}
+  height={80}
   
  
     ///Other configurable options
@@ -47,13 +47,13 @@ class BarChart extends Component {
 
   options={
     {
-       responsive: true,
+       responsive: false,
        maintainAspectRatio: false,
      },{
    
     tooltips: {
         bodyFontColor: "white",
-        bodyFontSize: 16,
+        bodyFontSize: 10,
     },
     scales: {
         yAxes: [
@@ -76,7 +76,7 @@ class BarChart extends Component {
               ticks: {
                   fontColor: "#212121",
                   fontFamily: "Oswald sans-serif",
-                  fontSize: 14,
+                  fontSize: 12,
                   fontStyle: "bold"
                 }
           }
@@ -86,16 +86,18 @@ class BarChart extends Component {
         title:{
         display: true,
           text: 'Liczba użytkowników korzystających z aplikacji',
-          fontSize:22,
+          fontSize:20,
           fontFamily: "Oswald sans-serif",
           fontColor: "black",
       },
         legend:{
+          maintainAspectRatio: false,
+          responsive: true,
           display: true,
           position: 'bottom',  
           labels: {
             fontColor: "black",
-            fontSize: 24,
+            fontSize: 18,
             fontFamily: "Oswald sans-serif",
         }
       },
