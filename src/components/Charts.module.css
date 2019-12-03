@@ -1,11 +1,47 @@
 .chart {
+  position: relative;
     width: 35%;
     height:50%;
     margin-left:5%;
     }
-    
+ 
+
 .chart2 {
+      position: relative;
       width: 35%;
       height:50%;
       margin-right:5%;
+
+    }
+
+    @media only screen and (max-width: 850px) {
+      .chart {
+        position: relative;
+          width: 60%;
+          height:30%;
+          margin-left:5%;
+          }
+      
+      .chart2 {
+        position: relative;
+          width: 60%;
+          height:30%;
+          margin-left:5%;
+          }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .chart {
+        position: relative;
+          width: 95%;
+          height:95%;
+          margin-left:5%;
+          }
+      
+      .chart2 {
+        position: relative;
+          width: 95%;
+          height:95%;
+          margin-left:5%;
+          }
     }

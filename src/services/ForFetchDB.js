@@ -22,3 +22,10 @@ export const watchRecipes = onSuccess => {
       onSuccess(prepareRecipes(recipes))
     })
 }
+
+//nie kasowac
+export const categories = data => {
+  
+  console.log(Object.entries(data).map(([id,item]) => item.category))
+  return Object.entries(data).map(item => item.category)
+}

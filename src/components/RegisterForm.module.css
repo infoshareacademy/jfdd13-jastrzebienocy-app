@@ -9,7 +9,6 @@
     width: 20%;
     margin: auto;
     display: block;
-    
 }
 
 .Register{
@@ -17,6 +16,15 @@
     margin: auto;
     padding: 20px;
     background-color: grey;
+    text-align: center;
+    font-size: 35px;
+}
+
+.Register2{
+    padding: 20px;
+    background-color: grey;
+    text-align: center;
+    font-size: 30px;
 }
 
 .RegPage{
@@ -31,6 +39,28 @@
 .MailParBelow{
     font-size: 25px;
     width: 100%;
+}
+
+.LoginPage{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.InnerBox{
+    background-color: lightgrey;
+    border-radius: 25px;
+    width: 80%;
+    border: outset;
+    margin: 4% 10% 10%;
+    padding: 16px 36px;
+    position: relative;
+}
+
+.AllRegister{
+    color: red;
+    font-size: 30px;
+    text-align: center;
 }
 
 /* .mailBox{

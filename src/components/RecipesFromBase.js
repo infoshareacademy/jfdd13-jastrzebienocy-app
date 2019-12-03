@@ -8,8 +8,9 @@ import styles from './RecipesFromBase.module.css'
 import {
   fetchRecipes,
   prepareRecipes,
-  watchRecipes
-} from '../services/ForFetchDB'
+  watchRecipes,
+  categories
+} from "../services/ForFetchDB";
 // import { bindExpression } from '@babel/types'
 // import { removeTypeDuplicates } from '@babel/types'
 
@@ -23,7 +24,7 @@ export class RecipesFromBase extends React.Component {
       products: '',
       weight: 2000,
       category: '',
-      favorites: false,
+      favourites: false,
       pageItems: 4,
       activePage: 1
     }
@@ -33,8 +34,10 @@ export class RecipesFromBase extends React.Component {
 
   componentDidMount () {
     watchRecipes(recipes => {
-      this.setState({ recipes })
-    })
+      this.setState({ recipes });
+      categories(recipes)
+    });
+    
   }
 
   // Filter for products and recipes.
@@ -81,7 +84,7 @@ export class RecipesFromBase extends React.Component {
             name={this.state.name}
             onNameChange={name => {
               this.setState({ name })
-              console.log(this.state.name)
+              // console.log(this.state.name)
             }}
             products={this.state.products}
             onProductsChange={products => {
@@ -100,16 +103,16 @@ export class RecipesFromBase extends React.Component {
               this.setState({
                 category
               })
-              console.log(category)
+              // console.log(category)
             }}
             favourites={this.state.favourites}
             onFavouritesChange={favourites => {
               this.setState({ favourites })
-              console.log(favourites)
+              // console.log(favourites)
             }}
           />
         </div>
-        <div>
+        <>
           <Grid stackable relaxed style={{ width: '100%' }}>
             {viewedRecipes.map(item => (
               <Grid.Column key={item.id} width={8}>
@@ -126,7 +129,7 @@ export class RecipesFromBase extends React.Component {
               )}
             />
           </div>
-        </div>
+        </>
       </div>
     )
   }
