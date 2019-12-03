@@ -36,7 +36,7 @@ class PieChart extends Component {
 <Pie
   data={this.state.chartData}
   width={100}
-  height={100}
+  height={80}
   
   options={
     {

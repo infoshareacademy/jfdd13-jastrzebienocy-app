@@ -39,7 +39,7 @@ class BarChart extends Component {
     <Bar
   data={this.state.chartData}
   width={100}
-  height={100}
+  height={80}
   
  
     ///Other configurable options
