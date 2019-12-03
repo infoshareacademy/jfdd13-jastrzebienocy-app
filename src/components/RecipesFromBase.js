@@ -62,7 +62,7 @@ export class RecipesFromBase extends React.Component {
         productsFilter &&
         nameFilter &&
         weightFilter &&
-        categoryFilter && 
+        categoryFilter &&
         favouritesFilter
       )
     })
@@ -84,7 +84,7 @@ export class RecipesFromBase extends React.Component {
             name={this.state.name}
             onNameChange={name => {
               this.setState({ name })
-              console.log(this.state.name)
+              // console.log(this.state.name)
             }}
             products={this.state.products}
             onProductsChange={products => {
@@ -103,12 +103,12 @@ export class RecipesFromBase extends React.Component {
               this.setState({
                 category
               })
-              console.log(category)
+              // console.log(category)
             }}
             favourites={this.state.favourites}
             onFavouritesChange={favourites => {
               this.setState({ favourites })
-              console.log(favourites)
+              // console.log(favourites)
             }}
           />
         </div>

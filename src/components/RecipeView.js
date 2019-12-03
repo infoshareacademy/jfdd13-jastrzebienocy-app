@@ -3,6 +3,8 @@ import styles from './RecipeView.module.css'
 import { Segment, Image, Icon, Modal, Button } from 'semantic-ui-react'
 import Heart from './Heart'
 import ModalWindow from './ModalWindow'
+import { RSA_NO_PADDING } from 'constants'
+import { handleFavoritesFirebase } from '../services/HandleFavourites'
 
 let portions = count => {
   let list = []
@@ -11,29 +13,35 @@ let portions = count => {
   }
   return list
 }
+
 class RecipeView extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = { open: false }
   }
-  showModalWindow() {
+
+  addToFavorites = checked => {
+    console.log(this.props.recipe.id)
+    //  handleFavoritesFirebase(this.props.recipe.id, userId)
+  }
+
+  showModalWindow () {
     this.setState({ open: true })
   }
-  closeWindow = () =>{
+  closeWindow = () => {
     this.setState({
       open: false
     })
   }
-  render() {
+  render () {
     return (
-      <div className={styles.RecipeView} >
-        <ModalWindow 
-        open={this.state.open} 
-        onCloseWindow={this.closeWindow} 
-        onClick={this.closeWindow }
-        {...this.props.recipe} >
-         
-        </ModalWindow>
+      <div className={styles.RecipeView}>
+        <ModalWindow
+          open={this.state.open}
+          onCloseWindow={this.closeWindow}
+          onClick={this.closeWindow}
+          {...this.props.recipe}
+        />
         <Segment className={styles.Wrapper}>
           <div className={styles.Heart}>
             <div>
@@ -54,25 +62,23 @@ class RecipeView extends React.Component {
                 }}
               />
             </div>
+
             <div className={styles.Text}>
               <div className={styles.NameRecipe}>
                 <p
                   onClick={() => {
                     this.showModalWindow()
                   }}
-                  style={{cursor: 'pointer'}}
+                  style={{ cursor: 'pointer' }}
                 >
                   {this.props.recipe.name}
                 </p>
-                <div className={styles.HeartInRecipe}>
-                  <Heart />
-                </div>
               </div>
               <div
                 onClick={() => {
                   this.showModalWindow()
                 }}
-                style={{cursor: 'pointer'}}
+                style={{ cursor: 'pointer' }}
                 className={styles.ShortDescription}
               >
                 <div>
@@ -90,7 +96,9 @@ class RecipeView extends React.Component {
               </div>
             </div>
           </div>
-
+          <div className={styles.HeartInRecipe}>
+            <Heart onHeartClick={this.addToFavorites} />
+          </div>
           <div className={styles.TimeAndPortions}>
             <div>
               <Icon name='time' size='large' style={{ color: '#8BC34A' }} />
