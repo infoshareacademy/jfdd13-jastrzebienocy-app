@@ -83,7 +83,10 @@ class Api {
             .auth()
             .createUserWithEmailAndPassword(email, password)
             .then(value => {
-                const user = firebase.auth().currentUser;
+                console.log('user?', value);
+
+                const user = value.user;
+                const id = user.uid;
                 user
                     .updateProfile({
                         displayName: "name"
@@ -92,9 +95,8 @@ class Api {
                         console.log('Poprawnie zarejestrowano dane: email, hasło i imię');
                         firebase
                             .database()
-                            .ref("/users")
-                            .push({
-                                id: user.uid,
+                            .ref(`/users/${id}`)
+                            .set({
                                 name,
                                 email,
                                 favorites: []

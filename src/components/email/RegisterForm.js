@@ -18,12 +18,11 @@ export default class RegisterForm extends React.Component {
              case "auth/email-already-in-use": 
                 return "Email już jest przypisany!";
              case "auth/invalid-email":
-                return "Niepoprawny meil"
+                return "Niepoprawny Emeil"
              case "auth/weak-password":
                  return "Twoje hasło musi posiadać przynajmniej 6 znaków"
              default: 
                 return "Wystąpił nieoczekiwany błąd"
-
          }
      }
      
