@@ -49,6 +49,10 @@ class AddRecipe extends React.Component {
     // }
   }
 
+  handleUpload = () => {
+    
+    
+}
   render () {
     // const { open } = this.props
     return (
@@ -68,17 +72,35 @@ class AddRecipe extends React.Component {
             favourites: false
           }}
           onSubmit={(values, actions) => {
-            fetch('https://foodwaste-ecb78.firebaseio.com/recipes.json', {
-              method: 'POST',
-              body: JSON.stringify({ ...values }) // .toLowerCase() // added to stndarize recipes in base -JK
-            })
-              .then(() => {
-                actions.setSubmitting(false)
-              })
-              .then(() => {
-                this.props.history.push('/')
-                this.props.history.push('/RecipeView')
-              })
+            const data = Object.assign({}, {...values});
+            const uploadTask = storage.ref(`images/${image.name}`).put(image);
+            uploadTask.on('state_changed',
+            (snapshot) => {},
+            (error) => {
+                // error function
+                console.log(error)
+            },
+            () => {
+                // complete function
+                storage.ref('images').child(image.name).getDownloadURL().then(url => {
+                  data.imageurl = url;
+                  
+                  fetch('https://foodwaste-ecb78.firebaseio.com/recipes.json', {
+                    method: 'POST',
+                    body: JSON.stringify(data) // .toLowerCase() // added to stndarize recipes in base -JK
+                  })
+                    .then(() => {
+                      actions.setSubmitting(false)
+                    })
+                    .then(() => {
+                      this.props.history.push('/')
+                      this.props.history.push('/RecipeView')
+                    })
+                })
+            });
+
+            
+
           }}
           validationSchema={Yup.object().shape({
             name: Yup.string()
