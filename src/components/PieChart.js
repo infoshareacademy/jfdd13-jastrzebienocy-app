@@ -1,17 +1,7 @@
 import React, { Component } from 'react';
 import { Bar, Line, Pie } from 'react-chartjs-2';
 import styles from "./Charts.module.css";
-import { categories } from '../services/ForFetchDB';
-import {
-    fetchRecipes,
-    prepareRecipes,
-    watchRecipes,
-} from "../services/ForFetchDB";
-
-
-// // ["polska", "Polska"] -> { "polska": 2, "wloska": 1 }
-// const labels = Object.keys({ "polska": 2, "wloska": 1 })
-// const data = Object.values({ "polska": 2, "wloska": 1 })
+import {   watchRecipes, getCategories } from '../services/ForFetchDB';
 
 class PieChart extends Component {
     constructor(props) {
@@ -23,9 +13,8 @@ class PieChart extends Component {
     }
     componentDidMount() {
         watchRecipes(recipes => {
-            //   this.setState({ recipes });
 
-            const pieChartData = categories(recipes)
+            const pieChartData = getCategories(recipes)
             const labels = Object.keys(pieChartData)
             const data = Object.values(pieChartData)
             const chartData = {
@@ -49,14 +38,13 @@ class PieChart extends Component {
                 chartData
 
             })
-            // console.log(recipes.categories)
         });
 
     }
 
 
     render() {
-        console.log(categories)
+        
         return (
 
             <div className={styles.chart2}>

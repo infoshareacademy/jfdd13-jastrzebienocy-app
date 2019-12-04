@@ -27,17 +27,17 @@ export const watchRecipes = onSuccess => {
 // trzeba to zaimplementowac wszedzie
 
 //nie kasowac
-export const categories = data => {
+export const getCategories = data => {
   // console.log(Object.entries(data).map(([id,item]) => item.category))
-  
-    const obj={};
-    data.map(v=>obj[v.category.toLowerCase()]=(obj[v.category.toLowerCase()]||0)+1)
-    console.log(obj)
-    return obj
-    
-  }
-  
+
+  const obj = {};
+  data.map(v => obj[v.category.toLowerCase()] = (obj[v.category.toLowerCase()] || 0) + 1)
+  console.log(obj)
+  return obj
+
+}
+
   // return Object.entries(data).map(([id,item]) => item.category)
-  
-  
+
+
 
