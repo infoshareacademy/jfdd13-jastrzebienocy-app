@@ -7,6 +7,7 @@ import * as Yup from 'yup'
 import { Modal, Link, Button } from 'semantic-ui-react'
 import MainContent from './MainContent'
 import styles from './AddRecipe.module.css'
+import ImageUpload from './ImageUpload'
 
 const regEx = /^[a-z\s\bąćśńółężź]{2,}$/i // Modified JK
 const SelectInput = props => {
@@ -266,7 +267,7 @@ class AddRecipe extends React.Component {
                 >
                   Zdjęcie
                 </label>
-                <input
+                {/* <input
                   id='imageUrl'
                   placeholder='Podaj adres URL zdjęcia gotowego dania'
                   type='text'
@@ -278,7 +279,8 @@ class AddRecipe extends React.Component {
                       ? 'text-input error'
                       : 'text-input'
                   }
-                />
+                /> */}
+                <ImageUpload/>
                 {errors.imageUrl && touched.imageUrl && (
                   <div className='input-feedback'>{errors.imageUrl}</div>
                 )}
