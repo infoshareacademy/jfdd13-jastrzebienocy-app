@@ -45,8 +45,8 @@ class ImageUpload extends Component {
             // complete function
             storage.ref('images').child(image.name).getDownloadURL().then(url => {
                 console.log(url);
-                this.setState({url})
-                this.updateProfilePicture(url)
+                this.props.onSucces(url)
+                
             })
         });
     }

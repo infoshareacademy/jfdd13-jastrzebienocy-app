@@ -23,6 +23,12 @@ export const watchRecipes = onSuccess => {
     })
 }
 
+export const unwatchRecipes = () => {
+  return firebase 
+  .database()
+  .ref('/recipes')
+  .off()
+}
 //nie kasowac
 export const categories = data => {
   

@@ -121,7 +121,8 @@ class AddRecipe extends React.Component {
               handleChange,
               handleBlur,
               handleSubmit,
-              handleReset
+              handleReset,
+              setFieldValue
             } = props
 
             return (
@@ -279,7 +280,9 @@ class AddRecipe extends React.Component {
                       : 'text-input'
                   }
                 /> */}
-                <ImageUpload/>
+                <ImageUpload onSucces = { (url) => { setFieldValue("imageUrl", url)
+                }}
+                />
                 {errors.imageUrl && touched.imageUrl && (
                   <div className='input-feedback'>{errors.imageUrl}</div>
                 )}

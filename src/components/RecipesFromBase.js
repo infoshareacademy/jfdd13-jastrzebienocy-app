@@ -9,6 +9,7 @@ import {
   fetchRecipes,
   prepareRecipes,
   watchRecipes,
+  unwatchRecipes,
   categories
 } from "../services/ForFetchDB";
 // import { bindExpression } from '@babel/types'
@@ -38,6 +39,11 @@ export class RecipesFromBase extends React.Component {
       categories(recipes)
     });
     
+  }
+
+  componentWillUnmount() {
+    unwatchRecipes()
+
   }
 
   // Filter for products and recipes.
