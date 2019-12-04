@@ -35,7 +35,6 @@ export class RecipesFromBase extends React.Component {
   componentDidMount () {
     watchRecipes(recipes => {
       this.setState({ recipes });
-      categories(recipes)
     });
     
   }
