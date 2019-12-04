@@ -7,7 +7,7 @@ export const handleFavoritesFirebase = async (recipeId) => {
 
 
     const recipes = dataSnapshot.val() // getting values to recipes from base
-    console.log('recipes', recipes);
+    // console.log('recipes', recipes);
     // setting vslues to new recipe if it exists
     if (!recipes) {
         const newRecipe = [recipeId]
