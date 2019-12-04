@@ -7,6 +7,7 @@ import { Modal, Link, Button } from 'semantic-ui-react'
 import MainContent from './MainContent'
 import styles from './AddRecipe.module.css'
 import ImageUpload from './ImageUpload'
+import {storage} from '../firebase'
 
 const regEx = /^[a-z\s\bąćśńółężź]{2,}$/i // Modified JK
 const SelectInput = props => {
@@ -73,17 +74,20 @@ class AddRecipe extends React.Component {
           }}
           onSubmit={(values, actions) => {
             const data = Object.assign({}, {...values});
-            const uploadTask = storage.ref(`images/${image.name}`).put(image);
-            uploadTask.on('state_changed',
-            (snapshot) => {},
-            (error) => {
-                // error function
-                console.log(error)
-            },
-            () => {
+            // const uploadTask = storage.ref(`images/${image.name}`).put(image);
+            // uploadTask.on('state_changed',
+            // (snapshot) => {},
+            // (error) => {
+            //     // error function
+            //     console.log(error)
+            // },
+            
+            
+          
+            // () => {
                 // complete function
-                storage.ref('images').child(image.name).getDownloadURL().then(url => {
-                  data.imageurl = url;
+                // storage.ref('images').child(image.name).getDownloadURL().then(url => {
+                //   data.imageurl = url;
                   
                   fetch('https://foodwaste-ecb78.firebaseio.com/recipes.json', {
                     method: 'POST',
@@ -96,12 +100,12 @@ class AddRecipe extends React.Component {
                       this.props.history.push('/')
                       this.props.history.push('/RecipeView')
                     })
-                })
-            });
+                }
+              }
 
             
 
-          }}
+          // }
           validationSchema={Yup.object().shape({
             name: Yup.string()
               .required('Pole jest wymagane!')
