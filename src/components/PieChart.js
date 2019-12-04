@@ -13,7 +13,6 @@ class PieChart extends Component {
     }
     componentDidMount() {
         watchRecipes(recipes => {
-
             const pieChartData = getCategories(recipes)
             const labels = Object.keys(pieChartData)
             const data = Object.values(pieChartData)
@@ -21,30 +20,27 @@ class PieChart extends Component {
                 labels: labels,
                 datasets: [
                     {
-                        label: 'Rodzaje kuchni ',
-                        data: data,
-                        backgroundColor: [
+                    label: 'Rodzaje kuchni ',
+                    data: data,
+                    backgroundColor: [
                             'rgba(255, 99, 132, 0.6)',
                             'rgba(54, 162, 235, 0.6)',
                             'rgba(255, 206, 86, 0.6)',
                             'rgba(75, 199, 192, 0.6)',
                             'rgba(153, 99, 232, 0.6)',
+                            'rgba(15, 99, 200, 0.6)',
+                            'rgba(133, 199, 232, 0.6)',
+                            'rgba(53, 199, 232, 0.6)',
                         ]
                     }
                 ]
             }
-
             this.setState({
                 chartData
-
             })
         });
-
     }
-
-
-    render() {
-        
+    render() {  
         return (
 
             <div className={styles.chart2}>
