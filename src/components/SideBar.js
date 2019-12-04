@@ -59,7 +59,7 @@ class SideBar extends React.Component {
   state = {
     icon: 'search'
   }
-  render () {
+  render() {
     return (
       <div className={styles.SideBar}>
         <div className={styles.Searching}>Wyszukaj:</div>
@@ -146,7 +146,7 @@ class SideBar extends React.Component {
         </div>
         <br />
         <div className={styles.Favourites}>
-          Ulubione <Heart onHeartClick={this.props.onFavouritesChange} />
+          Ulubione <Heart onHeartClick={(e) => console.log(e)} /> >
         </div>
       </div>
     )

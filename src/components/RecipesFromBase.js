@@ -7,6 +7,7 @@ import styles from './RecipesFromBase.module.css'
 
 import {
   // fetchRecipes,
+  getFavourites,
   prepareRecipes,
   watchRecipes,
   categories
@@ -39,6 +40,8 @@ export class RecipesFromBase extends React.Component {
     });
 
   }
+
+
 
   // Filter for products and recipes.
   get filteredRecepies() {

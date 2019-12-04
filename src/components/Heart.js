@@ -8,18 +8,14 @@ class Heart extends React.Component {
 
   handleOnClick = () => {
     this.setState({
-      icon: this.state.icon === 'heart' ? 'heart outline' : 'heart'
+      icon: !this.state.checked ? 'heart outline' : 'heart',
+      checked: !this.state.checked
+    }, () => {
+      this.props.onHeartClick(this.state.checked);
     })
-    this.setState(
-      {
-        checked: !this.state.checked
-      },
-      () => {
-        this.props.onHeartClick(this.state.checked)
-      }
-    )
+
   }
-  render () {
+  render() {
     // return <Icon onClick={this.handleOnClick} name={this.state.icon} />
     const { checked } = this.state
     return (

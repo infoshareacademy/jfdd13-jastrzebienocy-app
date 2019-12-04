@@ -24,8 +24,7 @@ class RecipeView extends React.Component {
     this.state = { open: false }
   }
 
-  addToFavorites = checked => {
-
+  addToFavorites = (checked) => {
     handleFavoritesFirebase(this.props.recipe.id)
   }
 

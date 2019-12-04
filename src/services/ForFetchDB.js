@@ -2,12 +2,16 @@ import React from 'react'
 import firebase from '../firebase'
 
 export const prepareRecipes = data => {
+  const favorites = getFavourites();
+  console.log(favorites);
   return Object.entries(data).map(arr => {
     console.log(arr)
     const [id, data] = arr
+    console.log(id, favorites.includes(id))
     return {
       ...data,
-      id
+      id,
+      isFavorites: favorites.includes(id)
     }
   })
 }
@@ -23,12 +27,14 @@ export const watchRecipes = onSuccess => {
     })
 }
 
-// export const getFavourites = () => {
-//   return firebase.database().ref(`/users/${userId}/favorites`).on('value', dataSnapshot => {
-//     const user = dataSnapshot.val()
-//     console.log(user)
-//   })
-// }
+export const getFavourites = () => {
+  const userId = firebase.auth().currentUser.uid;
+  return firebase.database().ref(`/users/${userId}/favorites`).on('value', dataSnapshot => {
+    const favourites = dataSnapshot.val()
+    console.log(favourites)
+    onSuccess(favourites)
+  })
+}
 
 //nie kasowac
 export const categories = data => {
