@@ -11,13 +11,13 @@ export default class RegisterForm extends React.Component {
     err: ''
   }
 
-  getMessage (code) {
+  getMessage(code) {
     console.log(code)
     switch (code) {
       case 'auth/email-already-in-use':
         return 'Email już jest przypisany!'
       case 'auth/invalid-email':
-        return 'Niepoprawny meil'
+        return 'Niepoprawny Emeil'
       case 'auth/weak-password':
         return 'Twoje hasło musi posiadać przynajmniej 6 znaków'
       default:
@@ -26,19 +26,17 @@ export default class RegisterForm extends React.Component {
   }
 
   onSubmit = e => {
-    console.log(api)
     // console.log(api)
 
     e.preventDefault()
     api
       .register(this.state.email, this.state.password, this.state.name)
-      .catch(err => this.setState({ err: err.message }))
-
+      .catch(err => this.setState({ err: this.getMessage(err.code) }))
     // this.props.apiMethod(this.state.email, this.state.password, this.state.name)
     //     .catch(err => this.setState({ err: err.message }));
   }
 
-  render () {
+  render() {
     return (
       <div>
         <div className={styles.Register}>Utwórz konto</div>
@@ -93,7 +91,6 @@ export default class RegisterForm extends React.Component {
           </button>
         </div>
         {/* <RegisterSignIn></RegisterSignIn> */}
-        {/* {this.state.err && <p style={{ color: 'red' }}>{this.state.err}</p>} */}
         {this.state.err && (
           <p className={styles.AllRegister} style={{ color: 'red' }}>
             {this.state.err}

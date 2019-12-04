@@ -52,7 +52,7 @@ const Root = () => {
                         <Route exact path="/Login" component={LoginForm} />
                         <Route exact path="/privacy" component={Privacy} />
                         {/* <Route exact path="/Login" component={LoginForm} /> */}
-                        <Redirect to="/Register"></Redirect>
+                        <Redirect to="/Login"></Redirect>
                     </Switch>
                     {/* <Footer /> */}
                 </div>
