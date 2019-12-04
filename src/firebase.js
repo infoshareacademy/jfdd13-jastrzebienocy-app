@@ -17,36 +17,4 @@ import firebase from "firebase";
 
   export const storage = firebase.storage();
   export default firebase;
-
-
-// register
-
-   export function register( email, password, name) {
-
-    return firebase
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .then(value => {
-      const user = firebase.auth().currentUser;
-      user
-        .updateProfile({
-          displayName: "name"
-        })
-        .then(() => {
-          console.log('Poprawnie zarejestrowano dane: email, hasło i imię');
-            firebase
-              .database()
-              .ref("/users")
-              .push({
-                id: user.uid,
-                name,
-                email,
-                favorites: []
-              });
-        });
-    }).catch(function(error) { 
-      console.log('error', error)});
-
-
-
-    }
+  

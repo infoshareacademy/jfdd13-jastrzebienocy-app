@@ -36,32 +36,34 @@ class PieChart extends Component {
 <Pie
   data={this.state.chartData}
   width={100}
-  height={100}
+  height={80}
   
   options={
     {
-        responsive: true,
+        responsive: false,
         maintainAspectRatio: false,
       },{ 
     tooltips: {
         bodyFontColor: "white",
-        bodyFontSize: 20,
+        bodyFontSize: 10,
     },
     ticks: {
     min: 0 },
         title:{
         display: true,
           text: 'Rodzaje kuchni',
-          fontSize:22,
+          fontSize:20,
           fontFamily: "Oswald sans-serif",
           fontColor: "black",
       },
       legend:{
+        maintainAspectRatio: false,
+        responsive: true,
         display: true,
         position: 'bottom',  
         labels: {
           fontColor: "black",
-          fontSize: 24,
+          fontSize: 16,
           fontFamily: "Oswald sans-serif",
       }
       }
