@@ -25,9 +25,8 @@ class RecipeView extends React.Component {
   }
 
   addToFavorites = checked => {
-    console.log(this.props.recipe.id)
-    console.log(this.props.id)
-    //  handleFavoritesFirebase(this.props.recipe.id, userId)
+
+    handleFavoritesFirebase(this.props.recipe.id)
   }
 
   showModalWindow() {

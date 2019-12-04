@@ -6,7 +6,7 @@ import SideBar from './SideBar'
 import styles from './RecipesFromBase.module.css'
 
 import {
-  fetchRecipes,
+  // fetchRecipes,
   prepareRecipes,
   watchRecipes,
   categories
@@ -15,7 +15,7 @@ import {
 // import { removeTypeDuplicates } from '@babel/types'
 
 export class RecipesFromBase extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -32,16 +32,16 @@ export class RecipesFromBase extends React.Component {
 
   handlePaginationChange = (e, { activePage }) => this.setState({ activePage })
 
-  componentDidMount () {
+  componentDidMount() {
     watchRecipes(recipes => {
       this.setState({ recipes });
       categories(recipes)
     });
-    
+
   }
 
   // Filter for products and recipes.
-  get filteredRecepies () {
+  get filteredRecepies() {
     // Destructure state for the products option
     const { recipes, products, weight, category, name, favourites } = this.state
     // console.log(name)
@@ -69,7 +69,7 @@ export class RecipesFromBase extends React.Component {
     return finalData
   }
 
-  render () {
+  render() {
     const { activePage, pageItems } = this.state
     console.log(activePage)
     const viewedRecipes = this.filteredRecepies.slice(

@@ -23,9 +23,16 @@ export const watchRecipes = onSuccess => {
     })
 }
 
+// export const getFavourites = () => {
+//   return firebase.database().ref(`/users/${userId}/favorites`).on('value', dataSnapshot => {
+//     const user = dataSnapshot.val()
+//     console.log(user)
+//   })
+// }
+
 //nie kasowac
 export const categories = data => {
-  
-  console.log(Object.entries(data).map(([id,item]) => item.category))
+
+  console.log(Object.entries(data).map(([id, item]) => item.category))
   return Object.entries(data).map(item => item.category)
 }

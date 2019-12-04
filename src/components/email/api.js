@@ -3,51 +3,51 @@ const apiUrl = 'https://foodwaste-ecb78.firebaseio.com'
 const appKey = 'AIzaSyCVVIiKXCqCGhTP7KCs1EkrTN7rm116-eI'
 class Api {
   user = null
-  userChanged = () => {}
-  constructor () {
+  userChanged = () => { }
+  constructor() {
     this.user = JSON.parse(localStorage.getItem('user'))
   }
-  todoCollection () {
+  todoCollection() {
     return `${apiUrl}/user/${this.user.localId}/todo.json?auth=${
       this.user.idToken
-    }`
+      }`
   }
-  todoResource (todoId) {
+  todoResource(todoId) {
     return `${apiUrl}/user/${this.user.localId}/todo/${todoId}.json?auth=${
       this.user.idToken
-    }`
+      }`
   }
-  handleLogout (resp) {
+  handleLogout(resp) {
     if (resp.status === 401) {
       this.setUser(null)
       throw new Error('Unauthorized')
     }
     return resp
   }
-  addTodo (text) {
+  addTodo(text) {
     return fetch(this.todoCollection(), {
       method: 'POST',
       body: JSON.stringify({ text: text, active: true })
     })
   }
-  setActive (todoId, active) {
+  setActive(todoId, active) {
     return fetch(this.todoResource(todoId), {
       method: 'PATCH',
       body: JSON.stringify({ active: active })
     })
   }
-  delete (todoId) {
+  delete(todoId) {
     return fetch(this.todoResource(todoId), {
       method: 'DELETE'
     })
   }
-  updateText (todoId, newText) {
+  updateText(todoId, newText) {
     return fetch(this.todoResource(todoId), {
       method: 'PATCH',
       body: JSON.stringify({ text: newText })
     })
   }
-  listTodos () {
+  listTodos() {
     return fetch(this.todoCollection())
       .then(res => this.handleLogout(res))
       .then(res => res.json())
@@ -61,7 +61,7 @@ class Api {
       )
       .catch(err => console.log(err))
   }
-  logIn (email, password) {
+  logIn(email, password) {
     return firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
@@ -73,7 +73,7 @@ class Api {
         console.log('Something went wrong!')
       })
   }
-  register (email, password, name) {
+  register(email, password, name) {
     return firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -98,13 +98,13 @@ class Api {
       })
   }
 
-  setUser (user) {
+  setUser(user) {
     this.user = user
     localStorage.setItem('user', JSON.stringify(user))
     this.userChanged(user)
     return user
   }
-  onUserChange (cb) {
+  onUserChange(cb) {
     this.userChanged = cb
     cb(this.user)
   }

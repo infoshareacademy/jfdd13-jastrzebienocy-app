@@ -1,13 +1,15 @@
 import firebase, { userId } from '../firebase'
 
-export const handleFavoritesFirebase = async (recipeId, userId) => {
-    console.log(userId, recipeId)
+export const handleFavoritesFirebase = async (recipeId) => {
+    const userId = firebase.auth().currentUser.uid;
     const recipeRef = await firebase.database().ref(`/users/${userId}/favorites`) // setting user favourites path to recipeRef
     const dataSnapshot = await recipeRef.once('value') // setting value ov users recipes to datasnapshot
 
+
     const recipes = dataSnapshot.val() // getting values to recipes from base
+    console.log('recipes', recipes);
     // setting vslues to new recipe if it exists
-    if (typeof recipes === 'string') {
+    if (!recipes) {
         const newRecipe = [recipeId]
         return recipeRef.set(newRecipe)
     }

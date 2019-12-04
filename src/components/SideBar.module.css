@@ -8,7 +8,7 @@
   /* background-color: #D4eFfa;
   /* border: 1px solid #a9a9a9;
   border-radius: 25% 0 0 40%;*/
-  width: 220px;
+  width: 27vh;
 }
 
 .Product, .Quantity, .Category, .Search, .Name {
@@ -74,7 +74,7 @@
   margin-right: 2px;
 }
 
-@media only screen and (max-width: 850px) { 
+@media only screen and (max-width: 850px) {
   .SideBar {
     font-family: "Oswald", sans-serif;
     align-items: center;
@@ -96,7 +96,6 @@
     padding-top: 10px;
     text-align: center;
   }
-  
   .Searching {
     font-family: serif;
     font-weight: bold;
@@ -105,7 +104,6 @@
     padding: 16px;
     text-align: center;
   }
-  
   .Searching::first-letter {
     font-family: serif;
     font-weight: bold;
@@ -114,7 +112,6 @@
     text-decoration: none;
     text-align: center;
   }
-  
   .Favourites {
     font-family: "Oswald", sans-serif;
     font-weight: bold;
@@ -123,9 +120,7 @@
     text-decoration: none;
     text-align: center;
   }
-  
   /* slider */
-  
   .Label {
     align-items: center;
     font-size: 18px;
@@ -134,11 +129,9 @@
     color: #212121;
     text-align: center;
   }
-  
   .InputSlide {
     margin-right: 10px;
   }
-  
   .WeightDisplay {
     font-size: 24px;
     font-weight: bold;
@@ -147,9 +140,6 @@
     padding: 3px;
     margin-right: 2px;
   }
-  
 }
 
-@media only screen and (max-width: 550px) { 
-
-}
+@media only screen and (max-width: 550px) {}
