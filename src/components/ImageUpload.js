@@ -13,13 +13,13 @@ class ImageUpload extends Component {
         this.handleChange = this
             .handleChange
             .bind(this);
-            this.handleUpload = this
+        this.handleUpload = this
             .handleUpload
             .bind(this);
     }
 
     componentDidMount() {
-        this.checkIfUserHasProfilePicture()
+        // this.checkIfUserHasProfilePicture()
     }
 
     handleChange = e => {
@@ -51,32 +51,32 @@ class ImageUpload extends Component {
         });
     }
 
-    updateProfilePicture = (url) => {
-        // 1. check what user are you logged in
-        const currentUser = firebase.auth().currentUser
-        const id = currentUser.uid
+    // updateProfilePicture = (url) => {
+    //     // 1. check what user are you logged in
+    //     const currentUser = firebase.auth().currentUser
+    //     const id = currentUser.uid
 
-        // 2. get the url and update user profile
-        firebase.database().ref(`/users/${id}/profilePicture`).set(url)
-    }
+    //     // 2. get the url and update user profile
+    //     firebase.database().ref(`/users/${id}/profilePicture`).set(url)
+    // }
 
-    checkIfUserHasProfilePicture = async () => {
-        // 1. get current user id
-        const currentUser = firebase.auth().currentUser
-        const id = currentUser.uid
+    // checkIfUserHasProfilePicture = async () => {
+    //     // 1. get current user id
+    //     const currentUser = firebase.auth().currentUser
+    //     const id = currentUser.uid
 
-        // 2. fetch current user profile picture
-        const dataSnapshot = await firebase.database().ref(`/users/${id}/profilePicture`).once('value')
-        const profilePictureUrl = dataSnapshot.val()
+    //     // 2. fetch current user profile picture
+    //     const dataSnapshot = await firebase.database().ref(`/users/${id}/profilePicture`).once('value')
+    //     const profilePictureUrl = dataSnapshot.val()
 
-        // 3. if there is a picture, use it
-        if (profilePictureUrl) {
-            // 4. update state of the component
-            this.setState({
-                url: profilePictureUrl
-            })
-        }
-    }
+    //     // 3. if there is a picture, use it
+    //     if (profilePictureUrl) {
+    //         // 4. update state of the component
+    //         this.setState({
+    //             url: profilePictureUrl
+    //         })
+    //     }
+    // }
 
 
     render() {
