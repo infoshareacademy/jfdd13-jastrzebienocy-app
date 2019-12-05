@@ -80,9 +80,7 @@ class Api {
         console.log('Logged in!')
         console.log(value)
       })
-      .catch(() => {
-        console.log('Something went wrong!')
-      })
+      
   }
 
     register(email, password, name) { 
