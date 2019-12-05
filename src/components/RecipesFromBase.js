@@ -66,7 +66,7 @@ export class RecipesFromBase extends React.Component {
       const categoryFilter = category
         ? recipe.category.toLowerCase().includes(category.toLowerCase())
         : true
-      const favouritesFilter = favourites === true ? recipe.favourites : true
+      const favouritesFilter = favourites === true ? this.state.favs[recipe.id] : true
       // console.log(recipe.name)
       return (
         productsFilter &&
@@ -116,8 +116,8 @@ export class RecipesFromBase extends React.Component {
               // console.log(category)
             }}
             favourites={this.state.favourites}
-            onFavouritesChange={favourites => {
-              this.setState({ favourites })
+            onFavouritesChange={() => {
+              this.setState({ favourites: !this.state.favourites })
               // console.log(favourites)
             }}
           />
