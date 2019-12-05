@@ -52,7 +52,7 @@ const dropdownI = [
   {
     key: 'Inna',
     text: 'Inna',
-    value: 'Inna'
+    value: 'zupa'
   }
 ]
 class SideBar extends React.Component {

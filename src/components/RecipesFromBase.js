@@ -70,7 +70,6 @@ export class RecipesFromBase extends React.Component {
 
   render () {
     const { activePage, pageItems } = this.state
-    console.log(activePage)
     const viewedRecipes = this.filteredRecepies.slice(
       (activePage - 1) * pageItems,
       activePage * pageItems

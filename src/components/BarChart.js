@@ -1,37 +1,46 @@
 import React, {Component} from 'react';
 import {Bar, Line, Pie } from 'react-chartjs-2';
 import styles from "./Charts.module.css";
+import {   getCookingTime, watchRecipes,  } from '../services/ForFetchDB';
 
 
 class BarChart extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            chartData:{
-              labels: ['Kwiecień', 'Maj', 'Czerwiec', 'Wrzesień', 'Październik', 'Listopad'],
-              datasets:[
-                  {
-                      label: 'Ilość Użytkowników',
-                      data:[
-                          10,
-                          30, 
-                          60, 
-                          100, 
-                          250, 
-                          400],
-                      backgroundColor: [
-                          'rgba(255, 99, 132, 0.6)',
-                          'rgba(54, 162, 235, 0.6)',
-                          'rgba(255, 206, 86, 0.6)',
-                          'rgba(75, 199, 192, 0.6)',
-                          'rgba(153, 99, 232, 0.6)',
-                          'rgba(33, 99, 232, 0.6)',
-                      ] 
-                  }
-              ] 
-            }
+  constructor(props) {
+    super(props);
+    this.state = {
+        chartData: {
         }
     }
+}
+componentDidMount() {
+    watchRecipes(recipes => {
+        const barChartData = getCookingTime(recipes)
+        const labels = Object.keys(barChartData)
+        const data = Object.values(barChartData)
+        const chartData = {
+            labels: data,
+            datasets: [
+                {
+                label: 'Czas Gotowania ',
+                data: labels,
+                backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(75, 199, 192, 0.6)',
+                        'rgba(153, 99, 232, 0.6)',
+                        'rgba(15, 99, 200, 0.6)',
+                        'rgba(133, 199, 232, 0.6)',
+                        'rgba(53, 199, 232, 0.6)',
+                    ]
+                }
+            ]
+        }
+        this.setState({
+            chartData
+        })
+    });
+}
     
     render() {
         return (
@@ -85,7 +94,7 @@ class BarChart extends Component {
       },
         title:{
         display: true,
-          text: 'Liczba użytkowników korzystających z aplikacji',
+          text: 'Przepisy / czas gotowania',
           fontSize:20,
           fontFamily: "Oswald sans-serif",
           fontColor: "black",
