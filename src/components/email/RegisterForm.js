@@ -8,19 +8,18 @@ import * as Yup from "yup";
 
 const accountFormSchema = Yup.object().shape({
   name: Yup.string()
-    .required("testing"),
+    .required("Pole wymagane"),
   email: Yup.string()
-    // .max(100, "Too long buddy")
-    // .email("Wrong email!")
-    .required("Required!"),
-  // password: Yup.string()
-  //   .min(8, "Too short! Min 8 chars")
-  //   .matches(new RegExp(/[a-zA-Z]\d\s/g), "Wrong password format."),
-  // phoneNumber: Yup.string().required("Required!")
-  // password: Yup.string()
-  //   .required("testing"),
-  // repeatPassword: Yup.string()
-  //   .required("testing"),
+    .max(100, "A długie hasło")
+    .email("Niepoprawny Email!")
+    .required("Pole wymagane"),
+  password: Yup.string()
+    .required("Pole wymagane")
+    .min(8, "Wymagane minimum 8 znaków")
+    .matches(/.+/, "Wrong password format."),
+  RepeatPassword: Yup.string()
+  .oneOf([Yup.ref('password'), null])
+  .required('Niepoprawne hasło')
 });
 
 const TextInput = props => {
@@ -56,7 +55,7 @@ export default class RegisterForm extends React.Component {
   }
 
   onSubmit = e => {
-    // console.log(api)
+    console.log("guzik dolny")
 
     e.preventDefault()
     api
@@ -78,11 +77,14 @@ export default class RegisterForm extends React.Component {
             initialValues={{
               name: "",
               email: "",
-              // password: "",
+              password: "",
               // repeatPassword: "",
             }}
             validationSchema={accountFormSchema}
-            onSubmit={(values, { setSubmitting }) => { console.log('testing3')
+            onSubmit={(values, { setSubmitting }) => {
+              api
+                .register(values.email, values.password, values.name)
+                .catch(err => this.setState({ err: this.getMessage(err.code) }))
               // setSubmitting(true);
               // setTimeout(() => {
               //   alert(JSON.stringify(values, null, 2));
@@ -104,11 +106,11 @@ export default class RegisterForm extends React.Component {
                 <form className={styles.Inputs} onSubmit={handleSubmit}>
                   <div className={styles.mailBox}>
                     <div>
-                      <label>Imię:</label>
+                      <label></label>
                       <TextInput
                         type="name"
                         name="name"
-                        placeholder="Name"
+                        placeholder="Imię"
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.name}
@@ -117,7 +119,7 @@ export default class RegisterForm extends React.Component {
                       />
                     </div>
                     <div>
-                      <label>Email:</label>
+                      <label></label>
                       <TextInput
                         type="email"
                         name="email"
@@ -129,10 +131,35 @@ export default class RegisterForm extends React.Component {
                         errors={errors}
                       />
                     </div>
+                    <div>
+                      <label></label>
+                      <TextInput
+                        type="password"
+                        name="password"
+                        placeholder="Hasło"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.password}
+                        touched={touched}
+                        errors={errors}
+                      />
+                    </div>
+                    <div>
+                      <label></label>
+                      <TextInput
+                        type="password"
+                        name="RepeatPassword"
+                        placeholder="powtórz hasło"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.password2}
+                        touched={touched}
+                        errors={errors}
+                      />
+                    </div>
                   </div>
-
                   <button type='submit' >
-            Zarejestruj się
+                    Zarejestruj się
           </button>
 
                 </form>)}
@@ -180,9 +207,9 @@ export default class RegisterForm extends React.Component {
             </Link>
           </p>
 
-          <button type='submit' onClick={this.onSubmit}>
+          {/* <button type='submit' onClick={this.onSubmit}>
             Zarejestruj się
-          </button>
+          </button> */}
         </div>
         {/* <RegisterSignIn></RegisterSignIn> */}
         {this.state.err && (
