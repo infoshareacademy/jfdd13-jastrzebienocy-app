@@ -3,7 +3,7 @@ import styles from '../RegisterForm.module.css'
 import { RegisterSignIn } from './RegisterSignIn'
 import { NavLink, Link } from 'react-router-dom'
 import api from './api'
-export default class RegisterForm extends React.Component {
+export default class  extends React.Component {
   state = {
     name: '',
     email: '',

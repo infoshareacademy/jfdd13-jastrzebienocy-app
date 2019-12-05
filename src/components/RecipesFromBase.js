@@ -21,6 +21,7 @@ export class RecipesFromBase extends React.Component {
 
     this.state = {
       recipes: [],
+      favs: {},
       name: '',
       products: '',
       weight: 2000,
@@ -33,15 +34,21 @@ export class RecipesFromBase extends React.Component {
 
   handlePaginationChange = (e, { activePage }) => this.setState({ activePage })
 
+  unsubscribe = undefined;
+
   componentDidMount() {
     watchRecipes(recipes => {
       this.setState({ recipes });
       categories(recipes)
     });
-
+    this.unsubscribe = getFavourites((favs) => this.setState({ favs }))
   }
 
-
+  componentWillUnmount() {
+    if (this.unsubscribe) {
+      this.unsubscribe()
+    }
+  }
 
   // Filter for products and recipes.
   get filteredRecepies() {
@@ -119,7 +126,7 @@ export class RecipesFromBase extends React.Component {
           <Grid stackable relaxed style={{ width: '100%' }}>
             {viewedRecipes.map(item => (
               <Grid.Column key={item.id} width={8}>
-                <RecipeView recipe={item} />
+                <RecipeView recipe={item} isFavourite={this.state.favs[item.id]} />
               </Grid.Column>
             ))}
           </Grid>

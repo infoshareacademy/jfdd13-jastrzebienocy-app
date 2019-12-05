@@ -100,7 +100,7 @@ class RecipeView extends React.Component {
             </div>
           </div>
           <div className={styles.HeartInRecipe}>
-            <Heart onHeartClick={this.addToFavorites} />
+            <Heart checked={this.props.isFavourite} onHeartClick={this.addToFavorites} />
           </div>
           <div className={styles.TimeAndPortions}>
             <div>
