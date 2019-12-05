@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '..//RegisterForm.module.css'
+import styles from '../RegisterForm.module.css'
 import { RegisterSignIn } from './RegisterSignIn'
 import { NavLink, Link } from 'react-router-dom'
 import api from './api'
@@ -18,8 +18,8 @@ const accountFormSchema = Yup.object().shape({
     .min(8, "Wymagane minimum 8 znaków")
     .matches(/.+/, "Wrong password format."),
   RepeatPassword: Yup.string()
-  .oneOf([Yup.ref('password'), null])
-  .required('Niepoprawne hasło')
+    .oneOf([Yup.ref('password'), null])
+    .required('Niepoprawne hasło')
 });
 
 const TextInput = props => {
