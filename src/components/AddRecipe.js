@@ -71,19 +71,6 @@ class AddRecipe extends React.Component {
             portions: ""
           }}
           onSubmit={(values, actions) => {
-<<<<<<< HEAD
-            fetch('https://foodwaste-ecb78.firebaseio.com/recipes.json', {
-              method: 'POST',
-              body: JSON.stringify({ ...values })
-            })
-              .then(() => {
-                actions.setSubmitting(false)
-              })
-              .then(() => {
-                this.props.history.push('/')
-                this.props.history.push('/RecipeView')
-              })
-=======
             const data = Object.assign({}, { ...values });
             console.log(values);
             const image = values.imageSrc;
@@ -92,7 +79,7 @@ class AddRecipe extends React.Component {
               const uploadTask = storage.ref(`images/${imageName}`).put(image);
               uploadTask.on(
                 "state_changed",
-                snapshot => {},
+                snapshot => { },
                 error => {
                   console.log(error);
                 },
@@ -121,7 +108,6 @@ class AddRecipe extends React.Component {
               this.props.onSuccess();
               console.log('nowy przepis')
             }
->>>>>>> e8296209c184b408ce4296eec0b36397055c46bf
           }}
           validationSchema={Yup.object().shape({
             name: Yup.string()
