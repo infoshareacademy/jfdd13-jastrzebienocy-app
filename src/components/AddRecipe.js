@@ -41,15 +41,6 @@ const SelectInput = props => {
           error={errors[name] && touched[name]}
         >
           { options.map((options)  => <option value={options.value}>{options.name}</option>)}
-          {/* <option value="włoska">Kuchnia włoska</option>
-          <option value="francuska">Kuchnia francuska</option>
-          <option value="polska">Kuchnia polska</option>
-          <option value="azjatycka">Kuchnia azjatycka</option>
-          <option value="amerykańska">Kuchnia amerykańska</option>
-          <option value="meksykańska">Kuchnia meksykańska</option>
-          <option value="gruzińska">Kuchnia gruzińska</option>
-          <option value="śródziemnomorska">Kuchnia środziemnomorska</option>
-          <option value="inna">Inna</option> */}
         </select>
       </label>
     </div>
@@ -62,7 +53,6 @@ class AddRecipe extends React.Component {
   }
 
   render() {
-    // const { open } = this.props
     return (
       <div>
         <h1>Nowy przepis</h1>
@@ -92,7 +82,6 @@ class AddRecipe extends React.Component {
                 "state_changed",
                 snapshot => {},
                 error => {
-                  // error function
                   console.log(error);
                 },
                 () => {
