@@ -5,11 +5,6 @@ import { Icon, Dropdown } from 'semantic-ui-react'
 
 const dropdownI = [
   {
-    key: 'Wszystkie',
-    text: 'Wszystkie',
-    value: null
-  },
-  {
     key: 'Kuchnia włoska',
     text: 'Kuchnia włoska',
     value: 'włoska'
@@ -76,7 +71,7 @@ class SideBar extends React.Component {
           value={this.props.name}
           onChange={event => {
             this.props.onNameChange(event.target.value)
-            // console.log(event)
+
           }}
         />
         <div className={styles.Product}>Produkt:</div>
@@ -92,7 +87,7 @@ class SideBar extends React.Component {
           value={this.props.products}
           onChange={event => {
             this.props.onProductsChange(event.target.value)
-            // console.log(event)
+
           }}
         />
         <div className={styles.Quantity}>
@@ -118,7 +113,7 @@ class SideBar extends React.Component {
             value={this.props.weight}
             onChange={event => {
               this.props.onWeigthChange(event.target.value)
-              // console.log(event)
+
             }}
           />
         </div>
@@ -147,7 +142,7 @@ class SideBar extends React.Component {
         <br />
         <div className={styles.Favourites}>
           Ulubione <Heart checked={this.props.favourites} onHeartClick={this.props.onFavouritesChange} />
-          {/*{(e) => console.log(e)} >*/}
+
         </div>
       </div>
     )
