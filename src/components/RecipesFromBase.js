@@ -9,6 +9,7 @@ import {
   fetchRecipes,
   prepareRecipes,
   watchRecipes,
+  unwatchRecipes,
   categories
 } from "../services/ForFetchDB";
 // import { bindExpression } from '@babel/types'
@@ -35,9 +36,13 @@ export class RecipesFromBase extends React.Component {
   componentDidMount () {
     watchRecipes(recipes => {
       this.setState({ recipes });
-      categories(recipes)
     });
     
+  }
+
+  componentWillUnmount() {
+    unwatchRecipes()
+
   }
 
   // Filter for products and recipes.
@@ -71,7 +76,6 @@ export class RecipesFromBase extends React.Component {
 
   render () {
     const { activePage, pageItems } = this.state
-    console.log(activePage)
     const viewedRecipes = this.filteredRecepies.slice(
       (activePage - 1) * pageItems,
       activePage * pageItems
