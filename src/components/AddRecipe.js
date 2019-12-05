@@ -6,7 +6,6 @@ import * as Yup from "yup";
 import { Modal, Link, Button } from "semantic-ui-react";
 import MainContent from "./MainContent";
 import styles from "./AddRecipe.module.css";
-import ImageUpload from "./ImageUpload";
 import firebase, { storage } from "../firebase";
 import { watchRecipes, unwatchRecipes } from "../services/ForFetchDB";
 
