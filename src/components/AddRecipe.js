@@ -1,4 +1,3 @@
-// Helper styles for demo
 import './helper.css'
 import React from 'react'
 import { Route } from 'react-router-dom'
@@ -7,6 +6,8 @@ import * as Yup from 'yup'
 import { Modal, Link, Button } from 'semantic-ui-react'
 import MainContent from './MainContent'
 import styles from './AddRecipe.module.css'
+import ImageUpload from './ImageUpload'
+import {storage} from '../firebase'
 
 const regEx = /^[a-z\s\bąćśńółężź]{2,}$/i // Modified JK
 const SelectInput = props => {
@@ -49,6 +50,10 @@ class AddRecipe extends React.Component {
     // }
   }
 
+  handleUpload = () => {
+    
+    
+}
   render () {
     // const { open } = this.props
     return (
@@ -68,18 +73,39 @@ class AddRecipe extends React.Component {
             favourites: false
           }}
           onSubmit={(values, actions) => {
-            fetch('https://foodwaste-ecb78.firebaseio.com/recipes.json', {
-              method: 'POST',
-              body: JSON.stringify({ ...values }) // .toLowerCase() // added to stndarize recipes in base -JK
-            })
-              .then(() => {
-                actions.setSubmitting(false)
-              })
-              .then(() => {
-                this.props.history.push('/')
-                this.props.history.push('/RecipeView')
-              })
-          }}
+            const data = Object.assign({}, {...values});
+            // const uploadTask = storage.ref(`images/${image.name}`).put(image);
+            // uploadTask.on('state_changed',
+            // (snapshot) => {},
+            // (error) => {
+            //     // error function
+            //     console.log(error)
+            // },
+            
+            
+          
+            // () => {
+                // complete function
+                // storage.ref('images').child(image.name).getDownloadURL().then(url => {
+                //   data.imageurl = url;
+                  
+                  fetch('https://foodwaste-ecb78.firebaseio.com/recipes.json', {
+                    method: 'POST',
+                    body: JSON.stringify(data) // .toLowerCase() // added to stndarize recipes in base -JK
+                  })
+                    .then(() => {
+                      actions.setSubmitting(false)
+                    })
+                    .then(() => {
+                      this.props.history.push('/')
+                      this.props.history.push('/RecipeView')
+                    })
+                }
+              }
+
+            
+
+          // }
           validationSchema={Yup.object().shape({
             name: Yup.string()
               .required('Pole jest wymagane!')
@@ -121,7 +147,8 @@ class AddRecipe extends React.Component {
               handleChange,
               handleBlur,
               handleSubmit,
-              handleReset
+              handleReset,
+              setFieldValue
             } = props
 
             return (
@@ -236,28 +263,6 @@ class AddRecipe extends React.Component {
                   errors={errors}
                 />
 
-                {/* <label
-                  htmlFor='category'
-                  style={{ display: 'block', margin: '5px' }}
-                >
-                  Rodzaj kuchni
-                </label>
-                <input
-                  id='category'
-                  placeholder='Wybierz kuchnię'
-                  type='text'
-                  value={values.category}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={
-                    errors.category && touched.category
-                      ? 'text-input error'
-                      : 'text-input'
-                  }
-                />
-                {errors.category && touched.category && (
-                  <div className='input-feedback'>{errors.name}</div>
-                )} */}
 
                 <label
                   htmlFor='cookingTime'
@@ -288,7 +293,7 @@ class AddRecipe extends React.Component {
                 >
                   Zdjęcie
                 </label>
-                <input
+                {/* <input
                   id='imageUrl'
                   placeholder='Podaj adres URL zdjęcia gotowego dania'
                   type='text'
@@ -300,6 +305,9 @@ class AddRecipe extends React.Component {
                       ? 'text-input error'
                       : 'text-input'
                   }
+                /> */}
+                <ImageUpload onSucces = { (url) => { setFieldValue("imageUrl", url)
+                }}
                 />
                 {errors.imageUrl && touched.imageUrl && (
                   <div className='input-feedback'>{errors.imageUrl}</div>
@@ -328,15 +336,14 @@ class AddRecipe extends React.Component {
                   <div className='input-feedback'>{errors.portions}</div>
                 )}
 
-                <input 
-                id='favorites'
-                type= 'text'
-                value={values.favorites}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                className={styles.None}
+                <input
+                  id='favorites'
+                  type='text'
+                  value={values.favorites}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={styles.None}
                 />
-
 
                 <div className='Buttons'>
                   <Button

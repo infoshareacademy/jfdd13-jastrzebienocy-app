@@ -34,7 +34,6 @@ export const getCategories = data => {
   return obj
 }
 
-
 export const getCookingTime = data => {
   const obj = {};
   data.map(v => obj[v.cookingTime] = (obj[v.cookingTime] || 0) + 1)
@@ -43,6 +42,9 @@ export const getCookingTime = data => {
 }
 
 
-
-
-
+export const unwatchRecipes = () => {
+  return firebase 
+  .database()
+  .ref('/recipes')
+  .off()
+}
