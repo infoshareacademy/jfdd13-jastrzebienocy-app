@@ -1,6 +1,5 @@
 import React from 'react'
 import RecipeView from './RecipeView'
-import firebase from '../firebase'
 import { Grid, Pagination } from 'semantic-ui-react'
 import SideBar from './SideBar'
 import styles from './RecipesFromBase.module.css'
@@ -12,8 +11,7 @@ import {
   unwatchRecipes,
   categories
 } from "../services/ForFetchDB";
-// import { bindExpression } from '@babel/types'
-// import { removeTypeDuplicates } from '@babel/types'
+
 
 export class RecipesFromBase extends React.Component {
   constructor (props) {
@@ -36,7 +34,6 @@ export class RecipesFromBase extends React.Component {
   componentDidMount () {
     watchRecipes(recipes => {
       this.setState({ recipes });
-      categories(recipes)
     });
     
   }
@@ -50,8 +47,6 @@ export class RecipesFromBase extends React.Component {
   get filteredRecepies () {
     // Destructure state for the products option
     const { recipes, products, weight, category, name, favourites } = this.state
-    // console.log(name)
-    // console.log(weight, recipes)
     const finalData = recipes.filter(recipe => {
       const productsFilter =
         recipe.products &&
@@ -63,7 +58,6 @@ export class RecipesFromBase extends React.Component {
         ? recipe.category.toLowerCase().includes(category.toLowerCase())
         : true
       const favouritesFilter = favourites === true ? recipe.favourites : true
-      // console.log(recipe.name)
       return (
         productsFilter &&
         nameFilter &&
@@ -77,7 +71,7 @@ export class RecipesFromBase extends React.Component {
 
   render () {
     const { activePage, pageItems } = this.state
-    console.log(activePage)
+    
     const viewedRecipes = this.filteredRecepies.slice(
       (activePage - 1) * pageItems,
       activePage * pageItems
@@ -90,7 +84,6 @@ export class RecipesFromBase extends React.Component {
             name={this.state.name}
             onNameChange={name => {
               this.setState({ name })
-              // console.log(this.state.name)
             }}
             products={this.state.products}
             onProductsChange={products => {
@@ -109,12 +102,10 @@ export class RecipesFromBase extends React.Component {
               this.setState({
                 category
               })
-              // console.log(category)
             }}
             favourites={this.state.favourites}
             onFavouritesChange={favourites => {
               this.setState({ favourites })
-              // console.log(favourites)
             }}
           />
         </div>
