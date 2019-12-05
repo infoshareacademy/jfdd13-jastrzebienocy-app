@@ -32,6 +32,8 @@ componentDidMount() {
                         'rgba(15, 99, 200, 0.6)',
                         'rgba(133, 199, 232, 0.6)',
                         'rgba(53, 199, 232, 0.6)',
+                        'rgba(153, 99, 12, 0.6)',
+                        'rgba(53, 9, 32, 0.6)'
                     ]
                 }
             ]
@@ -69,7 +71,7 @@ componentDidMount() {
           {
             ticks: {
               min: 0,
-              max: 500
+              max: 300
             },
             ticks: {
                 fontColor: "#212121",
@@ -94,7 +96,7 @@ componentDidMount() {
       },
         title:{
         display: true,
-          text: 'Przepisy / czas gotowania',
+          text: 'Ilość przepisów / czas gotowania',
           fontSize:20,
           fontFamily: "Oswald sans-serif",
           fontColor: "black",
