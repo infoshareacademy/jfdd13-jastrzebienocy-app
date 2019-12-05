@@ -3,3 +3,26 @@
    bottom: 10%;
    left:49%;
 }
+
+.layout {
+   display: flex;
+}
+
+@media only screen and (max-width: 850px) {
+   .layout {
+      display: flex;
+      flex-direction: column;
+   } 
+}
+
+.layout2 {
+   background: grey;
+   margin-right: 20px;
+}
+
+@media only screen and (max-width: 850px) {
+   .layout2 {
+      background: grey;
+      max-height: 150px;
+   } 
+}

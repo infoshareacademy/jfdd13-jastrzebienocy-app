@@ -70,8 +70,7 @@ componentDidMount() {
         yAxes: [
           {
             ticks: {
-              min: 0,
-              max: 300
+              beginAtZero: true
             },
             ticks: {
                 fontColor: "#212121",
