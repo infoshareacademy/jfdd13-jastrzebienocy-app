@@ -4,7 +4,8 @@ import ProfilePicture from "./images/ProfilePicture.jpg";
 import {
     
     getFavourites,
-    watchUsers
+    watchUsers,
+    unwatchUsers
     
   } from "../services/ForFetchDB";
 
@@ -22,15 +23,11 @@ class Profile extends React.Component {
       componentDidMount() {
         watchUsers(users => {
           this.setState({ ...users});
-          console.log(users)
         });
-        this.unsubscribe = getFavourites((favs) => this.setState({ favs }))
       }
     
       componentWillUnmount() {
-        if (this.unsubscribe) {
-          this.unsubscribe()
-        }
+        unwatchUsers()
       }
     render() {
         return (

@@ -22,18 +22,7 @@ export const watchRecipes = onSuccess => {
     })
 }
 
-export const prepareUsers = data => {
-  return data
-  
-  // Object.entries(data).map(arr => {
-  //   const [id, data] = arr 
-  //   return {
-  //     ...data,
-  //     id
-      
-  //   }
-    
-}
+
 
 
 export const watchUsers = onSuccess => {
@@ -45,8 +34,14 @@ export const watchUsers = onSuccess => {
     .on('value', dataSnapshot => {
       const users = dataSnapshot.val()
       onSuccess((users))
-      console.log(users)
     })
+}
+
+export const unwatchUsers = () => {
+  return firebase
+    .database()
+    .ref('/users')
+    .off()
 }
 
 export const getFavourites = onSuccess => {
