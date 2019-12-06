@@ -8,6 +8,15 @@
    display: flex;
 }
 
+@media only screen and (max-width: 1050px) { 
+   .pagMiddle {
+      position: fixed;
+      bottom: 34%;
+      left:49%;
+   }
+}
+
+
 @media only screen and (max-width: 850px) {
    .layout {
       display: flex;
@@ -24,10 +33,13 @@
    .layout2 {
       background: grey;
       height: auto;
-   } 
-
-   .layout2 {
-      background: grey;
       margin-right: 0;
    }
+
+
+   .pagMiddle {
+      position: fixed;
+      bottom: 5%;
+      left:29%;
+}
 }
