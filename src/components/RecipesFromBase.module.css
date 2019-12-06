@@ -39,7 +39,25 @@
 
    .pagMiddle {
       position: fixed;
-      bottom: 5%;
-      left:29%;
+      bottom: 10%;
+      left: 24%;
+}
+}
+
+@media only screen and (max-width: 600px) {
+
+   .pagMiddle {
+      position: fixed;
+      bottom: 18%;
+      left:17%;
+}
+}
+
+@media only screen and (max-width: 425px) {
+
+   .pagMiddle {
+      position: fixed;
+      bottom: 18%;
+      left:5%;
 }
 }
