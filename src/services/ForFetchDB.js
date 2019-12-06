@@ -3,7 +3,6 @@ import firebase from '../firebase'
 
 export const prepareRecipes = data => {
   return Object.entries(data).map(arr => {
-    // console.log(arr)
     const [id, data] = arr
     return {
       ...data,
@@ -20,6 +19,33 @@ export const watchRecipes = onSuccess => {
       const recipes = dataSnapshot.val()
       // console.log(recipes)
       onSuccess(prepareRecipes(recipes))
+    })
+}
+
+export const prepareUsers = data => {
+  return data
+  
+  // Object.entries(data).map(arr => {
+  //   const [id, data] = arr 
+  //   return {
+  //     ...data,
+  //     id
+      
+  //   }
+    
+}
+
+
+export const watchUsers = onSuccess => {
+  const userId = firebase.auth().currentUser.uid;
+  console.log(userId)
+  return firebase
+    .database()
+    .ref(`/users/${userId}`)
+    .on('value', dataSnapshot => {
+      const users = dataSnapshot.val()
+      onSuccess((users))
+      console.log(users)
     })
 }
 

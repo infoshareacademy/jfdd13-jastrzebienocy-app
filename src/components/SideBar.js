@@ -62,11 +62,10 @@ class SideBar extends React.Component {
         <input
           style={{
             borderRadius: '25px',
-            width: '165px',
             marginLeft: '16px',
             backgroundColor: 'lightGrey'
           }}
-          className={styles.Input}
+          className={styles.Input2}
           placeholder='Nazwa Potrawy ...'
           value={this.props.name}
           onChange={event => {
@@ -78,11 +77,10 @@ class SideBar extends React.Component {
         <input
           style={{
             borderRadius: '25px',
-            width: '165px',
             marginLeft: '16px',
             backgroundColor: 'lightGrey'
           }}
-          className={styles.Input}
+          className={styles.Input2}
           placeholder='Nazwa Produktu ...'
           value={this.props.products}
           onChange={event => {
@@ -98,13 +96,13 @@ class SideBar extends React.Component {
           <input
             style={{
               padding: '7px 0',
-              width: '165px',
               marginLeft: '16px',
               WebkitAppearance: 'media-volume-sliderthumb',
               borderRadius: '51px',
               height: '20px',
               backgroundColor: 'lightGrey'
             }}
+            className={styles.Input2}
             id='typeinp'
             type='range'
             min='0'
@@ -118,11 +116,11 @@ class SideBar extends React.Component {
           />
         </div>
         <div className={styles.Category}>Kategoria:</div>
-        <div className={styles.dropdown}>
+        <div className={styles.dropdown2}>
           <Dropdown
             style={{
               borderRadius: '25px',
-              width: '165px',
+              width: '85%',
               marginLeft: '16px',
               backgroundColor: 'lightGrey',
               textAlign: 'center'
@@ -134,12 +132,13 @@ class SideBar extends React.Component {
             clearable
             options={dropdownI}
             value={this.props.category}
+            className={styles.Input2}
             onChange={(event, data) => {
               this.props.onCategoryChange(data.value)
             }}
           />
         </div>
-        <br />
+     
         <div className={styles.Favourites}>
           Ulubione <Heart checked={this.props.favourites} onHeartClick={this.props.onFavouritesChange} />
         </div>
