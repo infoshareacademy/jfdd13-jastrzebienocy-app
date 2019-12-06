@@ -17,7 +17,7 @@
   color: #212121;
   font-size: 24px;
   text-decoration: none;
-  padding: 20px;
+  padding: 5px;
   text-align: center;
 }
 
@@ -80,30 +80,40 @@
 }
 
 .dropdown2 {
-  width:85%;
+  width: 85%;
   height: 20px;
 }
 
-@media only screen and (max-width: 850px) { 
+@media only screen and (max-width: 850px) {
   .SideBar {
+    display: flex;
+    flex-direction: column;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    height: auto;
+    font-family: "Oswald", sans-serif;
+    align-items: center;
+    scroll-behavior: smooth;
+    /* top: 0px; */
+    /* padding: 5px; */
+    /* margin: 0 auto; */
+    width: 95%;
     /* display: flex;
     flex-wrap: wrap;  */
-    
-    display: grid;
+    /* display: grid;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns:1fr 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     height: auto;
     font-family: "Oswald", sans-serif;
     align-items: center;
     scroll-behavior: smooth;
     top: 0px;
     padding: 5px;
-    margin: 0 auto;
-    
+    margin: 0 auto; */
     /* background-color: #D4eFfa;
     /* border: 1px solid #a9a9a9;
     border-radius: 25% 0 0 40%;*/
-    width: 95%;
+    /* width: 95%; */
   }
   .Product, .Quantity, .Category, .Search, .Name {
     font-family: "Oswald", sans-serif;
@@ -113,20 +123,19 @@
     text-decoration: none;
     padding-top: 5px;
     text-align: center;
-    margin-top: 15px;
+    /* margin-top: 15px; */
   }
-
   .Category {
-    margin-top: 25px; 
+    /* margin-top: 25px; */
   }
-  
   .Input2 {
-    width: 75%;
-   height: 20px;
+    /* margin: 0 auto; */
+    width: 50%;
+    height: 20px;
   }
-
   .dropdown2 {
-    width:90%;
+    margin: 0 auto;
+    width: 50%;
     font-size: 10px;
     height: 10px;
   }
@@ -154,7 +163,7 @@
     font-size: 16px;
     text-decoration: none;
     text-align: center;
-    margin-top: 0px;
+    margin-top: 25px;
   }
   /* slider */
   .Label {

@@ -1,6 +1,6 @@
 import React from 'react'
 import RecipeView from './RecipeView'
-import { Grid, Pagination } from 'semantic-ui-react'
+import { Grid, Pagination, GridRow } from 'semantic-ui-react'
 import SideBar from './SideBar'
 import styles from './RecipesFromBase.module.css'
 
@@ -124,9 +124,11 @@ export class RecipesFromBase extends React.Component {
         <>
           <Grid stackable relaxed style={{ width: '100%' }}>
             {viewedRecipes.map(item => (
+
               <Grid.Column key={item.id} width={8}>
                 <RecipeView recipe={item} isFavourite={this.state.favs[item.id]} />
               </Grid.Column>
+
             ))}
           </Grid>
           <div className={styles.pagMiddle}>

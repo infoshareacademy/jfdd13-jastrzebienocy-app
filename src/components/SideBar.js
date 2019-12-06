@@ -119,6 +119,7 @@ class SideBar extends React.Component {
         <div className={styles.dropdown2}>
           <Dropdown
             style={{
+              // margin: '0 auto',
               borderRadius: '25px',
               width: '85%',
               marginLeft: '16px',
@@ -138,7 +139,7 @@ class SideBar extends React.Component {
             }}
           />
         </div>
-     
+
         <div className={styles.Favourites}>
           Ulubione <Heart checked={this.props.favourites} onHeartClick={this.props.onFavouritesChange} />
         </div>
