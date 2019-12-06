@@ -1,3 +1,4 @@
+import './helper'
 import React from 'react'
 import RegisterForm from './RegisterForm'
 import LoginForm from './LoginForm'
@@ -6,7 +7,7 @@ import styles from '..//RegisterForm.module.css'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
-export function RegisterSignIn () {
+export function RegisterSignIn() {
   return (
     <div>
       <LoginForm apiMethod={(email, password) => api.logIn(email, password)} />

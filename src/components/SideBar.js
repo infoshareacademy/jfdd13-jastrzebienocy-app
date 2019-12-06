@@ -142,7 +142,6 @@ class SideBar extends React.Component {
         <br />
         <div className={styles.Favourites}>
           Ulubione <Heart checked={this.props.favourites} onHeartClick={this.props.onFavouritesChange} />
-
         </div>
       </div>
     )
