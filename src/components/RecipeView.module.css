@@ -1,5 +1,7 @@
 .RecipeView {
-    margin: 30px
+    margin: 30px;
+    box-shadow: 4px 4px grey;
+    border-radius: 3px;
 }
 
 .Wrapper {
