@@ -38,18 +38,16 @@ export class RecipesFromBase extends React.Component {
   componentDidMount() {
     watchRecipes(recipes => {
       this.setState({ recipes });
+      console.log(recipes)
     });
     this.unsubscribe = getFavourites((favs) => this.setState({ favs }))
   }
 
   componentWillUnmount() {
+    unwatchRecipes()
     if (this.unsubscribe) {
       this.unsubscribe()
     }
-  }
-
-  componentWillUnmount() {
-    unwatchRecipes()
 
   }
 
@@ -89,8 +87,8 @@ export class RecipesFromBase extends React.Component {
     )
 
     return (
-      <div style={{ display: 'flex' }}>
-        <div style={{ background: 'grey', marginRight: '20px' }}>
+      <div className={styles.layout}>
+        <div className={styles.layout2}>
           <SideBar
             name={this.state.name}
             onNameChange={name => {
