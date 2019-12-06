@@ -33,7 +33,8 @@ componentDidMount() {
                         'rgba(133, 199, 232, 0.6)',
                         'rgba(53, 199, 232, 0.6)',
                         'rgba(153, 99, 12, 0.6)',
-                        'rgba(53, 9, 32, 0.6)'
+                        'rgba(53, 9, 32, 0.6)',
+                        'rgba(153, 19, 112, 0.6)'
                     ]
                 }
             ]
@@ -63,7 +64,6 @@ componentDidMount() {
             xAxes: [
           {
             ticks: {
-              
                 fontColor: "#212121",
                 fontFamily: "Oswald sans-serif",
                 fontSize: 14,
@@ -71,8 +71,7 @@ componentDidMount() {
               }
         }
         ]
-    },
-       
+    }, 
       title:{
       display: true,
         text: 'Ilość przepisów / czas gotowania',
@@ -96,17 +95,5 @@ componentDidMount() {
 
 export default BarChart;
 
-
-
-
-
- 
-    
-  //   plugins: [{
-  //     beforeDraw: function(c) {
-  //        var chartHeight = c.chart.height;
-  //        c.scales['y-axis-0'].options.ticks.fontSize = chartHeight * 6 / 100; //fontSize: 6% of canvas height
-  //     }
-  //  }]
 
    
