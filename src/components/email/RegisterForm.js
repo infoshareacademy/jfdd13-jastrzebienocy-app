@@ -6,6 +6,7 @@ import { NavLink, Link } from 'react-router-dom'
 import api from './api'
 import { Formik } from "formik";
 import * as Yup from "yup";
+import "../helper.css";
 
 const accountFormSchema = Yup.object().shape({
   name: Yup.string()
