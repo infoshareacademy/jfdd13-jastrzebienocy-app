@@ -1,126 +1,121 @@
-import firebase from '../../firebase'
-const apiUrl = 'https://foodwaste-ecb78.firebaseio.com'
-const app = 'AIzaSyCVVIiKXCqCGhTP7KCs1EkrTN7rm116-eI'
-
+import firebase from '../../firebase';
+const apiUrl = 'https://foodwaste-ecb78.firebaseio.com';
+const appKey = 'AIzaSyCVVIiKXCqCGhTP7KCs1EkrTN7rm116-eI';
+// hash Oleksy, jakub@vp.pl
 class Api {
-  user = null
-  userChanged = () => {}
+  user = null;
+  userChanged = () => { }
 
-  constructor () {
-    this.user = JSON.parse(localStorage.getItem('user'))
+  constructor() {
+    this.user = JSON.parse(localStorage.getItem('user'));
   }
 
-  todoCollection () {
-    return `${apiUrl}/user/${this.user.localId}/todo.json?auth=${
-      this.user.idToken
-    }`
+  todoCollection() {
+    return `${apiUrl}/user/${this.user.localId}/todo.json?auth=${this.user.idToken}`;
   }
 
-  todoResource (todoId) {
-    return `${apiUrl}/user/${this.user.localId}/todo/${todoId}.json?auth=${
-      this.user.idToken
-    }`
+  todoResource(todoId) {
+    return `${apiUrl}/user/${this.user.localId}/todo/${todoId}.json?auth=${this.user.idToken}`;
   }
 
-  handleLogout (resp) {
+  handleLogout(resp) {
     if (resp.status === 401) {
-      this.setUser(null)
-      throw new Error('Unauthorized')
+      this.setUser(null);
+      throw new Error('Unauthorized');
     }
-    return resp
+    return resp;
   }
 
-  addTodo (text) {
+  addTodo(text) {
     return fetch(this.todoCollection(), {
       method: 'POST',
       body: JSON.stringify({ text: text, active: true })
-    })
+    });
   }
 
-  setActive (todoId, active) {
+  setActive(todoId, active) {
     return fetch(this.todoResource(todoId), {
       method: 'PATCH',
       body: JSON.stringify({ active: active })
-    })
+    });
   }
 
-  delete (todoId) {
+  delete(todoId) {
     return fetch(this.todoResource(todoId), {
       method: 'DELETE'
-    })
+    });
   }
 
-  updateText (todoId, newText) {
+  updateText(todoId, newText) {
     return fetch(this.todoResource(todoId), {
       method: 'PATCH',
       body: JSON.stringify({ text: newText })
-    })
+    });
   }
 
-  listTodos () {
+  listTodos() {
     return fetch(this.todoCollection())
       .then(res => this.handleLogout(res))
       .then(res => res.json())
-      .then(res => res || {})
-      .then(obj =>
-        Object.keys(obj).map(key => {
-          const todo = obj[key]
-          todo.id = key
-          return todo
-        })
-      )
-      .catch(err => console.log(err))
+      .then(res => res ? res : {})
+      .then(obj => Object.keys(obj).map(key => {
+        const todo = obj[key];
+        todo.id = key;
+        return todo;
+      })).catch(err => console.log(err));
   }
 
-  logIn (email, password) {
+  logIn(email, password) {
     return firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(value => {
-        console.log('Logged in!')
-        console.log(value)
+        console.log("Logged in!");
+        console.log(value);
       })
-      
+      .catch(() => {
+        console.log("Something went wrong!");
+      });
+  };
+
+  register(email, password, name) {
+    return firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(value => {
+        const user = firebase.auth().currentUser;
+        user
+          .updateProfile({
+            displayName: "name"
+          })
+          .then(() => {
+            console.log('Poprawnie zarejestrowano dane: email, hasło i imię');
+            firebase
+              .database()
+              .ref("/users")
+              .push({
+                id: user.uid,
+                name,
+                email,
+                favorites: []
+              });
+          });
+      }).catch(function (error) {
+        console.log('error', error)
+      });
   }
 
-    register(email, password, name) { 
-        return firebase
-            .auth()
-            .createUserWithEmailAndPassword(email, password)
-            .then(value => {
-                console.log('user?', value);
+  setUser(user) {
+    this.user = user;
+    localStorage.setItem('user', JSON.stringify(user));
+    this.userChanged(user);
+    return user;
+  };
 
-                const user = value.user;
-                const id = user.uid;
-                user
-                    .updateProfile({
-                        displayName: "name"
-                    })
-                    .then(() => {
-                        console.log('Poprawnie zarejestrowano dane: email, hasło i imię');
-                        firebase
-                            .database()
-                            .ref(`/users/${id}`)
-                            .set({
-                                name,
-                                email,
-                                favorites: []
-                            });
-                    });
-            })
-    }
-
-  setUser (user) {
-    this.user = user
-    localStorage.setItem('user', JSON.stringify(user))
-    this.userChanged(user)
-    return user
-  }
-
-  onUserChange (cb) {
-    this.userChanged = cb
-    cb(this.user)
+  onUserChange(cb) {
+    this.userChanged = cb;
+    cb(this.user);
   }
 }
 
-export default new Api()
+export default new Api();

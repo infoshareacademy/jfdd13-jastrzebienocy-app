@@ -1,4 +1,4 @@
-import "./helper.css";
+// src / components / email / RegisterForm.jsimport "./helper.css";
 import React from "react";
 import { Route } from "react-router-dom";
 import { Formik } from "formik";
@@ -11,16 +11,16 @@ import { watchRecipes, unwatchRecipes } from "../services/ForFetchDB";
 
 const regEx = /^[a-z\s\bąćśńółężź]{2,}$/i; // Modified JK
 const options = [
-  {value:"włoska", name: "Kuchnia włoska"},
-  {value:"francuska", name: "Kuchnia francuska"},
-  {value:"polska", name: "Kuchnia polska"},
-  {value:"azjatycka", name: "Kuchnia azjatycka"},
-  {value:"amerykańska", name: "Kuchnia amerykańska"},
-  {value:"meksykańska", name: "Kuchnia meksykańska"},
-  {value:"gruzińska", name: "Kuchnia gruzińska"},
-  {value:"śródziemnomorska", name: "Kuchnia śródziemnomorska"},
-  {value:"inna", name: "Inna"}
-  ]
+  { value: "włoska", name: "Kuchnia włoska" },
+  { value: "francuska", name: "Kuchnia francuska" },
+  { value: "polska", name: "Kuchnia polska" },
+  { value: "azjatycka", name: "Kuchnia azjatycka" },
+  { value: "amerykańska", name: "Kuchnia amerykańska" },
+  { value: "meksykańska", name: "Kuchnia meksykańska" },
+  { value: "gruzińska", name: "Kuchnia gruzińska" },
+  { value: "śródziemnomorska", name: "Kuchnia śródziemnomorska" },
+  { value: "inna", name: "Inna" }
+]
 
 const SelectInput = props => {
   const { name, errors, touched, labelform, tooltiptext } = props;
@@ -39,7 +39,7 @@ const SelectInput = props => {
           {...props}
           error={errors[name] && touched[name]}
         >
-          { options.map((options)  => <option value={options.value}>{options.name}</option>)}
+          {options.map((options) => <option value={options.value}>{options.name}</option>)}
         </select>
       </label>
     </div>
@@ -79,7 +79,7 @@ class AddRecipe extends React.Component {
               const uploadTask = storage.ref(`images/${imageName}`).put(image);
               uploadTask.on(
                 "state_changed",
-                snapshot => {},
+                snapshot => { },
                 error => {
                   console.log(error);
                 },

@@ -7,7 +7,7 @@ export const prepareRecipes = data => {
     const [id, data] = arr
     return {
       ...data,
-      id
+      id,
     }
   })
 }
@@ -23,6 +23,25 @@ export const watchRecipes = onSuccess => {
     })
 }
 
+export const getFavourites = onSuccess => {
+  const userId = firebase.auth().currentUser.uid;
+  const handleValue = dataSnapshot => {
+    const favourites = dataSnapshot.val()
+    onSuccess(favourites || {})
+  }
+  const ref = firebase.database().ref(`/favourites/${userId}`)
+
+  ref.on('value', handleValue)
+
+  return () => ref.off('value', handleValue)
+}
+
+//nie kasowac
+export const categories = data => {
+
+  console.log(Object.entries(data).map(([id, item]) => item.category))
+  return Object.entries(data).map(item => item.category)
+}
 // stopRecepies -> trzeba zaimplementowac!!!
 // trzeba to zaimplementowac wszedzie
 
@@ -43,8 +62,8 @@ export const getCookingTime = data => {
 
 
 export const unwatchRecipes = () => {
-  return firebase 
-  .database()
-  .ref('/recipes')
-  .off()
+  return firebase
+    .database()
+    .ref('/recipes')
+    .off()
 }
