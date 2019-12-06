@@ -25,4 +25,9 @@
       background: grey;
       height: auto;
    } 
+
+   .layout2 {
+      background: grey;
+      margin-right: 0;
+   }
 }
