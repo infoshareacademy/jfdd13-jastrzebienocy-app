@@ -49,72 +49,44 @@ componentDidMount() {
     <div  className={styles.chart}>
     <Bar
   data={this.state.chartData}
-  width={90}
-  height={80}
-  
- 
-    ///Other configurable options
-  
-
-  options={
-    {
-       responsive: false,
-       maintainAspectRatio: false,
-     },{
-   
-    tooltips: {
-        bodyFontColor: "white",
-        bodyFontSize: 10,
-    },
+  options={{
     scales: {
-        yAxes: [
+      yAxes: [{
+        ticks: {
+          beginAtZero: true,
+          fontColor: "#212121",
+              fontFamily: "Oswald sans-serif",
+               fontSize: 14,
+               fontStyle: "bold",
+        }
+      }],
+            xAxes: [
           {
             ticks: {
-              beginAtZero: true
-            },
-            ticks: {
+              
                 fontColor: "#212121",
                 fontFamily: "Oswald sans-serif",
                 fontSize: 14,
-                fontStyle: "bold",
-                mode: "single",
+                fontStyle: "bold"
               }
         }
-        ],
-        xAxes: [
-            {
-              ticks: {
-                  fontColor: "#212121",
-                  fontFamily: "Oswald sans-serif",
-                  fontSize: 12,
-                  fontStyle: "bold"
-                }
-          }
-          ]
-
-      },
-        title:{
-        display: true,
-          text: 'Ilość przepisów / czas gotowania',
-          fontSize:20,
-          fontFamily: "Oswald sans-serif",
-          fontColor: "black",
-      },
-        legend:{
-          maintainAspectRatio: false,
-          responsive: true,
-          display: true,
-          position: 'bottom',  
-          labels: {
-            fontColor: "black",
-            fontSize: 18,
-            fontFamily: "Oswald sans-serif",
-        }
-      },
-     
-
-       }}
-
+        ]
+    },
+       
+      title:{
+      display: true,
+        text: 'Ilość przepisów / czas gotowania',
+        fontSize:20,
+        fontFamily: "Oswald sans-serif",
+        fontColor: "black",
+    },
+    legend:{
+        
+            display: false,
+    }
+      }}
+  width={90}
+  height={80}
 /> 
 
     </div>
@@ -123,3 +95,18 @@ componentDidMount() {
 }
 
 export default BarChart;
+
+
+
+
+
+ 
+    
+  //   plugins: [{
+  //     beforeDraw: function(c) {
+  //        var chartHeight = c.chart.height;
+  //        c.scales['y-axis-0'].options.ticks.fontSize = chartHeight * 6 / 100; //fontSize: 6% of canvas height
+  //     }
+  //  }]
+
+   
