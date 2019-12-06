@@ -5,7 +5,8 @@ import SideBar from './SideBar'
 import styles from './RecipesFromBase.module.css'
 
 import {
-  fetchRecipes,
+  // fetchRecipes,
+  getFavourites,
   prepareRecipes,
   watchRecipes,
   unwatchRecipes,
@@ -14,11 +15,12 @@ import {
 
 
 export class RecipesFromBase extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
       recipes: [],
+      favs: {},
       name: '',
       products: '',
       weight: 2000,
@@ -31,20 +33,26 @@ export class RecipesFromBase extends React.Component {
 
   handlePaginationChange = (e, { activePage }) => this.setState({ activePage })
 
-  componentDidMount () {
+  unsubscribe = undefined;
+
+  componentDidMount() {
     watchRecipes(recipes => {
       this.setState({ recipes });
+      console.log(recipes)
     });
-    
+    this.unsubscribe = getFavourites((favs) => this.setState({ favs }))
   }
 
   componentWillUnmount() {
     unwatchRecipes()
+    if (this.unsubscribe) {
+      this.unsubscribe()
+    }
 
   }
 
   // Filter for products and recipes.
-  get filteredRecepies () {
+  get filteredRecepies() {
     // Destructure state for the products option
     const { recipes, products, weight, category, name, favourites } = this.state
     const finalData = recipes.filter(recipe => {
@@ -57,7 +65,8 @@ export class RecipesFromBase extends React.Component {
       const categoryFilter = category
         ? recipe.category.toLowerCase().includes(category.toLowerCase())
         : true
-      const favouritesFilter = favourites === true ? recipe.favourites : true
+      const favouritesFilter = favourites === true ? this.state.favs[recipe.id] : true
+      // console.log(recipe.name)
       return (
         productsFilter &&
         nameFilter &&
@@ -69,17 +78,17 @@ export class RecipesFromBase extends React.Component {
     return finalData
   }
 
-  render () {
+  render() {
     const { activePage, pageItems } = this.state
-    
+
     const viewedRecipes = this.filteredRecepies.slice(
       (activePage - 1) * pageItems,
       activePage * pageItems
     )
 
     return (
-      <div style={{ display: 'flex' }}>
-        <div style={{ background: 'grey', marginRight: '20px' }}>
+      <div className={styles.layout}>
+        <div className={styles.layout2}>
           <SideBar
             name={this.state.name}
             onNameChange={name => {
@@ -104,8 +113,9 @@ export class RecipesFromBase extends React.Component {
               })
             }}
             favourites={this.state.favourites}
-            onFavouritesChange={favourites => {
-              this.setState({ favourites })
+            onFavouritesChange={() => {
+              this.setState({ favourites: !this.state.favourites })
+              // console.log(favourites)
             }}
           />
         </div>
@@ -113,7 +123,7 @@ export class RecipesFromBase extends React.Component {
           <Grid stackable relaxed style={{ width: '100%' }}>
             {viewedRecipes.map(item => (
               <Grid.Column key={item.id} width={8}>
-                <RecipeView recipe={item} />
+                <RecipeView recipe={item} isFavourite={this.state.favs[item.id]} />
               </Grid.Column>
             ))}
           </Grid>

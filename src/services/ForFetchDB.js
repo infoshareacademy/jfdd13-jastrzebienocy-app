@@ -3,11 +3,10 @@ import firebase from '../firebase'
 
 export const prepareRecipes = data => {
   return Object.entries(data).map(arr => {
-    // console.log(arr)
     const [id, data] = arr
     return {
       ...data,
-      id
+      id,
     }
   })
 }
@@ -18,11 +17,51 @@ export const watchRecipes = onSuccess => {
     .ref('/recipes')
     .on('value', dataSnapshot => {
       const recipes = dataSnapshot.val()
-      // console.log(recipes)
       onSuccess(prepareRecipes(recipes))
     })
 }
 
+
+
+
+export const watchUsers = onSuccess => {
+  const userId = firebase.auth().currentUser.uid;
+  console.log(userId)
+  return firebase
+    .database()
+    .ref(`/users/${userId}`)
+    .on('value', dataSnapshot => {
+      const users = dataSnapshot.val()
+      onSuccess((users))
+    })
+}
+
+export const unwatchUsers = () => {
+  return firebase
+    .database()
+    .ref('/users')
+    .off()
+}
+
+export const getFavourites = onSuccess => {
+  const userId = firebase.auth().currentUser.uid;
+  const handleValue = dataSnapshot => {
+    const favourites = dataSnapshot.val()
+    onSuccess(favourites || {})
+  }
+  const ref = firebase.database().ref(`/favourites/${userId}`)
+
+  ref.on('value', handleValue)
+
+  return () => ref.off('value', handleValue)
+}
+
+//nie kasowac
+export const categories = data => {
+
+  console.log(Object.entries(data).map(([id, item]) => item.category))
+  return Object.entries(data).map(item => item.category)
+}
 // stopRecepies -> trzeba zaimplementowac!!!
 // trzeba to zaimplementowac wszedzie
 
@@ -43,8 +82,8 @@ export const getCookingTime = data => {
 
 
 export const unwatchRecipes = () => {
-  return firebase 
-  .database()
-  .ref('/recipes')
-  .off()
+  return firebase
+    .database()
+    .ref('/recipes')
+    .off()
 }
