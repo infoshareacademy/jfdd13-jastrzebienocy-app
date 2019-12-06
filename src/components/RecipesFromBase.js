@@ -1,26 +1,26 @@
 import React from 'react'
 import RecipeView from './RecipeView'
-import firebase from '../firebase'
 import { Grid, Pagination } from 'semantic-ui-react'
 import SideBar from './SideBar'
 import styles from './RecipesFromBase.module.css'
 
 import {
-  fetchRecipes,
+  // fetchRecipes,
+  getFavourites,
   prepareRecipes,
   watchRecipes,
   unwatchRecipes,
   categories
 } from "../services/ForFetchDB";
-// import { bindExpression } from '@babel/types'
-// import { removeTypeDuplicates } from '@babel/types'
+
 
 export class RecipesFromBase extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
       recipes: [],
+      favs: {},
       name: '',
       products: '',
       weight: 2000,
@@ -33,11 +33,19 @@ export class RecipesFromBase extends React.Component {
 
   handlePaginationChange = (e, { activePage }) => this.setState({ activePage })
 
-  componentDidMount () {
+  unsubscribe = undefined;
+
+  componentDidMount() {
     watchRecipes(recipes => {
       this.setState({ recipes });
     });
-    
+    this.unsubscribe = getFavourites((favs) => this.setState({ favs }))
+  }
+
+  componentWillUnmount() {
+    if (this.unsubscribe) {
+      this.unsubscribe()
+    }
   }
 
   componentWillUnmount() {
@@ -46,11 +54,9 @@ export class RecipesFromBase extends React.Component {
   }
 
   // Filter for products and recipes.
-  get filteredRecepies () {
+  get filteredRecepies() {
     // Destructure state for the products option
     const { recipes, products, weight, category, name, favourites } = this.state
-    // console.log(name)
-    // console.log(weight, recipes)
     const finalData = recipes.filter(recipe => {
       const productsFilter =
         recipe.products &&
@@ -61,7 +67,7 @@ export class RecipesFromBase extends React.Component {
       const categoryFilter = category
         ? recipe.category.toLowerCase().includes(category.toLowerCase())
         : true
-      const favouritesFilter = favourites === true ? recipe.favourites : true
+      const favouritesFilter = favourites === true ? this.state.favs[recipe.id] : true
       // console.log(recipe.name)
       return (
         productsFilter &&
@@ -74,8 +80,9 @@ export class RecipesFromBase extends React.Component {
     return finalData
   }
 
-  render () {
+  render() {
     const { activePage, pageItems } = this.state
+
     const viewedRecipes = this.filteredRecepies.slice(
       (activePage - 1) * pageItems,
       activePage * pageItems
@@ -88,7 +95,6 @@ export class RecipesFromBase extends React.Component {
             name={this.state.name}
             onNameChange={name => {
               this.setState({ name })
-              // console.log(this.state.name)
             }}
             products={this.state.products}
             onProductsChange={products => {
@@ -107,11 +113,10 @@ export class RecipesFromBase extends React.Component {
               this.setState({
                 category
               })
-              // console.log(category)
             }}
             favourites={this.state.favourites}
-            onFavouritesChange={favourites => {
-              this.setState({ favourites })
+            onFavouritesChange={() => {
+              this.setState({ favourites: !this.state.favourites })
               // console.log(favourites)
             }}
           />
@@ -120,7 +125,7 @@ export class RecipesFromBase extends React.Component {
           <Grid stackable relaxed style={{ width: '100%' }}>
             {viewedRecipes.map(item => (
               <Grid.Column key={item.id} width={8}>
-                <RecipeView recipe={item} />
+                <RecipeView recipe={item} isFavourite={this.state.favs[item.id]} />
               </Grid.Column>
             ))}
           </Grid>
