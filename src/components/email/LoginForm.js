@@ -1,4 +1,4 @@
-import './helper';
+import '../../components/helper.css';
 import React from 'react';
 import styles from '..//RegisterForm.module.css';
 import { Link } from "react-router-dom";
