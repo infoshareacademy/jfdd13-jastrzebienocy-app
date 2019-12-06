@@ -67,7 +67,7 @@ class SideBar extends React.Component {
         <input
           style={{
             borderRadius: '25px',
-            width: '10vh',
+            width: '165px',
             marginLeft: '16px',
             backgroundColor: 'lightGrey'
           }}
