@@ -65,7 +65,9 @@ class RecipeView extends React.Component {
                 }}
               />
             </div>
-
+            <div className={styles.HeartInRecipe}>
+              <Heart checked={this.props.isFavourite} onHeartClick={this.addToFavorites} />
+            </div>
             <div className={styles.Text}>
               <div className={styles.NameRecipe}>
                 <p
@@ -99,9 +101,7 @@ class RecipeView extends React.Component {
               </div>
             </div>
           </div>
-          <div className={styles.HeartInRecipe}>
-            <Heart checked={this.props.isFavourite} onHeartClick={this.addToFavorites} />
-          </div>
+
           <div className={styles.TimeAndPortions}>
             <div>
               <Icon name='time' size='large' style={{ color: '#8BC34A' }} />
