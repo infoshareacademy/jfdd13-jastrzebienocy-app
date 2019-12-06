@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from '..//RegisterForm.module.css';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import api from "./api";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import "../helper.css";
 
 const accountFormSchema = Yup.object().shape({
     email: Yup.string()
@@ -42,6 +43,7 @@ export default class LoginForm extends React.Component {
                 return 'Twoje hasło musi posiadać przynajmniej 6 znaków'
             default:
                 return 'Wystąpił nieoczekiwany błąd'
+                
         }
     }
 
@@ -114,19 +116,20 @@ export default class LoginForm extends React.Component {
                                     <button type='submit' >
                                         Zaloguj się
                                     </button>
+
                                 </form>)}
                     </Formik>
 
                     <div className={styles.Register2}>
                         Nie posiadasz konta?
-            <Link
+            <NavLink
                             activeClassName={'active-link'}
                             to='/Register'
                             className={styles.Register2}
                             exact
                         >
                             Zarejestruj się!
-            </Link>
+            </NavLink>
                     </div>
                 </div>
             </div>

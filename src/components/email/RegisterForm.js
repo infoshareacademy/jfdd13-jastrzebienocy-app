@@ -5,6 +5,7 @@ import { NavLink, Link } from 'react-router-dom'
 import api from './api'
 import { Formik } from "formik";
 import * as Yup from "yup";
+import "../helper.css";
 
 const accountFormSchema = Yup.object().shape({
   name: Yup.string()
@@ -16,10 +17,12 @@ const accountFormSchema = Yup.object().shape({
   password: Yup.string()
     .required("Pole wymagane")
     .min(8, "Wymagane minimum 8 znaków")
-    .matches(/.+/, "Wrong password format."),
+    .matches(/.+/, "Zły format hasła."),
   RepeatPassword: Yup.string()
-    .oneOf([Yup.ref('password'), null])
+  .oneOf([Yup.ref('password')], 'Powtórzone hasło się nie zgadza')
     .required('Niepoprawne hasło')
+
+
 });
 
 const TextInput = props => {
@@ -37,29 +40,39 @@ export default class RegisterForm extends React.Component {
     name: '',
     email: '',
     password: '',
-    err: ''
+    err: '',
+    errtest: ''
   }
 
-  getMessage(code) {
+  getMessage(code) { let msg = ''
     console.log(code)
-    switch (code) {
+   switch (code) {
       case 'auth/email-already-in-use':
-        return 'Email już jest przypisany!'
+        msg =  'Email już jest przypisany!'
+        break
       case 'auth/invalid-email':
-        return 'Niepoprawny Emeil'
+        msg =  'Niepoprawny Emeil'
+        break
       case 'auth/weak-password':
-        return 'Twoje hasło musi posiadać przynajmniej 8 znaków'
+        msg =  'Twoje hasło musi posiadać przynajmniej 8 znaków'
+        break
+      case 'auth/email-already-in-use':
+        msg =  'Sukces!'
+        break
       default:
-        return 'Wystąpił nieoczekiwany błąd'
+        msg =  'Wystąpił nieoczekiwany błąd'
     }
+    console.log(msg)
+    this.setState({ errtest: msg}, () => console.log(this.state.errtest) )
   }
 
-  onSubmit = e => {
-    e.preventDefault()
-    api
-      .register(this.state.email, this.state.password, this.state.name)
-      .catch(err => this.setState({ err: this.getMessage(err.code) }))
-  }
+  // onSubmit = e => {
+  //   console.log('gora')
+  //   e.preventDefault()
+  //   api
+  //     .register(this.state.email, this.state.password, this.state.name)
+  //     .catch(err => this.setState({ err: this.getMessage(err.code) }))
+  // }
 
   render() {
     return (
@@ -77,6 +90,7 @@ export default class RegisterForm extends React.Component {
             }}
             validationSchema={accountFormSchema}
             onSubmit={(values, { setSubmitting }) => {
+              console.log('dol')
               api
                 .register(values.email, values.password, values.name)
                 .catch(err => this.setState({ err: this.getMessage(err.code) }))
@@ -143,7 +157,7 @@ export default class RegisterForm extends React.Component {
                         value={values.password2}
                         touched={touched}
                         errors={errors}
-                      />
+                      /> <p>{this.state.errtest}</p>
                     </div>
                   </div>
                   <button type='submit' >
