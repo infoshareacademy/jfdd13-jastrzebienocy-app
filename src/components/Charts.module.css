@@ -1,6 +1,6 @@
 .chart {
   position: relative;
-    width: 35%;
+    width: 34%;
     height:50%;
     margin-left:5%;
     }
@@ -8,7 +8,7 @@
 
 .chart2 {
       position: relative;
-      width: 35%;
+      width: 39%;
       height:50%;
       margin-right:5%;
 
@@ -17,20 +17,34 @@
     @media only screen and (max-width: 1400px) {
       .chart {
         position: relative;
-          width: 60%;
+          width: 43%;
+          height:30%;
+          margin-left:3%;
+          }
+      
+      .chart2 {
+        position: relative;
+          width: 49%;
+          height:30%;
+          margin-left:3%;
+          }
+    }
+
+    @media only screen and (max-width: 1060px) {
+      .chart {
+        position: relative;
+          width: 38%;
           height:30%;
           margin-left:5%;
           }
       
       .chart2 {
         position: relative;
-          width: 60%;
+          width: 50%;
           height:30%;
           margin-left:5%;
           }
     }
-
-
     @media only screen and (max-width: 850px) {
       .chart {
         position: relative;
@@ -41,8 +55,8 @@
       
       .chart2 {
         position: relative;
-          width: 60%;
-          height:30%;
+          width: 65%;
+          height:40%;
           margin-left:5%;
           }
     }
@@ -50,15 +64,15 @@
     @media only screen and (max-width: 600px) {
       .chart {
         position: relative;
-          width: 95%;
-          height:95%;
+          width: 80%;
+          height:80%;
           margin-left:5%;
           }
       
       .chart2 {
         position: relative;
-          width: 95%;
-          height:95%;
+          width: 90%;
+          height:90%;
           margin-left:5%;
           }
     }
