@@ -1,11 +1,12 @@
 import '../../components/helper.css';
 import React from 'react';
-import styles from '..//RegisterForm.module.css';
+import styles from '../RegisterForm.module.css';
 import { NavLink } from "react-router-dom";
 import api from "./api";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "../helper.css";
+import Logo from '..//logo-nav.png';
 
 const accountFormSchema = Yup.object().shape({
     email: Yup.string()
@@ -59,6 +60,9 @@ export default class LoginForm extends React.Component {
         return (
             <div>
                 <div className={styles.InnerBox}>
+                <div className={styles.LogoLogin}>
+                    <img  src={Logo} alt={"Logo"} className={styles.logo}/>
+                    </div>
                     <p className={styles.MailPar}>
                         Proszę wypełnić pola do zalogowania.
               </p>

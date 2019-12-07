@@ -96,9 +96,6 @@
     top: 0px;
     padding: 5px;
     margin: 0 auto;
-    background-color: #D4eFfa;
-    border: 1px solid #a9a9a9;
-    border-radius: 25% 0 0 40%;
     width: 95%;
   }
   .Product, .Quantity, .Category, .Search, .Name {
@@ -109,18 +106,17 @@
     text-decoration: none;
     padding-top: 5px;
     text-align: center;
-    /* margin-top: 15px; */
+    margin-top: 15px;
   }
   .Category {
     margin-top: 25px;
   }
   .Input2 {
-    width: 50%;
+    width: 75%;
     height: 20px;
   }
   .dropdown2 {
-    margin: 0 auto;
-    width: 50%;
+    width: 90%;
     font-size: 10px;
     height: 10px;
   }
@@ -148,7 +144,7 @@
     font-size: 16px;
     text-decoration: none;
     text-align: center;
-    margin-top: 25px;
+    margin-top: 0px;
   }
   /* slider */
   .Label {
@@ -172,7 +168,7 @@
   }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .SideBar {
     display: flex;
     flex-direction: column;
@@ -190,11 +186,7 @@
     text-decoration: none;
     padding-top: 5px;
     text-align: center;
-    /* margin-top: 15px; */
   }
-  /* .Category {
-    margin-top: 25px;
-  } */
   .Input2 {
     /* margin: 0 auto; */
     width: 50%;

@@ -56,19 +56,19 @@ export const getFavourites = onSuccess => {
   return () => ref.off('value', handleValue)
 }
 // Get the person from DB
-export const getUserProfile = onSuccess => {
-  const userId = firebase.auth().currentUser.uid;
-  const userProf = dataSnapShot => {
-    const users = dataSnapShot.val()
-    onSuccess(users || {})
+// export const getUserProfile = onSuccess => {
+//   const userId = firebase.auth().currentUser.uid;
+//   const userProf = dataSnapShot => {
+//     const users = dataSnapShot.val()
+//     onSuccess(users || {})
 
-  }
-  const ref = firebase.database().ref(`/users/${userId}`)
+//   }
+//   const ref = firebase.database().ref(`/users/${userId}`)
 
-  ref.on('value', userProf)
+//   ref.on('value', userProf)
 
-  return () => ref.off('value', userProf)
-}
+//   return () => ref.off('value', userProf)
+// }
 
 
 //nie kasowac
