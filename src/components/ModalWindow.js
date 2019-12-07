@@ -33,7 +33,7 @@ class ModalWindow extends React.Component {
               />
               </div>
             
-            <div style={{fontSize: "20px"}} >{this.props.description}</div>
+            <div style={{fontSize: "20px", margin: '20px'}} >{this.props.description}</div>
             </Segment>
             <Modal.Actions>
                     <Button negative onClick={() => this.props.onCloseWindow()}>Zamknij</Button>
