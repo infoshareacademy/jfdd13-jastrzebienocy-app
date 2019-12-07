@@ -135,4 +135,14 @@ font-family: "Oswald", sans-serif;
     }
 }
 
-  
+@media only screen and (max-width: 550px) {
+  .header2 {
+    font-size: 18px;
+    line-height: 16px;
+    margin-top: 10px;
+    padding: 3px;
+    font-family: "Oswald", sans-serif;
+    }
+ 
+}
+
