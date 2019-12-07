@@ -17,7 +17,6 @@ export const watchRecipes = onSuccess => {
     .ref('/recipes')
     .on('value', dataSnapshot => {
       const recipes = dataSnapshot.val()
-      // console.log(recipes)
       onSuccess(prepareRecipes(recipes))
     })
 }

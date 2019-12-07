@@ -1,15 +1,15 @@
 import React from 'react';
 import styles from '..//RegisterForm.module.css';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import api from "./api";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "../helper.css";
-const accountFormSchema = Yup.object().shape({
 
+const accountFormSchema = Yup.object().shape({
     email: Yup.string()
         .required("Pole wymagane")
-        .max(100, "A długie hasło")
+        .max(100, "Za długie hasło")
         .email("Niepoprawny Email!"),
     password: Yup.string()
         .required("Pole wymagane")
@@ -43,11 +43,13 @@ export default class LoginForm extends React.Component {
                 return 'Twoje hasło musi posiadać przynajmniej 6 znaków'
             default:
                 return 'Wystąpił nieoczekiwany błąd'
+                
         }
     }
 
     onSubmit = e => {
         e.preventDefault();
+        console.log("zupa")
         api.logIn(this.state.email, this.state.password)
             .catch(err => this.setState({ err: err.message }));
     }
@@ -55,7 +57,6 @@ export default class LoginForm extends React.Component {
     render() {
         return (
             <div>
-                <div className={styles.Register}></div>
                 <div className={styles.InnerBox}>
                     <p className={styles.MailPar}>
                         Proszę wypełnić pola do zalogowania.
@@ -64,7 +65,7 @@ export default class LoginForm extends React.Component {
                         initialValues={{
                             name: "",
                             password: "",
-                            // repeatPassword: "",
+
                         }}
                         validationSchema={accountFormSchema}
                         onSubmit={(values, { setSubmitting }) => {
@@ -72,11 +73,6 @@ export default class LoginForm extends React.Component {
                             api
                                 .logIn(values.email, values.password)
                                 .catch(err => this.setState({ err: this.getMessage(err.code) }))
-                            // setSubmitting(true);
-                            // setTimeout(() => {
-                            //   alert(JSON.stringify(values, null, 2));
-                            //   setSubmitting(false);
-                            // }, 2000);
                         }}
                     >
                         {({
@@ -87,9 +83,7 @@ export default class LoginForm extends React.Component {
                             handleBlur,
                             handleSubmit,
                             isSubmitting
-                            /* and other goodies */
                         }) => (
-                                // <form onSubmit={handleSubmit}>
                                 <form className={styles.Inputs} onSubmit={handleSubmit}>
                                     <div className={styles.mailBox}>
                                         <div>
@@ -122,19 +116,20 @@ export default class LoginForm extends React.Component {
                                     <button type='submit' >
                                         Zaloguj się
                                     </button>
+
                                 </form>)}
                     </Formik>
 
                     <div className={styles.Register2}>
                         Nie posiadasz konta?
-            <Link
+            <NavLink
                             activeClassName={'active-link'}
                             to='/Register'
                             className={styles.Register2}
                             exact
                         >
                             Zarejestruj się!
-            </Link>
+            </NavLink>
                     </div>
                 </div>
             </div>

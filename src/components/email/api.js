@@ -73,37 +73,35 @@ class Api {
         console.log("Logged in!");
         console.log(value);
       })
-      .catch(() => {
-        console.log("Something went wrong!");
-      });
-  };
-
-  register(email, password, name) {
-    return firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(value => {
-        const user = firebase.auth().currentUser;
-        user
-          .updateProfile({
-            displayName: "name"
-          })
-          .then(() => {
-            console.log('Poprawnie zarejestrowano dane: email, hasło i imię');
-            firebase
-              .database()
-              .ref("/users")
-              .push({
-                id: user.uid,
-                name,
-                email,
-                favorites: []
-              });
-          });
-      }).catch(function (error) {
-        console.log('error', error)
-      });
+      
   }
+
+  register(email, password, name) { 
+    return firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(value => {
+            console.log('user?', value);
+
+            const user = value.user;
+            const id = user.uid;
+            user
+                .updateProfile({
+                    displayName: "name"
+                })
+                .then(() => {
+                    console.log('Poprawnie zarejestrowano dane: email, hasło i imię');
+                    firebase
+                        .database()
+                        .ref(`/users/${id}`)
+                        .set({
+                            name,
+                            email,
+                            favorites: []
+                        });
+                });
+        })
+}
 
   setUser(user) {
     this.user = user;
