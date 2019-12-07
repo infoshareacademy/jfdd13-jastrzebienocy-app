@@ -21,6 +21,15 @@ export const watchRecipes = onSuccess => {
     })
 }
 
+// export const prepareUsers = data => {
+//   return Object.entries(data).map(arr => {
+//     const [data] = arr
+//     return {
+//       ...data
+//     }
+//   })
+// }
+
 
 
 
