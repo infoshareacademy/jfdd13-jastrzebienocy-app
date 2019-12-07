@@ -6,6 +6,7 @@ import api from './api'
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "../helper.css";
+import Logo from '..//logo-nav.png';
 
 const accountFormSchema = Yup.object().shape({
   name: Yup.string()
@@ -19,7 +20,7 @@ const accountFormSchema = Yup.object().shape({
     .min(8, "Wymagane minimum 8 znaków")
     .matches(/.+/, "Zły format hasła."),
   RepeatPassword: Yup.string()
-  .oneOf([Yup.ref('password')], 'Powtórzone hasło się nie zgadza')
+    .oneOf([Yup.ref('password')], 'Powtórzone hasło się nie zgadza')
     .required('Niepoprawne hasło')
 
 
@@ -44,40 +45,39 @@ export default class RegisterForm extends React.Component {
     errtest: ''
   }
 
-  getMessage(code) { let msg = ''
+  getMessage(code) {
+    let msg = ''
     console.log(code)
-   switch (code) {
+    switch (code) {
       case 'auth/email-already-in-use':
-        msg =  'Email już jest przypisany!'
+        msg = 'Email już jest przypisany!'
         break
       case 'auth/invalid-email':
-        msg =  'Niepoprawny Emeil'
+        msg = 'Niepoprawny Emeil'
         break
       case 'auth/weak-password':
-        msg =  'Twoje hasło musi posiadać przynajmniej 8 znaków'
+        msg = 'Twoje hasło musi posiadać przynajmniej 8 znaków'
         break
       case 'auth/email-already-in-use':
-        msg =  'Sukces!'
+        msg = 'Sukces!'
         break
       default:
-        msg =  'Wystąpił nieoczekiwany błąd'
+        msg = 'Wystąpił nieoczekiwany błąd'
     }
     console.log(msg)
-    this.setState({ errtest: msg}, () => console.log(this.state.errtest) )
+    this.setState({ errtest: msg }, () => console.log(this.state.errtest))
   }
-
-  // onSubmit = e => {
-  //   console.log('gora')
-  //   e.preventDefault()
-  //   api
-  //     .register(this.state.email, this.state.password, this.state.name)
-  //     .catch(err => this.setState({ err: this.getMessage(err.code) }))
-  // }
 
   render() {
     return (
       <div>
-        <div className={styles.Register}>Utwórz konto</div>
+        <div className={styles.LogoLogin}>
+                        <img src={Logo}
+                            style={{
+                                width: '140px'
+                            }}
+                            alt={"Logo"} className={styles.logo} />
+                    </div>
         <div className={styles.InnerBox}>
           <p className={styles.MailPar}>
             Proszę wypełnić formularz w celu rejestracji.
@@ -107,7 +107,7 @@ export default class RegisterForm extends React.Component {
             }) => (
                 <form className={styles.Inputs} onSubmit={handleSubmit}>
                   <div className={styles.mailBox}>
-                    <div>
+                    <div className={styles.Input}>
                       <label></label>
                       <TextInput
                         type="name"
@@ -120,7 +120,7 @@ export default class RegisterForm extends React.Component {
                         errors={errors}
                       />
                     </div>
-                    <div>
+                    <div className={styles.Input}>
                       <label></label>
                       <TextInput
                         type="email"
@@ -133,7 +133,7 @@ export default class RegisterForm extends React.Component {
                         errors={errors}
                       />
                     </div>
-                    <div>
+                    <div className={styles.Input}>
                       <label></label>
                       <TextInput
                         type="password"
@@ -146,12 +146,12 @@ export default class RegisterForm extends React.Component {
                         errors={errors}
                       />
                     </div>
-                    <div>
+                    <div className={styles.Input}>
                       <label></label>
                       <TextInput
                         type="password"
                         name="RepeatPassword"
-                        placeholder="powtórz hasło"
+                        placeholder="Powtórz hasło"
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.password2}
@@ -160,11 +160,18 @@ export default class RegisterForm extends React.Component {
                       /> <p>{this.state.errtest}</p>
                     </div>
                   </div>
-                  <button type='submit' >
-                    Zarejestruj się
-          </button>
+                  <div className={styles.LogBttn}>
+                    <button style={{
+                      borderRadius: '20px',
+                      padding: '6px 26px',
+                      backgroundColor: 'rgba(139,195,74, 0.8)'
+                    }}
+                      type='submit' >
+                      Zarejestruj się
+                                    </button>
+                  </div>
                 </form>)}
-       
+
           </Formik>
           <p className={styles.MailParBelow}>
             Tworząc u Nas konto zgadzasz sie na naszą{' '}
