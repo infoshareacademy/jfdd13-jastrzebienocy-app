@@ -1,4 +1,4 @@
-.RegisterForm{
+ /* .RegisterForm{
     background-color: pink;
     padding: 20px;
     height: 90vh;
@@ -32,8 +32,10 @@
 }
 
 .MailPar{
-    font-size: 25px;
+       margin: 0;
+    padding: 0 0 20px;
     text-align: center;
+    font-size: 22px;
 }
 
 .MailParBelow{
@@ -45,18 +47,32 @@
     position: fixed;
     width: 100%;
     bottom: 0;
-}
+} */
 
 .InnerBox{
-    background-color: lightgrey;
-    border-radius: 25px;
-    width: 80%;
-    border: outset;
-    margin: 4% 10% 10%;
-    padding: 16px 36px;
-    position: relative;
+    width: 320px;
+    position: absolute;
+    height: 420px;
+    background: lightgrey;
+    left: 50%;
+    TOP: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 20px;
 }
 
+.LogoLogin{
+    border-style: none;
+    border-radius: 200px;
+    width: 210px;
+    position: relative;
+    margin: auto;
+    width: 55%;
+    margin: -15px 22%;
+}
+
+/*
 .AllRegister{
     color: red;
     font-size: 30px;
@@ -82,8 +98,4 @@ button {
 
   .ButtonReg{
       display: flex;
-  }
-
-/* .mailBox{
-    background-color: pink;
-} */
+  } */
