@@ -96,13 +96,12 @@ class SideBar extends React.Component {
           <input
             style={{
               padding: '7px 0',
-              marginLeft: '16px',
               WebkitAppearance: 'media-volume-sliderthumb',
-              borderRadius: '51px',
+              borderRadius: '50px',
               height: '20px',
               backgroundColor: 'lightGrey'
             }}
-            className={styles.Input2}
+            className={styles.Input3}
             id='typeinp'
             type='range'
             min='0'
