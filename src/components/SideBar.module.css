@@ -77,6 +77,7 @@
 }
 
 .Input3 {
+  margin-left: 20px;
   width: 85%;
 }
 
@@ -193,16 +194,17 @@
     padding-top: 5px;
     text-align: center;
   }
+  .Category {
+    margin-top: 10px;
+  }
   .Input2 {
-    /* padding: 7px 0px; */
-    /* margin-left: 16px; */
     border-radius: 50px;
     height: 20px;
     background-color: lightgrey;
     width: 50%;
   }
   .Input3 {
-    margin: 0;
+    margin: 0 auto;
     -webkit-appearance: media-volume-sliderthumb;
     border-radius: 50px;
     height: 20px;
@@ -213,7 +215,6 @@
     border-radius: 25px;
     width: 80%;
     margin-left: 30px;
-    background-color: lightgrey;
     text-align: center;
   }
   .Searching {
@@ -255,11 +256,11 @@
     margin-right: 5px;
   }
   .WeightDisplay {
-    /* font-size: 18px;
+    font-size: 18px;
     font-weight: bold;
     color: #212121;
     width: 100%;
     padding: 1px;
-    margin-right: 1px; */
+    margin-right: 1px;
   }
 }
