@@ -20,7 +20,7 @@ const accountFormSchema = Yup.object().shape({
 const TextInput = props => {
     const { name, errors, touched } = props;
     return (
-        <div>
+        <div style={{ textAlign: 'center' }}>
             <input {...props} />
             <div>{errors[name] && touched[name] && errors[name]}</div>
         </div>
@@ -44,7 +44,6 @@ export default class LoginForm extends React.Component {
                 return 'Twoje hasło musi posiadać przynajmniej 6 znaków'
             default:
                 return 'Wystąpił nieoczekiwany błąd'
-                
         }
     }
 
@@ -58,18 +57,21 @@ export default class LoginForm extends React.Component {
     render() {
         return (
             <div>
-                <div className={styles.InnerBox}>
                 <div className={styles.LogoLogin}>
-                    <img  src={Logo} alt={"Logo"} className={styles.logo}/>
+                        <img src={Logo}
+                            style={{
+                                width: '140px'
+                            }}
+                            alt={"Logo"} className={styles.logo} />
                     </div>
-                    <p className={styles.MailPar}>
-                        Proszę wypełnić pola do zalogowania.
-              </p>
+                <div className={styles.InnerBox}>
+                    <div className={styles.MailPar}>
+                        <p>Proszę wypełnić pola do zalogowania.</p>
+                    </div>
                     <Formik
                         initialValues={{
                             name: "",
                             password: "",
-
                         }}
                         validationSchema={accountFormSchema}
                         onSubmit={(values, { setSubmitting }) => {
@@ -90,7 +92,7 @@ export default class LoginForm extends React.Component {
                         }) => (
                                 <form className={styles.Inputs} onSubmit={handleSubmit}>
                                     <div className={styles.mailBox}>
-                                        <div>
+                                        <div className={styles.Input}>
                                             <label></label>
                                             <TextInput
                                                 type="email"
@@ -103,7 +105,7 @@ export default class LoginForm extends React.Component {
                                                 errors={errors}
                                             />
                                         </div>
-                                        <div>
+                                        <div className={styles.Input}>
                                             <label></label>
                                             <TextInput
                                                 type="password"
@@ -117,10 +119,16 @@ export default class LoginForm extends React.Component {
                                             />
                                         </div>
                                     </div>
-                                    <button type='submit' >
-                                        Zaloguj się
+                                    <div className={styles.LogBttn}>
+                                        <button style={{
+                                            borderRadius: '20px',
+                                            padding: '6px 26px',
+                                            backgroundColor: 'rgba(139,195,74, 0.8)' 
+                                        }}
+                                            type='submit' >
+                                            Zaloguj się
                                     </button>
-
+                                    </div>
                                 </form>)}
                     </Formik>
 
@@ -132,7 +140,7 @@ export default class LoginForm extends React.Component {
                             className={styles.Register2}
                             exact
                         >
-                            Zarejestruj się!
+                            &nbsp;  Zarejestruj się!
             </NavLink>
                     </div>
                 </div>

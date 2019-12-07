@@ -1,21 +1,29 @@
 import React from "react";
 import styles from "./Profile.module.css";
 import ProfilePicture from "./images/ProfilePicture.jpg";
-import { watchUsers, unwatchUsers } from "../services/ForFetchDB";
+import { watchUsers, unwatchUsers, watchRecipes } from "../services/ForFetchDB";
 
 class Profile extends React.Component {
   state = {
     id: "",
     email: this.email,
     name: "",
-    favorites: []
+    favorites: [],
+    recipes: []
   };
 
   componentDidMount() {
     watchUsers(users => {
       this.setState({ ...users });
+      
     });
+    watchRecipes(recipes => {
+      this.setState({ recipes })
+    })
+         
+
   }
+
 
   componentWillUnmount() {
     unwatchUsers();
@@ -32,10 +40,10 @@ class Profile extends React.Component {
             ></img>
             <div className={styles.ProfileRight}>
               <div className={styles.Name}>{this.state.name}</div>
-              <div className={styles.Email}>{this.state.email}</div>
+    <div className={styles.Email}>{this.state.email}</div>
             </div>
           </div>
-          <div className={styles.FavoutiteRecipe}>{this.favs}</div>
+          <div className={styles.FavoutiteRecipe}><button onClick={this.handleClick}>halo</button></div>
         </div>
       </div>
     );

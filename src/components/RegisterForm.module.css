@@ -19,26 +19,41 @@
     text-align: center;
     font-size: 35px;
 }
+*/
 
 .Register2{
-    padding: 20px;
-    background-color: grey;
     text-align: center;
-    font-size: 30px;
+    font-size: 16px;
 }
 
-.RegPage{
+/* .RegPage{
     height: 90vh;
-}
+} */
 
 .MailPar{
-       margin: 0;
-    padding: 0 0 20px;
     text-align: center;
-    font-size: 22px;
+    font-size: 17px;
+    padding: 14px;
 }
 
-.MailParBelow{
+.mailBox{
+    width: 70%;
+    margin: auto;
+}
+
+.Input{
+    padding: 6px 0;
+    position: relative;
+}
+
+.LogBttn{
+    text-align: center;
+    font-size: 18px;
+    padding: 14px;
+    height: 7vh;
+}
+
+/* .MailParBelow{
     font-size: 25px;
     width: 100%;
 }
@@ -47,12 +62,12 @@
     position: fixed;
     width: 100%;
     bottom: 0;
-} */
+}  */
 
 .InnerBox{
     width: 320px;
     position: absolute;
-    height: 420px;
+    height: fit-content;
     background: lightgrey;
     left: 50%;
     TOP: 50%;
@@ -63,13 +78,8 @@
 }
 
 .LogoLogin{
-    border-style: none;
-    border-radius: 200px;
-    width: 210px;
-    position: relative;
-    margin: auto;
-    width: 55%;
-    margin: -15px 22%;
+    text-align: center;
+    background-color: rgba(139,195,74, 0.8);
 }
 
 /*
