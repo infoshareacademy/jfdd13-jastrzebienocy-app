@@ -69,10 +69,10 @@ class Api {
     return firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(value => {
-        console.log("Logged in!");
-        console.log(value);
-      })
+      // .then(value => {
+      //   console.log("Logged in!");
+      //   console.log(value);
+      // })
       
   }
 
