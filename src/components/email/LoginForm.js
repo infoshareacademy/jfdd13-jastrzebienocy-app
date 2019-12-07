@@ -60,7 +60,8 @@ export default class LoginForm extends React.Component {
                 <div className={styles.LogoLogin}>
                         <img src={Logo}
                             style={{
-                                width: '140px'
+                                width: '100px',
+              marginLeft: '20px'
                             }}
                             alt={"Logo"} className={styles.logo} />
                     </div>
