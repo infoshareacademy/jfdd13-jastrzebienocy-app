@@ -17,23 +17,11 @@ export const watchRecipes = onSuccess => {
     .ref('/recipes')
     .on('value', dataSnapshot => {
       const recipes = dataSnapshot.val()
-      // console.log(recipes)
       onSuccess(prepareRecipes(recipes))
     })
 }
 
-export const prepareUsers = data => {
-  return data
-  
-  // Object.entries(data).map(arr => {
-  //   const [id, data] = arr 
-  //   return {
-  //     ...data,
-  //     id
-      
-  //   }
-    
-}
+
 
 
 export const watchUsers = onSuccess => {
@@ -45,8 +33,14 @@ export const watchUsers = onSuccess => {
     .on('value', dataSnapshot => {
       const users = dataSnapshot.val()
       onSuccess((users))
-      console.log(users)
     })
+}
+
+export const unwatchUsers = () => {
+  return firebase
+    .database()
+    .ref('/users')
+    .off()
 }
 
 export const getFavourites = onSuccess => {
@@ -90,14 +84,12 @@ export const categories = data => {
 export const getCategories = data => {
   const obj = {};
   data.map(v => obj[v.category.toLowerCase()] = (obj[v.category.toLowerCase()] || 0) + 1)
-  console.log(obj)
   return obj
 }
 
 export const getCookingTime = data => {
   const obj = {};
   data.map(v => obj[v.cookingTime] = (obj[v.cookingTime] || 0) + 1)
-  console.log(obj)
   return obj
 }
 

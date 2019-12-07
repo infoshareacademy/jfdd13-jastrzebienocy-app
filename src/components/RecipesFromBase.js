@@ -38,18 +38,16 @@ export class RecipesFromBase extends React.Component {
   componentDidMount() {
     watchRecipes(recipes => {
       this.setState({ recipes });
+      console.log(recipes)
     });
     this.unsubscribe = getFavourites((favs) => this.setState({ favs }))
   }
 
   componentWillUnmount() {
+    unwatchRecipes()
     if (this.unsubscribe) {
       this.unsubscribe()
     }
-  }
-
-  componentWillUnmount() {
-    unwatchRecipes()
 
   }
 
