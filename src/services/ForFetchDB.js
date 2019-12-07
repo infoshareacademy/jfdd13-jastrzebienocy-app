@@ -40,6 +40,24 @@ export const unwatchUsers = () => {
     .off()
 }
 
+export const watchFavs = onSuccess => {
+  const userId = firebase.auth().currentUser.uid;
+  return firebase
+    .database()
+    .ref(`/favourites/${userId}`)
+    .on('value', dataSnapshot => {
+      const favs = dataSnapshot.val()
+      onSuccess((favs))
+    })
+}
+
+export const unwatchFavs = () => {
+  return firebase
+    .database()
+    .ref('/favourites')
+    .off()
+}
+
 export const getFavourites = onSuccess => {
   const userId = firebase.auth().currentUser.uid;
   const handleValue = dataSnapshot => {

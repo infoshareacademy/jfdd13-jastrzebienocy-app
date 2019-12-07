@@ -1,42 +1,48 @@
 import React from "react";
 import styles from "./Profile.module.css";
 import ProfilePicture from "./images/ProfilePicture.jpg";
-import { watchUsers, unwatchUsers, watchRecipes } from "../services/ForFetchDB";
+import { watchUsers, unwatchUsers, watchRecipes, watchFavs, unwatchFavs, unwatchRecipes } from "../services/ForFetchDB";
+import { finished } from "stream";
 
 class Profile extends React.Component {
   state = {
     id: "",
     email: this.email,
     name: "",
-    favorites: []
-    // recipes: []
+    recipes: [],
+    favs: []
   };
 
   componentDidMount() {
     watchUsers(users => {
       this.setState({ ...users });
     });
-    // watchRecipes(recipes => {
-    //   this.setState({ recipes })
-    // })
+    watchRecipes(recipes => {
+      this.setState({ recipes })
+    })
+    watchFavs(favs => {
+      this.setState({favs})
+      console.log(Object.keys(favs))
+      console.log(this.state)
+    })
 
     
   }
 
+
   handleClick()
    {
-    //  console.log(this.state.favorites)
-    //  console.log(this.state.recipes)
-    //  const use = this.state.recipes.map(item => item.id)
-    //  console.log(use)
-    // const use2 = use.filter(list => list.includes(this.state.favorites.id))
-    // console.log(use2)
-     
-      //  recipe.includes(this.state.favorites.id))
+    const use = this.state.recipes
+   const favsKeys = (Object.keys((this.state.favs)))
+   const use2 = use.filter(use => use.id === favsKeys.find(idFav =>  idFav === use.id))
+   
+   console.log(use2)
    }
 
   componentWillUnmount() {
     unwatchUsers();
+    unwatchFavs();
+    unwatchRecipes();
   }
   render() {
     return (
@@ -54,7 +60,7 @@ class Profile extends React.Component {
             </div>
           </div>
           <div className={styles.FavoutiteRecipe}>
-            {/* <button onClick={this.handleClick()}>Pokaz przepisy ulubione</button> */}
+            <button onClick={this.handleClick()}>Pokaz przepisy ulubione</button>
             </div>
         </div>
       </div>
