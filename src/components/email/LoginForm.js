@@ -58,13 +58,13 @@ export default class LoginForm extends React.Component {
         return (
             <div>
                 <div className={styles.LogoLogin}>
-                        <img src={Logo}
-                            style={{
-                                width: '100px',
-              marginLeft: '20px'
-                            }}
-                            alt={"Logo"} className={styles.logo} />
-                    </div>
+                    <img src={Logo}
+                        style={{
+                            width: '100px',
+                            marginLeft: '20px'
+                        }}
+                        alt={"Logo"} className={styles.logo} />
+                </div>
                 <div className={styles.InnerBox}>
                     <div className={styles.MailPar}>
                         <p>Proszę wypełnić pola do zalogowania.</p>
@@ -124,7 +124,7 @@ export default class LoginForm extends React.Component {
                                         <button style={{
                                             borderRadius: '20px',
                                             padding: '6px 26px',
-                                            backgroundColor: 'rgba(139,195,74, 0.8)' 
+                                            backgroundColor: 'rgba(139,195,74, 0.8)'
                                         }}
                                             type='submit' >
                                             Zaloguj się
