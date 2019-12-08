@@ -23,8 +23,6 @@ const accountFormSchema = Yup.object().shape({
   RepeatPassword: Yup.string()
     .oneOf([Yup.ref('password')], 'Powtórzone hasło się nie zgadza')
     .required('Niepoprawne hasło')
-
-
 });
 
 const TextInput = props => {
@@ -76,7 +74,7 @@ export default class RegisterForm extends React.Component {
     return (
       <div>
         <div className={styles.LogoLogin}>
-          <img src={Logo}s
+          <img src={Logo}
             style={{
               width: '100px',
               marginLeft: '20px'
@@ -162,7 +160,7 @@ export default class RegisterForm extends React.Component {
                         value={values.password2}
                         touched={touched}
                         errors={errors}
-                      /> <p>{this.state.errtest}</p>
+                      /> <p style={{textAlign: 'center'}}>{this.state.errtest}</p>
                     </div>
                   </div>
                   <div className={styles.LogBttn}>
