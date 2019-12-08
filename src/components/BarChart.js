@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import {Bar, Line, Pie } from 'react-chartjs-2';
 import styles from "./Charts.module.css";
 import {   getCookingTime, watchRecipes,  } from '../services/ForFetchDB';
+import { defaults } from 'react-chartjs-2'
 
+defaults.global.defaultFontFamily = "'Oswald', serif"
 
 class BarChart extends Component {
   constructor(props) {
@@ -75,7 +77,7 @@ componentDidMount() {
       title:{
       display: true,
         text: 'Czas gotowania w min / Ilość przepisów',
-        fontSize:18,
+        fontSize:16,
         fontFamily: "Oswald sans-serif",
         fontColor: "black",
     },

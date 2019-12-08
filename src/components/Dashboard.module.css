@@ -1,5 +1,5 @@
 .wrapper {
-    font-family: "Oswald", sans-serif;
+    font-family: "Oswald", serif;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -13,12 +13,12 @@
   height: 100%;
   margin: 0 auto;
   width: 100%;
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", serif;
   margin-bottom: 5%;
 }
 
 .dasboardAll {
-  font-family: "Oswald", sans-serif;
+  font-family: "Oswald", serif;
   border: 2px solid #757575;
   width:85%;
   height:90%;
@@ -34,12 +34,12 @@ font-size: 30px;
 line-height: 40px;
 margin-top: 30px;
 padding: 10px;
-font-family: "Oswald", sans-serif;
+font-family: "Oswald", serif;
 }
 
 @media only screen and (max-width: 1400px) {
   .dasboardAll {
-    font-family: "Oswald", sans-serif;
+    font-family: "Oswald", serif;
     border: 2px solid #757575;
     width:95%;
     height:90%;
@@ -53,7 +53,7 @@ font-family: "Oswald", sans-serif;
 
 @media only screen and (max-width: 1250px) {
   .dasboardAll {
-    font-family: "Oswald", sans-serif;
+    font-family: "Oswald", serif;
     border: 2px solid #757575;
     width:95%;
     height:95%;
@@ -67,7 +67,7 @@ font-family: "Oswald", sans-serif;
 
 @media only screen and (max-width: 850px) {
   .wrapper {
-    font-family: "Oswald", sans-serif;
+    font-family: "Oswald", serif;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -81,10 +81,11 @@ font-family: "Oswald", sans-serif;
     line-height: 30px;
     margin-top: 10px;
     padding: 5px;
-    font-family: "Oswald", sans-serif;
+    font-family: "Oswald", serif;
+    font-weight: bold;
     }
     .dasboardAll {
-      font-family: "Oswald", sans-serif;
+      font-family: "Oswald", serif;
       border: 2px solid #757575;
       width:90%;
       height:90%;
@@ -99,8 +100,9 @@ font-family: "Oswald", sans-serif;
       height: 100%;
       margin: 0 auto;
       width: 100%;
-      font-family: "Oswald", sans-serif;
+      font-family: "Oswald", serif;
       margin-bottom: 1%;
+      font-weight: bold;
     }
     .headerButton {
       font-size: 5px;
@@ -109,7 +111,7 @@ font-family: "Oswald", sans-serif;
 
 @media only screen and (max-width: 550px) {
   .wrapper {
-    font-family: "Oswald", sans-serif;
+    font-family: "Oswald", serif;
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -122,10 +124,10 @@ font-family: "Oswald", sans-serif;
     line-height: 20px;
     margin-top: 20px;
     padding: 5px;
-    font-family: "Oswald", sans-serif;
+    font-family: "Oswald", serif;
     }
     .dasboardAll {
-      font-family: "Oswald", sans-serif;
+      font-family: "Oswald", serif;
       border: 2px solid #757575;
       width:90%;
       height:90%;
@@ -143,7 +145,7 @@ font-family: "Oswald", sans-serif;
     line-height: 16px;
     margin-top: 10px;
     padding: 3px;
-    font-family: "Oswald", sans-serif;
+    font-family: "Oswald", serif;
     }
  
 }
@@ -154,10 +156,10 @@ font-family: "Oswald", sans-serif;
     line-height: 16px;
     margin-top: 5px;
     padding: 2px;
-    font-family: "Oswald", sans-serif;
+    font-family: "Oswald", serif;
     }
     .dasboardAll {
-      font-family: "Oswald", sans-serif;
+      font-family: "Oswald", serif;
       border: 2px solid #757575;
       width:90%;
       height:100vh;
