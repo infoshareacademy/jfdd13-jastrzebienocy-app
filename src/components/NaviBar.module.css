@@ -4,8 +4,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    /* background: #BDBDBD; */
-    /* background-color: rgba(220,237,200, 0.9);*/
     background-color: rgba(139,195,74, 0.8); 
     z-index: 5;
     scroll-behavior: smooth;
@@ -13,12 +11,6 @@
     align-self: flex-end; 
     height: 7vh;
     justify-content: space-between;
-    /* display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none; */
-    
 }
 
 .logo {

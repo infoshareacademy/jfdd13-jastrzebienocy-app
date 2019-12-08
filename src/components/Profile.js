@@ -16,6 +16,7 @@ class Profile extends React.Component {
   componentDidMount() {
     watchUsers(users => {
       this.setState({ ...users });
+      
     });
     watchRecipes(recipes => {
       this.setState({ recipes })
@@ -56,7 +57,7 @@ class Profile extends React.Component {
             ></img>
             <div className={styles.ProfileRight}>
               <div className={styles.Name}>{this.state.name}</div>
-              <div className={styles.Email}>{this.state.email}</div>
+    <div className={styles.Email}>{this.state.email}</div>
             </div>
           </div>
           <div className={styles.FavoutiteRecipe}>
