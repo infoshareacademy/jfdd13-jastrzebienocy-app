@@ -44,8 +44,8 @@ export default class LoginForm extends React.Component {
             case 'auth/email-already-in-use':
                 msg = 'Email już jest przypisany!'
                 break
-            case 'auth/invalid-email':
-                msg = 'Niepoprawny Emeil'
+            case 'auth/wrong-password':
+                msg = 'Niepoprawne hasło'
                 break
             case 'auth/weak-password':
                 msg = 'Twoje hasło musi posiadać przynajmniej 6 znaków'
@@ -127,7 +127,7 @@ export default class LoginForm extends React.Component {
                                                 value={values.password}
                                                 touched={touched}
                                                 errors={errors}
-                                            />
+                                            /><p style={{textAlign: 'center'}}>{this.state.errtest}</p>
                                         </div>
                                     </div>
                                     <div className={styles.LogBttn}>
