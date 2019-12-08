@@ -1,4 +1,4 @@
-  
+
 import React from "react";
 import styles from "./Profile.module.css";
 import ProfilePicture from "./images/ProfilePicture.jpg";
