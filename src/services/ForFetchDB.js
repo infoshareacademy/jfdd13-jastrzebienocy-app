@@ -21,9 +21,6 @@ export const watchRecipes = onSuccess => {
     })
 }
 
-
-
-
 export const watchUsers = onSuccess => {
   const userId = firebase.auth().currentUser.uid;
   console.log(userId)
@@ -43,6 +40,24 @@ export const unwatchUsers = () => {
     .off()
 }
 
+export const watchFavs = onSuccess => {
+  const userId = firebase.auth().currentUser.uid;
+  return firebase
+    .database()
+    .ref(`/favourites/${userId}`)
+    .on('value', dataSnapshot => {
+      const favs = dataSnapshot.val()
+      onSuccess((favs))
+    })
+}
+
+export const unwatchFavs = () => {
+  return firebase
+    .database()
+    .ref('/favourites')
+    .off()
+}
+
 export const getFavourites = onSuccess => {
   const userId = firebase.auth().currentUser.uid;
   const handleValue = dataSnapshot => {
@@ -55,6 +70,21 @@ export const getFavourites = onSuccess => {
 
   return () => ref.off('value', handleValue)
 }
+// Get the person from DB
+export const getUserProfile = onSuccess => {
+  const userId = firebase.auth().currentUser.uid;
+  const userProf = dataSnapShot => {
+    const users = dataSnapShot.val()
+    onSuccess(users || {})
+
+  }
+  const ref = firebase.database().ref(`/users/${userId}`)
+
+  ref.on('value', userProf)
+
+  return () => ref.off('value', userProf)
+}
+
 
 //nie kasowac
 export const categories = data => {

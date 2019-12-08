@@ -5,11 +5,6 @@ import { Icon, Dropdown } from 'semantic-ui-react'
 
 const dropdownI = [
   {
-    key: 'Wszystkie',
-    text: 'Wszystkie',
-    value: null
-  },
-  {
     key: 'Kuchnia włoska',
     text: 'Kuchnia włoska',
     value: 'włoska'
@@ -75,7 +70,7 @@ class SideBar extends React.Component {
           value={this.props.name}
           onChange={event => {
             this.props.onNameChange(event.target.value)
-            // console.log(event)
+
           }}
         />
         <div className={styles.Product}>Produkt:</div>
@@ -90,7 +85,7 @@ class SideBar extends React.Component {
           value={this.props.products}
           onChange={event => {
             this.props.onProductsChange(event.target.value)
-            // console.log(event)
+
           }}
         />
         <div className={styles.Quantity}>
@@ -101,13 +96,12 @@ class SideBar extends React.Component {
           <input
             style={{
               padding: '7px 0',
-              marginLeft: '16px',
               WebkitAppearance: 'media-volume-sliderthumb',
-              borderRadius: '51px',
+              borderRadius: '50px',
               height: '20px',
               backgroundColor: 'lightGrey'
             }}
-            className={styles.Input2}
+            className={styles.Input3}
             id='typeinp'
             type='range'
             min='0'
@@ -116,7 +110,7 @@ class SideBar extends React.Component {
             value={this.props.weight}
             onChange={event => {
               this.props.onWeigthChange(event.target.value)
-              // console.log(event)
+
             }}
           />
         </div>
@@ -124,6 +118,7 @@ class SideBar extends React.Component {
         <div className={styles.dropdown2}>
           <Dropdown
             style={{
+              // margin: '0 auto',
               borderRadius: '25px',
               width: '85%',
               marginLeft: '16px',
@@ -143,10 +138,9 @@ class SideBar extends React.Component {
             }}
           />
         </div>
-     
+
         <div className={styles.Favourites}>
           Ulubione <Heart checked={this.props.favourites} onHeartClick={this.props.onFavouritesChange} />
-          {/*{(e) => console.log(e)} >*/}
         </div>
       </div>
     )
