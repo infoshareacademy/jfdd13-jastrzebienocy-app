@@ -25,7 +25,7 @@
    .pagMiddle {
       position: fixed;
       left: 26.25%;
-      bottom: 6.3%;
+      bottom: 5.5%;
    }
    .layout {
       display: flex;
@@ -42,31 +42,31 @@
    .pagMiddle {
       position: fixed;
       left: 20%;
-      bottom: 6.3%;
+      bottom: 5.5%;
    }
 }
 
 @media only screen and (max-width: 480px) {
    .pagMiddle {
       position: fixed;
-      left: 15%;
-      bottom: 2%;
+      left: 10%;
+      bottom: 1.75%;
    }
 }
 
 @media only screen and (max-width: 425px) {
    .pagMiddle {
       position: fixed;
-      left: 10%;
-      bottom: 2%;
+      left: 5%;
+      bottom: 1.75%;
    }
 }
 
 @media only screen and (max-width: 375px) {
    .pagMiddle {
       position: fixed;
-      left: 5%;
-      bottom: 2%;
+      left: 0;
+      bottom: 1.75%;
    }
 }
 
@@ -74,6 +74,6 @@
    .pagMiddle {
       position: fixed;
       left: 0;
-      bottom: 2%;
+      bottom: 1.75%;
    }
 }
