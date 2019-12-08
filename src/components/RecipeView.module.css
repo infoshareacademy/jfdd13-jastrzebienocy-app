@@ -1,5 +1,7 @@
 .RecipeView {
-    margin: 30px
+    margin: 30px;
+    box-shadow: 4px 4px grey;
+    border-radius: 3px;
 }
 
 .Wrapper {
@@ -52,12 +54,9 @@
 .HeartInRecipe {
     font-family: "Oswald", sans-serif;
     font-weight: bold;
-    margin: 10px;
     color: #212121;
     font-size: 24px;
     text-decoration: none;
-    position: absolute;
-    top: 205px;
-    left: 0;
-    padding: 10px;
+    text-align: center;
+    margin-top: 7px;
 }

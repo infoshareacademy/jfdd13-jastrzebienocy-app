@@ -1,4 +1,4 @@
-.RegisterForm{
+ /* .RegisterForm{
     background-color: pink;
     padding: 20px;
     height: 90vh;
@@ -19,24 +19,41 @@
     text-align: center;
     font-size: 35px;
 }
+*/
 
 .Register2{
-    padding: 20px;
-    background-color: grey;
     text-align: center;
-    font-size: 30px;
+    font-size: 16px;
 }
 
-.RegPage{
+/* .RegPage{
     height: 90vh;
-}
+} */
 
 .MailPar{
-    font-size: 25px;
     text-align: center;
+    font-size: 17px;
+    padding: 14px;
 }
 
-.MailParBelow{
+.mailBox{
+    width: 70%;
+    margin: auto;
+}
+
+.Input{
+    padding: 6px 0;
+    position: relative;
+}
+
+.LogBttn{
+    text-align: center;
+    font-size: 18px;
+    padding: 14px;
+    height: 7vh;
+}
+
+/* .MailParBelow{
     font-size: 25px;
     width: 100%;
 }
@@ -45,18 +62,27 @@
     position: fixed;
     width: 100%;
     bottom: 0;
-}
+}  */
 
 .InnerBox{
-    background-color: lightgrey;
-    border-radius: 25px;
-    width: 80%;
-    border: outset;
-    margin: 4% 10% 10%;
-    padding: 16px 36px;
-    position: relative;
+    width: 320px;
+    position: absolute;
+    height: fit-content;
+    background: lightgrey;
+    left: 50%;
+    TOP: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 20px;
 }
 
+.LogoLogin{
+    text-align: center;
+    background-color: rgba(139,195,74, 0.8);
+}
+
+/*
 .AllRegister{
     color: red;
     font-size: 30px;
@@ -82,8 +108,4 @@ button {
 
   .ButtonReg{
       display: flex;
-  }
-
-/* .mailBox{
-    background-color: pink;
-} */
+  } */

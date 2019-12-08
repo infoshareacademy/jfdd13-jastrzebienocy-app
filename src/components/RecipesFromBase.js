@@ -5,7 +5,6 @@ import SideBar from './SideBar'
 import styles from './RecipesFromBase.module.css'
 
 import {
-  // fetchRecipes,
   getFavourites,
   prepareRecipes,
   watchRecipes,
@@ -32,7 +31,6 @@ export class RecipesFromBase extends React.Component {
   }
 
   handlePaginationChange = (e, { activePage }) => this.setState({ activePage })
-
   unsubscribe = undefined;
 
   componentDidMount() {
@@ -43,19 +41,13 @@ export class RecipesFromBase extends React.Component {
   }
 
   componentWillUnmount() {
+    unwatchRecipes()
     if (this.unsubscribe) {
       this.unsubscribe()
     }
   }
 
-  componentWillUnmount() {
-    unwatchRecipes()
-
-  }
-
-  // Filter for products and recipes.
   get filteredRecepies() {
-    // Destructure state for the products option
     const { recipes, products, weight, category, name, favourites } = this.state
     const finalData = recipes.filter(recipe => {
       const productsFilter =
@@ -68,7 +60,6 @@ export class RecipesFromBase extends React.Component {
         ? recipe.category.toLowerCase().includes(category.toLowerCase())
         : true
       const favouritesFilter = favourites === true ? this.state.favs[recipe.id] : true
-      // console.log(recipe.name)
       return (
         productsFilter &&
         nameFilter &&
@@ -82,15 +73,14 @@ export class RecipesFromBase extends React.Component {
 
   render() {
     const { activePage, pageItems } = this.state
-
     const viewedRecipes = this.filteredRecepies.slice(
       (activePage - 1) * pageItems,
       activePage * pageItems
     )
 
     return (
-      <div style={{ display: 'flex' }}>
-        <div style={{ background: 'grey', marginRight: '20px' }}>
+      <div className={styles.layout}>
+        <div className={styles.layout2}>
           <SideBar
             name={this.state.name}
             onNameChange={name => {
@@ -117,7 +107,6 @@ export class RecipesFromBase extends React.Component {
             favourites={this.state.favourites}
             onFavouritesChange={() => {
               this.setState({ favourites: !this.state.favourites })
-              // console.log(favourites)
             }}
           />
         </div>

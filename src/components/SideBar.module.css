@@ -45,6 +45,7 @@
   font-weight: bold;
   color: #212121;
   font-size: 24px;
+  margin-top: 20px;
   text-decoration: none;
   text-align: center;
 }
@@ -74,41 +75,75 @@
   margin-right: 2px;
 }
 
-@media only screen and (max-width: 850px) {
+.Input2 {
+  width: 85%;
+}
+
+.dropdown2 {
+  width:100%;
+  height: 20px;
+}
+
+@media only screen and (max-width: 850px) { 
   .SideBar {
+    /* display: flex;
+    flex-wrap: wrap;  */
+    
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr 1fr ;
+    height: auto;
     font-family: "Oswald", sans-serif;
     align-items: center;
     scroll-behavior: smooth;
     top: 0px;
-    padding: 10px;
-    height: 88vh;
+    padding: 5px;
+    margin: 0 auto;
+    
     /* background-color: #D4eFfa;
     /* border: 1px solid #a9a9a9;
     border-radius: 25% 0 0 40%;*/
-    width: 150px;
+    width: 95%;
   }
   .Product, .Quantity, .Category, .Search, .Name {
     font-family: "Oswald", sans-serif;
     font-weight: bold;
     color: #212121;
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
-    padding-top: 10px;
+    padding-top: 5px;
     text-align: center;
+    margin-top: 15px;
+  }
+
+  .Category {
+    margin-top: 25px; 
+  }
+  
+  .Input2 {
+    width: 75%;
+   height: 20px;
+  }
+
+  .dropdown2 {
+    width:90%;
+    font-size: 10px;
+    height: 10px;
   }
   .Searching {
+    display: none;
     font-family: serif;
     font-weight: bold;
     color: #212121;
     text-decoration: underline;
-    padding: 16px;
+    padding: 5px;
     text-align: center;
   }
   .Searching::first-letter {
     font-family: serif;
     font-weight: bold;
     color: #212121;
-    font-size: 20px;
+    font-size: 16px;
     text-decoration: none;
     text-align: center;
   }
@@ -116,30 +151,33 @@
     font-family: "Oswald", sans-serif;
     font-weight: bold;
     color: #212121;
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: none;
     text-align: center;
+    margin-top: 0px;
   }
   /* slider */
   .Label {
     align-items: center;
-    font-size: 18px;
+    font-size: 16px;
     font-family: "Oswald", sans-serif;
     font-weight: bold;
     color: #212121;
     text-align: center;
   }
   .InputSlide {
-    margin-right: 10px;
+    margin-right: 5px;
   }
   .WeightDisplay {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
     color: #212121;
     width: 100%;
-    padding: 3px;
-    margin-right: 2px;
+    padding: 1px;
+    margin-right: 1px;
   }
 }
 
-@media only screen and (max-width: 550px) {}
+@media only screen and (max-width: 600px) {
+  
+}
