@@ -23,7 +23,10 @@ const TextInput = props => {
     return (
         <div style={{ textAlign: 'center' }}>
             <input {...props} />
-            <div>{errors[name] && touched[name] && errors[name]}</div>
+            <div style={{
+        height: '2px',
+        fontSize: '12px'
+      }}>{errors[name] && touched[name] && errors[name]}</div>
         </div>
     );
 };
@@ -35,17 +38,23 @@ export default class LoginForm extends React.Component {
     }
 
     getMessage(code) {
+        let msg = ''
         console.log(code)
         switch (code) {
             case 'auth/email-already-in-use':
-                return 'Email już jest przypisany!'
+                msg = 'Email już jest przypisany!'
+                break
             case 'auth/invalid-email':
-                return 'Niepoprawny Emeil'
+                msg = 'Niepoprawny Emeil'
+                break
             case 'auth/weak-password':
-                return 'Twoje hasło musi posiadać przynajmniej 6 znaków'
+                msg = 'Twoje hasło musi posiadać przynajmniej 6 znaków'
+                break
             default:
-                return 'Wystąpił nieoczekiwany błąd'
+                msg =  'Wystąpił nieoczekiwany błąd'
         }
+        console.log(msg)
+        this.setState({ errtest: msg }, () => console.log(this.state.errtest))
     }
 
     onSubmit = e => {

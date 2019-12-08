@@ -30,10 +30,7 @@ const accountFormSchema = Yup.object().shape({
 const TextInput = props => {
   const { name, errors, touched } = props;
   return (
-    <div style={{
-      textAlign: 'center',
-
-    }}>
+    <div style={{textAlign: 'center',}}>
       <input {...props} />
       <div style={{
         height: '2px',
