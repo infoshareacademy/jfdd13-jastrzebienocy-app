@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './RecipeView.module.css'
-import { Segment, Image, Icon} from 'semantic-ui-react'
+import { Segment, Image, Icon } from 'semantic-ui-react'
 import Heart from './Heart'
 import ModalWindow from './ModalWindow'
 import { handleFavoritesFirebase } from '../services/HandleFavourites'
@@ -59,10 +59,10 @@ class RecipeView extends React.Component {
                 }}
               />
             </div>
-            
+
 
             <div className={styles.Text}>
-            
+
               <div className={styles.NameRecipe}>
                 <p
                   onClick={() => {
@@ -72,7 +72,7 @@ class RecipeView extends React.Component {
                 >
                   {this.props.recipe.name}
                 </p>
-                
+
               </div>
               <div
                 onClick={() => {
@@ -96,7 +96,7 @@ class RecipeView extends React.Component {
               </div>
             </div>
           </div>
-          
+
           <div className={styles.TimeAndPortions}>
             <div>
               <Icon name='time' size='large' style={{ color: '#8BC34A' }} />
@@ -108,7 +108,7 @@ class RecipeView extends React.Component {
             <Heart checked={this.props.isFavourite} onHeartClick={this.addToFavorites} />
           </div>
         </Segment>
-        
+
       </div>
     )
   }

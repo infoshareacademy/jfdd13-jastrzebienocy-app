@@ -1,27 +1,11 @@
 .pagMiddle {
    position: fixed;
-   bottom: 10%;
-   left:49%;
+   left: 48.5%;
+   bottom: 5.5%;
 }
 
 .layout {
    display: flex;
-}
-
-@media only screen and (max-width: 1050px) { 
-   .pagMiddle {
-      position: fixed;
-      bottom: 34%;
-      left:49%;
-   }
-}
-
-
-@media only screen and (max-width: 850px) {
-   .layout {
-      display: flex;
-      flex-direction: column;
-   } 
 }
 
 .layout2 {
@@ -29,35 +13,67 @@
    margin-right: 20px;
 }
 
+@media only screen and (max-width: 1050px) {
+   .pagMiddle {
+      position: fixed;
+      left: 47.75%;
+      bottom: 5.5%;
+   }
+}
+
 @media only screen and (max-width: 850px) {
+   .pagMiddle {
+      position: fixed;
+      left: 26.25%;
+      bottom: 6.3%;
+   }
+   .layout {
+      display: flex;
+      flex-direction: column;
+   }
    .layout2 {
       background: grey;
       height: auto;
       margin-right: 0;
    }
-
-
-   .pagMiddle {
-      position: fixed;
-      bottom: 10%;
-      left: 24%;
-}
 }
 
 @media only screen and (max-width: 600px) {
-
    .pagMiddle {
       position: fixed;
-      bottom: 18%;
-      left:17%;
+      left: 20%;
+      bottom: 6.3%;
+   }
 }
+
+@media only screen and (max-width: 480px) {
+   .pagMiddle {
+      position: fixed;
+      left: 15%;
+      bottom: 2%;
+   }
 }
 
 @media only screen and (max-width: 425px) {
-
    .pagMiddle {
       position: fixed;
-      bottom: 18%;
-      left:5%;
+      left: 10%;
+      bottom: 2%;
+   }
 }
+
+@media only screen and (max-width: 375px) {
+   .pagMiddle {
+      position: fixed;
+      left: 5%;
+      bottom: 2%;
+   }
+}
+
+@media only screen and (max-width: 320px) {
+   .pagMiddle {
+      position: fixed;
+      left: 0;
+      bottom: 2%;
+   }
 }

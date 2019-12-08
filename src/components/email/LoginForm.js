@@ -1,3 +1,4 @@
+import '../../components/helper.css';
 import React from 'react';
 import styles from '../RegisterForm.module.css';
 import { NavLink } from "react-router-dom";
