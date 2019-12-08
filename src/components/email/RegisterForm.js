@@ -1,3 +1,4 @@
+import '../../components/helper.css';
 import React from 'react'
 import styles from '../RegisterForm.module.css'
 import { RegisterSignIn } from './RegisterSignIn'
@@ -29,9 +30,12 @@ const accountFormSchema = Yup.object().shape({
 const TextInput = props => {
   const { name, errors, touched } = props;
   return (
-    <div>
+    <div style={{textAlign: 'center',}}>
       <input {...props} />
-      <div>{errors[name] && touched[name] && errors[name]}</div>
+      <div style={{
+        height: '2px',
+        fontSize: '12px'
+      }}>{errors[name] && touched[name] && errors[name]}</div>
     </div>
   );
 };
@@ -72,12 +76,13 @@ export default class RegisterForm extends React.Component {
     return (
       <div>
         <div className={styles.LogoLogin}>
-                        <img src={Logo}
-                            style={{
-                                width: '140px'
-                            }}
-                            alt={"Logo"} className={styles.logo} />
-                    </div>
+          <img src={Logo}s
+            style={{
+              width: '100px',
+              marginLeft: '20px'
+            }}
+            alt={"Logo"} className={styles.logo} />
+        </div>
         <div className={styles.InnerBox}>
           <p className={styles.MailPar}>
             Proszę wypełnić formularz w celu rejestracji.

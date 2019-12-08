@@ -1,3 +1,4 @@
+import '../../components/helper.css';
 import React from 'react';
 import styles from '../RegisterForm.module.css';
 import { NavLink } from "react-router-dom";
@@ -22,7 +23,10 @@ const TextInput = props => {
     return (
         <div style={{ textAlign: 'center' }}>
             <input {...props} />
-            <div>{errors[name] && touched[name] && errors[name]}</div>
+            <div style={{
+        height: '2px',
+        fontSize: '12px'
+      }}>{errors[name] && touched[name] && errors[name]}</div>
         </div>
     );
 };
@@ -34,17 +38,23 @@ export default class LoginForm extends React.Component {
     }
 
     getMessage(code) {
+        let msg = ''
         console.log(code)
         switch (code) {
             case 'auth/email-already-in-use':
-                return 'Email już jest przypisany!'
+                msg = 'Email już jest przypisany!'
+                break
             case 'auth/invalid-email':
-                return 'Niepoprawny Emeil'
+                msg = 'Niepoprawny Emeil'
+                break
             case 'auth/weak-password':
-                return 'Twoje hasło musi posiadać przynajmniej 6 znaków'
+                msg = 'Twoje hasło musi posiadać przynajmniej 6 znaków'
+                break
             default:
-                return 'Wystąpił nieoczekiwany błąd'
+                msg =  'Wystąpił nieoczekiwany błąd'
         }
+        console.log(msg)
+        this.setState({ errtest: msg }, () => console.log(this.state.errtest))
     }
 
     onSubmit = e => {
@@ -58,12 +68,13 @@ export default class LoginForm extends React.Component {
         return (
             <div>
                 <div className={styles.LogoLogin}>
-                        <img src={Logo}
-                            style={{
-                                width: '140px'
-                            }}
-                            alt={"Logo"} className={styles.logo} />
-                    </div>
+                    <img src={Logo}
+                        style={{
+                            width: '100px',
+                            marginLeft: '20px'
+                        }}
+                        alt={"Logo"} className={styles.logo} />
+                </div>
                 <div className={styles.InnerBox}>
                     <div className={styles.MailPar}>
                         <p>Proszę wypełnić pola do zalogowania.</p>
@@ -123,7 +134,7 @@ export default class LoginForm extends React.Component {
                                         <button style={{
                                             borderRadius: '20px',
                                             padding: '6px 26px',
-                                            backgroundColor: 'rgba(139,195,74, 0.8)' 
+                                            backgroundColor: 'rgba(139,195,74, 0.8)'
                                         }}
                                             type='submit' >
                                             Zaloguj się

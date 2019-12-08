@@ -18,14 +18,17 @@
 }
 
 .NameRecipe {
+    width: 90%;
     font-size: 20px;
     font-weight: bold;
     color: black;
-    padding-bottom: 20px;
+    float: left;
+    margin-left: 10px;
 }
 
 .ShortDescription {
     margin: 10px;
+    display: inline-block;
 }
 
 .GridContainer {
@@ -36,8 +39,9 @@
 
 .Img {
     border-radius: 6px;
-    width: 200px;
-    height: 200px;
+    margin-left: 3%;
+    width: 70%;
+    height: 70%;
     background: cover;
 }
 
@@ -45,10 +49,6 @@
     padding-top: 20px;
     display: flex;
     justify-content: space-around;
-}
-
-.Heart {
-    display: flexbox;
 }
 
 .HeartInRecipe {

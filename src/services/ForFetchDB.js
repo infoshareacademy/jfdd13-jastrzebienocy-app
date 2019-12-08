@@ -70,6 +70,21 @@ export const getFavourites = onSuccess => {
 
   return () => ref.off('value', handleValue)
 }
+// Get the person from DB
+export const getUserProfile = onSuccess => {
+  const userId = firebase.auth().currentUser.uid;
+  const userProf = dataSnapShot => {
+    const users = dataSnapShot.val()
+    onSuccess(users || {})
+
+  }
+  const ref = firebase.database().ref(`/users/${userId}`)
+
+  ref.on('value', userProf)
+
+  return () => ref.off('value', userProf)
+}
+
 
 //nie kasowac
 export const categories = data => {
@@ -84,12 +99,14 @@ export const categories = data => {
 export const getCategories = data => {
   const obj = {};
   data.map(v => obj[v.category.toLowerCase()] = (obj[v.category.toLowerCase()] || 0) + 1)
+  console.log(obj)
   return obj
 }
 
 export const getCookingTime = data => {
   const obj = {};
   data.map(v => obj[v.cookingTime] = (obj[v.cookingTime] || 0) + 1)
+  console.log(obj)
   return obj
 }
 
