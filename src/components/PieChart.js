@@ -20,7 +20,7 @@ class PieChart extends Component {
                 labels: labels,
                 datasets: [
                     {
-                    label: 'Rodzaje kuchni ',
+                    label: 'Ilość przepisów z danej kuchni',
                     data: data,
                     backgroundColor: [
                             'rgba(255, 99, 132, 0.6)',
@@ -64,7 +64,7 @@ class PieChart extends Component {
                             },
                             title: {
                                 display: true,
-                                text: 'Rodzaje kuchni',
+                                text: 'Ilość przepisów / rodzaje kuchni',
                                 fontSize: 20,
                                 fontFamily: "Oswald sans-serif",
                                 fontColor: "black",
