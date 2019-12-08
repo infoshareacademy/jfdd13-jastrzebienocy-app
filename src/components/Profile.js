@@ -16,29 +16,28 @@ class Profile extends React.Component {
   componentDidMount() {
     watchUsers(users => {
       this.setState({ ...users });
-      
+
     });
     watchRecipes(recipes => {
       this.setState({ recipes })
     })
     watchFavs(favs => {
-      this.setState({favs})
+      this.setState({ favs })
       console.log(Object.keys(favs))
       console.log(this.state)
     })
 
-    
+
   }
 
 
-  handleClick()
-   {
+  handleClick() {
     const use = this.state.recipes
-   const favsKeys = (Object.keys((this.state.favs)))
-   const use2 = use.filter(use => use.id === favsKeys.find(idFav =>  idFav === use.id))
-   
-   console.log(use2)
-   }
+    const favsKeys = (Object.keys((this.state.favs)))
+    const use2 = use.filter(use => use.id === favsKeys.find(idFav => idFav === use.id))
+
+    console.log(use2)
+  }
 
   componentWillUnmount() {
     unwatchUsers();
@@ -56,13 +55,13 @@ class Profile extends React.Component {
               alt={"Profile picture"}
             ></img>
             <div className={styles.ProfileRight}>
-              <div className={styles.Name}>{this.state.name}</div>
-    <div className={styles.Email}>{this.state.email}</div>
+              <div className={styles.Name}>Name:  {this.state.name}</div>
+              <div className={styles.Email}>Email:    {this.state.email}</div>
             </div>
           </div>
           <div className={styles.FavoutiteRecipe}>
             <button onClick={this.handleClick()}>Pokaz przepisy ulubione</button>
-            </div>
+          </div>
         </div>
       </div>
     );
