@@ -40,9 +40,9 @@ const dropdownI = [
     value: 'śródziemnomorska'
   },
   {
-    key: 'Kuchnia gruzińksa',
-    text: 'Kuchnia gruzińksa',
-    value: 'gruzińksa'
+    key: 'Kuchnia gruzińska',
+    text: 'Kuchnia gruzińska',
+    value: 'gruzińska'
   },
   {
     key: 'Inna',

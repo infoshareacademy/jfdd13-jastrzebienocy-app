@@ -1,3 +1,4 @@
+
 import '../../components/helper.css';
 import React from 'react'
 import styles from '../RegisterForm.module.css'
@@ -66,27 +67,23 @@ export default class RegisterForm extends React.Component {
       default:
         msg = 'Wystąpił nieoczekiwany błąd'
     }
-
+    console.log(msg)
     this.setState({ errtest: msg }, () => console.log(this.state.errtest))
   }
 
   render() {
     return (
-<<<<<<< HEAD
-      <div >
-=======
       <div className={styles.BodyReg}>
->>>>>>> origin
         <div className={styles.LogoLogin}>
           <div className={styles.FoodTxt}>Powiedz nam, co masz w swojej lodówce, a my powiemy Ci, co możesz z tym zrobić!</div>
         </div>
         <div className={styles.InnerBox}>
-        <div className={styles.LogoReg}><img src={Logo}
-          style={{
-            width: '182px'
-          }}
-          alt={"Logo"} className={styles.logo} />
-        </div>
+          <div className={styles.LogoReg}><img src={Logo}
+            style={{
+              width: '182px'
+            }}
+            alt={"Logo"} className={styles.logo} />
+          </div>
           <p className={styles.MailPar}>
             Proszę wypełnić formularz w celu rejestracji.
           </p>
@@ -186,8 +183,6 @@ export default class RegisterForm extends React.Component {
           </Formik>
           <p className={styles.MailParBelow}>
             Tworząc u Nas konto zgadzasz sie na naszą{' '}
-
-
             <Link to='/privacy' className={styles.footerLinks}>
               Politykę prywatności
             </Link>

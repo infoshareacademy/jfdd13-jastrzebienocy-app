@@ -76,16 +76,11 @@
     transform: translate(-50%, -50%);
 }
 
-<<<<<<< HEAD
-.MailParBelow, .LoginPage {
-=======
-.BodyReg{
-    background-image: linear-gradient(205deg, rgba(189,189,189,1) 0%, rgba(241,236,236,1) 55%, rgba(255,255,255,1) 100%);
+.BodyReg {
+    background-image: linear-gradient(205deg, rgba(189, 189, 189, 1) 0%, rgba(241, 236, 236, 1) 55%, rgba(255, 255, 255, 1) 100%);
 }
 
-.MailParBelow,
-.LoginPage{
->>>>>>> origin
+.MailParBelow, .LoginPage {
     text-align: center;
     font-size: 16px;
 }
