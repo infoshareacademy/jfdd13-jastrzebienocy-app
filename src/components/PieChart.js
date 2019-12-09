@@ -65,7 +65,7 @@ class PieChart extends Component {
                             title: {
                                 display: true,
                                 text: 'Ilość przepisów / rodzaje kuchni',
-                                fontSize: 20,
+                                fontSize: 18,
                                 fontFamily: "Oswald sans-serif",
                                 fontColor: "black",
                             },

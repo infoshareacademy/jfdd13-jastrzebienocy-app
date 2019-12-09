@@ -24,7 +24,7 @@ class Profile extends React.Component {
     })
     watchFavs(favs => {
       this.setState({favs})
-      console.log(Object.keys(favs))
+      
       console.log(this.state)
     })
 
@@ -35,10 +35,14 @@ class Profile extends React.Component {
   handleClick()
    {
     const use = this.state.recipes
-   const favsKeys = (Object.keys((this.state.favs)))
-   const use2 = use.filter(use => use.id === favsKeys.find(idFav =>  idFav === use.id))
+    let favsKeys = []
+    if(this.state.favs === null){
+      favsKeys = []
+    } else {
+      favsKeys = (Object.keys((this.state.favs)))
+    }
    
-   console.log(use2)
+   const use2 = use.filter(use => use.id === favsKeys.find(idFav =>  idFav === use.id))
    }
 
   componentWillUnmount() {
