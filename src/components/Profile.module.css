@@ -13,7 +13,7 @@
     padding: 20px;
     margin: 30px 120px;
     border-radius: 10px;
-    height: 60vh;
+    
 }
 
 img {
@@ -30,22 +30,31 @@ img {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    margin-left: 20%;
+    margin-left: 10%;
     border-radius: 20px;
-    background-color: white;;
+    background-color: white;
+    width: 30%;
 }
 
 .FavoutiteRecipe,
 .Email,
 .Name {
     font-size: 30px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .FavoutiteRecipe{
     margin-top: 40px;
     background-color: white;
     border-radius: 20px;
+    
+    
+}
+
+.FavoutiteRecipe button{
+    
+    border-radius: 20px;
+    margin: 0 40%;
 }
 
 

@@ -3,7 +3,8 @@ import React from "react";
 import styles from "./Profile.module.css";
 import ProfilePicture from "./images/ProfilePicture.jpg";
 import { watchUsers, unwatchUsers, watchRecipes, watchFavs, unwatchFavs, unwatchRecipes } from "../services/ForFetchDB";
-import { finished } from "stream";
+import {Grid} from "semantic-ui-react"
+import RecipeView from "./RecipeView"
 
 class Profile extends React.Component {
   state = {
@@ -11,7 +12,8 @@ class Profile extends React.Component {
     email: this.email,
     name: "",
     recipes: [],
-    favs: []
+    favs: {},
+    favs2: []
   };
 
   componentDidMount() {
@@ -26,15 +28,7 @@ class Profile extends React.Component {
       this.setState({favs})
       
       console.log(this.state)
-    })
-
-    
-  }
-
-
-  handleClick()
-   {
-    const use = this.state.recipes
+      const use = this.state.recipes
     let favsKeys = []
     if(this.state.favs === null){
       favsKeys = []
@@ -43,7 +37,14 @@ class Profile extends React.Component {
     }
    
    const use2 = use.filter(use => use.id === favsKeys.find(idFav =>  idFav === use.id))
-   }
+   console.log(use2)
+
+   this.setState({favs2: use2})
+    })
+
+    
+  }
+
 
   componentWillUnmount() {
     unwatchUsers();
@@ -56,18 +57,25 @@ class Profile extends React.Component {
         <div className={styles.ProfileMain}>
           <div className={styles.ProfileFlex}>
             <img
-              src={ProfilePicture}
+              src={`https://www.gravatar.com/avatar/${this.state.email}`}
               className={styles.ProfilePicture}
               alt={"Profile picture"}
             ></img>
             <div className={styles.ProfileRight}>
-              <div className={styles.Name}>{this.state.name}</div>
-    <div className={styles.Email}>{this.state.email}</div>
+              <div className={styles.Name}> Witaj {this.state.name}!</div>
+    <div className={styles.Email}>Twój e-mail: {this.state.email}</div>
             </div>
           </div>
           <div className={styles.FavoutiteRecipe}>
-            <button onClick={this.handleClick()}>Pokaz przepisy ulubione</button>
-            </div>
+            <Grid stackable relaxed style={{ width: '100%', marginTop: '0' }}>
+            {this.state.favs2.length == 0 ? <p>Nie masz żadych ulubionych, wejdź na przepisy i dodaj coś do ulubionych! :)</p> : this.state.favs2.map(item => (
+              <Grid.Column key={item.id} width={8}>
+                <RecipeView recipe={item} isFavourite={this.state.favs[item.id]} />
+              </Grid.Column>
+
+            ))}
+          </Grid>
+          </div>
         </div>
       </div>
     );
