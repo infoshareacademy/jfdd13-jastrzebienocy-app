@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> origin
 import React from "react";
 import styles from "./Profile.module.css";
 import {
@@ -27,28 +23,17 @@ class Profile extends React.Component {
   };
 
   componentDidMount() {
-    const avatar=`https://api.adorable.io/avatars/285/${this.state.email}.png`
+    const avatar = `https://api.adorable.io/avatars/285/${this.state.email}.png`
     watchUsers(users => {
-<<<<<<< HEAD
-      this.setState({ ...users });
-
-=======
       this.setState({ ...users, avatar });
->>>>>>> origin
+
+
+
     });
     watchRecipes(recipes => {
       this.setState({ recipes });
     });
     watchFavs(favs => {
-<<<<<<< HEAD
-      this.setState({ favs })
-
-
-    })
-
-
-  }
-=======
       this.setState({ favs });
       const use = this.state.recipes;
       let favsKeys = [];
@@ -63,25 +48,10 @@ class Profile extends React.Component {
       );
       this.setState({ favs2: use2 });
     });
->>>>>>> origin
 
   }
 
-<<<<<<< HEAD
-  handleClick() {
-    const use = this.state.recipes
-    let favsKeys = []
-    if (this.state.favs === null) {
-      favsKeys = []
-    } else {
-      favsKeys = (Object.keys((this.state.favs)))
-    }
 
-    const use2 = use.filter(use => use.id === favsKeys.find(idFav => idFav === use.id))
-  }
-=======
-  
->>>>>>> origin
 
   componentWillUnmount() {
     unwatchUsers();
@@ -99,14 +69,6 @@ class Profile extends React.Component {
               alt={"Profile picture"}
             ></img>
             <div className={styles.ProfileRight}>
-<<<<<<< HEAD
-              <div className={styles.Name}>Witaj  {this.state.name}</div>
-              <div className={styles.Email}>Email:    {this.state.email}</div>
-            </div>
-          </div>
-          <div className={styles.FavoutiteRecipe}>
-            <button onClick={this.handleClick()}>Pokaz przepisy ulubione</button>
-=======
               <div className={styles.Name}> Witaj {this.state.name}!</div>
               <div className={styles.Email}>
                 Twój e-mail: {this.state.email}
@@ -121,17 +83,16 @@ class Profile extends React.Component {
                   ulubionych! :)
                 </p>
               ) : (
-                this.state.favs2.map(item => (
-                  <Grid.Column key={item.id} width={8}>
-                    <RecipeView
-                      recipe={item}
-                      isFavourite={this.state.favs[item.id]}
-                    />
-                  </Grid.Column>
-                ))
-              )}
+                  this.state.favs2.map(item => (
+                    <Grid.Column key={item.id} width={8}>
+                      <RecipeView
+                        recipe={item}
+                        isFavourite={this.state.favs[item.id]}
+                      />
+                    </Grid.Column>
+                  ))
+                )}
             </Grid>
->>>>>>> origin
           </div>
         </div>
       </div>

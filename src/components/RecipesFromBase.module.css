@@ -13,6 +13,7 @@
    margin-right: 20px;
 }
 
+
 @media only screen and (max-width: 1050px) {
    .pagMiddle {
       position: fixed;
@@ -76,4 +77,10 @@
       left: 0;
       bottom: 1.75%;
    }
+}
+
+
+.none{
+   font-size: 50px;
+   margin: 0 auto;
 }

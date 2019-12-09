@@ -39,15 +39,27 @@ class RecipeView extends React.Component {
           onClick={this.closeWindow}
           {...this.props.recipe}
         />
+        
         <Segment className={styles.Wrapper}>
+        <div className={styles.NameRecipe}>
+                <p
+                  onClick={() => {
+                    this.showModalWindow()
+                  }}
+                  style={{ cursor: 'pointer' }}
+                >
+                  {this.props.recipe.name}
+                </p>
+
+              </div>
           <div className={styles.Heart}>
             <div>
               <Image
                 src={this.props.recipe.imageUrl}
                 className={styles.Img}
                 style={{
-                  width: 200,
-                  height: 200,
+                  width: 150,
+                  height: 150,
                   objectFit: 'cover',
                   objectPosition: 'center',
                   cursor: 'pointer'
@@ -63,17 +75,7 @@ class RecipeView extends React.Component {
 
             <div className={styles.Text}>
 
-              <div className={styles.NameRecipe}>
-                <p
-                  onClick={() => {
-                    this.showModalWindow()
-                  }}
-                  style={{ cursor: 'pointer' }}
-                >
-                  {this.props.recipe.name}
-                </p>
-
-              </div>
+              
               <div
                 onClick={() => {
                   this.showModalWindow()
@@ -99,10 +101,10 @@ class RecipeView extends React.Component {
 
           <div className={styles.TimeAndPortions}>
             <div>
-              <Icon name='time' size='large' style={{ color: '#8BC34A' }} />
-              {this.props.recipe.cookingTime} min
+            <p style={{fontSize: '16px', fontWeight: 'bold'}}><Icon name='time' size='large' style={{ color: '#8BC34A' }} />
+              {this.props.recipe.cookingTime} min</p>
             </div>
-            <div>{portions(this.props.recipe.portions || 1)}</div>{' '}
+            <div style={{fontSize: '16px'}}>{portions(this.props.recipe.portions || 1)}</div>{' '}
           </div>
           <div className={styles.HeartInRecipe}>
             <Heart checked={this.props.isFavourite} onHeartClick={this.addToFavorites} />
