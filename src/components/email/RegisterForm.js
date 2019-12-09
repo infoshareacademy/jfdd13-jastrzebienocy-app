@@ -49,7 +49,7 @@ export default class RegisterForm extends React.Component {
 
   getMessage(code) {
     let msg = ''
-    console.log(code)
+    // console.log(code)
     switch (code) {
       case 'auth/email-already-in-use':
         msg = 'Email już jest przypisany!'
@@ -93,7 +93,6 @@ export default class RegisterForm extends React.Component {
             }}
             validationSchema={accountFormSchema}
             onSubmit={(values, { setSubmitting }) => {
-              console.log('dol')
               api
                 .register(values.email, values.password, values.name)
                 .catch(err => this.setState({ err: this.getMessage(err.code) }))
@@ -160,7 +159,11 @@ export default class RegisterForm extends React.Component {
                         value={values.password2}
                         touched={touched}
                         errors={errors}
-                      /> <p style={{ textAlign: 'center' }}>{this.state.errtest}</p>
+                      /> <p style={{
+                        textAlign: 'center',
+                        padding: '16px 0 0 0',
+                        fontSize: '12px'
+                      }}>{this.state.errtest}</p>
                     </div>
                   </div>
                   <div className={styles.LogBttn}>
@@ -183,7 +186,7 @@ export default class RegisterForm extends React.Component {
             </Link>
           </p>
           <div className={styles.LoginPage}>
-            Posiadasz już konto?
+            Posiadasz już konto?{' '}
             <Link
               activeClassName={'active-link'}
               to='/Login'
@@ -192,7 +195,7 @@ export default class RegisterForm extends React.Component {
             >
               Zaloguj się!
             </Link>
-        </div>
+          </div>
         </div>
 
         {this.state.err && (
@@ -200,7 +203,7 @@ export default class RegisterForm extends React.Component {
             {this.state.err}
           </p>
         )}
-        
+
       </div>
     )
   }
