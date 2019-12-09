@@ -64,7 +64,7 @@
 
 .Logo{
     position: absolute;
-    top: 33%;
+    top: -2%;
     left: 50%;
     z-index: 4;
     transform: translate(-50%, -50%);
@@ -72,13 +72,13 @@
 
 .LogoReg{
     position: absolute;
-    top: 23%;
+    top: -1%;
     left: 50%;
     z-index: 4;
     transform: translate(-50%, -50%);
 }
 
-body{
+.BodyReg{
     background-image: linear-gradient(205deg, rgba(189,189,189,1) 0%, rgba(241,236,236,1) 55%, rgba(255,255,255,1) 100%);
 }
 

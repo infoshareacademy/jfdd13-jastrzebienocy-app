@@ -19,10 +19,10 @@ const accountFormSchema = Yup.object().shape({
 });
 
 const TextInput = props => {
-    const { name, errors, touched } = props;
+    const { name, errors, touched, ...rest } = props;
     return (
         <div style={{ textAlign: 'center' }}>
-            <input {...props} />
+            <input {...rest} name={name} />
             <div style={{
                 height: '2px',
                 fontSize: '12px'
@@ -64,22 +64,24 @@ export default class LoginForm extends React.Component {
 
     render() {
         return (
+            <div className={styles.BodyReg}>
             <div>
                 <div className={styles.LogoLogin}>
                     <div className={styles.FoodTxt}>Powiedz nam, co masz w swojej lodówce, a my powiemy Ci, co masz z tym zrobić!</div>
                 </div>
-                <div className={styles.Logo}><img src={Logo}
-                        style={{
-                            width: '182px'
-                        }}
-                        alt={"Logo"} className={styles.logo} /></div>
                 <div className={styles.InnerBox}>
+                <div className={styles.Logo}><img src={Logo}
+                    style={{
+                        width: '182px'
+                    }}
+                    alt={"Logo"} className={styles.logo} />
+                </div>
                     <div className={styles.MailPar}>
                         <p>Proszę wypełnić pola do zalogowania.</p>
                     </div>
                     <Formik
                         initialValues={{
-                            name: "",
+                            email: "",
                             password: "",
                         }}
                         validationSchema={accountFormSchema}
@@ -125,7 +127,11 @@ export default class LoginForm extends React.Component {
                                                 value={values.password}
                                                 touched={touched}
                                                 errors={errors}
-                                            /><p style={{ textAlign: 'center' }}>{this.state.errtest}</p>
+                                            /><p style={{
+                                                textAlign: 'center',
+                                                padding: '16px 0 0 0',
+                                                fontSize: '12px'
+                                            }}>{this.state.errtest}</p>
                                         </div>
                                     </div>
                                     <div className={styles.LogBttn}>
@@ -153,6 +159,7 @@ export default class LoginForm extends React.Component {
             </NavLink>
                     </div>
                 </div>
+            </div>
             </div>
         )
     }
