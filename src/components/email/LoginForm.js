@@ -6,7 +6,8 @@ import api from "./api";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "../helper.css";
-import Logo from '..//logo-nav.png';
+// import Logo from '..//logo-nav.png';
+
 
 const accountFormSchema = Yup.object().shape({
     email: Yup.string()
@@ -50,7 +51,7 @@ export default class LoginForm extends React.Component {
 
     onSubmit = e => {
         e.preventDefault();
-        console.log("zupa")
+
         api.logIn(this.state.email, this.state.password)
             .catch(err => this.setState({ err: err.message }));
     }
@@ -58,13 +59,15 @@ export default class LoginForm extends React.Component {
     render() {
         return (
             <div>
-                <div className={styles.LogoLogin}>
-                        <img src={Logo}
-                            style={{
-                                width: '140px'
-                            }}
-                            alt={"Logo"} className={styles.logo} />
-                    </div>
+                {/*}  <div className={styles.LogoLogin}>
+
+                    <img src={Logo}
+                        style={{
+                            width: '140px'
+                        }}
+                        alt={"Logo"} className={styles.logo} />
+
+                    </div> */}
                 <div className={styles.InnerBox}>
                     <div className={styles.MailPar}>
                         <p>Proszę wypełnić pola do zalogowania.</p>
@@ -124,9 +127,9 @@ export default class LoginForm extends React.Component {
                                         <button style={{
                                             borderRadius: '20px',
                                             padding: '6px 26px',
-                                            backgroundColor: 'rgba(139,195,74, 0.8)' 
+                                            backgroundColor: 'rgba(139,195,74, 0.8)'
                                         }}
-                                            type='submit' >
+                                            type='submit'  >
                                             Zaloguj się
                                     </button>
                                     </div>
@@ -145,7 +148,7 @@ export default class LoginForm extends React.Component {
             </NavLink>
                     </div>
                 </div>
-            </div>
+            </div >
         )
     }
 }

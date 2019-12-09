@@ -9,6 +9,7 @@ import * as Yup from "yup";
 import "../helper.css";
 import Logo from '..//logo-nav.png';
 
+
 const accountFormSchema = Yup.object().shape({
   name: Yup.string()
     .required("Pole wymagane"),
@@ -23,8 +24,6 @@ const accountFormSchema = Yup.object().shape({
   RepeatPassword: Yup.string()
     .oneOf([Yup.ref('password')], 'Powtórzone hasło się nie zgadza')
     .required('Niepoprawne hasło')
-
-
 });
 
 const TextInput = props => {
@@ -73,12 +72,12 @@ export default class RegisterForm extends React.Component {
     return (
       <div>
         <div className={styles.LogoLogin}>
-                        <img src={Logo}
-                            style={{
-                                width: '140px'
-                            }}
-                            alt={"Logo"} className={styles.logo} />
-                    </div>
+          <img src={Logo}
+            style={{
+              width: '140px'
+            }}
+            alt={"Logo"} className={styles.logo} />
+        </div>
         <div className={styles.InnerBox}>
           <p className={styles.MailPar}>
             Proszę wypełnić formularz w celu rejestracji.

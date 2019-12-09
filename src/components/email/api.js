@@ -1,7 +1,7 @@
 import firebase from '../../firebase';
 const apiUrl = 'https://foodwaste-ecb78.firebaseio.com';
 const appKey = 'AIzaSyCVVIiKXCqCGhTP7KCs1EkrTN7rm116-eI';
-// hash Oleksy, jakub@vp.pl
+
 class Api {
   user = null;
   userChanged = () => { }

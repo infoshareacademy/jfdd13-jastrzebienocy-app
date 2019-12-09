@@ -7,9 +7,11 @@ import Footer from './components/Footer'
 import Dashboard from './components/Dashboard'
 
 
-function App () {
+
+function App() {
   return (
     <div className='App'>
+
       <Dashboard />
     </div>
   )
