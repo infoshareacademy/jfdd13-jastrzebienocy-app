@@ -76,10 +76,7 @@ class Api {
 
   }
 
-
-
-
-  register(email, password, name) {
+  register(email, password, name) { 
     return firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)

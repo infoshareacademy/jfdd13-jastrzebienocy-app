@@ -6,7 +6,7 @@ import api from "./api";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "../helper.css";
-// import Logo from '..//logo-nav.png';
+
 
 
 const accountFormSchema = Yup.object().shape({
@@ -24,7 +24,10 @@ const TextInput = props => {
     return (
         <div style={{ textAlign: 'center' }}>
             <input {...props} />
-            <div>{errors[name] && touched[name] && errors[name]}</div>
+            <div style={{
+                height: '2px',
+                fontSize: '12px'
+            }}>{errors[name] && touched[name] && errors[name]}</div>
         </div>
     );
 };
@@ -36,17 +39,23 @@ export default class LoginForm extends React.Component {
     }
 
     getMessage(code) {
+        let msg = ''
         console.log(code)
         switch (code) {
             case 'auth/email-already-in-use':
-                return 'Email już jest przypisany!'
-            case 'auth/invalid-email':
-                return 'Niepoprawny Emeil'
+                msg = 'Email już jest przypisany!'
+                break
+            case 'auth/wrong-password':
+                msg = 'Niepoprawne hasło'
+                break
             case 'auth/weak-password':
-                return 'Twoje hasło musi posiadać przynajmniej 6 znaków'
+                msg = 'Twoje hasło musi posiadać przynajmniej 6 znaków'
+                break
             default:
-                return 'Wystąpił nieoczekiwany błąd'
+                msg = 'Wystąpił nieoczekiwany błąd'
         }
+        console.log(msg)
+        this.setState({ errtest: msg }, () => console.log(this.state.errtest))
     }
 
     onSubmit = e => {
@@ -59,15 +68,15 @@ export default class LoginForm extends React.Component {
     render() {
         return (
             <div>
-                {/*}  <div className={styles.LogoLogin}>
-
+                <div className={styles.LogoLogin}>
                     <img src={Logo}
                         style={{
-                            width: '140px'
+                            width: '100px',
+                            marginLeft: '20px'
                         }}
                         alt={"Logo"} className={styles.logo} />
-
-                    </div> */}
+                    <div className={styles.FoodTxt}>Powiedz nam, co masz w swojej lodówce, a my powiemy Ci, co masz z tym zrobić!</div>
+                </div>
                 <div className={styles.InnerBox}>
                     <div className={styles.MailPar}>
                         <p>Proszę wypełnić pola do zalogowania.</p>
@@ -120,7 +129,7 @@ export default class LoginForm extends React.Component {
                                                 value={values.password}
                                                 touched={touched}
                                                 errors={errors}
-                                            />
+                                            /><p style={{ textAlign: 'center' }}>{this.state.errtest}</p>
                                         </div>
                                     </div>
                                     <div className={styles.LogBttn}>

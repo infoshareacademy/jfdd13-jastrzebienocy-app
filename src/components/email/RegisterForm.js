@@ -29,9 +29,12 @@ const accountFormSchema = Yup.object().shape({
 const TextInput = props => {
   const { name, errors, touched } = props;
   return (
-    <div>
+    <div style={{ textAlign: 'center', }}>
       <input {...props} />
-      <div>{errors[name] && touched[name] && errors[name]}</div>
+      <div style={{
+        height: '2px',
+        fontSize: '12px'
+      }}>{errors[name] && touched[name] && errors[name]}</div>
     </div>
   );
 };
@@ -74,9 +77,11 @@ export default class RegisterForm extends React.Component {
         <div className={styles.LogoLogin}>
           <img src={Logo}
             style={{
-              width: '140px'
+              width: '100px',
+              marginLeft: '20px'
             }}
             alt={"Logo"} className={styles.logo} />
+          <div className={styles.FoodTxt}>Powiedz nam, co masz w swojej lodówce, a my powiemy Ci, co masz z tym zrobić!</div>
         </div>
         <div className={styles.InnerBox}>
           <p className={styles.MailPar}>
@@ -157,7 +162,7 @@ export default class RegisterForm extends React.Component {
                         value={values.password2}
                         touched={touched}
                         errors={errors}
-                      /> <p>{this.state.errtest}</p>
+                      /> <p style={{ textAlign: 'center' }}>{this.state.errtest}</p>
                     </div>
                   </div>
                   <div className={styles.LogBttn}>
