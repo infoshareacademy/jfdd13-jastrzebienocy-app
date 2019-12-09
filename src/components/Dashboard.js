@@ -1,11 +1,11 @@
-// .toLowerCase()import React, {Component} from 'react';import React from 'react'
+import React, { Component } from 'react';
 import BarChart from './BarChart'
 import PieChart from './PieChart'
 import styles from "./Dashboard.module.css";
 import DashboardHeader from './DashboardHeader';
 
 
-class Dashboard extends React.Component {
+class Dashboard extends Component {
   constructor(props) {
     super(props);
 

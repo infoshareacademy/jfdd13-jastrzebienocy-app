@@ -1,7 +1,7 @@
-// .toLowerCase()import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Bar, Line, Pie } from 'react-chartjs-2';
 import styles from "./Charts.module.css";
-import { getCookingTime, watchRecipes, } from '../services/ForFetchDB';
+import { getCookingTime, watchRecipes, unwatchRecipes } from '../services/ForFetchDB';
 import { defaults } from 'react-chartjs-2'
 
 defaults.global.defaultFontFamily = "'Oswald', serif"
@@ -46,6 +46,12 @@ class BarChart extends Component {
       })
     });
   }
+  componentWillUnmount() {
+    unwatchRecipes()
+    if (this.unsubscribe) {
+      this.unsubscribe()
+    }
+  }
 
   render() {
     return (
@@ -77,7 +83,7 @@ class BarChart extends Component {
             title: {
               display: true,
               text: 'Czas gotowania w min / Ilość przepisów',
-              fontSize: 16,
+              fontSize: 18,
               fontFamily: "Oswald sans-serif",
               fontColor: "black",
             },
@@ -97,5 +103,3 @@ class BarChart extends Component {
 }
 
 export default BarChart;
-
-

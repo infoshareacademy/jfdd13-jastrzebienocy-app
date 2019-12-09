@@ -16,9 +16,9 @@ class NaviBar extends React.Component {
                     <NavLink activeClassName={"active-link"} to="/" className={styles.Dashboard} exact>Dashboard</NavLink>
                     <NavLink activeClassName={"active-link"} to="/RecipeView" className={styles.Przepisy} exact>Przepisy</NavLink>
                     <NavLink activeClassName={"active-link"} to="/Profile" className={styles.Profile}>Profil</NavLink>
-                    <NavLink activeClassName={"active-link"} to="/Login" style={{ color: 'black' }} className={styles.Logout}><i class="log out link icon" onClick={() => firebase.auth().signOut()}></i></NavLink>
+                    <NavLink activeClassName={"active-link"} to="/Login" style={{ color: 'black' }} className={styles.Logout}><i className="log out link icon" onClick={() => firebase.auth().signOut()}></i></NavLink>
                 </div>
-            </div >
+            </div>
         )
     }
 }

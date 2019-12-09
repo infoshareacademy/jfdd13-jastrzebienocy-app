@@ -6,9 +6,7 @@ import api from "./api";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "../helper.css";
-import Logo from '../logo-nav.png';
-
-
+import Logo from '..//logo-nav.png';
 
 const accountFormSchema = Yup.object().shape({
     email: Yup.string()
@@ -41,7 +39,7 @@ export default class LoginForm extends React.Component {
 
     getMessage(code) {
         let msg = ''
-
+        console.log(code)
         switch (code) {
             case 'auth/email-already-in-use':
                 msg = 'Email już jest przypisany!'
@@ -55,13 +53,13 @@ export default class LoginForm extends React.Component {
             default:
                 msg = 'Wystąpił nieoczekiwany błąd'
         }
-
+        console.log(msg)
         this.setState({ errtest: msg }, () => console.log(this.state.errtest))
     }
 
     onSubmit = e => {
         e.preventDefault();
-
+        console.log("zupa")
         api.logIn(this.state.email, this.state.password)
             .catch(err => this.setState({ err: err.message }));
     }
@@ -70,14 +68,13 @@ export default class LoginForm extends React.Component {
         return (
             <div>
                 <div className={styles.LogoLogin}>
-                    <img src={Logo}
-                        style={{
-                            width: '100px',
-                            marginLeft: '20px'
-                        }}
-                        alt={"Logo"} className={styles.logo} />
                     <div className={styles.FoodTxt}>Powiedz nam, co masz w swojej lodówce, a my powiemy Ci, co masz z tym zrobić!</div>
                 </div>
+                <div className={styles.Logo}><img src={Logo}
+                    style={{
+                        width: '182px'
+                    }}
+                    alt={"Logo"} className={styles.logo} /></div>
                 <div className={styles.InnerBox}>
                     <div className={styles.MailPar}>
                         <p>Proszę wypełnić pola do zalogowania.</p>
@@ -139,7 +136,7 @@ export default class LoginForm extends React.Component {
                                             padding: '6px 26px',
                                             backgroundColor: 'rgba(139,195,74, 0.8)'
                                         }}
-                                            type='submit'  >
+                                            type='submit' >
                                             Zaloguj się
                                     </button>
                                     </div>
@@ -158,7 +155,7 @@ export default class LoginForm extends React.Component {
             </NavLink>
                     </div>
                 </div>
-            </div >
+            </div>
         )
     }
 }
