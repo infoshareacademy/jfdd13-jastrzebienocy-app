@@ -18,12 +18,14 @@ class Profile extends React.Component {
     name: "",
     recipes: [],
     favs: {},
-    favs2: []
+    favs2: [],
+    avatar: ''
   };
 
   componentDidMount() {
+    const avatar=`https://api.adorable.io/avatars/285/${this.state.email}.png`
     watchUsers(users => {
-      this.setState({ ...users });
+      this.setState({ ...users, avatar });
     });
     watchRecipes(recipes => {
       this.setState({ recipes });
@@ -43,7 +45,12 @@ class Profile extends React.Component {
       );
       this.setState({ favs2: use2 });
     });
+
+    
+    console.log(avatar)
   }
+
+  
 
   componentWillUnmount() {
     unwatchUsers();
@@ -56,7 +63,7 @@ class Profile extends React.Component {
         <div className={styles.ProfileMain}>
           <div className={styles.ProfileFlex}>
             <img
-              src={`https://www.gravatar.com/avatar/${this.state.email}`}
+              src={this.state.avatar}
               className={styles.ProfilePicture}
               alt={"Profile picture"}
             ></img>
