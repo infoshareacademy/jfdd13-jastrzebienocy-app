@@ -4,6 +4,9 @@
     border-radius: 3px;
 }
 
+p{
+    font-size: 20px;
+}
 
 
 .Wrapper {
@@ -44,8 +47,8 @@
 .Img {
     border-radius: 6px;
     margin-left: 3%;
-    width: 70%;
-    height: 70%;
+    width: 50%;
+    height: 50%;
     background: cover;
 }
 
@@ -62,5 +65,5 @@
     font-size: 24px;
     text-decoration: none;
     text-align: center;
-    margin-top: 7px;
+    margin-top: 10px;
 }
