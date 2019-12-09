@@ -1,34 +1,8 @@
- /* .RegisterForm{
-    background-color: pink;
-    padding: 20px;
-    height: 90vh;
-    text-align: center;
-}
-
-.Inputs{
-    width: 20%;
-    margin: auto;
-    display: block;
-}
-
-.Register{
-    display: block;
-    margin: auto;
-    padding: 20px;
-    background-color: grey;
-    text-align: center;
-    font-size: 35px;
-}
-*/
 
 .Register2{
     text-align: center;
     font-size: 16px;
 }
-
-/* .RegPage{
-    height: 90vh;
-} */
 
 .MailPar{
     text-align: center;
@@ -53,16 +27,13 @@
     height: 7vh;
 }
 
-/* .MailParBelow{
-    font-size: 25px;
-    width: 100%;
-}
+.FoodTxt{
+    font-size: 15px;
+    font-weight: bold;
+    margin: auto;
+    padding: 10px;
 
-.LoginPage{
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}  */
+}
 
 .InnerBox{
     width: 320px;
@@ -78,34 +49,41 @@
 }
 
 .LogoLogin{
-    text-align: center;
-    background-color: rgba(139,195,74, 0.8);
+    font-family: "Oswald", sans-serif;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(139,195,74, 0.8); 
+    z-index: 5;
+    scroll-behavior: smooth;
+    top: 0px;
+    align-self: flex-end; 
+    height: 7vh;
+    justify-content: space-between;
 }
 
-/*
-.AllRegister{
-    color: red;
-    font-size: 30px;
-    text-align: center;
+.Logo{
+    position: absolute;
+    top: -2%;
+    left: 50%;
+    z-index: 4;
+    transform: translate(-50%, -50%);
 }
 
-button {
-    max-width: 150px;
-    margin: 20px 0px;
-    padding: 12px 20px;
-    border-style: none;
-    border-radius: 5px;
-    background-color: rgba(139,195,74, 0.8);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-    font-size: 17px;
-    font-weight: 500;
-    color:black;
-    cursor: pointer;
-    outline: none;
-    -webkit-appearance: none;
-    margin-left: 30px;
-  }
+.LogoReg{
+    position: absolute;
+    top: -1%;
+    left: 50%;
+    z-index: 4;
+    transform: translate(-50%, -50%);
+}
 
-  .ButtonReg{
-      display: flex;
-  } */
+.BodyReg{
+    background-image: linear-gradient(205deg, rgba(189,189,189,1) 0%, rgba(241,236,236,1) 55%, rgba(255,255,255,1) 100%);
+}
+
+.MailParBelow,
+.LoginPage{
+    text-align: center;
+    font-size: 16px;
+}

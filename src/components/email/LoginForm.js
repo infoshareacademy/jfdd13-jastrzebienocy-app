@@ -19,11 +19,14 @@ const accountFormSchema = Yup.object().shape({
 });
 
 const TextInput = props => {
-    const { name, errors, touched } = props;
+    const { name, errors, touched, ...rest } = props;
     return (
         <div style={{ textAlign: 'center' }}>
-            <input {...props} />
-            <div>{errors[name] && touched[name] && errors[name]}</div>
+            <input {...rest} name={name} />
+            <div style={{
+                height: '2px',
+                fontSize: '12px'
+            }}>{errors[name] && touched[name] && errors[name]}</div>
         </div>
     );
 };
@@ -35,43 +38,50 @@ export default class LoginForm extends React.Component {
     }
 
     getMessage(code) {
+        let msg = ''
         console.log(code)
         switch (code) {
             case 'auth/email-already-in-use':
-                return 'Email już jest przypisany!'
-            case 'auth/invalid-email':
-                return 'Niepoprawny Emeil'
+                msg = 'Email już jest przypisany!'
+                break
+            case 'auth/wrong-password':
+                msg = 'Niepoprawne hasło'
+                break
             case 'auth/weak-password':
-                return 'Twoje hasło musi posiadać przynajmniej 6 znaków'
+                msg = 'Twoje hasło musi posiadać przynajmniej 6 znaków'
+                break
             default:
-                return 'Wystąpił nieoczekiwany błąd'
+                msg = 'Wystąpił nieoczekiwany błąd'
         }
+        this.setState({ errtest: msg }, () => console.log(this.state.errtest))
     }
 
     onSubmit = e => {
         e.preventDefault();
-        console.log("zupa")
         api.logIn(this.state.email, this.state.password)
             .catch(err => this.setState({ err: err.message }));
     }
 
     render() {
         return (
+            <div className={styles.BodyReg}>
             <div>
                 <div className={styles.LogoLogin}>
-                        <img src={Logo}
-                            style={{
-                                width: '140px'
-                            }}
-                            alt={"Logo"} className={styles.logo} />
-                    </div>
+                    <div className={styles.FoodTxt}>Powiedz nam, co masz w swojej lodówce, a my powiemy Ci, co co możesz z tym zrobić!</div>
+                </div>
                 <div className={styles.InnerBox}>
+                <div className={styles.Logo}><img src={Logo}
+                    style={{
+                        width: '182px'
+                    }}
+                    alt={"Logo"} className={styles.logo} />
+                </div>
                     <div className={styles.MailPar}>
                         <p>Proszę wypełnić pola do zalogowania.</p>
                     </div>
                     <Formik
                         initialValues={{
-                            name: "",
+                            email: "",
                             password: "",
                         }}
                         validationSchema={accountFormSchema}
@@ -117,14 +127,18 @@ export default class LoginForm extends React.Component {
                                                 value={values.password}
                                                 touched={touched}
                                                 errors={errors}
-                                            />
+                                            /><p style={{
+                                                textAlign: 'center',
+                                                padding: '16px 0 0 0',
+                                                fontSize: '12px'
+                                            }}>{this.state.errtest}</p>
                                         </div>
                                     </div>
                                     <div className={styles.LogBttn}>
                                         <button style={{
                                             borderRadius: '20px',
                                             padding: '6px 26px',
-                                            backgroundColor: 'rgba(139,195,74, 0.8)' 
+                                            backgroundColor: 'rgba(139,195,74, 0.8)'
                                         }}
                                             type='submit' >
                                             Zaloguj się
@@ -145,6 +159,7 @@ export default class LoginForm extends React.Component {
             </NavLink>
                     </div>
                 </div>
+            </div>
             </div>
         )
     }

@@ -111,13 +111,15 @@
     margin-top: 15px;
   }
   .Category {
-    margin-top: 25px;
+    margin-top: 20px;
   }
   .Input2 {
+    margin-top: 15px;
     width: 75%;
     height: 20px;
   }
   .Input3 {
+    margin-top: 20px;
     margin-left: 16px;
     width: 75%;
     height: 20px;
@@ -202,6 +204,7 @@
     height: 20px;
     background-color: lightgrey;
     width: 50%;
+    margin-top: 1px;
   }
   .Input3 {
     margin: 0 auto;

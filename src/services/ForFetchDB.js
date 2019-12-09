@@ -86,14 +86,10 @@ export const getUserProfile = onSuccess => {
 }
 
 
-//nie kasowac
 export const categories = data => {
 
-  console.log(Object.entries(data).map(([id, item]) => item.category))
   return Object.entries(data).map(item => item.category)
 }
-// stopRecepies -> trzeba zaimplementowac!!!
-// trzeba to zaimplementowac wszedzie
 
 
 export const getCategories = data => {

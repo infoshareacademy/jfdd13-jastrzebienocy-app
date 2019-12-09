@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Bar, Line, Pie } from 'react-chartjs-2';
 import styles from "./Charts.module.css";
-import {   watchRecipes, getCategories } from '../services/ForFetchDB';
+import {   watchRecipes, getCategories, unwatchRecipes, } from '../services/ForFetchDB';
 
 class PieChart extends Component {
     constructor(props) {
@@ -20,7 +20,7 @@ class PieChart extends Component {
                 labels: labels,
                 datasets: [
                     {
-                    label: 'Rodzaje kuchni ',
+                    label: 'Ilość przepisów z danej kuchni',
                     data: data,
                     backgroundColor: [
                             'rgba(255, 99, 132, 0.6)',
@@ -40,6 +40,13 @@ class PieChart extends Component {
             })
         });
     }
+
+    componentWillUnmount() {
+        unwatchRecipes()
+        if (this.unsubscribe) {
+          this.unsubscribe()
+        }
+      }
     render() {  
         return (
 
@@ -64,8 +71,8 @@ class PieChart extends Component {
                             },
                             title: {
                                 display: true,
-                                text: 'Rodzaje kuchni',
-                                fontSize: 20,
+                                text: 'Ilość przepisów / rodzaje kuchni',
+                                fontSize: 18,
                                 fontFamily: "Oswald sans-serif",
                                 fontColor: "black",
                             },

@@ -132,7 +132,7 @@ class SideBar extends React.Component {
             clearable
             options={dropdownI}
             value={this.props.category}
-            className={styles.Input2}
+            className={styles.Input4}
             onChange={(event, data) => {
               this.props.onCategoryChange(data.value)
             }}
