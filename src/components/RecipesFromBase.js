@@ -1,11 +1,10 @@
 import React from 'react'
 import RecipeView from './RecipeView'
-import { Grid, Pagination } from 'semantic-ui-react'
+import { Grid, Pagination, GridRow } from 'semantic-ui-react'
 import SideBar from './SideBar'
 import styles from './RecipesFromBase.module.css'
 
 import {
-  // fetchRecipes,
   getFavourites,
   prepareRecipes,
   watchRecipes,
@@ -32,13 +31,11 @@ export class RecipesFromBase extends React.Component {
   }
 
   handlePaginationChange = (e, { activePage }) => this.setState({ activePage })
-
   unsubscribe = undefined;
 
   componentDidMount() {
     watchRecipes(recipes => {
       this.setState({ recipes });
-      console.log(recipes)
     });
     this.unsubscribe = getFavourites((favs) => this.setState({ favs }))
   }
@@ -48,12 +45,9 @@ export class RecipesFromBase extends React.Component {
     if (this.unsubscribe) {
       this.unsubscribe()
     }
-
   }
 
-  // Filter for products and recipes.
   get filteredRecepies() {
-    // Destructure state for the products option
     const { recipes, products, weight, category, name, favourites } = this.state
     const finalData = recipes.filter(recipe => {
       const productsFilter =
@@ -66,7 +60,6 @@ export class RecipesFromBase extends React.Component {
         ? recipe.category.toLowerCase().includes(category.toLowerCase())
         : true
       const favouritesFilter = favourites === true ? this.state.favs[recipe.id] : true
-      // console.log(recipe.name)
       return (
         productsFilter &&
         nameFilter &&
@@ -74,17 +67,17 @@ export class RecipesFromBase extends React.Component {
         categoryFilter &&
         favouritesFilter
       )
-    })
+    }) 
     return finalData
   }
 
   render() {
     const { activePage, pageItems } = this.state
-
-    const viewedRecipes = this.filteredRecepies.slice(
+    
+     const viewedRecipes = this.filteredRecepies.slice(
       (activePage - 1) * pageItems,
       activePage * pageItems
-    )
+    ) || <p>Nie ma nic</p>
 
     return (
       <div className={styles.layout}>
@@ -115,20 +108,23 @@ export class RecipesFromBase extends React.Component {
             favourites={this.state.favourites}
             onFavouritesChange={() => {
               this.setState({ favourites: !this.state.favourites })
-              // console.log(favourites)
             }}
           />
         </div>
         <>
-          <Grid stackable relaxed style={{ width: '100%' }}>
-            {viewedRecipes.map(item => (
+          <Grid stackable relaxed style={{ width: '100%', marginTop: '0' }}>
+            {viewedRecipes.length == 0 ? (<div style={{ margin: '50px 30px', fontSize: '35px', lineHeight:'1'}}>Brak wyników dla podanych filtrów wyszukiwania :(</div>) : 
+            (viewedRecipes.map(item => (
+
               <Grid.Column key={item.id} width={8}>
                 <RecipeView recipe={item} isFavourite={this.state.favs[item.id]} />
               </Grid.Column>
-            ))}
+
+            )))}
           </Grid>
           <div className={styles.pagMiddle}>
             <Pagination
+
               onPageChange={this.handlePaginationChange}
               activePage={this.state.activePage}
               totalPages={Math.ceil(

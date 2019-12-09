@@ -1,24 +1,60 @@
 import React from "react";
 import styles from "./Profile.module.css";
-import ProfilePicture from "./images/ProfilePicture.jpg";
-import { watchUsers, unwatchUsers } from "../services/ForFetchDB";
+import {
+  watchUsers,
+  unwatchUsers,
+  watchRecipes,
+  watchFavs,
+  unwatchFavs,
+  unwatchRecipes
+} from "../services/ForFetchDB";
+import { Grid } from "semantic-ui-react";
+import RecipeView from "./RecipeView";
 
 class Profile extends React.Component {
   state = {
     id: "",
     email: this.email,
     name: "",
-    favorites: []
+    recipes: [],
+    favs: {},
+    favs2: [],
+    avatar: ''
   };
 
   componentDidMount() {
+    const avatar=`https://api.adorable.io/avatars/285/${this.state.email}.png`
     watchUsers(users => {
-      this.setState({ ...users });
+      this.setState({ ...users, avatar });
+      
     });
+    watchRecipes(recipes => {
+      this.setState({ recipes });
+    });
+    watchFavs(favs => {
+      this.setState({ favs });
+      const use = this.state.recipes;
+      let favsKeys = [];
+      if (this.state.favs === null) {
+        favsKeys = [];
+      } else {
+        favsKeys = Object.keys(this.state.favs);
+      }
+
+      const use2 = use.filter(
+        use => use.id === favsKeys.find(idFav => idFav === use.id)
+      );
+      this.setState({ favs2: use2 });
+    });
+
   }
+
+  
 
   componentWillUnmount() {
     unwatchUsers();
+    unwatchFavs();
+    unwatchRecipes();
   }
   render() {
     return (
@@ -26,16 +62,36 @@ class Profile extends React.Component {
         <div className={styles.ProfileMain}>
           <div className={styles.ProfileFlex}>
             <img
-              src={ProfilePicture}
+              src={this.state.avatar}
               className={styles.ProfilePicture}
               alt={"Profile picture"}
             ></img>
             <div className={styles.ProfileRight}>
-              <div className={styles.Name}>{this.state.name}</div>
-              <div className={styles.Email}>{this.state.email}</div>
+              <div className={styles.Name}> Witaj {this.state.name}!</div>
+              <div className={styles.Email}>
+                Twój e-mail: {this.state.email}
+              </div>
             </div>
           </div>
-          <div className={styles.FavoutiteRecipe}>{this.favs}</div>
+          <div className={styles.FavoutiteRecipe}>
+            <Grid stackable relaxed style={{ width: "100%", marginTop: "0" }}>
+              {this.state.favs2.length == 0 ? (
+                <p>
+                  Nie masz żadych ulubionych, wejdź na przepisy i dodaj coś do
+                  ulubionych! :)
+                </p>
+              ) : (
+                this.state.favs2.map(item => (
+                  <Grid.Column key={item.id} width={8}>
+                    <RecipeView
+                      recipe={item}
+                      isFavourite={this.state.favs[item.id]}
+                    />
+                  </Grid.Column>
+                ))
+              )}
+            </Grid>
+          </div>
         </div>
       </div>
     );

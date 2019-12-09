@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {Bar, Line, Pie } from 'react-chartjs-2';
 import styles from "./Charts.module.css";
-import {   getCookingTime, watchRecipes,  } from '../services/ForFetchDB';
+import {   getCookingTime, watchRecipes, unwatchRecipes  } from '../services/ForFetchDB';
+import { defaults } from 'react-chartjs-2'
 
+defaults.global.defaultFontFamily = "'Oswald', serif"
 
 class BarChart extends Component {
   constructor(props) {
@@ -32,9 +34,9 @@ componentDidMount() {
                         'rgba(15, 99, 200, 0.6)',
                         'rgba(133, 199, 232, 0.6)',
                         'rgba(53, 199, 232, 0.6)',
-                        'rgba(153, 99, 12, 0.6)',
-                        'rgba(53, 9, 32, 0.6)',
-                        'rgba(153, 19, 112, 0.6)'
+                        'rgba(153, 99, 122, 0.6)',
+                        'rgba(53, 109, 132, 0.6)',
+                        'rgba(153, 100, 112, 0.6)'
                     ]
                 }
             ]
@@ -43,6 +45,12 @@ componentDidMount() {
             chartData
         })
     });
+}
+componentWillUnmount() {
+  unwatchRecipes()
+  if (this.unsubscribe) {
+    this.unsubscribe()
+  }
 }
     
     render() {
@@ -74,8 +82,8 @@ componentDidMount() {
     }, 
       title:{
       display: true,
-        text: 'Ilość przepisów / czas gotowania',
-        fontSize:20,
+        text: 'Czas gotowania w min / Ilość przepisów',
+        fontSize:18,
         fontFamily: "Oswald sans-serif",
         fontColor: "black",
     },

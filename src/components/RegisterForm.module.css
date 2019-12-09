@@ -1,89 +1,89 @@
-.RegisterForm{
-    background-color: pink;
-    padding: 20px;
-    height: 90vh;
-    text-align: center;
-}
-
-.Inputs{
-    width: 20%;
-    margin: auto;
-    display: block;
-}
-
-.Register{
-    display: block;
-    margin: auto;
-    padding: 20px;
-    background-color: grey;
-    text-align: center;
-    font-size: 35px;
-}
 
 .Register2{
-    padding: 20px;
-    background-color: grey;
     text-align: center;
-    font-size: 30px;
-}
-
-.RegPage{
-    height: 90vh;
+    font-size: 16px;
 }
 
 .MailPar{
-    font-size: 25px;
     text-align: center;
+    font-size: 17px;
+    padding: 14px;
 }
 
-.MailParBelow{
-    font-size: 25px;
-    width: 100%;
+.mailBox{
+    width: 70%;
+    margin: auto;
 }
 
-.LoginPage{
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-.InnerBox{
-    background-color: lightgrey;
-    border-radius: 25px;
-    width: 80%;
-    border: outset;
-    margin: 4% 10% 10%;
-    padding: 16px 36px;
+.Input{
+    padding: 6px 0;
     position: relative;
 }
 
-.AllRegister{
-    color: red;
-    font-size: 30px;
+.LogBttn{
     text-align: center;
+    font-size: 18px;
+    padding: 14px;
+    height: 7vh;
 }
 
-button {
-    max-width: 150px;
-    margin: 20px 0px;
-    padding: 12px 20px;
-    border-style: none;
-    border-radius: 5px;
-    background-color: rgba(139,195,74, 0.8);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-    font-size: 17px;
-    font-weight: 500;
-    color:black;
-    cursor: pointer;
-    outline: none;
-    -webkit-appearance: none;
-    margin-left: 30px;
-  }
+.FoodTxt{
+    font-size: 15px;
+    font-weight: bold;
+    margin: auto;
+    padding: 10px;
 
-  .ButtonReg{
-      display: flex;
-  }
+}
 
-/* .mailBox{
-    background-color: pink;
-} */
+.InnerBox{
+    width: 320px;
+    position: absolute;
+    height: fit-content;
+    background: lightgrey;
+    left: 50%;
+    TOP: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.LogoLogin{
+    font-family: "Oswald", sans-serif;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(139,195,74, 0.8); 
+    z-index: 5;
+    scroll-behavior: smooth;
+    top: 0px;
+    align-self: flex-end; 
+    height: 7vh;
+    justify-content: space-between;
+}
+
+.Logo{
+    position: absolute;
+    top: -2%;
+    left: 50%;
+    z-index: 4;
+    transform: translate(-50%, -50%);
+}
+
+.LogoReg{
+    position: absolute;
+    top: -1%;
+    left: 50%;
+    z-index: 4;
+    transform: translate(-50%, -50%);
+}
+
+.BodyReg{
+    background-image: linear-gradient(205deg, rgba(189,189,189,1) 0%, rgba(241,236,236,1) 55%, rgba(255,255,255,1) 100%);
+}
+
+.MailParBelow,
+.LoginPage{
+    text-align: center;
+    font-size: 16px;
+}

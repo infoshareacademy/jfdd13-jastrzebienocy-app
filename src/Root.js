@@ -18,7 +18,6 @@ import { useAuth } from "./components/UseAuth";
 const Root = () => {
     const loggedIn = useAuth()
     console.log("logged in", loggedIn)
-
     if (loggedIn === null) {
         return (<div></div>);
     }
@@ -31,11 +30,9 @@ const Root = () => {
                     <Switch>
                         <Route exact path="/" component={App} />
                         <Route exact path="/privacy" component={Privacy} />
-                        {/* <Route exact path="/dashboard" component={Dashboard} /> */}
                         <Route exact path="/RecipeView" component={MainContent} />
                         <Route exact path="/Profile" component={Profile} />
-                        {/* <Route exact strict path="/RegisterForm" component={RegisterForm}/>
-                    <Route exact strict path="/LoginForm" component={LoginForm}/> */}
+                        {/* <Route exact path="/Login" component={ LoginForm } /> */}
                         <Redirect exact path="/Login" to="/"></Redirect>
                         <Redirect exact path="/Register" to="/"></Redirect>
                     </Switch>
@@ -51,14 +48,11 @@ const Root = () => {
                         <Route exact path="/Register" component={RegisterForm} />
                         <Route exact path="/Login" component={LoginForm} />
                         <Route exact path="/privacy" component={Privacy} />
-                        {/* <Route exact path="/Login" component={LoginForm} /> */}
                         <Redirect to="/Login"></Redirect>
                     </Switch>
-                    {/* <Footer /> */}
                 </div>
             </Router>
         )
-
     }
 };
 

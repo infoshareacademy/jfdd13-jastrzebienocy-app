@@ -4,8 +4,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    /* background: #BDBDBD; */
-    /* background-color: rgba(220,237,200, 0.9);*/
     background-color: rgba(139,195,74, 0.8); 
     z-index: 5;
     scroll-behavior: smooth;
@@ -13,12 +11,6 @@
     align-self: flex-end; 
     height: 7vh;
     justify-content: space-between;
-    /* display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none; */
-    
 }
 
 .logo {
@@ -26,6 +18,7 @@
     margin-left: 25px;
 }
 
+.Logout,
 .Profile,
 .Przepisy,
 .Dashboard {
@@ -38,6 +31,13 @@
     justify-content: flex-end;
 }
 
+/* .Logout {
+    font-weight: bold;
+    color: #212121;
+    font-size: 24px;
+    text-decoration: none;
+} */
+
 .NaviBarRight {
     height: 100%;
     display: flex;
@@ -47,7 +47,8 @@
 }
 
 @media only screen and (max-width: 850px) {
-    .Profile,
+.Logout,
+.Profile,
 .Przepisy,
 .Dashboard {
     font-family: "Oswald", sans-serif;
@@ -57,6 +58,7 @@
     text-decoration: none;
     padding: 10px;
     justify-content: flex-end;
+    line-height: normal;
 }
 .logo {
     width: 100px;
@@ -65,7 +67,8 @@
 }
 
 @media only screen and (max-width: 500px) {
-    .Profile,
+.Logout,
+.Profile,
 .Przepisy,
 .Dashboard {
     font-family: "Oswald", sans-serif;
@@ -75,6 +78,7 @@
     text-decoration: none;
     padding: 5px;
     justify-content: flex-end;
+    line-height: normal;
 }
 .logo {
     width: 90px;
@@ -82,6 +86,7 @@
 }
 }
 
+.Logout:hover,
 .Profile:hover,
 .Przepisy:hover,
 .Dashboard:hover {
@@ -92,5 +97,5 @@
     justify-content: center;
     align-items: center;
     color: black;
-   
+    line-height: normal;
 }
