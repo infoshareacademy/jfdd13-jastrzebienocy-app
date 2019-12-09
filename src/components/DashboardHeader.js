@@ -1,4 +1,4 @@
-// .toLowerCase()import React, {Component} from 'react';import React from 'react'
+import React, { Component } from 'react';
 import styles from "./Dashboard.module.css";
 import { Button, Icon } from 'semantic-ui-react'
 

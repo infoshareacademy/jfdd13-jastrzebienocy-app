@@ -52,7 +52,7 @@ class Profile extends React.Component {
   render() {
     return (
       <div>
-        <div className={styles.ProfileMain}>// .toLowerCase()import React, {Component} from 'react';
+        <div className={styles.ProfileMain}>
           <div className={styles.ProfileFlex}>
             <img
               src={ProfilePicture}
