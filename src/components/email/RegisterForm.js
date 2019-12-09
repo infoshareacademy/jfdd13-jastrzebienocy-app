@@ -74,14 +74,13 @@ export default class RegisterForm extends React.Component {
     return (
       <div>
         <div className={styles.LogoLogin}>
-          <img src={Logo}
-            style={{
-              width: '100px',
-              marginLeft: '20px'
-            }}
-            alt={"Logo"} className={styles.logo} />
           <div className={styles.FoodTxt}>Powiedz nam, co masz w swojej lodówce, a my powiemy Ci, co masz z tym zrobić!</div>
         </div>
+        <div className={styles.LogoReg}><img src={Logo}
+          style={{
+            width: '182px'
+          }}
+          alt={"Logo"} className={styles.logo} /></div>
         <div className={styles.InnerBox}>
           <p className={styles.MailPar}>
             Proszę wypełnić formularz w celu rejestracji.
@@ -183,15 +182,7 @@ export default class RegisterForm extends React.Component {
               Politykę prywatności
             </Link>
           </p>
-
-        </div>
-        {this.state.err && (
-          <p className={styles.AllRegister} style={{ color: 'red' }}>
-            {this.state.err}
-          </p>
-        )}
-        <div className={styles.LoginPage}>
-          <div className={styles.Register2}>
+          <div className={styles.LoginPage}>
             Posiadasz już konto?
             <Link
               activeClassName={'active-link'}
@@ -201,8 +192,15 @@ export default class RegisterForm extends React.Component {
             >
               Zaloguj się!
             </Link>
-          </div>
         </div>
+        </div>
+
+        {this.state.err && (
+          <p className={styles.AllRegister} style={{ color: 'red' }}>
+            {this.state.err}
+          </p>
+        )}
+        
       </div>
     )
   }
