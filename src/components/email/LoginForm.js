@@ -53,13 +53,11 @@ export default class LoginForm extends React.Component {
             default:
                 msg = 'Wystąpił nieoczekiwany błąd'
         }
-        console.log(msg)
         this.setState({ errtest: msg }, () => console.log(this.state.errtest))
     }
 
     onSubmit = e => {
         e.preventDefault();
-        console.log("zupa")
         api.logIn(this.state.email, this.state.password)
             .catch(err => this.setState({ err: err.message }));
     }
