@@ -14,10 +14,10 @@ export default class GoogleAuthProvider extends Component {
     }
 
     componentDidMount = () => {
-        firebase.initializeApp({
-            apiKey: "AIzaSyCVVIiKXCqCGhTP7KCs1EkrTN7rm116-eI",
-            authDomain: 'https://foodwaste-ecb78.firebaseio.com'
-        })
+        // firebase.initializeApp({
+        //     apiKey: "AIzaSyCVVIiKXCqCGhTP7KCs1EkrTN7rm116-eI",
+        //     authDomain: 'https://foodwaste-ecb78.firebaseio.com'
+        // })
 
         firebase.auth().onAuthStateChanged(user => {
             this.setState({ isSignedIn: !!user })

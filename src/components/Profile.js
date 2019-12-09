@@ -56,7 +56,7 @@ class Profile extends React.Component {
               alt={"Profile picture"}
             ></img>
             <div className={styles.ProfileRight}>
-              <div className={styles.Name}>Name:  {this.state.name}</div>
+              <div className={styles.Name}>Witaj  {this.state.name}</div>
               <div className={styles.Email}>Email:    {this.state.email}</div>
             </div>
           </div>
