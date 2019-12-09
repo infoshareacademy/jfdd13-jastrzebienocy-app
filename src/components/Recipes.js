@@ -1,7 +1,3 @@
-// import uuid from 'uuid';
-// import RecipesToRender from './RecipesToRender';
-
-// Recipes in general
 const Recipes = [
   {
     name: 'Niesamowity pieczony kurczak',

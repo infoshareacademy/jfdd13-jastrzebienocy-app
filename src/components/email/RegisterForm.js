@@ -49,7 +49,7 @@ export default class RegisterForm extends React.Component {
 
   getMessage(code) {
     let msg = ''
-    console.log(code)
+    // console.log(code)
     switch (code) {
       case 'auth/email-already-in-use':
         msg = 'Email już jest przypisany!'
@@ -72,17 +72,17 @@ export default class RegisterForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.BodyReg}>
         <div className={styles.LogoLogin}>
-          <img src={Logo}
-            style={{
-              width: '100px',
-              marginLeft: '20px'
-            }}
-            alt={"Logo"} className={styles.logo} />
-          <div className={styles.FoodTxt}>Powiedz nam, co masz w swojej lodówce, a my powiemy Ci, co masz z tym zrobić!</div>
+          <div className={styles.FoodTxt}>Powiedz nam, co masz w swojej lodówce, a my powiemy Ci, co możesz z tym zrobić!</div>
         </div>
         <div className={styles.InnerBox}>
+        <div className={styles.LogoReg}><img src={Logo}
+          style={{
+            width: '182px'
+          }}
+          alt={"Logo"} className={styles.logo} />
+        </div>
           <p className={styles.MailPar}>
             Proszę wypełnić formularz w celu rejestracji.
           </p>
@@ -94,7 +94,6 @@ export default class RegisterForm extends React.Component {
             }}
             validationSchema={accountFormSchema}
             onSubmit={(values, { setSubmitting }) => {
-              console.log('dol')
               api
                 .register(values.email, values.password, values.name)
                 .catch(err => this.setState({ err: this.getMessage(err.code) }))
@@ -161,7 +160,11 @@ export default class RegisterForm extends React.Component {
                         value={values.password2}
                         touched={touched}
                         errors={errors}
-                      /> <p style={{ textAlign: 'center' }}>{this.state.errtest}</p>
+                      /> <p style={{
+                        textAlign: 'center',
+                        padding: '16px 0 0 0',
+                        fontSize: '12px'
+                      }}>{this.state.errtest}</p>
                     </div>
                   </div>
                   <div className={styles.LogBttn}>
@@ -183,26 +186,23 @@ export default class RegisterForm extends React.Component {
               Politykę prywatności
             </Link>
           </p>
-
-        </div>
-        {this.state.err && (
-          <p className={styles.AllRegister} style={{ color: 'red' }}>
-            {this.state.err}
-          </p>
-        )}
-        <div className={styles.LoginPage}>
-          <div className={styles.Register2}>
-            Posiadasz już konto?
+          <div className={styles.LoginPage}>
+            Posiadasz już konto?{' '}
             <Link
-              activeClassName={'active-link'}
               to='/Login'
               className={styles.Register2}
-              exact
             >
               Zaloguj się!
             </Link>
           </div>
         </div>
+
+        {this.state.err && (
+          <p className={styles.AllRegister} style={{ color: 'red' }}>
+            {this.state.err}
+          </p>
+        )}
+
       </div>
     )
   }
