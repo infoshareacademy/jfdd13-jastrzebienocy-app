@@ -39,7 +39,19 @@ class RecipeView extends React.Component {
           onClick={this.closeWindow}
           {...this.props.recipe}
         />
+        
         <Segment className={styles.Wrapper}>
+        <div className={styles.NameRecipe}>
+                <p
+                  onClick={() => {
+                    this.showModalWindow()
+                  }}
+                  style={{ cursor: 'pointer' }}
+                >
+                  {this.props.recipe.name}
+                </p>
+
+              </div>
           <div className={styles.Heart}>
             <div>
               <Image
@@ -63,17 +75,7 @@ class RecipeView extends React.Component {
 
             <div className={styles.Text}>
 
-              <div className={styles.NameRecipe}>
-                <p
-                  onClick={() => {
-                    this.showModalWindow()
-                  }}
-                  style={{ cursor: 'pointer' }}
-                >
-                  {this.props.recipe.name}
-                </p>
-
-              </div>
+              
               <div
                 onClick={() => {
                   this.showModalWindow()
