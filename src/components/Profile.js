@@ -26,6 +26,7 @@ class Profile extends React.Component {
     const avatar=`https://api.adorable.io/avatars/285/${this.state.email}.png`
     watchUsers(users => {
       this.setState({ ...users, avatar });
+      
     });
     watchRecipes(recipes => {
       this.setState({ recipes });
