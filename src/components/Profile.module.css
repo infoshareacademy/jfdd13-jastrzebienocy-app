@@ -33,7 +33,7 @@ img {
     margin-left: 10%;
     border-radius: 20px;
     background-color: white;
-    width: 30%;
+    width: 70%;
 }
 
 .FavoutiteRecipe,
@@ -58,7 +58,7 @@ img {
 }
 
 
-@media (max-width: 700px ){
+@media (max-width: 500px ){
     .ProfileMain {
         padding: 10px;
         margin: 30px 10px;
@@ -87,6 +87,57 @@ img {
 }
 
 
+}
+
+@media (max-width: 900px ){
+    .ProfileMain {
+        padding: 10px;
+        margin: 30px 10px;
+    }
+    .ProfileRight{
+        margin-left: 5%;
+        border-radius: 36px;
+        width: 70%;
+    }
+    
+.Email,
+.Name {
+    font-size: 26px;
+    padding: 10px;
+}
+}
+
+@media (max-width: 1200px ){
+    .ProfileMain {
+        padding: 10px;
+        margin: 30px 10px;
+    }
+    .ProfileRight{
+        margin-left: 5%;
+        border-radius: 40px;
+        width: 70%;
+    }
+    
+.Email,
+.Name {
+    font-size: 32px;
+
+}
+}
+
+@media (max-width: 1600px ){
+
+    .ProfileRight{
+        margin-left: 5%;
+        border-radius: 40px;
+        width: 70%;
+    }
+    
+.Email,
+.Name {
+    font-size: 40px;
+
+}
 }
 
 
