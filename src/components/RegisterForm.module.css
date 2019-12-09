@@ -53,6 +53,12 @@
     height: 7vh;
 }
 
+.FoodTxt{
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
 /* .MailParBelow{
     font-size: 25px;
     width: 100%;
