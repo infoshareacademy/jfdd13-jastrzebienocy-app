@@ -1,0 +1,20 @@
+.selectCat{
+    text-align: center;
+    color: black;
+    padding: 5px
+}
+
+.None{
+    display: none;
+}
+
+.picture {
+    border: 1px solid grey;
+}
+
+
+.uploadButton{
+        float: left;
+}
+
+

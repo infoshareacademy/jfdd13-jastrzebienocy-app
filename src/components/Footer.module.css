@@ -34,6 +34,7 @@
   border-radius: 5px;
   padding: 0 5px;
 }
+/* privacy styles */
 
 .privacy {
   text-align: center;
@@ -44,7 +45,8 @@
 .policyText {
   background-color: #BDBDBD;
   border-radius: 10px;
-  padding: 30px;
+  padding: 15px;
+  margin: 0 0 52px 0;
 }
 
 .policyText p {
@@ -58,5 +60,46 @@
 }
 
 .policyText p:last-child {
-  padding-bottom: 10px;
+  padding-bottom: 30px;
+}
+
+
+@media only screen and (max-width: 480px) { 
+  .footerBox {
+    font-size: 12px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+}
+
+.FooterTxt {
+  background-color: pink;
+}
+
+.copywright {
+  color: #757575;
+  line-height: 12px;
+  float: left;
+  margin: 2px;
+  font-size: 12px;
+}
+
+.footerLinks {
+  line-height: 12px;
+  float: right;
+  text-decoration: none;
+  color: #000;
+  margin:2px;
+  font-size: 12px;
+}
+
+.footerLinks:hover {
+  background-color: #757575;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
 }

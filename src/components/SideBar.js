@@ -1,86 +1,146 @@
 import React from 'react'
 import styles from './SideBar.module.css'
 import Heart from './Heart'
-import { Icon } from 'semantic-ui-react'
-
-import { Dropdown } from 'semantic-ui-react'
+import { Icon, Dropdown } from 'semantic-ui-react'
 
 const dropdownI = [
   {
     key: 'Kuchnia włoska',
     text: 'Kuchnia włoska',
-    value: 'Włoska'
+    value: 'włoska'
   },
   {
     key: 'Kuchnia azjatycka',
     text: 'Kuchnia azjatycka',
-    value: 'Azjatycka'
+    value: 'azjatycka'
   },
   {
     key: 'Kuchnia polska',
     text: 'Kuchnia polska',
-    value: 'Polska'
+    value: 'polska'
   },
   {
     key: 'Kuchnia francuska',
     text: 'Kuchnia francuska',
-    value: 'Francuska'
+    value: 'francuska'
+  },
+  {
+    key: 'Kuchnia amerykańska',
+    text: 'Kuchnia amerykańska',
+    value: 'amerykańska'
+  },
+  {
+    key: 'Kuchnia meksykańska',
+    text: 'Kuchnia meksykańska',
+    value: 'meksykańska'
+  },
+  {
+    key: 'Kuchnia śródziemnomorska',
+    text: 'Kuchnia śródziemnomorska',
+    value: 'śródziemnomorska'
+  },
+  {
+    key: 'Kuchnia gruzińksa',
+    text: 'Kuchnia gruzińksa',
+    value: 'gruzińksa'
+  },
+  {
+    key: 'Inna',
+    text: 'Inna',
+    value: 'zupa'
   }
 ]
 class SideBar extends React.Component {
-  render () {
+  state = {
+    icon: 'search'
+  }
+  render() {
     return (
       <div className={styles.SideBar}>
-        <div className={styles.Produkt}>Wyszukaj</div>
-        <div className={styles.Produkt}>Produkt:</div>
+        <div className={styles.Searching}>Wyszukaj:</div>
+        <div className={styles.Name}>Nazwa:</div>
         <input
-          className={styles.Input}
-          placeholder='Szukaj ...'
+          style={{
+            borderRadius: '25px',
+            marginLeft: '16px',
+            backgroundColor: 'lightGrey'
+          }}
+          className={styles.Input2}
+          placeholder='Nazwa Potrawy ...'
+          value={this.props.name}
+          onChange={event => {
+            this.props.onNameChange(event.target.value)
+
+          }}
+        />
+        <div className={styles.Product}>Produkt:</div>
+        <input
+          style={{
+            borderRadius: '25px',
+            marginLeft: '16px',
+            backgroundColor: 'lightGrey'
+          }}
+          className={styles.Input2}
+          placeholder='Nazwa Produktu ...'
           value={this.props.products}
           onChange={event => {
             this.props.onProductsChange(event.target.value)
-            // console.log(event)
+
           }}
         />
         <div className={styles.Quantity}>
           Masa:{' '}
-          <span className={styles.WeightDisplay}>{this.props.weigth}</span>g
+          <span className={styles.WeightDisplay}>{this.props.weight}</span>g
         </div>
+        <div className={styles.inputSlide}>
+          <input
+            style={{
+              padding: '7px 0',
+              WebkitAppearance: 'media-volume-sliderthumb',
+              borderRadius: '50px',
+              height: '20px',
+              backgroundColor: 'lightGrey'
+            }}
+            className={styles.Input3}
+            id='typeinp'
+            type='range'
+            min='0'
+            max='2000'
+            step='50'
+            value={this.props.weight}
+            onChange={event => {
+              this.props.onWeigthChange(event.target.value)
 
-        <input
-          className={styles.inputSlide}
-          id='typeinp'
-          type='range'
-          min='0'
-          max='2000'
-          step='50'
-          value={this.props.weigth}
-          onChange={event => {
-            this.props.onWeigthChange(event.target.value)
-            // console.log(event)
-          }}
-        />
-
+            }}
+          />
+        </div>
         <div className={styles.Category}>Kategoria:</div>
-
-        <div className={styles.dropdown}>
+        <div className={styles.dropdown2}>
           <Dropdown
+            style={{
+              // margin: '0 auto',
+              borderRadius: '25px',
+              width: '85%',
+              marginLeft: '16px',
+              backgroundColor: 'lightGrey',
+              textAlign: 'center'
+            }}
             size='massive'
             placeholder='Kategoria'
             fluid
             selection
+            clearable
             options={dropdownI}
             value={this.props.category}
+            className={styles.Input4}
             onChange={(event, data) => {
               this.props.onCategoryChange(data.value)
-              // console.log(data)
             }}
           />
         </div>
 
-        <br />
-        <div className={styles.Vawourites}>
-          Ulubione <Heart />
+        <div className={styles.Favourites}>
+          Ulubione <Heart checked={this.props.favourites} onHeartClick={this.props.onFavouritesChange} />
         </div>
       </div>
     )

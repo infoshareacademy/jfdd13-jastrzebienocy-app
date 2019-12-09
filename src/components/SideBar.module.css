@@ -4,26 +4,45 @@
   scroll-behavior: smooth;
   top: 0px;
   padding: 10px;
-  background: rgba(189, 189, 189, 1) 0%, ;
   height: 88vh;
-  width: 220px;
+  width: 27vh;
 }
 
-.Produkt, .Quantity, .Category, .Search {
+.Product, .Quantity, .Category, .Search, .Name {
   font-family: "Oswald", sans-serif;
   font-weight: bold;
   color: #212121;
   font-size: 24px;
   text-decoration: none;
+  padding: 5px;
+  text-align: center;
+}
+
+.Searching {
+  font-family: serif;
+  font-weight: bold;
+  color: #212121;
+  font-size: 30px;
+  text-decoration: underline;
   padding: 20px;
   text-align: center;
 }
 
-.Vawourites {
+.Searching::first-letter {
+  font-family: serif;
+  font-weight: bold;
+  color: #212121;
+  font-size: 40px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.Favourites {
   font-family: "Oswald", sans-serif;
   font-weight: bold;
   color: #212121;
   font-size: 24px;
+  margin-top: 20px;
   text-decoration: none;
   text-align: center;
 }
@@ -51,4 +70,200 @@
   width: 100%;
   padding: 3px;
   margin-right: 2px;
+}
+
+.Input2 {
+  width: 85%;
+}
+
+.Input3 {
+  margin-left: 20px;
+  width: 85%;
+}
+
+.dropdown2 {
+  width: 100%;
+  height: 20px;
+}
+
+@media only screen and (max-width: 850px) {
+  .SideBar {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: auto;
+    font-family: "Oswald", sans-serif;
+    align-items: center;
+    scroll-behavior: smooth;
+    top: 0px;
+    padding: 5px;
+    margin: 0 auto;
+    width: 95%;
+  }
+  .Product, .Quantity, .Category, .Search, .Name {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 16px;
+    text-decoration: none;
+    padding-top: 5px;
+    text-align: center;
+    margin-top: 15px;
+  }
+  .Category {
+    margin-top: 20px;
+  }
+  .Input2 {
+    margin-top: 15px;
+    width: 75%;
+    height: 20px;
+  }
+  .Input3 {
+    margin-top: 20px;
+    margin-left: 16px;
+    width: 75%;
+    height: 20px;
+  }
+  .dropdown2 {
+    width: 90%;
+    font-size: 10px;
+    height: 10px;
+  }
+  .Searching {
+    display: none;
+    font-family: serif;
+    font-weight: bold;
+    color: #212121;
+    text-decoration: underline;
+    padding: 5px;
+    text-align: center;
+  }
+  .Searching::first-letter {
+    font-family: serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+  }
+  .Favourites {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 0px;
+  }
+  /* slider */
+  .Label {
+    align-items: center;
+    font-size: 16px;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    text-align: center;
+  }
+  .InputSlide {
+    margin-right: 5px;
+  }
+  .WeightDisplay {
+    font-size: 18px;
+    font-weight: bold;
+    color: #212121;
+    width: 100%;
+    padding: 1px;
+    margin-right: 1px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .SideBar {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    font-family: "Oswald", sans-serif;
+    align-items: center;
+    scroll-behavior: smooth;
+    width: 95%;
+  }
+  .Product, .Quantity, .Category, .Search, .Name {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 16px;
+    text-decoration: none;
+    padding-top: 5px;
+    text-align: center;
+  }
+  .Category {
+    margin-top: 10px;
+  }
+  .Input2 {
+    border-radius: 50px;
+    height: 20px;
+    background-color: lightgrey;
+    width: 50%;
+    margin-top: 1px;
+  }
+  .Input3 {
+    margin: 0 auto;
+    -webkit-appearance: media-volume-sliderthumb;
+    border-radius: 50px;
+    height: 20px;
+    background-color: lightgrey;
+    width: 100%;
+  }
+  .dropdown2 {
+    border-radius: 25px;
+    width: 80%;
+    margin-left: 30px;
+    text-align: center;
+  }
+  .Searching {
+    display: none;
+    font-family: serif;
+    font-weight: bold;
+    color: #212121;
+    text-decoration: underline;
+    padding: 5px;
+    text-align: center;
+  }
+  .Searching::first-letter {
+    font-family: serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+  }
+  .Favourites {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 25px;
+  }
+  /* slider */
+  .Label {
+    align-items: center;
+    font-size: 16px;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    text-align: center;
+  }
+  .InputSlide {
+    margin-right: 5px;
+  }
+  .WeightDisplay {
+    font-size: 18px;
+    font-weight: bold;
+    color: #212121;
+    width: 100%;
+    padding: 1px;
+    margin-right: 1px;
+  }
 }
