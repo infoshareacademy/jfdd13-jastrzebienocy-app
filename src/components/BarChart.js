@@ -77,7 +77,7 @@ componentDidMount() {
       title:{
       display: true,
         text: 'Czas gotowania w min / Ilość przepisów',
-        fontSize:16,
+        fontSize:18,
         fontFamily: "Oswald sans-serif",
         fontColor: "black",
     },
