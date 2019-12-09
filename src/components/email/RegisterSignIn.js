@@ -9,7 +9,7 @@ export function RegisterSignIn() {
     <div>
       <LoginForm apiMethod={(email, password) => api.logIn(email, password)} />
       <RegisterForm apiMethod={(email, password, name) => api.register(email, password, name)
-        }
+      }
       />
     </div>
   )
