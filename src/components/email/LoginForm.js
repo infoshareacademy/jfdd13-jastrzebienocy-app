@@ -19,10 +19,10 @@ const accountFormSchema = Yup.object().shape({
 });
 
 const TextInput = props => {
-    const { name, errors, touched } = props;
+    const { name, errors, touched, ...rest } = props;
     return (
         <div style={{ textAlign: 'center' }}>
-            <input {...props} />
+            <input {...rest} name={name} />
             <div style={{
                 height: '2px',
                 fontSize: '12px'
@@ -79,7 +79,7 @@ export default class LoginForm extends React.Component {
                     </div>
                     <Formik
                         initialValues={{
-                            name: "",
+                            email: "",
                             password: "",
                         }}
                         validationSchema={accountFormSchema}

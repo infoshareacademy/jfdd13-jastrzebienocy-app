@@ -188,10 +188,8 @@ export default class RegisterForm extends React.Component {
           <div className={styles.LoginPage}>
             Posiadasz już konto?{' '}
             <Link
-              activeClassName={'active-link'}
               to='/Login'
               className={styles.Register2}
-              exact
             >
               Zaloguj się!
             </Link>
