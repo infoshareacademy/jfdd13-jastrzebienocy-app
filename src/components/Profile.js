@@ -3,7 +3,6 @@ import React from "react";
 import styles from "./Profile.module.css";
 import ProfilePicture from "./images/ProfilePicture.jpg";
 import { watchUsers, unwatchUsers, watchRecipes, watchFavs, unwatchFavs, unwatchRecipes } from "../services/ForFetchDB";
-import { finished } from "stream";
 
 class Profile extends React.Component {
   state = {

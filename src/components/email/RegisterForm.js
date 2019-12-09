@@ -74,7 +74,7 @@ export default class RegisterForm extends React.Component {
     return (
       <div className={styles.BodyReg}>
         <div className={styles.LogoLogin}>
-          <div className={styles.FoodTxt}>Powiedz nam, co masz w swojej lodówce, a my powiemy Ci, co masz z tym zrobić!</div>
+          <div className={styles.FoodTxt}>Powiedz nam, co masz w swojej lodówce, a my powiemy Ci, co możesz z tym zrobić!</div>
         </div>
         <div className={styles.InnerBox}>
         <div className={styles.LogoReg}><img src={Logo}
