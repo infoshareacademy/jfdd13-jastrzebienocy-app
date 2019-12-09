@@ -58,5 +58,36 @@ img {
 }
 
 
+@media (max-width: 700px ){
+    .ProfileMain {
+        padding: 10px;
+        margin: 30px 10px;
+    }
+    img {
+        border-radius: 300px;
+        width: 30%;
+        height: 3%;
+    }
+    .ProfileRight{
+        margin-left: 5%;
+        border-radius: 36px;
+        width: 70%;
+    }
+    .ProfileTxt {
+        border-radius: 10px;
+        font-size: 20px;
+        text-align: center;
+        font-family: Oswald, sans-serif;
+    }
+    
+.Email,
+.Name {
+    font-size: 16px;
+    padding: 2px;
+}
+
+
+}
+
 
 
