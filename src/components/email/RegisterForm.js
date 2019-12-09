@@ -50,7 +50,6 @@ export default class RegisterForm extends React.Component {
 
   getMessage(code) {
     let msg = ''
-    console.log(code)
     switch (code) {
       case 'auth/email-already-in-use':
         msg = 'Email już jest przypisany!'
@@ -67,7 +66,7 @@ export default class RegisterForm extends React.Component {
       default:
         msg = 'Wystąpił nieoczekiwany błąd'
     }
-    console.log(msg)
+
     this.setState({ errtest: msg }, () => console.log(this.state.errtest))
   }
 
@@ -95,7 +94,7 @@ export default class RegisterForm extends React.Component {
             }}
             validationSchema={accountFormSchema}
             onSubmit={(values, { setSubmitting }) => {
-              console.log('dol')
+
               api
                 .register(values.email, values.password, values.name)
                 .catch(err => this.setState({ err: this.getMessage(err.code) }))

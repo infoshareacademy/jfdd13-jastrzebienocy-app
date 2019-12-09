@@ -23,7 +23,7 @@ export const watchRecipes = onSuccess => {
 
 export const watchUsers = onSuccess => {
   const userId = firebase.auth().currentUser.uid;
-  console.log(userId)
+
   return firebase
     .database()
     .ref(`/users/${userId}`)
@@ -89,7 +89,7 @@ export const getUserProfile = onSuccess => {
 //nie kasowac
 export const categories = data => {
 
-  console.log(Object.entries(data).map(([id, item]) => item.category))
+  // console.log(Object.entries(data).map(([id, item]) => item.category))
   return Object.entries(data).map(item => item.category)
 }
 // stopRecepies -> trzeba zaimplementowac!!!

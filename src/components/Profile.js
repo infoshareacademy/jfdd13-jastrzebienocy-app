@@ -23,14 +23,9 @@ class Profile extends React.Component {
       this.setState({ recipes })
     })
     watchFavs(favs => {
-<<<<<<< HEAD
       this.setState({ favs })
-      console.log(Object.keys(favs))
-=======
-      this.setState({favs})
 
->>>>>>> 8e26881648733cf6614ce9f19a6e7114d65dbb29
-      console.log(this.state)
+
     })
 
 
@@ -57,7 +52,7 @@ class Profile extends React.Component {
   render() {
     return (
       <div>
-        <div className={styles.ProfileMain}>
+        <div className={styles.ProfileMain}>// .toLowerCase()import React, {Component} from 'react';
           <div className={styles.ProfileFlex}>
             <img
               src={ProfilePicture}

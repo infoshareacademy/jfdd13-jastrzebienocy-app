@@ -1,4 +1,4 @@
-import React from 'react'
+// .toLowerCase()import React, {Component} from 'react';import React from 'react'
 import BarChart from './BarChart'
 import PieChart from './PieChart'
 import styles from "./Dashboard.module.css";
@@ -6,23 +6,23 @@ import DashboardHeader from './DashboardHeader';
 
 
 class Dashboard extends React.Component {
-    constructor(props) {
-      super(props);
-  
-    }
-    render() {
-      return (
-        <div className={styles.dasboardAll}>
-        <div>
-        <DashboardHeader />
-        <div className={styles.wrapper}>
-        <BarChart />
-        <PieChart />
-        </div>
-        </div>
-        </div>
-      );
-    }
-  }
+  constructor(props) {
+    super(props);
 
-  export default Dashboard;
+  }
+  render() {
+    return (
+      <div className={styles.dasboardAll}>
+        <div>
+          <DashboardHeader />
+          <div className={styles.wrapper}>
+            <BarChart />
+            <PieChart />
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Dashboard;

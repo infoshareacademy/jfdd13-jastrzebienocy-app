@@ -1,4 +1,4 @@
-import React from 'react';
+console.log(userId)import React from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -17,7 +17,6 @@ import { useAuth } from "./components/UseAuth";
 
 const Root = () => {
     const loggedIn = useAuth()
-    console.log("logged in", loggedIn)
     if (loggedIn === null) {
         return (<div></div>);
     }

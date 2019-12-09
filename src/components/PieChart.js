@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+// .toLowerCase()import React, {Component} from 'react';import React, { Component } from 'react';
 import { Bar, Line, Pie } from 'react-chartjs-2';
 import styles from "./Charts.module.css";
 import {   watchRecipes, getCategories } from '../services/ForFetchDB';
