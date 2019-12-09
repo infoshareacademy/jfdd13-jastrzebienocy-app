@@ -67,7 +67,7 @@ export default class LoginForm extends React.Component {
             <div className={styles.BodyReg}>
             <div>
                 <div className={styles.LogoLogin}>
-                    <div className={styles.FoodTxt}>Powiedz nam, co masz w swojej lodówce, a my powiemy Ci, co masz z tym zrobić!</div>
+                    <div className={styles.FoodTxt}>Powiedz nam, co masz w swojej lodówce, a my powiemy Ci, co co możesz z tym zrobić!</div>
                 </div>
                 <div className={styles.InnerBox}>
                 <div className={styles.Logo}><img src={Logo}
