@@ -65,7 +65,7 @@ componentWillUnmount() {
           beginAtZero: true,
           fontColor: "#212121",
               fontFamily: "Oswald sans-serif",
-               fontSize: 14,
+               fontSize: 18,
                fontStyle: "bold",
         }
       }],
@@ -87,8 +87,12 @@ componentWillUnmount() {
         fontFamily: "Oswald sans-serif",
         fontColor: "black",
     },
+    tooltips: {
+      bodyFontColor: "white",
+      bodyFontSize: 20,
+  },
     legend:{
-        
+            fontSize:26,
             display: false,
     }
       }}
