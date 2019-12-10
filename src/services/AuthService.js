@@ -5,13 +5,6 @@ export const login = (email, password) => {
   return firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
-    .then(value => {
-      console.log("Logged in!");
-      console.log(value);
-    })
-    .catch(() => {
-      console.log("Something went wrong!");
-    });
 };
 
 export const register = (email, password, name, favorites) => {
@@ -25,7 +18,6 @@ export const register = (email, password, name, favorites) => {
           displayName: name
         })
         .then(() => {
-          console.log("Registered user with email, password and name");
           firebase
             .database()
             .ref("/users")

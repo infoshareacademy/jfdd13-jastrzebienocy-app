@@ -65,8 +65,7 @@ export default class RegisterForm extends React.Component {
       default:
         msg = 'Wystąpił nieoczekiwany błąd'
     }
-    console.log(msg)
-    this.setState({ errtest: msg }, () => console.log(this.state.errtest))
+    this.setState({ errtest: msg })
   }
 
   render() {
