@@ -49,7 +49,6 @@ export default class RegisterForm extends React.Component {
 
   getMessage(code) {
     let msg = ''
-    // console.log(code)
     switch (code) {
       case 'auth/email-already-in-use':
         msg = 'Email już jest przypisany!'
@@ -77,12 +76,12 @@ export default class RegisterForm extends React.Component {
           <div className={styles.FoodTxt}>Powiedz nam, co masz w swojej lodówce, a my powiemy Ci, co możesz z tym zrobić!</div>
         </div>
         <div className={styles.InnerBox}>
-        <div className={styles.LogoReg}><img src={Logo}
-          style={{
-            width: '182px'
-          }}
-          alt={"Logo"} className={styles.logo} />
-        </div>
+          <div className={styles.LogoReg}><img src={Logo}
+            style={{
+              width: '182px'
+            }}
+            alt={"Logo"} className={styles.logo} />
+          </div>
           <p className={styles.MailPar}>
             Proszę wypełnić formularz w celu rejestracji.
           </p>
@@ -175,10 +174,9 @@ export default class RegisterForm extends React.Component {
                     }}
                       type='submit' >
                       Zarejestruj się
-                                    </button>
+                      </button>
                   </div>
                 </form>)}
-
           </Formik>
           <p className={styles.MailParBelow}>
             Tworząc u Nas konto zgadzasz sie na naszą{' '}
@@ -196,13 +194,11 @@ export default class RegisterForm extends React.Component {
             </Link>
           </div>
         </div>
-
         {this.state.err && (
           <p className={styles.AllRegister} style={{ color: 'red' }}>
             {this.state.err}
           </p>
         )}
-
       </div>
     )
   }

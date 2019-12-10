@@ -6,6 +6,7 @@
     "chart.js": "^2.9.3",
     "firebase": "^7.5.0",
     "formik": "^2.0.4",
+    "moment": "^2.24.0",
     "react": "^16.11.0",
     "react-chartjs-2": "^2.8.0",
     "react-dom": "^16.11.0",
