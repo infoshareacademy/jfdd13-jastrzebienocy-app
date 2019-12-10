@@ -31,8 +31,17 @@
     font-size: 15px;
     font-weight: bold;
     margin: auto;
-    padding: 10px;
+    padding: 9px;
 
+}
+
+@media only screen and (max-width: 329px){
+.FoodTxt{
+    font-size: 14px;
+    font-weight: bold;
+    margin: auto;
+    padding: 9px;
+    }
 }
 
 .InnerBox{
@@ -46,8 +55,39 @@
     box-sizing: border-box;
     border-radius: 10px;
     padding: 20px;
-}
+    }    
 
+@media only screen and (max-width: 1063px){
+    .InnerBox{
+        width: 320px;
+        position: absolute;
+        height: fit-content;
+        background: lightgrey;
+        left: 50%;
+        TOP: 55%;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        border-radius: 10px;
+        padding: 20px;
+        }
+    } 
+    
+    @media only screen and (max-width: 623px){    
+    .InnerBox{
+        width: 320px;
+        position: absolute;
+        height: fit-content;
+        background: lightgrey;
+        left: 50%;
+        TOP: 57%;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        border-radius: 10px;
+        padding: 20px;
+        }   
+    }
+
+@media only screen and (min-width: 645px){
 .LogoLogin{
     font-family: "Oswald", sans-serif;
     width: 100%;
@@ -60,6 +100,23 @@
     align-self: flex-end; 
     height: 7vh;
     justify-content: space-between;
+    }
+}    
+
+@media only screen and (max-width: 645px){
+    .LogoLogin{
+        font-family: "Oswald", sans-serif;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: rgba(139,195,74, 0.8); 
+        z-index: 5;
+        scroll-behavior: smooth;
+        top: 0px;
+        align-self: flex-end; 
+        /* height: 7vh; */
+        justify-content: space-between;
+    }
 }
 
 .Logo{

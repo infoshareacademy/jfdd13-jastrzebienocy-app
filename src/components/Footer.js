@@ -7,7 +7,6 @@ class Footer extends React.Component {
         return (
          <div className={`${styles.footerBox} ${styles.footerBoxMobile}`}>
          <span className={styles.copywright}>© 2019 Food Waste</span>
-          <a className={styles.footerLinks} href="">Kontakt</a>
           <Link to="/privacy" className={styles.footerLinks} >Polityka prywatności</Link>     
          </div>
         )

@@ -67,16 +67,17 @@ export class RecipesFromBase extends React.Component {
         categoryFilter &&
         favouritesFilter
       )
-    })
+    }) 
     return finalData
   }
 
   render() {
     const { activePage, pageItems } = this.state
-    const viewedRecipes = this.filteredRecepies.slice(
+    
+     const viewedRecipes = this.filteredRecepies.slice(
       (activePage - 1) * pageItems,
       activePage * pageItems
-    )
+    ) || <p>Nie ma nic</p>
 
     return (
       <div className={styles.layout}>
@@ -112,13 +113,14 @@ export class RecipesFromBase extends React.Component {
         </div>
         <>
           <Grid stackable relaxed style={{ width: '100%', marginTop: '0' }}>
-            {viewedRecipes.map(item => (
+            {viewedRecipes.length == 0 ? (<div style={{ margin: '50px 30px', fontSize: '35px', lineHeight:'1'}}>Brak wyników dla podanych filtrów wyszukiwania :(</div>) : 
+            (viewedRecipes.map(item => (
 
               <Grid.Column key={item.id} width={8}>
                 <RecipeView recipe={item} isFavourite={this.state.favs[item.id]} />
               </Grid.Column>
 
-            ))}
+            )))}
           </Grid>
           <div className={styles.pagMiddle}>
             <Pagination
