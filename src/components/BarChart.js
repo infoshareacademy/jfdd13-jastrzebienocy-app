@@ -65,7 +65,7 @@ componentWillUnmount() {
           beginAtZero: true,
           fontColor: "#212121",
               fontFamily: "Oswald sans-serif",
-               fontSize: 14,
+               fontSize: 18,
                fontStyle: "bold",
         }
       }],
