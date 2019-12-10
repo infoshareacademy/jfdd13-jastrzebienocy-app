@@ -34,7 +34,6 @@ class Profile extends React.Component {
         const favIds = Object.keys(favs)
         const { recipes } = this.state
         const favoriteRecipes = recipes.filter(recipe => favIds.includes(recipe.id))
-        console.log(recipes, favs)
         this.setState({ favs2: favoriteRecipes });
       });
     });
