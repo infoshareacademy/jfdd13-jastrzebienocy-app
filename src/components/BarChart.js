@@ -46,51 +46,12 @@ class BarChart extends Component {
       })
     });
   }
-}
-
-render() {
-  return (
-    <div className={styles.chart}>
-      <Bar
-        data={this.state.chartData}
-        options={{
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true,
-                fontColor: "#212121",
-                fontFamily: "Oswald sans-serif",
-                fontSize: 18,
-                fontStyle: "bold",
-              }
-            }],
-            xAxes: [
-              {
-                ticks: {
-                  fontColor: "#212121",
-                  fontFamily: "Oswald sans-serif",
-                  fontSize: 14,
-                  fontStyle: "bold"
-                }
-              }
-            ]
-          },
-          title: {
-            display: true,
-            text: 'Czas gotowania w min / Ilość przepisów',
-            fontSize: 18,
-            fontFamily: "Oswald sans-serif",
-            fontColor: "black",
-          },
-          tooltips: {
-            bodyFontColor: "white",
-            bodyFontSize: 20,
-          },
-          legend: {
-            fontSize: 26,
-            display: false,
-          }
-        }
+  componentWillUnmount() {
+    unwatchRecipes()
+    if (this.unsubscribe) {
+      this.unsubscribe()
+    }
+  }
 
   render() {
     return (
@@ -104,7 +65,7 @@ render() {
                   beginAtZero: true,
                   fontColor: "#212121",
                   fontFamily: "Oswald sans-serif",
-                  fontSize: 14,
+                  fontSize: 18,
                   fontStyle: "bold",
                 }
               }],
@@ -126,8 +87,12 @@ render() {
               fontFamily: "Oswald sans-serif",
               fontColor: "black",
             },
+            tooltips: {
+              bodyFontColor: "white",
+              bodyFontSize: 20,
+            },
             legend: {
-
+              fontSize: 26,
               display: false,
             }
           }}
@@ -141,8 +106,4 @@ render() {
   }
 }
 
-<<<<<<< .merge_file_JvdXWT
-  export default BarChart;
-=======
-
->>>>>>> .merge_file_VtkjFU
+export default BarChart;
