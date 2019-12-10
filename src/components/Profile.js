@@ -48,9 +48,7 @@ class Profile extends React.Component {
       );
       this.setState({ favs2: use2 });
     });
-
   }
-
 
 
   componentWillUnmount() {
