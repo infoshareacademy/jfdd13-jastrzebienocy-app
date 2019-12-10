@@ -64,7 +64,7 @@ class PieChart extends Component {
                         }, {
                             tooltips: {
                                 bodyFontColor: "white",
-                                bodyFontSize: 10,
+                                bodyFontSize: 20,
                             },
                             ticks: {
                                 min: 0
