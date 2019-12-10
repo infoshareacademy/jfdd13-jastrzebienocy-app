@@ -23,7 +23,6 @@ export const watchRecipes = onSuccess => {
 
 export const watchUsers = onSuccess => {
   const userId = firebase.auth().currentUser.uid;
-  console.log(userId)
   return firebase
     .database()
     .ref(`/users/${userId}`)

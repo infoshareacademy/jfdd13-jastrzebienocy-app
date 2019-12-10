@@ -35,16 +35,8 @@ class AddForm extends React.Component {
       }) // .toLowerCase()
     })
       .then(res => res.json())
-      .then(res => console.log(res))
   }
 
-  //   get(recipe) {
-  //     fetch(`https://myfirstproject-b5855.firebaseio.com/${recipe}.json`, {
-  //       method: 'GET'
-  //     })
-  //     .then(res => res.json())
-  //     .then(res => console.log(res));
-  //   }
 
   render () {
     return (
