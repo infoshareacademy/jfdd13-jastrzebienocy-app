@@ -62,7 +62,7 @@ class Api {
         const todo = obj[key];
         todo.id = key;
         return todo;
-      })).catch(err => console.log(err));
+      }))
   }
 
   logIn(email, password) {
@@ -70,8 +70,6 @@ class Api {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(value => {
-        console.log("Logged in!");
-        console.log(value);
       })
 
   }
@@ -81,8 +79,6 @@ class Api {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(value => {
-        console.log('user?', value);
-
         const user = value.user;
         const id = user.uid;
         user
@@ -90,7 +86,6 @@ class Api {
             displayName: "name"
           })
           .then(() => {
-            console.log('Poprawnie zarejestrowano dane: email, hasło i imię');
             firebase
               .database()
               .ref(`/users/${id}`)

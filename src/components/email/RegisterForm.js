@@ -50,7 +50,6 @@ export default class RegisterForm extends React.Component {
 
   getMessage(code) {
     let msg = ''
-    // console.log(code)
     switch (code) {
       case 'auth/email-already-in-use':
         msg = 'Email już jest przypisany!'
@@ -67,8 +66,7 @@ export default class RegisterForm extends React.Component {
       default:
         msg = 'Wystąpił nieoczekiwany błąd'
     }
-    console.log(msg)
-    this.setState({ errtest: msg }, () => console.log(this.state.errtest))
+    this.setState({ errtest: msg })
   }
 
   render() {
@@ -176,10 +174,9 @@ export default class RegisterForm extends React.Component {
                     }}
                       type='submit' >
                       Zarejestruj się
-                                    </button>
+                      </button>
                   </div>
                 </form>)}
-
           </Formik>
           <p className={styles.MailParBelow}>
             Tworząc u Nas konto zgadzasz sie na naszą{' '}
@@ -197,13 +194,11 @@ export default class RegisterForm extends React.Component {
             </Link>
           </div>
         </div>
-
         {this.state.err && (
           <p className={styles.AllRegister} style={{ color: 'red' }}>
             {this.state.err}
           </p>
         )}
-
       </div>
     )
   }

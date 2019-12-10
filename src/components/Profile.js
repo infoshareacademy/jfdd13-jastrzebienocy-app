@@ -32,7 +32,14 @@ class Profile extends React.Component {
     });
     watchRecipes(recipes => {
       this.setState({ recipes });
+      watchFavs(favs => {
+        const favIds = Object.keys(favs)
+        const { recipes } = this.state
+        const favoriteRecipes = recipes.filter(recipe => favIds.includes(recipe.id))
+        this.setState({ favs2: favoriteRecipes });
+      });
     });
+<<<<<<< .merge_file_Sz0jY5
     watchFavs(favs => {
       this.setState({ favs });
       const use = this.state.recipes;
@@ -48,6 +55,8 @@ class Profile extends React.Component {
       );
       this.setState({ favs2: use2 });
     });
+=======
+>>>>>>> .merge_file_bIfUM5
   }
 
 

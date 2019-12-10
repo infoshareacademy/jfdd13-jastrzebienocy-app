@@ -39,7 +39,6 @@ export default class LoginForm extends React.Component {
 
     getMessage(code) {
         let msg = ''
-        console.log(code)
         switch (code) {
             case 'auth/email-already-in-use':
                 msg = 'Email już jest przypisany!'
@@ -53,8 +52,7 @@ export default class LoginForm extends React.Component {
             default:
                 msg = 'Wystąpił nieoczekiwany błąd'
         }
-        console.log(msg)
-        this.setState({ errtest: msg }, () => console.log(this.state.errtest))
+        this.setState({ errtest: msg })
     }
 
     onSubmit = e => {
@@ -88,7 +86,7 @@ export default class LoginForm extends React.Component {
                             }}
                             validationSchema={accountFormSchema}
                             onSubmit={(values, { setSubmitting }) => {
-                                console.log(values)
+
                                 api
                                     .logIn(values.email, values.password)
                                     .catch(err => this.setState({ err: this.getMessage(err.code) }))
@@ -148,17 +146,15 @@ export default class LoginForm extends React.Component {
                                         </div>
                                     </form>)}
                         </Formik>
-
                         <div className={styles.Register2}>
                             Nie posiadasz konta?
-            <NavLink
+                        <NavLink
                                 activeClassName={'active-link'}
                                 to='/Register'
                                 className={styles.Register2}
-                                exact
-                            >
+                                exact>
                                 &nbsp;  Zarejestruj się!
-            </NavLink>
+                        </NavLink>
                         </div>
                     </div>
                 </div>

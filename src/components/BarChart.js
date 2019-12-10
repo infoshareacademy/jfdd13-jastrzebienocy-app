@@ -46,12 +46,51 @@ class BarChart extends Component {
       })
     });
   }
-  componentWillUnmount() {
-    unwatchRecipes()
-    if (this.unsubscribe) {
-      this.unsubscribe()
-    }
-  }
+}
+
+render() {
+  return (
+    <div className={styles.chart}>
+      <Bar
+        data={this.state.chartData}
+        options={{
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                fontColor: "#212121",
+                fontFamily: "Oswald sans-serif",
+                fontSize: 18,
+                fontStyle: "bold",
+              }
+            }],
+            xAxes: [
+              {
+                ticks: {
+                  fontColor: "#212121",
+                  fontFamily: "Oswald sans-serif",
+                  fontSize: 14,
+                  fontStyle: "bold"
+                }
+              }
+            ]
+          },
+          title: {
+            display: true,
+            text: 'Czas gotowania w min / Ilość przepisów',
+            fontSize: 18,
+            fontFamily: "Oswald sans-serif",
+            fontColor: "black",
+          },
+          tooltips: {
+            bodyFontColor: "white",
+            bodyFontSize: 20,
+          },
+          legend: {
+            fontSize: 26,
+            display: false,
+          }
+        }
 
   render() {
     return (
@@ -102,4 +141,8 @@ class BarChart extends Component {
   }
 }
 
-export default BarChart;
+<<<<<<< .merge_file_JvdXWT
+  export default BarChart;
+=======
+
+>>>>>>> .merge_file_VtkjFU
