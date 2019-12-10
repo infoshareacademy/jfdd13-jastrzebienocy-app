@@ -17,7 +17,6 @@ import { useAuth } from "./components/UseAuth";
 
 const Root = () => {
     const loggedIn = useAuth()
-    console.log("logged in", loggedIn)
     if (loggedIn === null) {
         return (<div></div>);
     }

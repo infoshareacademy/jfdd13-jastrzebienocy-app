@@ -30,23 +30,13 @@ class Profile extends React.Component {
     });
     watchRecipes(recipes => {
       this.setState({ recipes });
+      watchFavs(favs => {
+        const favIds = Object.keys(favs)
+        const { recipes } = this.state
+        const favoriteRecipes = recipes.filter(recipe => favIds.includes(recipe.id))
+        this.setState({ favs2: favoriteRecipes });
+      });
     });
-    watchFavs(favs => {
-      this.setState({ favs });
-      const use = this.state.recipes;
-      let favsKeys = [];
-      if (this.state.favs === null) {
-        favsKeys = [];
-      } else {
-        favsKeys = Object.keys(this.state.favs);
-      }
-
-      const use2 = use.filter(
-        use => use.id === favsKeys.find(idFav => idFav === use.id)
-      );
-      this.setState({ favs2: use2 });
-    });
-
   }
 
   
