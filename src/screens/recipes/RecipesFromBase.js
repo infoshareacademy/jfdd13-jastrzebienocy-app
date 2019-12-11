@@ -1,14 +1,14 @@
 import React from 'react'
 import RecipeView from './RecipeView'
 import { Grid, Pagination, GridRow } from 'semantic-ui-react'
-import SideBar from '../screens/recipes/SideBar'
+import SideBar from './SideBar'
 import styles from './RecipesFromBase.module.css'
 
 import {
   getFavourites,
   watchRecipes,
   unwatchRecipes,
-} from "../services/ForFetchDB";
+} from "../../services/ForFetchDB";
 
 
 export class RecipesFromBase extends React.Component {

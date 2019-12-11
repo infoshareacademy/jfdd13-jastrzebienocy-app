@@ -4,7 +4,7 @@ import { Route } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { Modal, Link, Button } from "semantic-ui-react";
-import MainContent from "./MainContent";
+import MainContent from "../screens/recipes/MainContent";
 import styles from "./AddRecipe.module.css";
 import firebase, { storage } from "../firebase";
 import { watchRecipes, unwatchRecipes } from "../services/ForFetchDB";

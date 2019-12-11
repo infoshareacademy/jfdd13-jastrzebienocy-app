@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Navibar from './components/NaviBar';
 import App from './App';
-import MainContent from './components/MainContent';
+import MainContent from './screens/recipes/MainContent';
 import  Profile  from './components/Profile';
 import RegisterForm from './components/email/RegisterForm';
 import LoginForm from './components/email/LoginForm';

@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './RecipeView.module.css'
 import { Segment, Image, Icon } from 'semantic-ui-react'
-import Heart from './Heart'
-import ModalWindow from './ModalWindow'
-import { handleFavoritesFirebase } from '../services/HandleFavourites'
+import Heart from '../../components/Heart'
+import ModalWindow from '../../components/ModalWindow'
+import { handleFavoritesFirebase } from '../../services/HandleFavourites'
 
 let portions = count => {
   let list = []
