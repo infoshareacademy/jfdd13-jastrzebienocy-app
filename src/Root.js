@@ -13,7 +13,7 @@ import RegisterForm from './components/email/RegisterForm';
 import LoginForm from './components/email/LoginForm';
 import Footer from "./components/Footer";
 import Privacy from "./components/Privacy";
-import { useAuth } from "./components/UseAuth";
+import { useAuth } from "./services/UseAuth";
 
 const Root = () => {
     const loggedIn = useAuth()
