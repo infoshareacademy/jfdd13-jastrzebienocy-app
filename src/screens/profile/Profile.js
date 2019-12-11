@@ -7,9 +7,9 @@ import {
   watchFavs,
   unwatchFavs,
   unwatchRecipes
-} from "../services/ForFetchDB";
+} from "../../services/ForFetchDB";
 import { Grid } from "semantic-ui-react";
-import RecipeView from "../screens/recipes/RecipeView";
+import RecipeView from "../recipes/RecipeView";
 
 class Profile extends React.Component {
   state = {
