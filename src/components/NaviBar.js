@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./NaviBar.module.css";
 import Logo from "./logo-nav.png";
 import { NavLink } from 'react-router-dom';
-import LoginForm from './email/LoginForm'
+
 import firebase from "../firebase"
 
 class NaviBar extends React.Component {
