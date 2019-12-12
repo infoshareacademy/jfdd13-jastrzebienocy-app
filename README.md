@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## To run the app first run the npm install, then npm start. 
+
+
+FOODWASTE is an app to search through recipes based on what you have in your fridge. Simply tap your staff in filters and look what you can do with that. 
+
+Data base will be growing with every new user, we believe that everyone will give something to this app.  
+
 ## Available Scripts
 
 In the project directory, you can run:
