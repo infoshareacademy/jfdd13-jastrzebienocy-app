@@ -1,12 +1,11 @@
 import '../../components/helper.css';
 import React from 'react';
-import styles from '../RegisterForm.module.css';
+import styles from './RegisterForm.module.css';
 import { NavLink } from "react-router-dom";
 import api from "./api";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import "../helper.css";
-import Logo from '..//logo-nav.png';
+import Logo from '../../components/images/logo-nav.png';
 
 const accountFormSchema = Yup.object().shape({
     email: Yup.string()
