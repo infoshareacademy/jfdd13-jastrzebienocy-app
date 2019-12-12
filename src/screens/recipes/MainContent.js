@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./MainContent.module.css";
-import AddRecipe from "../../components/AddRecipe";
+import AddRecipe from "./AddRecipe";
 import {RecipesFromBase} from "./RecipesFromBase"
 import {Icon, Button, Modal} from 'semantic-ui-react';
 
