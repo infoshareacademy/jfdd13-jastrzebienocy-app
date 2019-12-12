@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './RecipeView.module.css'
 import { Segment, Image, Icon } from 'semantic-ui-react'
-import Heart from '../../components/Heart'
+import Heart from './Heart'
 import ModalWindow from './ModalWindow'
 import { handleFavoritesFirebase } from '../../services/HandleFavourites'
 
