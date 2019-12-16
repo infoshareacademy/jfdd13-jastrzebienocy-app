@@ -1,3 +1,4 @@
+
 import '../../components/helper.css';
 import React from 'react'
 import styles from '../RegisterForm.module.css'
@@ -65,8 +66,7 @@ export default class RegisterForm extends React.Component {
       default:
         msg = 'Wystąpił nieoczekiwany błąd'
     }
-    console.log(msg)
-    this.setState({ errtest: msg }, () => console.log(this.state.errtest))
+    this.setState({ errtest: msg })
   }
 
   render() {

@@ -3,7 +3,7 @@ import { Input, Dropdown } from 'semantic-ui-react'
 import styles from './AddToForm.module.css'
 
 class AddForm extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       name: '',
@@ -27,26 +27,19 @@ class AddForm extends React.Component {
     })
   }
 
-  create () {
+  create() {
     fetch(`https://myfirstproject-b5855.firebaseio.com/recipe.json`, {
       method: 'POST',
       body: JSON.stringify({
         recipe: this.state
-      }) // .toLowerCase()
+      })
     })
       .then(res => res.json())
-      .then(res => console.log(res))
   }
 
-  //   get(recipe) {
-  //     fetch(`https://myfirstproject-b5855.firebaseio.com/${recipe}.json`, {
-  //       method: 'GET'
-  //     })
-  //     .then(res => res.json())
-  //     .then(res => console.log(res));
-  //   }
 
-  render () {
+
+  render() {
     return (
       <form
         onSubmit={e => {

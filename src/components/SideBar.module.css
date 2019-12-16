@@ -28,15 +28,6 @@
   text-align: center;
 }
 
-.Searching::first-letter {
-  font-family: serif;
-  font-weight: bold;
-  color: #212121;
-  font-size: 40px;
-  text-decoration: none;
-  text-align: center;
-}
-
 .Favourites {
   font-family: "Oswald", sans-serif;
   font-weight: bold;
@@ -74,6 +65,7 @@
 
 .Input2 {
   width: 85%;
+  font-size: 16px;
 }
 
 .Input3 {
@@ -117,6 +109,7 @@
     margin-top: 15px;
     width: 75%;
     height: 20px;
+    font-size: 14px;
   }
   .Input3 {
     margin-top: 20px;
@@ -136,14 +129,6 @@
     color: #212121;
     text-decoration: underline;
     padding: 5px;
-    text-align: center;
-  }
-  .Searching::first-letter {
-    font-family: serif;
-    font-weight: bold;
-    color: #212121;
-    font-size: 16px;
-    text-decoration: none;
     text-align: center;
   }
   .Favourites {
@@ -201,7 +186,7 @@
   }
   .Input2 {
     border-radius: 50px;
-    height: 20px;
+    height: 32px;
     background-color: lightgrey;
     width: 50%;
     margin-top: 1px;
@@ -216,7 +201,7 @@
   }
   .dropdown2 {
     border-radius: 25px;
-    width: 80%;
+    width: 60%;
     margin-left: 30px;
     text-align: center;
   }
@@ -229,14 +214,6 @@
     padding: 5px;
     text-align: center;
   }
-  .Searching::first-letter {
-    font-family: serif;
-    font-weight: bold;
-    color: #212121;
-    font-size: 16px;
-    text-decoration: none;
-    text-align: center;
-  }
   .Favourites {
     font-family: "Oswald", sans-serif;
     font-weight: bold;
@@ -244,7 +221,7 @@
     font-size: 16px;
     text-decoration: none;
     text-align: center;
-    margin-top: 25px;
+    margin-top: 40px;
   }
   /* slider */
   .Label {

@@ -39,7 +39,6 @@ export default class LoginForm extends React.Component {
 
     getMessage(code) {
         let msg = ''
-        console.log(code)
         switch (code) {
             case 'auth/email-already-in-use':
                 msg = 'Email już jest przypisany!'
@@ -53,11 +52,12 @@ export default class LoginForm extends React.Component {
             default:
                 msg = 'Wystąpił nieoczekiwany błąd'
         }
-        this.setState({ errtest: msg }, () => console.log(this.state.errtest))
+        this.setState({ errtest: msg })
     }
 
     onSubmit = e => {
         e.preventDefault();
+        console.log("zupa")
         api.logIn(this.state.email, this.state.password)
             .catch(err => this.setState({ err: err.message }));
     }
@@ -86,7 +86,11 @@ export default class LoginForm extends React.Component {
                             }}
                             validationSchema={accountFormSchema}
                             onSubmit={(values, { setSubmitting }) => {
+<<<<<<< HEAD
                                 console.log(values)
+=======
+
+>>>>>>> 3f9c2e742f250a77a97b681f1641ec0b79f3c316
                                 api
                                     .logIn(values.email, values.password)
                                     .catch(err => this.setState({ err: this.getMessage(err.code) }))

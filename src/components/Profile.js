@@ -23,33 +23,24 @@ class Profile extends React.Component {
   };
 
   componentDidMount() {
-    const avatar=`https://api.adorable.io/avatars/285/${this.state.email}.png`
+    const avatar = `https://api.adorable.io/avatars/285/${this.state.email}.png`
     watchUsers(users => {
       this.setState({ ...users, avatar });
-      
+
+
+
     });
     watchRecipes(recipes => {
       this.setState({ recipes });
+      watchFavs(favs => {
+        const favIds = Object.keys(favs)
+        const { recipes } = this.state
+        const favoriteRecipes = recipes.filter(recipe => favIds.includes(recipe.id))
+        this.setState({ favs2: favoriteRecipes });
+      });
     });
-    watchFavs(favs => {
-      this.setState({ favs });
-      const use = this.state.recipes;
-      let favsKeys = [];
-      if (this.state.favs === null) {
-        favsKeys = [];
-      } else {
-        favsKeys = Object.keys(this.state.favs);
-      }
-
-      const use2 = use.filter(
-        use => use.id === favsKeys.find(idFav => idFav === use.id)
-      );
-      this.setState({ favs2: use2 });
-    });
-
   }
 
-  
 
   componentWillUnmount() {
     unwatchUsers();
@@ -81,15 +72,15 @@ class Profile extends React.Component {
                   ulubionych! :)
                 </p>
               ) : (
-                this.state.favs2.map(item => (
-                  <Grid.Column key={item.id} width={8}>
-                    <RecipeView
-                      recipe={item}
-                      isFavourite={this.state.favs[item.id]}
-                    />
-                  </Grid.Column>
-                ))
-              )}
+                  this.state.favs2.map(item => (
+                    <Grid.Column key={item.id} width={8}>
+                      <RecipeView
+                        recipe={item}
+                        isFavourite={this.state.favs[item.id]}
+                      />
+                    </Grid.Column>
+                  ))
+                )}
             </Grid>
           </div>
         </div>

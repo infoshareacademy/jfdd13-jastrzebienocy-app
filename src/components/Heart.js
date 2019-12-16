@@ -15,7 +15,7 @@ class Heart extends React.Component {
         onClick={this.handleOnClick}
         name={checked ? 'heart' : 'heart outline'}
       />
-    )
+    )// .toLowerCase()import React, {Component} from 'react';
   }
 }
 
