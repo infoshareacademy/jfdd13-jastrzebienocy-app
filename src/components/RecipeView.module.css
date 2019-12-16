@@ -1,37 +1,69 @@
+.RecipeView {
+    margin: 30px;
+    box-shadow: 4px 4px grey;
+    border-radius: 3px;
+}
+
+p{
+    font-size: 20px;
+}
+
+
 .Wrapper {
     display: flex;
     flex-direction: column;
 }
 
-.Text{
-    color: red;
+.Text {
+    color: #689F38;
     text-align: start;
     align-items: flex-end;
-
+    font-size: 16px;
+    font-weight: bold;
 }
 
-.NameRecipe{
-    font-size: 20px;
+.NameRecipe {
+    width: 90%;
+    font-size: 26px;
     font-weight: bold;
     color: black;
-    padding-bottom: 20px ;
+    float: left;
+    margin-left: 3%;
+    margin-bottom: 20px;
+    
 }
 
-.GridContainer{
+.ShortDescription {
+    margin: 10px;
+    display: inline-block;
+}
+
+.GridContainer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr) ;
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(200px, auto);
 }
 
-.Img{
+.Img {
     border-radius: 6px;
-    width: 200px;
-    height: 200px;
+    margin-left: 3%;
+    width: 50%;
+    height: 50%;
     background: cover;
 }
 
-.TimeAndPortions{
+.TimeAndPortions {
     padding-top: 20px;
     display: flex;
     justify-content: space-around;
+}
+
+.HeartInRecipe {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 24px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
 }

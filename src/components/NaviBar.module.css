@@ -4,21 +4,22 @@
     width: 100%;
     display: flex;
     align-items: center;
-    background: #8bc34a;
-    height: 120px;
+    background-color: rgba(139,195,74, 0.8); 
     z-index: 5;
     scroll-behavior: smooth;
     top: 0px;
-    align-self: flex-end;
-    height: 10%;
+    align-self: flex-end; 
+    height: 7vh;
+    justify-content: space-between;
 }
 
 .logo {
-    width: 155px;
+    width: 125px;
     margin-left: 25px;
 }
 
-.Profil,
+.Logout,
+.Profile,
 .Przepisy,
 .Dashboard {
     font-family: "Oswald", sans-serif;
@@ -27,10 +28,74 @@
     font-size: 24px;
     text-decoration: none;
     padding: 20px;
+    justify-content: flex-end;
 }
 
+/* .Logout {
+    font-weight: bold;
+    color: #212121;
+    font-size: 24px;
+    text-decoration: none;
+} */
+
 .NaviBarRight {
-    flex-basis: 100%;
-    text-align: end;
-    margin-right: 25px;  
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    margin-right: 30px; 
+}
+
+@media only screen and (max-width: 850px) {
+.Logout,
+.Profile,
+.Przepisy,
+.Dashboard {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px;
+    justify-content: flex-end;
+    line-height: normal;
+}
+.logo {
+    width: 100px;
+    margin-left: 20px;
+}
+}
+
+@media only screen and (max-width: 500px) {
+.Logout,
+.Profile,
+.Przepisy,
+.Dashboard {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    color: #212121;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 5px;
+    justify-content: flex-end;
+    line-height: normal;
+}
+.logo {
+    width: 90px;
+    margin-left: 15px;
+}
+}
+
+.Logout:hover,
+.Profile:hover,
+.Przepisy:hover,
+.Dashboard:hover {
+    background-color: #689F38;
+    padding: 0 21px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    line-height: normal;
 }
