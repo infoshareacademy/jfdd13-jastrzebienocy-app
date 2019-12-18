@@ -7,13 +7,13 @@ import {
 } from "react-router-dom";
 import Navibar from './components/NaviBar';
 import App from './App';
-import MainContent from './components/MainContent';
-import  Profile  from './components/Profile';
-import RegisterForm from './components/email/RegisterForm';
-import LoginForm from './components/email/LoginForm';
+import MainContent from './screens/recipes/MainContent';
+import  Profile  from './screens/profile/Profile';
+import RegisterForm from './screens/register/RegisterForm';
+import LoginForm from './screens/register/LoginForm';
 import Footer from "./components/Footer";
 import Privacy from "./components/Privacy";
-import { useAuth } from "./components/UseAuth";
+import { useAuth } from "./services/UseAuth";
 
 const Root = () => {
     const loggedIn = useAuth()

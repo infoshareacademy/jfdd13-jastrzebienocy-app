@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Bar, Line, Pie } from 'react-chartjs-2';
 import styles from "./Charts.module.css";
-import {   getCookingTime, watchRecipes, unwatchRecipes  } from '../services/ForFetchDB';
+import {   getCookingTime, watchRecipes, unwatchRecipes  } from '../../services/ForFetchDB';
 import { defaults } from 'react-chartjs-2'
 
 defaults.global.defaultFontFamily = "'Oswald', serif"

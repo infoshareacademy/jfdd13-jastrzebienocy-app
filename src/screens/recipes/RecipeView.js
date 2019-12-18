@@ -3,7 +3,7 @@ import styles from './RecipeView.module.css'
 import { Segment, Image, Icon } from 'semantic-ui-react'
 import Heart from './Heart'
 import ModalWindow from './ModalWindow'
-import { handleFavoritesFirebase } from '../services/HandleFavourites'
+import { handleFavoritesFirebase } from '../../services/HandleFavourites'
 
 let portions = count => {
   let list = []

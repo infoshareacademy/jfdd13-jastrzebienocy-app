@@ -6,11 +6,9 @@ import styles from './RecipesFromBase.module.css'
 
 import {
   getFavourites,
-  prepareRecipes,
   watchRecipes,
   unwatchRecipes,
-  categories
-} from "../services/ForFetchDB";
+} from "../../services/ForFetchDB";
 
 
 export class RecipesFromBase extends React.Component {

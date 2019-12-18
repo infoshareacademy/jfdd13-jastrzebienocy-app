@@ -1,4 +1,4 @@
-import "./helper.css";
+import "../../components/helper.css";
 import React from "react";
 import { Route } from "react-router-dom";
 import { Formik } from "formik";
@@ -6,8 +6,8 @@ import * as Yup from "yup";
 import { Modal, Link, Button } from "semantic-ui-react";
 import MainContent from "./MainContent";
 import styles from "./AddRecipe.module.css";
-import firebase, { storage } from "../firebase";
-import { watchRecipes, unwatchRecipes } from "../services/ForFetchDB";
+import firebase, { storage } from "../../firebase";
+import { watchRecipes, unwatchRecipes } from "../../services/ForFetchDB";
 
 const regEx = /^[a-z\s\bąćśńółężź]{2,}$/i; // Modified JK
 const options = [

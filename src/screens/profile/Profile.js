@@ -7,9 +7,9 @@ import {
   watchFavs,
   unwatchFavs,
   unwatchRecipes
-} from "../services/ForFetchDB";
+} from "../../services/ForFetchDB";
 import { Grid } from "semantic-ui-react";
-import RecipeView from "./RecipeView";
+import RecipeView from "../recipes/RecipeView";
 
 class Profile extends React.Component {
   state = {
@@ -31,7 +31,13 @@ class Profile extends React.Component {
     watchRecipes(recipes => {
       this.setState({ recipes });
       watchFavs(favs => {
-        const favIds = Object.keys(favs)
+        let favIds
+        if(favs != null){
+          favIds = Object.keys(favs)
+        } else{
+           favIds = []
+        }
+       
         const { recipes } = this.state
         const favoriteRecipes = recipes.filter(recipe => favIds.includes(recipe.id))
         this.setState({ favs2: favoriteRecipes });
