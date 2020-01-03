@@ -1,15 +1,12 @@
 import "../../components/helper.css";
 import React from "react";
-import { Route } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { Modal, Link, Button } from "semantic-ui-react";
-import MainContent from "./MainContent";
+import { Button } from "semantic-ui-react";
 import styles from "./AddRecipe.module.css";
 import firebase, { storage } from "../../firebase";
-import { watchRecipes, unwatchRecipes } from "../../services/ForFetchDB";
 
-const regEx = /^[a-z\s\bąćśńółężź]{2,}$/i; // Modified JK
+const regEx = /^[a-z\s\bąćśńółężź]{2,}$/i;
 const options = [
   { value: "włoska", name: "Kuchnia włoska" },
   { value: "francuska", name: "Kuchnia francuska" },
@@ -23,7 +20,7 @@ const options = [
 ]
 
 const SelectInput = props => {
-  const { name, errors, touched, labelform, tooltiptext } = props;
+  const { name, errors, touched, labelform} = props;
   return (
     <div>
       <label>
@@ -47,10 +44,6 @@ const SelectInput = props => {
 };
 
 class AddRecipe extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>
