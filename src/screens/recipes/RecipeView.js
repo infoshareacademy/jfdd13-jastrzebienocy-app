@@ -71,8 +71,6 @@ class RecipeView extends React.Component {
                 }}
               />
             </div>
-
-
             <div className={styles.Text}>
               <div
                 onClick={() => {
