@@ -4,10 +4,7 @@ import { Button, Icon } from 'semantic-ui-react'
 
 
 class DashboardHeader extends React.Component {
-    constructor(props) {
-      super(props);
-  
-    }
+    
   
     render() {
       return (
