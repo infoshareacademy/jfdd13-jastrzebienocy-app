@@ -74,8 +74,6 @@ class RecipeView extends React.Component {
 
 
             <div className={styles.Text}>
-
-              
               <div
                 onClick={() => {
                   this.showModalWindow()
@@ -110,7 +108,6 @@ class RecipeView extends React.Component {
             <Heart checked={this.props.isFavourite} onHeartClick={this.addToFavorites} />
           </div>
         </Segment>
-
       </div>
     )
   }
