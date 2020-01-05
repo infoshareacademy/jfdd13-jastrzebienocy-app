@@ -60,7 +60,7 @@ class Profile extends React.Component {
             <img
               src={this.state.avatar}
               className={styles.ProfilePicture}
-              alt={"Profile picture"}
+              alt={"Profile"}
             ></img>
             <div className={styles.ProfileRight}>
               <div className={styles.Name}> Witaj {this.state.name}!</div>
