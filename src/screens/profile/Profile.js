@@ -71,7 +71,7 @@ class Profile extends React.Component {
           </div>
           <div className={styles.FavoutiteRecipe}>
             <Grid stackable relaxed style={{ width: "100%", marginTop: "0" }}>
-              {this.state.favs2.length == 0 ? (
+              {this.state.favs2.length === 0 ? (
                 <p>
                   Nie masz żadych ulubionych, wejdź na przepisy i dodaj coś do
                   ulubionych! :)
