@@ -57,7 +57,7 @@ export default class RegisterForm extends React.Component {
       case 'auth/weak-password':
         msg = 'Twoje hasło musi posiadać przynajmniej 8 znaków'
         break
-      case 'auth/email-already-in-use':
+      case 'auth/email-already-in-use': //this should be checked
         msg = 'Sukces!'
         break
       default:
