@@ -61,7 +61,8 @@ class PieChart extends Component {
                         {
                             responsive: false,
                             maintainAspectRatio: false,
-                        }, {
+                        }, //why are these two separate objects? 
+                         {
                             tooltips: {
                                 bodyFontColor: "white",
                                 bodyFontSize: 20,
