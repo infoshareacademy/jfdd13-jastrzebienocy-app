@@ -1,6 +1,6 @@
 import React from 'react'
 import RecipeView from './RecipeView'
-import { Grid, Pagination, GridRow } from 'semantic-ui-react'
+import { Grid, Pagination} from 'semantic-ui-react'
 import SideBar from './SideBar'
 import styles from './RecipesFromBase.module.css'
 
@@ -111,7 +111,7 @@ export class RecipesFromBase extends React.Component {
         </div>
         <>
           <Grid stackable relaxed style={{ width: '100%', marginTop: '0' }}>
-            {viewedRecipes.length == 0 ? (<div style={{ margin: '50px 30px', fontSize: '35px', lineHeight:'1'}}>Brak wyników dla podanych filtrów wyszukiwania :(</div>) : 
+            {viewedRecipes.length === 0 ? (<div style={{ margin: '50px 30px', fontSize: '35px', lineHeight:'1'}}>Brak wyników dla podanych filtrów wyszukiwania :(</div>) : 
             (viewedRecipes.map(item => (
 
               <Grid.Column key={item.id} width={8}>
