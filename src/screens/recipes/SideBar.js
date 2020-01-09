@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './SideBar.module.css'
 import Heart from './Heart'
-import { Icon, Dropdown } from 'semantic-ui-react'
+import { Dropdown } from 'semantic-ui-react'
 
 const dropdownI = [
   {
@@ -40,9 +40,9 @@ const dropdownI = [
     value: 'śródziemnomorska'
   },
   {
-    key: 'Kuchnia gruzińksa',
-    text: 'Kuchnia gruzińksa',
-    value: 'gruzińksa'
+    key: 'Kuchnia gruzińska',
+    text: 'Kuchnia gruzińska',
+    value: 'gruzińska'
   },
   {
     key: 'Inna',

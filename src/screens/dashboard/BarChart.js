@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Bar, Line, Pie } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import styles from "./Charts.module.css";
-import {   getCookingTime, watchRecipes,  } from '../services/ForFetchDB';
+import {   getCookingTime, watchRecipes, unwatchRecipes  } from '../../services/ForFetchDB';
 import { defaults } from 'react-chartjs-2'
 
 defaults.global.defaultFontFamily = "'Oswald', serif"
@@ -46,6 +46,12 @@ componentDidMount() {
         })
     });
 }
+componentWillUnmount() {
+  unwatchRecipes()
+  if (this.unsubscribe) {
+    this.unsubscribe()
+  }
+}
     
     render() {
         return (
@@ -59,7 +65,7 @@ componentDidMount() {
           beginAtZero: true,
           fontColor: "#212121",
               fontFamily: "Oswald sans-serif",
-               fontSize: 14,
+               fontSize: 18,
                fontStyle: "bold",
         }
       }],
@@ -77,12 +83,16 @@ componentDidMount() {
       title:{
       display: true,
         text: 'Czas gotowania w min / Ilość przepisów',
-        fontSize:16,
+        fontSize:18,
         fontFamily: "Oswald sans-serif",
         fontColor: "black",
     },
+    tooltips: {
+      bodyFontColor: "white",
+      bodyFontSize: 20,
+  },
     legend:{
-        
+            fontSize:26,
             display: false,
     }
       }}

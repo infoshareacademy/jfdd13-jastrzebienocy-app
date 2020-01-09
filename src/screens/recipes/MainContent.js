@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./MainContent.module.css";
 import AddRecipe from "./AddRecipe";
-import {RecipesFromBase} from "./RecipesFromBase"
-import {Icon, Button, Modal} from 'semantic-ui-react';
+import { RecipesFromBase } from "./RecipesFromBase"
+import { Button, Modal } from 'semantic-ui-react';
 
 class MainContent extends React.Component {
     constructor(props){

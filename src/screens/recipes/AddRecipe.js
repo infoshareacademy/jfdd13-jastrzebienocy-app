@@ -1,15 +1,12 @@
-import "./helper.css";
+import "../../components/helper.css";
 import React from "react";
-import { Route } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { Modal, Link, Button } from "semantic-ui-react";
-import MainContent from "./MainContent";
+import { Button } from "semantic-ui-react";
 import styles from "./AddRecipe.module.css";
-import firebase, { storage } from "../firebase";
-import { watchRecipes, unwatchRecipes } from "../services/ForFetchDB";
+import firebase, { storage } from "../../firebase";
 
-const regEx = /^[a-z\s\bąćśńółężź]{2,}$/i; // Modified JK
+const regEx = /^[a-z\s\bąćśńółężź]{2,}$/i;
 const options = [
   { value: "włoska", name: "Kuchnia włoska" },
   { value: "francuska", name: "Kuchnia francuska" },
@@ -23,7 +20,7 @@ const options = [
 ]
 
 const SelectInput = props => {
-  const { name, errors, touched, labelform, tooltiptext } = props;
+  const { name, errors, touched, labelform} = props;
   return (
     <div>
       <label>
@@ -47,10 +44,6 @@ const SelectInput = props => {
 };
 
 class AddRecipe extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>
@@ -72,7 +65,6 @@ class AddRecipe extends React.Component {
           }}
           onSubmit={(values, actions) => {
             const data = Object.assign({}, { ...values });
-            console.log(values);
             const image = values.imageSrc;
             if (image) {
               const imageName = image.name.replace(/\s/gi, "_");
@@ -81,7 +73,7 @@ class AddRecipe extends React.Component {
                 "state_changed",
                 snapshot => { },
                 error => {
-                  console.log(error);
+                  
                 },
                 () => {
                   storage
@@ -89,7 +81,6 @@ class AddRecipe extends React.Component {
                     .child(imageName)
                     .getDownloadURL()
                     .then(url => {
-                      console.log("url", url);
                       data.imageUrl = url;
 
                       firebase
@@ -106,7 +97,6 @@ class AddRecipe extends React.Component {
                 .ref("/recipes")
                 .push(data);
               this.props.onSuccess();
-              console.log('nowy przepis')
             }
           }}
           validationSchema={Yup.object().shape({
@@ -301,7 +291,6 @@ class AddRecipe extends React.Component {
                   type="file"
                   accept=".jpg, .jpeg, .png"
                   onChange={event => {
-                    console.log("imageSrc", event.target.files[0]);
                     setFieldValue("imageSrc", event.target.files[0]);
                   }}
                   onBlur={handleBlur}

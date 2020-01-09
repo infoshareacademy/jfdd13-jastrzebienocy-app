@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Bar, Line, Pie } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 import styles from "./Charts.module.css";
-import {   watchRecipes, getCategories } from '../services/ForFetchDB';
+import {   watchRecipes, getCategories, unwatchRecipes, } from '../../services/ForFetchDB';
 
 class PieChart extends Component {
     constructor(props) {
@@ -40,6 +40,13 @@ class PieChart extends Component {
             })
         });
     }
+
+    componentWillUnmount() {
+        unwatchRecipes()
+        if (this.unsubscribe) {
+          this.unsubscribe()
+        }
+      }
     render() {  
         return (
 
@@ -54,10 +61,11 @@ class PieChart extends Component {
                         {
                             responsive: false,
                             maintainAspectRatio: false,
-                        }, {
+                        }, //why are these two separate objects? 
+                         {
                             tooltips: {
                                 bodyFontColor: "white",
-                                bodyFontSize: 10,
+                                bodyFontSize: 20,
                             },
                             ticks: {
                                 min: 0
@@ -65,7 +73,7 @@ class PieChart extends Component {
                             title: {
                                 display: true,
                                 text: 'Ilość przepisów / rodzaje kuchni',
-                                fontSize: 20,
+                                fontSize: 18,
                                 fontFamily: "Oswald sans-serif",
                                 fontColor: "black",
                             },

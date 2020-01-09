@@ -1,4 +1,4 @@
-import firebase, { userId } from '../firebase'
+import firebase from '../firebase'
 
 export const handleFavoritesFirebase = async (recipeId) => {
     const userId = firebase.auth().currentUser.uid;

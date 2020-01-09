@@ -1,0 +1,144 @@
+.ProfileTxt {
+    background-color: #BDBDBD;
+    padding: 20px;
+    margin: 30px 120px;
+    border-radius: 10px;
+    font-size: 35px;
+    text-align: center;
+    font-family: Oswald, sans-serif;
+}
+
+.ProfileMain {
+    background-color: #BDBDBD;
+    padding: 20px;
+    margin: 30px 120px;
+    border-radius: 10px;
+    
+}
+
+img {
+    border-style: none;
+    border-radius: 200px;
+    width: 210px;
+}
+
+.ProfileFlex{
+    display: flex;
+}
+
+.ProfileRight{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 10%;
+    border-radius: 20px;
+    background-color: white;
+    width: 70%;
+}
+
+.FavoutiteRecipe,
+.Email,
+.Name {
+    font-size: 30px;
+    padding: 10px;
+}
+
+.FavoutiteRecipe{
+    margin-top: 40px;
+    background-color: white;
+    border-radius: 20px;
+    
+    
+}
+
+.FavoutiteRecipe button{
+    
+    border-radius: 20px;
+    margin: 0 40%;
+}
+
+
+@media (max-width: 500px ){
+    .ProfileMain {
+        padding: 10px;
+        margin: 30px 10px;
+    }
+    img {
+        border-radius: 300px;
+        width: 30%;
+        height: 3%;
+    }
+    .ProfileRight{
+        margin-left: 5%;
+        border-radius: 36px;
+        width: 70%;
+    }
+    .ProfileTxt {
+        border-radius: 10px;
+        font-size: 20px;
+        text-align: center;
+        font-family: Oswald, sans-serif;
+    }
+    
+.Email,
+.Name {
+    font-size: 16px;
+    padding: 2px;
+}
+
+
+}
+
+@media (max-width: 900px ){
+    .ProfileMain {
+        padding: 10px;
+        margin: 30px 10px;
+    }
+    .ProfileRight{
+        margin-left: 5%;
+        border-radius: 36px;
+        width: 70%;
+    }
+    
+.Email,
+.Name {
+    font-size: 26px;
+    padding: 10px;
+}
+}
+
+@media (max-width: 1200px ){
+    .ProfileMain {
+        padding: 10px;
+        margin: 30px 10px;
+    }
+    .ProfileRight{
+        margin-left: 5%;
+        border-radius: 40px;
+        width: 70%;
+    }
+    
+.Email,
+.Name {
+    font-size: 32px;
+
+}
+}
+
+@media (max-width: 1600px ){
+
+    .ProfileRight{
+        margin-left: 5%;
+        border-radius: 40px;
+        width: 70%;
+    }
+    
+.Email,
+.Name {
+    font-size: 40px;
+
+}
+}
+
+
+
