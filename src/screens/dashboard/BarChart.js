@@ -7,13 +7,12 @@ import { defaults } from 'react-chartjs-2'
 defaults.global.defaultFontFamily = "'Oswald', serif"
 
 class BarChart extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  
+    state = {
         chartData: {
         }
     }
-}
+
 componentDidMount() {
     watchRecipes(recipes => {
         const barChartData = getCookingTime(recipes)

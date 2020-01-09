@@ -4,13 +4,10 @@ import styles from "./Charts.module.css";
 import {   watchRecipes, getCategories, unwatchRecipes, } from '../../services/ForFetchDB';
 
 class PieChart extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+        state = {
             chartData: {
             }
         }
-    }
     componentDidMount() {
         watchRecipes(recipes => {
             const pieChartData = getCategories(recipes)
@@ -57,11 +54,7 @@ class PieChart extends Component {
                     width={100}
                     height={80}
 
-                    options={
-                        {
-                            responsive: false,
-                            maintainAspectRatio: false,
-                        }, //why are these two separate objects? 
+                    options={ 
                          {
                             tooltips: {
                                 bodyFontColor: "white",
